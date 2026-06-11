@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/evaluation/results.db
+frontend/node_modules/
+frontend/dist/
