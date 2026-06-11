@@ -97,81 +97,481 @@
       "from": "NDLS",
       "to": "GZB",
       "distance_km": 26.0,
-      "max_speed_kmph": 110,
-      "track_type": "double",
-      "typical_traversal_min": 20
+      "tracks": 4,
+      "max_speed": 110,
+      "electrified": true,
+      "section_capacity": 15,
+      "typical_traversal_min": 20,
+      "blocks": [
+        {
+          "id": "NDLS_GZB_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "NDLS_GZB_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "NDLS_GZB_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "NDLS_GZB_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "NDLS_GZB_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "NDLS_GZB_06",
+          "length_km": 1.0
+        }
+      ]
     },
     {
       "id": "GZB_ALJN",
       "from": "GZB",
       "to": "ALJN",
       "distance_km": 106.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 70
+      "tracks": 4,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 24,
+      "typical_traversal_min": 70,
+      "blocks": [
+        {
+          "id": "GZB_ALJN_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_06",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_07",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_08",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_09",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_10",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_11",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_12",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_13",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_14",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_15",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_16",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_17",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_18",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_19",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_20",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_21",
+          "length_km": 5.0
+        },
+        {
+          "id": "GZB_ALJN_22",
+          "length_km": 1.0
+        }
+      ]
     },
     {
       "id": "ALJN_HRS",
       "from": "ALJN",
       "to": "HRS",
       "distance_km": 30.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 20
+      "tracks": 2,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 10,
+      "typical_traversal_min": 20,
+      "blocks": [
+        {
+          "id": "ALJN_HRS_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "ALJN_HRS_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "ALJN_HRS_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "ALJN_HRS_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "ALJN_HRS_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "ALJN_HRS_06",
+          "length_km": 5.0
+        }
+      ]
     },
     {
       "id": "HRS_TDL",
       "from": "HRS",
       "to": "TDL",
       "distance_km": 44.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 30
+      "tracks": 2,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 12,
+      "typical_traversal_min": 30,
+      "blocks": [
+        {
+          "id": "HRS_TDL_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_06",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_07",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_08",
+          "length_km": 5.0
+        },
+        {
+          "id": "HRS_TDL_09",
+          "length_km": 4.0
+        }
+      ]
     },
     {
       "id": "TDL_FZD",
       "from": "TDL",
       "to": "FZD",
       "distance_km": 17.0,
-      "max_speed_kmph": 110,
-      "track_type": "double",
-      "typical_traversal_min": 12
+      "tracks": 2,
+      "max_speed": 110,
+      "electrified": true,
+      "section_capacity": 8,
+      "typical_traversal_min": 12,
+      "blocks": [
+        {
+          "id": "TDL_FZD_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "TDL_FZD_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "TDL_FZD_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "TDL_FZD_04",
+          "length_km": 2.0
+        }
+      ]
     },
     {
       "id": "FZD_SKB",
       "from": "FZD",
       "to": "SKB",
       "distance_km": 20.0,
-      "max_speed_kmph": 110,
-      "track_type": "double",
-      "typical_traversal_min": 15
+      "tracks": 2,
+      "max_speed": 110,
+      "electrified": true,
+      "section_capacity": 8,
+      "typical_traversal_min": 15,
+      "blocks": [
+        {
+          "id": "FZD_SKB_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "FZD_SKB_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "FZD_SKB_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "FZD_SKB_04",
+          "length_km": 5.0
+        }
+      ]
     },
     {
       "id": "SKB_ETW",
       "from": "SKB",
       "to": "ETW",
       "distance_km": 55.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 35
+      "tracks": 2,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 14,
+      "typical_traversal_min": 35,
+      "blocks": [
+        {
+          "id": "SKB_ETW_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_06",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_07",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_08",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_09",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_10",
+          "length_km": 5.0
+        },
+        {
+          "id": "SKB_ETW_11",
+          "length_km": 5.0
+        }
+      ]
     },
     {
       "id": "ETW_PHD",
       "from": "ETW",
       "to": "PHD",
       "distance_km": 56.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 36
+      "tracks": 2,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 14,
+      "typical_traversal_min": 36,
+      "blocks": [
+        {
+          "id": "ETW_PHD_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_06",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_07",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_08",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_09",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_10",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_11",
+          "length_km": 5.0
+        },
+        {
+          "id": "ETW_PHD_12",
+          "length_km": 1.0
+        }
+      ]
     },
     {
       "id": "PHD_CNB",
       "from": "PHD",
       "to": "CNB",
       "distance_km": 83.0,
-      "max_speed_kmph": 130,
-      "track_type": "double",
-      "typical_traversal_min": 55
+      "tracks": 2,
+      "max_speed": 130,
+      "electrified": true,
+      "section_capacity": 20,
+      "typical_traversal_min": 55,
+      "blocks": [
+        {
+          "id": "PHD_CNB_01",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_02",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_03",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_04",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_05",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_06",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_07",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_08",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_09",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_10",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_11",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_12",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_13",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_14",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_15",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_16",
+          "length_km": 5.0
+        },
+        {
+          "id": "PHD_CNB_17",
+          "length_km": 3.0
+        }
+      ]
     }
   ]
 }

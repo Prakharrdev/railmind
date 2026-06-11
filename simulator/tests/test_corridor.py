@@ -38,6 +38,10 @@ def test_load_sections(graph):
     assert sec["from"] == "NDLS"
     assert sec["to"] == "GZB"
     assert sec["distance_km"] == 26.0
+    assert sec["tracks"] == 4
+    assert sec["max_speed"] == 110
+    assert sec["electrified"] is True
+    assert sec["section_capacity"] == 15
     
     # Verify reversed section retrieval
     sec_down = graph.get_section("NDLS_GZB_DOWN")
@@ -51,6 +55,10 @@ def test_get_section_by_endpoints(graph):
     assert sec is not None
     assert sec["id"] == "NDLS_GZB"
     assert sec["distance_km"] == 26.0
+    assert sec["tracks"] == 4
+    assert sec["max_speed"] == 110
+    assert sec["electrified"] is True
+    assert sec["section_capacity"] == 15
 
     sec_down = graph.get_section_by_endpoints("GZB", "NDLS")
     assert sec_down is not None
@@ -84,3 +92,21 @@ def test_shortest_path(graph):
     
     # Path with invalid stations
     assert graph.get_shortest_path("NDLS", "INVALID") == []
+
+def test_blocks_generation(graph):
+    # Verify blocks generated for NDLS_GZB (distance 26 km, should be 6 blocks)
+    sec_ndls_gzb = graph.get_section("NDLS_GZB")
+    assert "blocks" in sec_ndls_gzb
+    blocks = sec_ndls_gzb["blocks"]
+    assert len(blocks) == 6
+    assert blocks[0]["id"] == "NDLS_GZB_01"
+    assert blocks[0]["length_km"] == 5.0
+    assert blocks[5]["id"] == "NDLS_GZB_06"
+    assert pytest.approx(blocks[5]["length_km"]) == 1.0  # 26 - 5*5 = 1.0 km
+
+    # Verify blocks generated for GZB_ALJN (distance 106 km, should be 22 blocks)
+    sec_gzb_aljn = graph.get_section("GZB_ALJN")
+    assert len(sec_gzb_aljn["blocks"]) == 22
+    assert sec_gzb_aljn["blocks"][21]["id"] == "GZB_ALJN_22"
+    assert pytest.approx(sec_gzb_aljn["blocks"][21]["length_km"]) == 1.0  # 106 - 21*5 = 1.0 km
+

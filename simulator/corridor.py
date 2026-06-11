@@ -34,8 +34,10 @@ class RailwayGraph:
                 u, v,
                 id=sec_id,
                 distance_km=sec["distance_km"],
-                max_speed_kmph=sec["max_speed_kmph"],
-                track_type=sec["track_type"],
+                tracks=sec["tracks"],
+                max_speed=sec["max_speed"],
+                electrified=sec["electrified"],
+                section_capacity=sec["section_capacity"],
                 typical_traversal_min=sec["typical_traversal_min"],
                 direction="UP"
             )
@@ -44,8 +46,10 @@ class RailwayGraph:
                 v, u,
                 id=f"{sec_id}_DOWN",
                 distance_km=sec["distance_km"],
-                max_speed_kmph=sec["max_speed_kmph"],
-                track_type=sec["track_type"],
+                tracks=sec["tracks"],
+                max_speed=sec["max_speed"],
+                electrified=sec["electrified"],
+                section_capacity=sec["section_capacity"],
                 typical_traversal_min=sec["typical_traversal_min"],
                 direction="DOWN"
             )
@@ -78,8 +82,10 @@ class RailwayGraph:
                 "from": from_node,
                 "to": to_node,
                 "distance_km": edge_data["distance_km"],
-                "max_speed_kmph": edge_data["max_speed_kmph"],
-                "track_type": edge_data["track_type"],
+                "tracks": edge_data["tracks"],
+                "max_speed": edge_data["max_speed"],
+                "electrified": edge_data["electrified"],
+                "section_capacity": edge_data["section_capacity"],
                 "typical_traversal_min": edge_data["typical_traversal_min"]
             }
         return None
@@ -93,7 +99,7 @@ class RailwayGraph:
         if not sec:
             raise ValueError(f"Section {section_id} not found in corridor graph.")
         
-        effective_speed = min(sec["max_speed_kmph"], train_max_speed)
+        effective_speed = min(sec["max_speed"], train_max_speed)
         time_hours = sec["distance_km"] / effective_speed
         return time_hours * 60.0
 

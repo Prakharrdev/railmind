@@ -29,15 +29,17 @@ def main():
             "has_loop": s["has_loop"]
         })
 
-    # Define track sections between stations
+    # Define track sections between stations with capacity and electrification attributes
     sections = [
         {
             "id": "NDLS_GZB",
             "from": "NDLS",
             "to": "GZB",
             "distance_km": 26.0,
-            "max_speed_kmph": 110,
-            "track_type": "double",
+            "tracks": 4,
+            "max_speed": 110,
+            "electrified": True,
+            "section_capacity": 15,
             "typical_traversal_min": 20
         },
         {
@@ -45,8 +47,10 @@ def main():
             "from": "GZB",
             "to": "ALJN",
             "distance_km": 106.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 4,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 24,
             "typical_traversal_min": 70
         },
         {
@@ -54,8 +58,10 @@ def main():
             "from": "ALJN",
             "to": "HRS",
             "distance_km": 30.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 10,
             "typical_traversal_min": 20
         },
         {
@@ -63,8 +69,10 @@ def main():
             "from": "HRS",
             "to": "TDL",
             "distance_km": 44.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 12,
             "typical_traversal_min": 30
         },
         {
@@ -72,8 +80,10 @@ def main():
             "from": "TDL",
             "to": "FZD",
             "distance_km": 17.0,
-            "max_speed_kmph": 110,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 110,
+            "electrified": True,
+            "section_capacity": 8,
             "typical_traversal_min": 12
         },
         {
@@ -81,8 +91,10 @@ def main():
             "from": "FZD",
             "to": "SKB",
             "distance_km": 20.0,
-            "max_speed_kmph": 110,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 110,
+            "electrified": True,
+            "section_capacity": 8,
             "typical_traversal_min": 15
         },
         {
@@ -90,8 +102,10 @@ def main():
             "from": "SKB",
             "to": "ETW",
             "distance_km": 55.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 14,
             "typical_traversal_min": 35
         },
         {
@@ -99,8 +113,10 @@ def main():
             "from": "ETW",
             "to": "PHD",
             "distance_km": 56.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 14,
             "typical_traversal_min": 36
         },
         {
@@ -108,11 +124,34 @@ def main():
             "from": "PHD",
             "to": "CNB",
             "distance_km": 83.0,
-            "max_speed_kmph": 130,
-            "track_type": "double",
+            "tracks": 2,
+            "max_speed": 130,
+            "electrified": True,
+            "section_capacity": 20,
             "typical_traversal_min": 55
         }
     ]
+    
+    # Automatically generate 5 km blocks for each section
+    import math
+    BLOCK_LENGTH_KM = 5.0
+    for sec in sections:
+        sec_id = sec["id"]
+        dist = sec["distance_km"]
+        num_blocks = math.ceil(dist / BLOCK_LENGTH_KM)
+        blocks_list = []
+        for i in range(1, num_blocks + 1):
+            block_id = f"{sec_id}_{i:02d}"
+            # Calculate block length (last block takes remainder)
+            if i == num_blocks:
+                length = dist - (num_blocks - 1) * BLOCK_LENGTH_KM
+            else:
+                length = BLOCK_LENGTH_KM
+            blocks_list.append({
+                "id": block_id,
+                "length_km": round(length, 2)
+            })
+        sec["blocks"] = blocks_list
     
     corridor_data = {
         "stations": stations_data,
