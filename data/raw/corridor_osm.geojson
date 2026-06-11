@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Delhi",
+        "id": "NDLS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2227,
+          28.6435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ghaziabad Junction",
+        "id": "GZB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4318,
+          28.6505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aligarh Junction",
+        "id": "ALJN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0747,
+          27.8888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hathras Junction",
+        "id": "HRS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.1373,
+          27.6246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tundla Junction",
+        "id": "TDL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.233,
+          27.2081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Firozabad",
+        "id": "FZD"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3864,
+          27.1479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shikohabad Junction",
+        "id": "SKB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5754,
+          27.0863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Etawah Junction",
+        "id": "ETW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.022,
+          26.7855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phaphund",
+        "id": "PHD"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.5545,
+          26.6324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kanpur Central",
+        "id": "CNB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3512,
+          26.4539
+        ]
+      }
+    }
+  ]
+}
