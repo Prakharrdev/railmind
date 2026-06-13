@@ -155,6 +155,17 @@ class ConflictDetector:
 
             # Move route index to the next station
             curr_idx += 1
+        else:
+            # Train is at a station — respect scheduled departure time
+            st_from = route[curr_idx] if curr_idx < len(route) else None
+            if st_from:
+                sched_dep = self._get_scheduled_departure(train.train_id, st_from)
+                if sched_dep is not None:
+                    # Don't project if train won't depart within the lookahead window
+                    effective_dep = max(sched_dep, t)
+                    if effective_dep >= lookahead_limit:
+                        return intervals
+                    t = effective_dep
 
         # Project subsequent route sections and stations
         while curr_idx < len(route) - 1 and t < lookahead_limit:
@@ -162,15 +173,13 @@ class ConflictDetector:
             st_to = route[curr_idx + 1]
             
             # Station dwell time (if scheduled stop)
-            stop_dur = self.get_stop_duration(train.train_id, st_from)
-            if stop_dur > 0:
-                # Train occupies station loops during dwell.
-                # In our block model, stations are represented by station loops.
-                # For conflict detection on sections, we don't strictly flag station overlaps as conflicts
-                # unless capacity is exceeded. We'll bypass adding station loop occupancy to the section conflicts,
-                # but we advance time by stop duration.
-                t += stop_dur
-                
+            # Only add dwell time if the train is arriving at this station in the future
+            # (not the station it's currently sitting at, which was handled above)
+            if current_section is not None or curr_idx > train.current_route_index:
+                stop_dur = self.get_stop_duration(train.train_id, st_from)
+                if stop_dur > 0:
+                    t += stop_dur
+            
             if t >= lookahead_limit:
                 break
                 
@@ -194,6 +203,18 @@ class ConflictDetector:
             curr_idx += 1
             
         return intervals
+
+    def _get_scheduled_departure(self, train_id: str, station_id: str) -> Optional[float]:
+        """Get scheduled departure time in minutes since midnight."""
+        schedule = self.train_schedules.get(train_id)
+        if not schedule:
+            return None
+        for stop in schedule.get("stops", []):
+            if stop["station_id"] == station_id:
+                dep = stop.get("scheduled_departure")
+                if dep:
+                    return self.parse_time_to_minutes(dep)
+        return None
 
     def detect_conflicts(self, state: NetworkState, active_disruptions: List) -> List[Conflict]:
         """Scan projected occupancy windows and return list of Conflict objects sorted by urgency."""
