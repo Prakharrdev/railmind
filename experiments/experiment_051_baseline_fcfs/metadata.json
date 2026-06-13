@@ -1,0 +1,11 @@
+{
+  "experiment_id": "051",
+  "planner": "fcfs",
+  "beam_width": 0,
+  "search_depth": 0,
+  "date": "2026-06-13",
+  "git_commit": "7f57962",
+  "scenario_count": 50,
+  "simulation_duration": 120,
+  "random_seed": 42
+}

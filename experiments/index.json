@@ -78,5 +78,29 @@
     "improvement": 10.07,
     "date": "2026-06-13",
     "git_commit": "80d595c"
+  },
+  {
+    "id": "051",
+    "name": "experiment_051_baseline_fcfs",
+    "planner": "fcfs",
+    "improvement": 0.0,
+    "date": "2026-06-13",
+    "git_commit": "7f57962"
+  },
+  {
+    "id": "052",
+    "name": "experiment_052_greedy",
+    "planner": "greedy",
+    "improvement": 1.59,
+    "date": "2026-06-13",
+    "git_commit": "7f57962"
+  },
+  {
+    "id": "053",
+    "name": "experiment_053_beam_d2_w4",
+    "planner": "beam_search",
+    "improvement": 10.07,
+    "date": "2026-06-13",
+    "git_commit": "7f57962"
   }
 ]

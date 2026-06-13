@@ -81,10 +81,17 @@ class BeamSearchPlanner:
         beam_node_ids: Set[str] = {root.node_id}
         beam: List[SearchNode] = [root]
 
+        time_spent_per_depth = []
+        survival_rates = []
+        branching_factors = []
+
         for d in range(1, depth + 1):
+            depth_start = time.perf_counter()
             candidates: List[SearchNode] = []
             if not beam:
                 break
+
+            num_parents = len(beam)
 
             for parent in beam:
                 # Generate candidate actions based on conflicts in the parent state
@@ -127,11 +134,17 @@ class BeamSearchPlanner:
                     nodes_generated += 1
 
             if not candidates:
+                depth_duration = (time.perf_counter() - depth_start) * 1000.0
+                time_spent_per_depth.append(depth_duration)
                 break
+
+            # Branching factor = candidates generated / number of parents expanded at this level
+            branching_factors.append(len(candidates) / num_parents)
 
             # Rank candidates by f_cost (ascending)
             candidates.sort(key=lambda x: x.f_cost)
 
+            num_candidates = len(candidates)
             # Prune candidates to fit within beam width
             if len(candidates) > beam_width:
                 beam = candidates[:beam_width]
@@ -139,9 +152,15 @@ class BeamSearchPlanner:
             else:
                 beam = candidates
 
+            # Survival rate = kept nodes / total candidates at this level
+            survival_rates.append(len(beam) / num_candidates)
+
             # Track which nodes were kept in the beam
             for node in beam:
                 beam_node_ids.add(node.node_id)
+
+            depth_duration = (time.perf_counter() - depth_start) * 1000.0
+            time_spent_per_depth.append(depth_duration)
 
         # 2. Extract best leaf node from the final beam
         if beam:
@@ -165,13 +184,19 @@ class BeamSearchPlanner:
         # 4. Compute metrics and build explainability trace
         latency_ms = (time.perf_counter() - start_time) * 1000.0
         
+        avg_branching_factor = sum(branching_factors) / len(branching_factors) if branching_factors else 0.0
+        avg_survival_rate = sum(survival_rates) / len(survival_rates) if survival_rates else 0.0
+
         stats = SearchStats(
             nodes_generated=nodes_generated,
             nodes_expanded=nodes_expanded,
             nodes_pruned=nodes_pruned,
             beam_width=beam_width,
             depth=depth,
-            latency_ms=latency_ms
+            latency_ms=latency_ms,
+            beam_survival_rate=avg_survival_rate,
+            avg_branching_factor=avg_branching_factor,
+            time_spent_per_depth=time_spent_per_depth
         )
 
         trace_root = build_trace_tree(root, beam_node_ids, state)

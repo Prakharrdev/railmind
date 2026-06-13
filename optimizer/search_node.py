@@ -34,6 +34,9 @@ class SearchStats:
     beam_width: int
     depth: int
     latency_ms: float
+    beam_survival_rate: float = 0.0
+    avg_branching_factor: float = 0.0
+    time_spent_per_depth: List[float] = field(default_factory=list)
 
 @dataclass
 class ActionSequence:

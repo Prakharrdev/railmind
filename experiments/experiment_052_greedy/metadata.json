@@ -1,0 +1,11 @@
+{
+  "experiment_id": "052",
+  "planner": "greedy",
+  "beam_width": 0,
+  "search_depth": 1,
+  "date": "2026-06-13",
+  "git_commit": "7f57962",
+  "scenario_count": 50,
+  "simulation_duration": 120,
+  "random_seed": 42
+}
