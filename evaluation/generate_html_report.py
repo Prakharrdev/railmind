@@ -17,32 +17,25 @@ def main():
 
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    
-    # Query comparisons
-    cursor.execute("""
-    SELECT 
-        episode_id,
-        disruption_type,
-        disruption_train,
-        disruption_mag_min,
-        unique_conflicts_fcfs,
-        unique_conflicts_greedy,
-        conflict_records_fcfs,
-        conflict_records_greedy,
-        planner_invocations,
-        actions_applied,
-        delay_cost_before,
-        delay_cost_after,
-        conflict_cost_before,
-        conflict_cost_after,
-        fcfs_total_cost,
-        greedy_total_cost,
-        improvement_pct,
-        avg_plan_time_ms
-    FROM episodes
-    ORDER BY CAST(SUBSTR(episode_id, 10) AS INTEGER)
-    """)
-    
+
+    # Query columns in episodes table to handle backward compatibility
+    cursor.execute("PRAGMA table_info(episodes)")
+    cols = [col[1] for col in cursor.fetchall()]
+
+    select_cols = [
+        "episode_id", "disruption_type", "disruption_train", "disruption_mag_min",
+        "unique_conflicts_fcfs", "unique_conflicts_greedy", "conflict_records_fcfs",
+        "conflict_records_greedy", "planner_invocations", "actions_applied",
+        "delay_cost_before", "delay_cost_after", "conflict_cost_before",
+        "conflict_cost_after", "fcfs_total_cost", "greedy_total_cost",
+        "improvement_pct", "avg_plan_time_ms"
+    ]
+    has_search = "nodes_generated" in cols
+    if has_search:
+        select_cols.extend(["nodes_generated", "nodes_expanded", "nodes_pruned"])
+
+    query = f"SELECT {', '.join(select_cols)} FROM episodes ORDER BY CAST(SUBSTR(episode_id, 10) AS INTEGER)"
+    cursor.execute(query)
     rows = cursor.fetchall()
     conn.close()
 
@@ -62,6 +55,10 @@ def main():
     total_fcfs = 0.0
     total_greedy = 0.0
     max_imp = 0.0
+
+    tot_nodes_gen = 0
+    tot_nodes_exp = 0
+    tot_nodes_pru = 0
     
     # Group by type
     by_type = {}
@@ -86,8 +83,20 @@ def main():
             "fcfs_cost": r[14],
             "greedy_cost": r[15],
             "improvement": r[16],
-            "latency": r[17]
+            "latency": r[17],
+            "nodes_gen": 0,
+            "nodes_exp": 0,
+            "nodes_pru": 0
         }
+        if has_search:
+            scen_dict["nodes_gen"] = r[18]
+            scen_dict["nodes_exp"] = r[19]
+            scen_dict["nodes_pru"] = r[20]
+
+            tot_nodes_gen += r[18]
+            tot_nodes_exp += r[19]
+            tot_nodes_pru += r[20]
+
         scenarios.append(scen_dict)
         labels.append(r[0])
         fcfs_costs.append(r[14])
@@ -118,6 +127,10 @@ def main():
     mean_imp = (total_fcfs - total_greedy) / total_fcfs * 100.0 if total_fcfs > 0 else 0
     avg_latency = sum(latencies) / len(latencies) if latencies else 0
 
+    avg_nodes_gen = tot_nodes_gen / n_scens if n_scens > 0 else 0
+    avg_nodes_exp = tot_nodes_exp / n_scens if n_scens > 0 else 0
+    avg_nodes_pru = tot_nodes_pru / n_scens if n_scens > 0 else 0
+
     # Type Averages
     avg_engine = sum(by_type.get("engine_slow", [0])) / len(by_type.get("engine_slow", [1]))
     avg_platform = sum(by_type.get("platform_block", [0])) / len(by_type.get("platform_block", [1]))
@@ -129,7 +142,7 @@ def main():
     bucket_3_5 = len([x for x in improvements if 3.0 <= x < 5.0])
     bucket_5_plus = len([x for x in improvements if x >= 5.0])
 
-    # Interventions Distribution Buckets (e.g. scenarios with 0, 1-3, 4-6, 7-9, 10+ actions)
+    # Interventions Distribution Buckets
     int_0 = len([x for x in actions_applied_list if x == 0])
     int_1_3 = len([x for x in actions_applied_list if 1 <= x <= 3])
     int_4_6 = len([x for x in actions_applied_list if 4 <= x <= 6])
@@ -144,8 +157,7 @@ def main():
 
     import datetime
     date_str = datetime.date.today().isoformat()
-    date_fn = datetime.date.today().strftime("%Y_%m_%d")
-    improvements_desc = "Implemented scenario validation layer to ensure high-impact, active disruptions. Tracked unique conflicts, raw conflict records, and planner interventions distribution."
+    improvements_desc = "Implemented Conflict-based Beam Search Planner with customizable depth and beam width parameters. Recorded search complexity and latency distribution."
 
     # HTML Content
     html_content = f"""<!DOCTYPE html>
@@ -153,7 +165,7 @@ def main():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RailMind Phase 3 Benchmark Dashboard</title>
+    <title>RailMind Planner Benchmark Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -347,9 +359,9 @@ def main():
 <body>
 
     <header>
-        <h1>RailMind Phase 3 Benchmark Dashboard — {date_str}</h1>
+        <h1>RailMind Planner Benchmark Dashboard — {date_str}</h1>
         <p style="margin-bottom: 0.5rem;"><strong>Improvements</strong>: {improvements_desc}</p>
-        <p style="font-size: 0.95rem; color: var(--text-secondary);">Interactive evaluation of Greedy (depth=1) vs FCFS on validated active scenarios (50 Scenarios)</p>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">Interactive evaluation of Planner vs FCFS on validated active scenarios (50 Scenarios)</p>
     </header>
 
     <!-- KPI Row -->
@@ -360,9 +372,9 @@ def main():
             <div class="kpi-desc">First-come-first-served baseline</div>
         </div>
         <div class="kpi-card kpi-green">
-            <div class="kpi-title">Avg Greedy Delay Cost</div>
+            <div class="kpi-title">Avg Planner Delay Cost</div>
             <div class="kpi-value">{mean_greedy:,.0f}</div>
-            <div class="kpi-desc">With Greedy Optimizer</div>
+            <div class="kpi-desc">With Dispatch Optimizer</div>
         </div>
         <div class="kpi-card kpi-green">
             <div class="kpi-title">Mean Improvement %</div>
@@ -375,12 +387,36 @@ def main():
             <div class="kpi-desc">Best resolving scenario</div>
         </div>
         <div class="kpi-card kpi-purple">
-            <div class="kpi-title">Avg Conflicts (FCFS / Greedy)</div>
-            <div class="kpi-value">{avg_unique_fcfs:.1f} / {avg_unique_greedy:.1f}</div>
-            <div class="kpi-desc">Mean unique conflicts per scenario</div>
+            <div class="kpi-title">Avg Latency</div>
+            <div class="kpi-value">{avg_latency:.2f} ms</div>
+            <div class="kpi-desc">Mean planning step time</div>
         </div>
     </div>
+    """
 
+    if has_search:
+        html_content += f"""
+    <!-- Search Complexity KPI Row -->
+    <div class="kpi-container">
+        <div class="kpi-card kpi-blue">
+            <div class="kpi-title">Avg Nodes Generated</div>
+            <div class="kpi-value">{avg_nodes_gen:,.1f}</div>
+            <div class="kpi-desc">Total search nodes created</div>
+        </div>
+        <div class="kpi-card kpi-purple">
+            <div class="kpi-title">Avg Nodes Expanded</div>
+            <div class="kpi-value">{avg_nodes_exp:,.1f}</div>
+            <div class="kpi-desc">Nodes selected for expansion</div>
+        </div>
+        <div class="kpi-card kpi-yellow">
+            <div class="kpi-title">Avg Nodes Pruned</div>
+            <div class="kpi-value">{avg_nodes_pru:,.1f}</div>
+            <div class="kpi-desc">Nodes cut by beam width</div>
+        </div>
+    </div>"""
+
+    # Build Charts and Table
+    html_content += f"""
     <!-- Diversity Statistics Section -->
     <div class="grid-charts" style="margin-bottom: 2rem;">
         <div class="chart-card">
@@ -390,7 +426,7 @@ def main():
             </div>
         </div>
         <div class="chart-card">
-            <h2>Distribution of Conflicts (FCFS vs Greedy)</h2>
+            <h2>Distribution of Conflicts (FCFS vs Planner)</h2>
             <div class="chart-container" style="min-height: 300px;">
                 <canvas id="conflictDistributionChart"></canvas>
             </div>
@@ -414,7 +450,7 @@ def main():
 
     <!-- Detailed Cost Comparison -->
     <div class="chart-card" style="margin-bottom: 2.5rem;">
-        <h2>Cost Comparison by Scenario (FCFS vs Greedy)</h2>
+        <h2>Cost Comparison by Scenario (FCFS vs Planner)</h2>
         <div class="chart-container" style="min-height: 400px;">
             <canvas id="costComparisonChart"></canvas>
         </div>
@@ -431,10 +467,11 @@ def main():
                         <th>Disrupted Train</th>
                         <th>Disruption</th>
                         <th>FCFS Delay / Conflict / Total</th>
-                        <th>Greedy Delay / Conflict / Total</th>
-                        <th>Unique Conflicts (F/G)</th>
-                        <th>Conflict Records (F/G)</th>
+                        <th>Planner Delay / Conflict / Total</th>
+                        <th>Unique Conflicts (F/P)</th>
+                        <th>Conflict Records (F/P)</th>
                         <th>Actions Applied</th>
+                        {"<th>Nodes Gen/Exp/Pru</th>" if has_search else ""}
                         <th>Improvement</th>
                         <th>Avg Latency</th>
                     </tr>
@@ -446,6 +483,8 @@ def main():
         badge_class = "badge-slow" if scen["type"] == "engine_slow" else ("badge-block" if scen["type"] == "platform_block" else "badge-hold")
         fcfs_break = f"{scen['delay_before']:,.0f} / {scen['conflict_before']:,.0f} / {scen['fcfs_cost']:,.0f}"
         greedy_break = f"{scen['delay_after']:,.0f} / {scen['conflict_after']:,.0f} / {scen['greedy_cost']:,.0f}"
+        search_col = f"<td>{scen['nodes_gen']} / {scen['nodes_exp']} / {scen['nodes_pru']}</td>" if has_search else ""
+        
         html_content += f"""
                     <tr>
                         <td><strong>{scen["id"]}</strong></td>
@@ -456,6 +495,7 @@ def main():
                         <td>{scen["unique_conf_fcfs"]} / {scen["unique_conf_greedy"]}</td>
                         <td>{scen["records_fcfs"]} / {scen["records_greedy"]}</td>
                         <td><strong>{scen["actions"]}</strong></td>
+                        {search_col}
                         <td class="text-green">{scen["improvement"]:.2f}%</td>
                         <td>{scen["latency"]:.4f} ms</td>
                     </tr>"""
@@ -487,7 +527,7 @@ def main():
                         borderWidth: 1
                     }},
                     {{
-                        label: 'Greedy Cost',
+                        label: 'Planner Cost',
                         data: greedyCosts,
                         backgroundColor: '#10b981',
                         borderColor: '#059669',
@@ -539,7 +579,7 @@ def main():
             }}
         }});
 
-        // 3. Conflict Distribution (Unique Conflicts FCFS vs Greedy)
+        // 3. Conflict Distribution (Unique Conflicts FCFS vs Planner)
         const ctxConfDist = document.getElementById('conflictDistributionChart').getContext('2d');
         new Chart(ctxConfDist, {{
             type: 'bar',
@@ -554,7 +594,7 @@ def main():
                         borderWidth: 1
                     }},
                     {{
-                        label: 'Greedy Unique Conflicts',
+                        label: 'Planner Unique Conflicts',
                         data: {json.dumps(unique_conf_greedy)},
                         backgroundColor: 'rgba(16, 185, 129, 0.7)',
                         borderColor: '#10b981',

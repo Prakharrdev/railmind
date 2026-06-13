@@ -1,0 +1,11 @@
+{
+  "experiment_id": "006",
+  "planner": "beam_search",
+  "beam_width": 16,
+  "search_depth": 4,
+  "date": "2026-06-13",
+  "git_commit": "2738515",
+  "scenario_count": 50,
+  "simulation_duration": 120,
+  "random_seed": 42
+}

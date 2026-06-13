@@ -22,5 +22,37 @@
     "improvement": 1.59,
     "date": "2026-06-13",
     "git_commit": "fc1bb47"
+  },
+  {
+    "id": "004",
+    "name": "experiment_004_beam_shallow",
+    "planner": "beam_search",
+    "improvement": 10.01,
+    "date": "2026-06-13",
+    "git_commit": "2738515"
+  },
+  {
+    "id": "005",
+    "name": "experiment_005_beam_default",
+    "planner": "beam_search",
+    "improvement": 10.01,
+    "date": "2026-06-13",
+    "git_commit": "2738515"
+  },
+  {
+    "id": "006",
+    "name": "experiment_006_beam_wide",
+    "planner": "beam_search",
+    "improvement": 10.01,
+    "date": "2026-06-13",
+    "git_commit": "2738515"
+  },
+  {
+    "id": "007",
+    "name": "experiment_007_greedy_beam",
+    "planner": "beam_search",
+    "improvement": 10.01,
+    "date": "2026-06-13",
+    "git_commit": "2738515"
   }
 ]

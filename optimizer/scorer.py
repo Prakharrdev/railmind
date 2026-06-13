@@ -62,3 +62,7 @@ class StateScorer:
             starvation_cost=starvation_cost,
             total_cost=total_cost
         )
+
+    def cost(self, state: NetworkState) -> float:
+        return self.score(state).total_cost
+

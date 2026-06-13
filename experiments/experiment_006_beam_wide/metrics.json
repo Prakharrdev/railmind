@@ -1,0 +1,9 @@
+{
+  "mean_latency_ms": 9.5449,
+  "total_nodes_generated": 84312,
+  "total_nodes_expanded": 53960,
+  "total_nodes_pruned": 15982,
+  "mean_fcfs_cost": 298335.7,
+  "mean_evaluated_cost": 268545.7,
+  "mean_improvement_pct": 10.01
+}
