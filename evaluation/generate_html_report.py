@@ -20,8 +20,10 @@ def main():
         disruption_type,
         disruption_train,
         disruption_mag_min,
-        num_conflicts_fcfs,
-        num_conflicts_greedy,
+        unique_conflicts_fcfs,
+        unique_conflicts_greedy,
+        conflict_records_fcfs,
+        conflict_records_greedy,
         planner_invocations,
         actions_applied,
         delay_cost_before,
@@ -46,12 +48,19 @@ def main():
     latencies = []
     improvements = []
     
+    unique_conf_fcfs = []
+    unique_conf_greedy = []
+    records_conf_fcfs = []
+    records_conf_greedy = []
+    actions_applied_list = []
+    
     total_fcfs = 0.0
     total_greedy = 0.0
     max_imp = 0.0
     
     # Group by type
     by_type = {}
+    disruption_counts = {"engine_slow": 0, "platform_block": 0, "signal_hold": 0}
     
     for r in rows:
         scen_dict = {
@@ -59,33 +68,44 @@ def main():
             "type": r[1],
             "train": r[2],
             "magnitude": r[3],
-            "conflicts_fcfs": r[4],
-            "conflicts_greedy": r[5],
-            "invocations": r[6],
-            "actions": r[7],
-            "delay_before": r[8],
-            "delay_after": r[9],
-            "conflict_before": r[10],
-            "conflict_after": r[11],
-            "fcfs_cost": r[12],
-            "greedy_cost": r[13],
-            "improvement": r[14],
-            "latency": r[15]
+            "unique_conf_fcfs": r[4],
+            "unique_conf_greedy": r[5],
+            "records_fcfs": r[6],
+            "records_greedy": r[7],
+            "invocations": r[8],
+            "actions": r[9],
+            "delay_before": r[10],
+            "delay_after": r[11],
+            "conflict_before": r[12],
+            "conflict_after": r[13],
+            "fcfs_cost": r[14],
+            "greedy_cost": r[15],
+            "improvement": r[16],
+            "latency": r[17]
         }
         scenarios.append(scen_dict)
         labels.append(r[0])
-        fcfs_costs.append(r[12])
-        greedy_costs.append(r[13])
-        latencies.append(r[15])
-        improvements.append(r[14])
+        fcfs_costs.append(r[14])
+        greedy_costs.append(r[15])
+        latencies.append(r[17])
+        improvements.append(r[16])
         
-        total_fcfs += r[12]
-        total_greedy += r[13]
-        max_imp = max(max_imp, r[14])
+        unique_conf_fcfs.append(r[4])
+        unique_conf_greedy.append(r[5])
+        records_conf_fcfs.append(r[6])
+        records_conf_greedy.append(r[7])
+        actions_applied_list.append(r[9])
+        
+        total_fcfs += r[14]
+        total_greedy += r[15]
+        max_imp = max(max_imp, r[16])
         
         if r[1] not in by_type:
             by_type[r[1]] = []
-        by_type[r[1]].append(r[14])
+        by_type[r[1]].append(r[16])
+        
+        if r[1] in disruption_counts:
+            disruption_counts[r[1]] += 1
 
     n_scens = len(scenarios)
     mean_fcfs = total_fcfs / n_scens if n_scens > 0 else 0
@@ -98,16 +118,29 @@ def main():
     avg_platform = sum(by_type.get("platform_block", [0])) / len(by_type.get("platform_block", [1]))
     avg_signal = sum(by_type.get("signal_hold", [0])) / len(by_type.get("signal_hold", [1]))
 
-    # Histogram buckets
+    # Histogram buckets for improvement
     bucket_0_1 = len([x for x in improvements if 0.0 <= x < 1.0])
     bucket_1_3 = len([x for x in improvements if 1.0 <= x < 3.0])
     bucket_3_5 = len([x for x in improvements if 3.0 <= x < 5.0])
     bucket_5_plus = len([x for x in improvements if x >= 5.0])
 
+    # Interventions Distribution Buckets (e.g. scenarios with 0, 1-3, 4-6, 7-9, 10+ actions)
+    int_0 = len([x for x in actions_applied_list if x == 0])
+    int_1_3 = len([x for x in actions_applied_list if 1 <= x <= 3])
+    int_4_6 = len([x for x in actions_applied_list if 4 <= x <= 6])
+    int_7_9 = len([x for x in actions_applied_list if 7 <= x <= 9])
+    int_10_plus = len([x for x in actions_applied_list if x >= 10])
+
+    # Unique conflicts statistics
+    avg_unique_fcfs = sum(unique_conf_fcfs) / len(unique_conf_fcfs) if unique_conf_fcfs else 0
+    avg_unique_greedy = sum(unique_conf_greedy) / len(unique_conf_greedy) if unique_conf_greedy else 0
+    avg_records_fcfs = sum(records_conf_fcfs) / len(records_conf_fcfs) if records_conf_fcfs else 0
+    avg_records_greedy = sum(records_conf_greedy) / len(records_conf_greedy) if records_conf_greedy else 0
+
     import datetime
     date_str = datetime.date.today().isoformat()
     date_fn = datetime.date.today().strftime("%Y_%m_%d")
-    improvements_desc = "Added detailed metrics tracking (invocations, actions applied, conflicts counts), printed console ScoreBreakdowns, disruption averages, and distribution histogram."
+    improvements_desc = "Implemented scenario validation layer to ensure high-impact, active disruptions. Tracked unique conflicts, raw conflict records, and planner interventions distribution."
 
     # HTML Content
     html_content = f"""<!DOCTYPE html>
@@ -128,6 +161,8 @@ def main():
             --accent-blue: #3b82f6;
             --accent-green: #10b981;
             --accent-yellow: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
             --border-color: #334155;
         }}
 
@@ -154,7 +189,7 @@ def main():
         header h1 {{
             font-size: 2.2rem;
             font-weight: 700;
-            background: linear-gradient(to right, #60a5fa, #34d399);
+            background: linear-gradient(to right, #60a5fa, #34d399, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
@@ -168,7 +203,7 @@ def main():
         /* KPI Container */
         .kpi-container {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }}
@@ -207,6 +242,8 @@ def main():
 
         .kpi-blue .kpi-value {{ color: var(--accent-blue); }}
         .kpi-green .kpi-value {{ color: var(--accent-green); }}
+        .kpi-purple .kpi-value {{ color: var(--accent-purple); }}
+        .kpi-yellow .kpi-value {{ color: var(--accent-yellow); }}
 
         /* Main Grid */
         .grid-charts {{
@@ -218,7 +255,7 @@ def main():
 
         @media (min-width: 1024px) {{
             .grid-charts {{
-                grid-template-columns: 2fr 1fr;
+                grid-template-columns: 1fr 1fr;
             }}
         }}
 
@@ -241,26 +278,13 @@ def main():
             min-height: 350px;
         }}
 
-        /* Secondary Grid */
-        .secondary-grid {{
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }}
-
-        @media (min-width: 768px) {{
-            .secondary-grid {{
-                grid-template-columns: 1fr 1fr;
-            }}
-        }}
-
         /* Table Section */
         .table-card {{
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
             padding: 2rem;
+            margin-bottom: 2.5rem;
         }}
 
         .table-card h2 {{
@@ -320,7 +344,7 @@ def main():
     <header>
         <h1>RailMind Phase 3 Benchmark Dashboard — {date_str}</h1>
         <p style="margin-bottom: 0.5rem;"><strong>Improvements</strong>: {improvements_desc}</p>
-        <p style="font-size: 0.95rem; color: var(--text-secondary);">Interactive conflict-resolution evaluation: FCFS vs Greedy Baseline (50 Scenarios)</p>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">Interactive evaluation of Greedy (depth=1) vs FCFS on validated active scenarios (50 Scenarios)</p>
     </header>
 
     <!-- KPI Row -->
@@ -328,61 +352,66 @@ def main():
         <div class="kpi-card kpi-blue">
             <div class="kpi-title">Avg FCFS Delay Cost</div>
             <div class="kpi-value">{mean_fcfs:,.0f}</div>
-            <div class="kpi-desc">First-come-first-served schedule baseline</div>
+            <div class="kpi-desc">First-come-first-served baseline</div>
         </div>
         <div class="kpi-card kpi-green">
             <div class="kpi-title">Avg Greedy Delay Cost</div>
             <div class="kpi-value">{mean_greedy:,.0f}</div>
-            <div class="kpi-desc">With depth-1 Greedy optimizer</div>
+            <div class="kpi-desc">With Greedy Optimizer</div>
         </div>
         <div class="kpi-card kpi-green">
             <div class="kpi-title">Mean Improvement %</div>
             <div class="kpi-value">{mean_imp:.2f}%</div>
-            <div class="kpi-desc">Average delay reduction across runs</div>
+            <div class="kpi-desc">Average cost reduction</div>
         </div>
-        <div class="kpi-card kpi-blue">
+        <div class="kpi-card kpi-yellow">
             <div class="kpi-title">Max Improvement %</div>
             <div class="kpi-value">{max_imp:.2f}%</div>
-            <div class="kpi-desc">Best resolving scenario optimization</div>
+            <div class="kpi-desc">Best resolving scenario</div>
         </div>
-        <div class="kpi-card">
-            <div class="kpi-title">Avg Step Latency</div>
-            <div class="kpi-value">{avg_latency:.4f} ms</div>
-            <div class="kpi-desc">Greedy policy decision step calculation time</div>
-        </div>
-    </div>
-
-    <!-- Main Charts Grid -->
-    <div class="grid-charts">
-        <div class="chart-card">
-            <h2>FCFS vs Greedy Delay Cost Comparison</h2>
-            <div class="chart-container">
-                <canvas id="costComparisonChart"></canvas>
-            </div>
-        </div>
-        <div class="chart-card">
-            <h2>Improvement Distribution (Histogram)</h2>
-            <div class="chart-container">
-                <canvas id="histogramChart"></canvas>
-            </div>
+        <div class="kpi-card kpi-purple">
+            <div class="kpi-title">Avg Conflicts (FCFS / Greedy)</div>
+            <div class="kpi-value">{avg_unique_fcfs:.1f} / {avg_unique_greedy:.1f}</div>
+            <div class="kpi-desc">Mean unique conflicts per scenario</div>
         </div>
     </div>
 
-    <!-- Secondary Grid -->
-    <div class="secondary-grid">
-        <!-- Disruption Stats Card -->
+    <!-- Diversity Statistics Section -->
+    <div class="grid-charts" style="margin-bottom: 2rem;">
+        <div class="chart-card">
+            <h2>Distribution of Scenario Disruptions</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="disruptionDistributionChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-card">
+            <h2>Distribution of Conflicts (FCFS vs Greedy)</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="conflictDistributionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-charts" style="margin-bottom: 2rem;">
+        <div class="chart-card">
+            <h2>Planner Interventions (Actions Applied)</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="interventionsChart"></canvas>
+            </div>
+        </div>
         <div class="chart-card">
             <h2>Avg Improvement by Disruption Type</h2>
-            <div class="chart-container" style="min-height: 250px;">
+            <div class="chart-container" style="min-height: 300px;">
                 <canvas id="disruptionTypeChart"></canvas>
             </div>
         </div>
-        <!-- Decision Latency Card -->
-        <div class="chart-card">
-            <h2>Decision Latency (ms)</h2>
-            <div class="chart-container" style="min-height: 250px;">
-                <canvas id="latencyChart"></canvas>
-            </div>
+    </div>
+
+    <!-- Detailed Cost Comparison -->
+    <div class="chart-card" style="margin-bottom: 2.5rem;">
+        <h2>Cost Comparison by Scenario (FCFS vs Greedy)</h2>
+        <div class="chart-container" style="min-height: 400px;">
+            <canvas id="costComparisonChart"></canvas>
         </div>
     </div>
 
@@ -394,10 +423,12 @@ def main():
                 <thead>
                     <tr>
                         <th>Scenario</th>
+                        <th>Disrupted Train</th>
                         <th>Disruption</th>
-                        <th>FCFS Delay/Conflict/Total</th>
-                        <th>Greedy Delay/Conflict/Total</th>
-                        <th>Invocations</th>
+                        <th>FCFS Delay / Conflict / Total</th>
+                        <th>Greedy Delay / Conflict / Total</th>
+                        <th>Unique Conflicts (F/G)</th>
+                        <th>Conflict Records (F/G)</th>
                         <th>Actions Applied</th>
                         <th>Improvement</th>
                         <th>Avg Latency</th>
@@ -413,10 +444,12 @@ def main():
         html_content += f"""
                     <tr>
                         <td><strong>{scen["id"]}</strong></td>
+                        <td>{scen["train"]} ({scen["magnitude"]}m)</td>
                         <td><span class="badge {badge_class}">{scen["type"]}</span></td>
                         <td class="text-secondary">{fcfs_break}</td>
                         <td class="text-secondary">{greedy_break}</td>
-                        <td>{scen["invocations"]}</td>
+                        <td>{scen["unique_conf_fcfs"]} / {scen["unique_conf_greedy"]}</td>
+                        <td>{scen["records_fcfs"]} / {scen["records_greedy"]}</td>
                         <td><strong>{scen["actions"]}</strong></td>
                         <td class="text-green">{scen["improvement"]:.2f}%</td>
                         <td>{scen["latency"]:.4f} ms</td>
@@ -477,15 +510,15 @@ def main():
             }}
         }});
 
-        // 2. Histogram Pie Chart
-        const ctxHist = document.getElementById('histogramChart').getContext('2d');
-        new Chart(ctxHist, {{
+        // 2. Disruption Distribution (Pie Chart)
+        const ctxDispDist = document.getElementById('disruptionDistributionChart').getContext('2d');
+        new Chart(ctxDispDist, {{
             type: 'pie',
             data: {{
-                labels: ['0-1% (Minimal)', '1-3% (Moderate)', '3-5% (High)', '5%+ (Significant)'],
+                labels: ['Engine Slow', 'Platform Block', 'Signal Hold'],
                 datasets: [{{
-                    data: [{bucket_0_1}, {bucket_1_3}, {bucket_3_5}, {bucket_5_plus}],
-                    backgroundColor: ['#64748b', '#3b82f6', '#f59e0b', '#10b981'],
+                    data: [{disruption_counts["engine_slow"]}, {disruption_counts["platform_block"]}, {disruption_counts["signal_hold"]}],
+                    backgroundColor: ['#ef4444', '#f59e0b', '#3b82f6'],
                     borderWidth: 1
                 }}]
             }},
@@ -501,7 +534,84 @@ def main():
             }}
         }});
 
-        // 3. Disruption Type Bar Chart
+        // 3. Conflict Distribution (Unique Conflicts FCFS vs Greedy)
+        const ctxConfDist = document.getElementById('conflictDistributionChart').getContext('2d');
+        new Chart(ctxConfDist, {{
+            type: 'bar',
+            data: {{
+                labels: labels,
+                datasets: [
+                    {{
+                        label: 'FCFS Unique Conflicts',
+                        data: {json.dumps(unique_conf_fcfs)},
+                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                        borderColor: '#ef4444',
+                        borderWidth: 1
+                    }},
+                    {{
+                        label: 'Greedy Unique Conflicts',
+                        data: {json.dumps(unique_conf_greedy)},
+                        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                        borderColor: '#10b981',
+                        borderWidth: 1
+                    }}
+                ]
+            }},
+            options: {{
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {{
+                    y: {{
+                        beginAtZero: true,
+                        grid: {{ color: '#334155' }},
+                        ticks: {{ color: '#94a3b8' }}
+                    }},
+                    x: {{
+                        grid: {{ display: false }},
+                        ticks: {{ color: '#94a3b8', maxRotation: 90, minRotation: 90 }}
+                    }}
+                }},
+                plugins: {{
+                    legend: {{ labels: {{ color: '#f8fafc' }} }}
+                }}
+            }}
+        }});
+
+        // 4. Planner Interventions Distribution
+        const ctxInt = document.getElementById('interventionsChart').getContext('2d');
+        new Chart(ctxInt, {{
+            type: 'bar',
+            data: {{
+                labels: ['0 holds', '1-3 holds', '4-6 holds', '7-9 holds', '10+ holds'],
+                datasets: [{{
+                    label: 'Scenario Count',
+                    data: [{int_0}, {int_1_3}, {int_4_6}, {int_7_9}, {int_10_plus}],
+                    backgroundColor: '#8b5cf6',
+                    borderColor: '#7c3aed',
+                    borderWidth: 1
+                }}]
+            }},
+            options: {{
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {{
+                    y: {{
+                        beginAtZero: true,
+                        grid: {{ color: '#334155' }},
+                        ticks: {{ color: '#94a3b8', stepSize: 1 }}
+                    }},
+                    x: {{
+                        grid: {{ display: false }},
+                        ticks: {{ color: '#94a3b8' }}
+                    }}
+                }},
+                plugins: {{
+                    legend: {{ display: false }}
+                }}
+            }}
+        }});
+
+        // 5. Disruption Type Averages Bar Chart
         const ctxType = document.getElementById('disruptionTypeChart').getContext('2d');
         new Chart(ctxType, {{
             type: 'bar',
@@ -527,38 +637,6 @@ def main():
                         grid: {{ display: false }},
                         ticks: {{ color: '#94a3b8' }}
                     }}
-                }},
-                plugins: {{
-                    legend: {{ display: false }}
-                }}
-            }}
-        }});
-
-        // 4. Latency Line Chart
-        const ctxLat = document.getElementById('latencyChart').getContext('2d');
-        new Chart(ctxLat, {{
-            type: 'line',
-            data: {{
-                labels: labels,
-                datasets: [{{
-                    label: 'Latency (ms)',
-                    data: latencies,
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    fill: true,
-                    tension: 0.3,
-                    borderWidth: 1.5
-                }}]
-            }},
-            options: {{
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {{
-                    y: {{
-                        grid: {{ color: '#334155' }},
-                        ticks: {{ color: '#94a3b8' }}
-                    }},
-                    x: {{ display: false }}
                 }},
                 plugins: {{
                     legend: {{ display: false }}

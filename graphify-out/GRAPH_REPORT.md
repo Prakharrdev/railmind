@@ -1,16 +1,16 @@
 # Graph Report - railmind  (2026-06-13)
 
 ## Corpus Check
-- 67 files · ~135,353 words
+- 68 files · ~139,289 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 502 nodes · 916 edges · 78 communities (74 shown, 4 thin omitted)
+- 517 nodes · 942 edges · 78 communities (74 shown, 4 thin omitted)
 - Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 175 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `541c1188`
+- Built from commit: `6ad10dc8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,7 @@
 - [[_COMMUNITY_Community 72|Community 72]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `TrainNetworkSimulator` - 54 edges
+1. `TrainNetworkSimulator` - 57 edges
 2. `NetworkState` - 50 edges
 3. `RailwayGraph` - 44 edges
 4. `ConflictDetector` - 37 edges
@@ -83,8 +83,8 @@
   optimizer/csp_checker.py → simulator/train_state.py
 - `ConstraintChecker` --uses--> `TrainState`  [INFERRED]
   optimizer/csp_checker.py → simulator/train_state.py
-- `GreedyPolicy` --uses--> `Action`  [INFERRED]
-  optimizer/greedy_policy.py → simulator/env.py
+- `NetworkState` --uses--> `RailwayGraph`  [INFERRED]
+  optimizer/csp_checker.py → simulator/corridor.py
 
 ## Import Cycles
 - None detected.
@@ -93,11 +93,11 @@
 
 ### Community 0 - "Community 0"
 Cohesion: 0.12
-Nodes (34): Disruption, Action, NetworkState, RailwayGraph, TrainState, Verifies safety margin between two trains.         Since the simulator handles p, NetworkState, RailwayGraph (+26 more)
+Nodes (35): Disruption, Action, RailwayGraph, TrainState, NetworkState, TrainState, NetworkState, RailwayGraph (+27 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.09
-Nodes (27): Calculate the max target speed of a train on a section under active disruptions., Get block IDs currently blocked by active signal failures., Get capacity reductions at stations due to platform blockages., Advance the simulation time by 30 seconds (0.5 minutes) and update train states., Fast forward a state snapshot by N minutes (using 60-second steps for speed) und, Pure function that advances the simulation state by delta_minutes, returning a n, Convert HH:MM to minutes since midnight., TrainNetworkSimulator (+19 more)
+Nodes (26): Get block IDs currently blocked by active signal failures., Get capacity reductions at stations due to platform blockages., Advance the simulation time by 30 seconds (0.5 minutes) and update train states., Fast forward a state snapshot by N minutes (using 60-second steps for speed) und, Pure function that advances the simulation state by delta_minutes, returning a n, Convert HH:MM to minutes since midnight., TrainNetworkSimulator, check_impossible_states() (+18 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.07
@@ -240,39 +240,39 @@ Cohesion: 0.67
 Nodes (3): 3.1 Goals, 3.2 Non-Goals, 3. Goals and Non-Goals
 
 ### Community 57 - "Community 57"
-Cohesion: 0.12
-Nodes (32): Conflict, ConstraintChecker, generate_scenarios(), init_db(), main(), Generates 50 fixed-seed scenarios and saves to benchmark_scenarios.json., run_scenario_fcfs(), run_scenario_greedy() (+24 more)
+Cohesion: 0.10
+Nodes (36): Conflict, ConstraintChecker, generate_scenarios(), init_db(), main(), Generates 50 validated scenarios and saves them to benchmark_scenarios.json., run_scenario_fcfs(), run_scenario_greedy() (+28 more)
 
 ### Community 63 - "Community 63"
 Cohesion: 0.22
 Nodes (6): TrainState, Get scheduled departure time in minutes since midnight., Calculate effective speed of a train on a section considering max speeds and dis, Convert HH:MM to minutes since midnight., Get scheduled stop duration at a station in minutes., Project block occupancy intervals (block_id, start_time, end_time) over next 30
 
 ### Community 64 - "Community 64"
-Cohesion: 0.25
-Nodes (7): Analysis & Findings, Detailed Results Ledger, Disruption Type Performance Summary, Improvement Distribution (Histogram Buckets), Phase 3 Benchmark Report — 2026-06-13, Scenario Outcomes, Summary Metrics
+Cohesion: 0.17
+Nodes (11): 1. Distribution of Scenario Disruptions, 2. Distribution of Conflicts, 3. Distribution of Planner Interventions, Analysis & Findings, Detailed Results Ledger, Disruption Type Performance Summary, Diversity Statistics, Improvement Distribution (Histogram Buckets) (+3 more)
 
 ### Community 66 - "Community 66"
-Cohesion: 0.25
-Nodes (7): Analysis & Findings, Detailed Results Ledger, Disruption Type Performance Summary, Improvement Distribution (Histogram Buckets), Phase 3 Benchmark Report — 2026-06-13, Scenario Outcomes, Summary Metrics
+Cohesion: 0.17
+Nodes (11): 1. Distribution of Scenario Disruptions, 2. Distribution of Conflicts, 3. Distribution of Planner Interventions, Analysis & Findings, Detailed Results Ledger, Disruption Type Performance Summary, Diversity Statistics, Improvement Distribution (Histogram Buckets) (+3 more)
 
 ### Community 72 - "Community 72"
-Cohesion: 0.25
-Nodes (4): Deadlock check: returns False if the station platforms are completely full., Verifies if the train is at a station or loop (i.e. not mid-section) to be held., Enforces that holds are within the maximum limit (e.g. 30 minutes)., Filters a list of candidate actions, returning only those that satisfy all CSP c
+Cohesion: 0.22
+Nodes (6): NetworkState, Verifies safety margin between two trains.         Since the simulator handles p, Deadlock check: returns False if the station platforms are completely full., Verifies if the train is at a station or loop (i.e. not mid-section) to be held., Enforces that holds are within the maximum limit (e.g. 30 minutes)., Filters a list of candidate actions, returning only those that satisfy all CSP c
 
 ## Knowledge Gaps
-- **187 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+182 more)
+- **193 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+188 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `RailwayGraph` connect `Community 0` to `Community 1`, `Community 4`, `Community 36`, `Community 10`, `Community 13`, `Community 57`, `Community 63`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Why does `TrainNetworkSimulator` connect `Community 1` to `Community 0`, `Community 57`, `Community 36`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+- **Why does `RailwayGraph` connect `Community 0` to `Community 1`, `Community 4`, `Community 36`, `Community 72`, `Community 10`, `Community 13`, `Community 57`, `Community 63`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Why does `**RailMind**` connect `Community 7` to `Community 34`, `Community 35`, `Community 11`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 21`, `Community 22`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **Are the 18 inferred relationships involving `TrainNetworkSimulator` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**
   _`TrainNetworkSimulator` has 18 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 30 inferred relationships involving `NetworkState` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**

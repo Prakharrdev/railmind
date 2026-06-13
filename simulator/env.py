@@ -166,7 +166,7 @@ class TrainNetworkSimulator:
         reductions = {}
         for d in self.disruption_injector.get_active_disruptions(sim_time):
             if d.disruption_type == "platform_block" and d.target_id:
-                reductions[d.target_id] = reductions.get(d.target_id, 0) + 1
+                reductions[d.target_id] = reductions.get(d.target_id, 0) + 99
         return reductions
 
     def tick(self) -> NetworkState:

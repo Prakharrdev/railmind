@@ -40,24 +40,42 @@ def main():
     avg_platform = disruption_dict.get("platform_block", 0.0)
     avg_signal = disruption_dict.get("signal_hold", 0.0)
 
-    # 3. Histogram / Distribution Buckets
+    disruption_counts = df["disruption_type"].value_counts().to_dict()
+    count_engine = disruption_counts.get("engine_slow", 0)
+    count_platform = disruption_counts.get("platform_block", 0)
+    count_signal = disruption_counts.get("signal_hold", 0)
+
+    # 3. Histogram / Distribution Buckets (Improvement)
     bucket_0_1 = len(df[(df["improvement_pct"] >= 0.0) & (df["improvement_pct"] < 1.0)])
     bucket_1_3 = len(df[(df["improvement_pct"] >= 1.0) & (df["improvement_pct"] < 3.0)])
     bucket_3_5 = len(df[(df["improvement_pct"] >= 3.0) & (df["improvement_pct"] < 5.0)])
     bucket_5_plus = len(df[df["improvement_pct"] >= 5.0])
 
-    # 4. Generate Markdown report
+    # 4. Planner Interventions Distribution Buckets
+    int_0 = len(df[df["actions_applied"] == 0])
+    int_1_3 = len(df[(df["actions_applied"] >= 1) & (df["actions_applied"] <= 3)])
+    int_4_6 = len(df[(df["actions_applied"] >= 4) & (df["actions_applied"] <= 6)])
+    int_7_9 = len(df[(df["actions_applied"] >= 7) & (df["actions_applied"] <= 9)])
+    int_10_plus = len(df[df["actions_applied"] >= 10])
+
+    # 5. Conflicts Distribution Statistics
+    mean_uniq_fcfs = df["unique_conflicts_fcfs"].mean()
+    mean_uniq_greedy = df["unique_conflicts_greedy"].mean()
+    mean_rec_fcfs = df["conflict_records_fcfs"].mean()
+    mean_rec_greedy = df["conflict_records_greedy"].mean()
+
+    # 6. Generate Markdown report
     os.makedirs(os.path.dirname(REPORT_PATH), exist_ok=True)
     
     import datetime
     date_str = datetime.date.today().isoformat()
     date_fn = datetime.date.today().strftime("%Y_%m_%d")
-    improvements_desc = "Added detailed metrics tracking (invocations, actions applied, conflicts counts), printed console ScoreBreakdowns, disruption averages, and distribution histogram."
+    improvements_desc = "Implemented scenario validation layer to ensure high-impact, active disruptions. Tracked unique conflicts, raw conflict records, and planner interventions distribution."
 
     report_content = f"""# Phase 3 Benchmark Report — {date_str}
 **Improvements**: {improvements_desc}
 
-This report summarizes the performance evaluation of the **Greedy Policy (depth=1)** vs the **FCFS (None)** baseline across 50 pre-defined disruption scenarios.
+This report summarizes the performance evaluation of the **Greedy Policy (depth=1)** vs the **FCFS (None)** baseline across 50 pre-defined, active disruption scenarios.
 
 ## Summary Metrics
 
@@ -76,21 +94,37 @@ This report summarizes the performance evaluation of the **Greedy Policy (depth=
 
 ---
 
-## Disruption Type Performance Summary
+## Diversity Statistics
 
-This table shows the average improvement of the greedy optimizer grouped by the class of track disruption.
+### 1. Distribution of Scenario Disruptions
+- **Engine Slow disruptions:** {count_engine} scenarios (Avg Gain: {avg_engine:.2f}%)
+- **Platform Block disruptions:** {count_platform} scenarios (Avg Gain: {avg_platform:.2f}%)
+- **Signal Hold disruptions:** {count_signal} scenarios (Avg Gain: {avg_signal:.2f}%)
+
+### 2. Distribution of Conflicts
+- **Avg Unique Conflicts per Scenario (FCFS / Greedy):** {mean_uniq_fcfs:.2f} / {mean_uniq_greedy:.2f} (Unique train-block conflict overlaps)
+- **Avg Raw Conflict Records per Scenario (FCFS / Greedy):** {mean_rec_fcfs:.2f} / {mean_rec_greedy:.2f} (Conflict records summed across ticks)
+
+### 3. Distribution of Planner Interventions
+- **0 holds applied:** {int_0} scenarios
+- **1 - 3 holds applied:** {int_1_3} scenarios
+- **4 - 6 holds applied:** {int_4_6} scenarios
+- **7 - 9 holds applied:** {int_7_9} scenarios
+- **10+ holds applied:** {int_10_plus} scenarios
+
+---
+
+## Disruption Type Performance Summary
 
 | Disruption Type | Avg Improvement % | Scenarios Evaluated |
 |---|---|---|
-| **Engine Slow** | {avg_engine:.2f}% | {len(df[df["disruption_type"] == "engine_slow"])} |
-| **Platform Block** | {avg_platform:.2f}% | {len(df[df["disruption_type"] == "platform_block"])} |
-| **Signal Hold** | {avg_signal:.2f}% | {len(df[df["disruption_type"] == "signal_hold"])} |
+| **Engine Slow** | {avg_engine:.2f}% | {count_engine} |
+| **Platform Block** | {avg_platform:.2f}% | {count_platform} |
+| **Signal Hold** | {avg_signal:.2f}% | {count_signal} |
 
 ---
 
 ## Improvement Distribution (Histogram Buckets)
-
-Understanding where optimization actually matters (e.g. prunes massive delay loops vs minor tweaks).
 
 | Improvement Bracket | Scenario Count | Percentage |
 |---|---|---|
@@ -104,19 +138,22 @@ Understanding where optimization actually matters (e.g. prunes massive delay loo
 ## Detailed Results Ledger
 
 For every scenario, we track:
-- `num_conflicts` (FCFS / Greedy total overlaps across steps)
-- `planner_invocations` (Total decision steps)
-- `actions_applied` (Total hold decisions executed)
+- `train_id` of the disrupted train
+- `disruption_type` and its duration magnitude (min)
+- `unique_conflicts` (FCFS / Greedy distinct overlaps)
+- `conflict_records` (FCFS / Greedy total overlaps across ticks)
+- `actions_applied` (Total hold decisions executed by Greedy)
+- `improvement_pct` (%)
 - Before and After cost breakdowns (Delay and Conflict)
 
-| Scenario ID | Disruption Type | FCFS Delay / Conflict / Total | Greedy Delay / Conflict / Total | Actions Applied | Latency (ms) | Improvement % |
-|---|---|---|---|---|---|---|
+| Scenario ID | Train ID | Disruption (Mag) | FCFS Delay / Conflict / Total | Greedy Delay / Conflict / Total | Unique Conflicts (F/G) | Conflict Records (F/G) | Actions Applied | Latency (ms) | Improvement % |
+|---|---|---|---|---|---|---|---|---|---|
 """
 
     for _, row in df.iterrows():
         fcfs_breakdown = f"{row['delay_cost_before']:,.0f} / {row['conflict_cost_before']:,.0f} / {row['fcfs_total_cost']:,.0f}"
         greedy_breakdown = f"{row['delay_cost_after']:,.0f} / {row['conflict_cost_after']:,.0f} / {row['greedy_total_cost']:,.0f}"
-        report_content += f"| {row['episode_id']} | {row['disruption_type']} | {fcfs_breakdown} | {greedy_breakdown} | {row['actions_applied']} | {row['avg_plan_time_ms']:.4f} | {row['improvement_pct']:.2f}% |\n"
+        report_content += f"| {row['episode_id']} | {row['disruption_train']} | {row['disruption_type']} ({row['disruption_mag_min']:.1f}m) | {fcfs_breakdown} | {greedy_breakdown} | {row['unique_conflicts_fcfs']} / {row['unique_conflicts_greedy']} | {row['conflict_records_fcfs']} / {row['conflict_records_greedy']} | {row['actions_applied']} | {row['avg_plan_time_ms']:.4f} | {row['improvement_pct']:.2f}% |\n"
 
     report_content += """
 ---

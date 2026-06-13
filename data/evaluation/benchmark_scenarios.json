@@ -18,11 +18,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_2_disp",
-        "train_id": "12004",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 14.5,
-        "start_time": 884.2,
-        "end_time": 898.7,
+        "magnitude_minutes": 25.8,
+        "start_time": 865.3,
+        "end_time": 891.0999999999999,
         "target_id": null
       }
     ]
@@ -32,11 +32,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_3_disp",
-        "train_id": "04184",
+        "train_id": "04183",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 24.8,
-        "start_time": 872.7,
-        "end_time": 897.5,
+        "magnitude_minutes": 20.2,
+        "start_time": 851.9,
+        "end_time": 872.1,
         "target_id": null
       }
     ]
@@ -46,11 +46,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_4_disp",
-        "train_id": "12419",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 18.4,
-        "start_time": 841.8,
-        "end_time": 860.1999999999999,
+        "magnitude_minutes": 15.6,
+        "start_time": 855.0,
+        "end_time": 870.6,
         "target_id": null
       }
     ]
@@ -60,11 +60,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_5_disp",
-        "train_id": "12003",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 14.7,
-        "start_time": 876.1,
-        "end_time": 890.8000000000001,
+        "magnitude_minutes": 28.0,
+        "start_time": 849.9,
+        "end_time": 877.9,
         "target_id": null
       }
     ]
@@ -74,11 +74,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_6_disp",
-        "train_id": "14164",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 14.0,
-        "start_time": 879.0,
-        "end_time": 893.0,
+        "magnitude_minutes": 11.4,
+        "start_time": 844.1,
+        "end_time": 855.5,
         "target_id": null
       }
     ]
@@ -88,11 +88,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_7_disp",
-        "train_id": "14164",
+        "train_id": "04183",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 18.4,
-        "start_time": 867.0,
-        "end_time": 885.4,
+        "magnitude_minutes": 16.0,
+        "start_time": 859.0,
+        "end_time": 875.0,
         "target_id": null
       }
     ]
@@ -102,11 +102,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_8_disp",
-        "train_id": "12226",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 26.2,
-        "start_time": 840.4,
-        "end_time": 866.6,
+        "magnitude_minutes": 24.8,
+        "start_time": 873.1,
+        "end_time": 897.9,
         "target_id": null
       }
     ]
@@ -116,11 +116,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_9_disp",
-        "train_id": "F9001",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 13.2,
-        "start_time": 865.4,
-        "end_time": 878.6,
+        "magnitude_minutes": 24.7,
+        "start_time": 859.9,
+        "end_time": 884.6,
         "target_id": null
       }
     ]
@@ -130,11 +130,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_10_disp",
-        "train_id": "12226",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 13.1,
-        "start_time": 897.4,
-        "end_time": 910.5,
+        "magnitude_minutes": 21.6,
+        "start_time": 899.0,
+        "end_time": 920.6,
         "target_id": null
       }
     ]
@@ -144,11 +144,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_11_disp",
-        "train_id": "12801",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 12.0,
-        "start_time": 862.8,
-        "end_time": 874.8,
+        "magnitude_minutes": 23.5,
+        "start_time": 894.2,
+        "end_time": 917.7,
         "target_id": null
       }
     ]
@@ -158,11 +158,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_12_disp",
-        "train_id": "12802",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 26.9,
-        "start_time": 876.2,
-        "end_time": 903.1,
+        "magnitude_minutes": 14.9,
+        "start_time": 879.4,
+        "end_time": 894.3,
         "target_id": null
       }
     ]
@@ -172,11 +172,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_13_disp",
-        "train_id": "F9001",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 10.9,
-        "start_time": 867.6,
-        "end_time": 878.5,
+        "magnitude_minutes": 26.1,
+        "start_time": 881.8,
+        "end_time": 907.9,
         "target_id": null
       }
     ]
@@ -186,11 +186,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_14_disp",
-        "train_id": "12424",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 29.5,
-        "start_time": 862.7,
-        "end_time": 892.2,
+        "magnitude_minutes": 28.1,
+        "start_time": 875.0,
+        "end_time": 903.1,
         "target_id": null
       }
     ]
@@ -200,11 +200,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_15_disp",
-        "train_id": "14164",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 15.9,
-        "start_time": 877.7,
-        "end_time": 893.6,
+        "magnitude_minutes": 26.8,
+        "start_time": 895.2,
+        "end_time": 922.0,
         "target_id": null
       }
     ]
@@ -214,11 +214,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_16_disp",
-        "train_id": "F9004",
+        "train_id": "04183",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 27.2,
-        "start_time": 874.6,
-        "end_time": 901.8000000000001,
+        "magnitude_minutes": 18.6,
+        "start_time": 892.0,
+        "end_time": 910.6,
         "target_id": null
       }
     ]
@@ -228,11 +228,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_17_disp",
-        "train_id": "04191",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 11.4,
-        "start_time": 879.7,
-        "end_time": 891.1,
+        "magnitude_minutes": 11.0,
+        "start_time": 862.7,
+        "end_time": 873.7,
         "target_id": null
       }
     ]
@@ -242,11 +242,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_18_disp",
-        "train_id": "04415",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 15.8,
-        "start_time": 844.8,
-        "end_time": 860.5999999999999,
+        "magnitude_minutes": 17.9,
+        "start_time": 882.9,
+        "end_time": 900.8,
         "target_id": null
       }
     ]
@@ -256,11 +256,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_19_disp",
-        "train_id": "12004",
+        "train_id": "22435",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 27.3,
-        "start_time": 862.8,
-        "end_time": 890.0999999999999,
+        "magnitude_minutes": 24.7,
+        "start_time": 897.9,
+        "end_time": 922.6,
         "target_id": null
       }
     ]
@@ -270,11 +270,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_20_disp",
-        "train_id": "12555",
+        "train_id": "12397",
         "disruption_type": "engine_slow",
-        "magnitude_minutes": 22.7,
-        "start_time": 861.9,
-        "end_time": 884.6,
+        "magnitude_minutes": 23.8,
+        "start_time": 858.4,
+        "end_time": 882.1999999999999,
         "target_id": null
       }
     ]
@@ -284,11 +284,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_21_disp",
-        "train_id": "12802",
+        "train_id": "12419",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 17.1,
-        "start_time": 880.2,
-        "end_time": 897.3000000000001,
+        "magnitude_minutes": 21.7,
+        "start_time": 895.0,
+        "end_time": 916.7,
         "target_id": "GZB"
       }
     ]
@@ -298,12 +298,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_22_disp",
-        "train_id": "12420",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 22.7,
-        "start_time": 872.0,
-        "end_time": 894.7,
-        "target_id": "HRS"
+        "magnitude_minutes": 27.8,
+        "start_time": 849.7,
+        "end_time": 877.5,
+        "target_id": "GZB"
       }
     ]
   },
@@ -314,10 +314,10 @@
         "disruption_id": "scen_23_disp",
         "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 19.2,
-        "start_time": 856.2,
-        "end_time": 875.4000000000001,
-        "target_id": "PHD"
+        "magnitude_minutes": 29.4,
+        "start_time": 888.5,
+        "end_time": 917.9,
+        "target_id": "ALJN"
       }
     ]
   },
@@ -326,12 +326,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_24_disp",
-        "train_id": "12004",
+        "train_id": "12419",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 23.7,
-        "start_time": 890.6,
-        "end_time": 914.3000000000001,
-        "target_id": "NDLS"
+        "magnitude_minutes": 25.2,
+        "start_time": 896.4,
+        "end_time": 921.6,
+        "target_id": "GZB"
       }
     ]
   },
@@ -340,12 +340,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_25_disp",
-        "train_id": "12004",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 26.4,
-        "start_time": 888.3,
-        "end_time": 914.6999999999999,
-        "target_id": "SKB"
+        "magnitude_minutes": 26.8,
+        "start_time": 855.5,
+        "end_time": 882.3,
+        "target_id": "GZB"
       }
     ]
   },
@@ -354,12 +354,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_26_disp",
-        "train_id": "12226",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 11.3,
-        "start_time": 894.8,
-        "end_time": 906.0999999999999,
-        "target_id": "CNB"
+        "magnitude_minutes": 13.6,
+        "start_time": 896.9,
+        "end_time": 910.5,
+        "target_id": "ALJN"
       }
     ]
   },
@@ -368,12 +368,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_27_disp",
-        "train_id": "F9004",
+        "train_id": "12397",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 24.4,
-        "start_time": 852.8,
-        "end_time": 877.1999999999999,
-        "target_id": "ETW"
+        "magnitude_minutes": 21.4,
+        "start_time": 853.0,
+        "end_time": 874.4,
+        "target_id": "GZB"
       }
     ]
   },
@@ -384,10 +384,10 @@
         "disruption_id": "scen_28_disp",
         "train_id": "12397",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 27.7,
-        "start_time": 878.6,
-        "end_time": 906.3000000000001,
-        "target_id": "ALJN"
+        "magnitude_minutes": 28.0,
+        "start_time": 857.3,
+        "end_time": 885.3,
+        "target_id": "GZB"
       }
     ]
   },
@@ -396,12 +396,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_29_disp",
-        "train_id": "12226",
+        "train_id": "12397",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 12.8,
-        "start_time": 884.7,
-        "end_time": 897.5,
-        "target_id": "PHD"
+        "magnitude_minutes": 21.4,
+        "start_time": 859.3,
+        "end_time": 880.6999999999999,
+        "target_id": "GZB"
       }
     ]
   },
@@ -410,12 +410,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_30_disp",
-        "train_id": "12226",
+        "train_id": "04183",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 24.9,
-        "start_time": 865.7,
-        "end_time": 890.6,
-        "target_id": "CNB"
+        "magnitude_minutes": 25.9,
+        "start_time": 892.4,
+        "end_time": 918.3,
+        "target_id": "PHD"
       }
     ]
   },
@@ -424,11 +424,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_31_disp",
-        "train_id": "12397",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 17.2,
-        "start_time": 899.8,
-        "end_time": 917.0,
+        "magnitude_minutes": 19.2,
+        "start_time": 888.9,
+        "end_time": 908.1,
         "target_id": "ALJN"
       }
     ]
@@ -438,11 +438,11 @@
     "disruptions": [
       {
         "disruption_id": "scen_32_disp",
-        "train_id": "14163",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 19.9,
-        "start_time": 885.3,
-        "end_time": 905.1999999999999,
+        "magnitude_minutes": 29.0,
+        "start_time": 852.2,
+        "end_time": 881.2,
         "target_id": "GZB"
       }
     ]
@@ -452,12 +452,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_33_disp",
-        "train_id": "22436",
+        "train_id": "22435",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 22.5,
-        "start_time": 887.5,
-        "end_time": 910.0,
-        "target_id": "SKB"
+        "magnitude_minutes": 14.7,
+        "start_time": 852.2,
+        "end_time": 866.9000000000001,
+        "target_id": "GZB"
       }
     ]
   },
@@ -466,12 +466,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_34_disp",
-        "train_id": "12420",
+        "train_id": "12397",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 11.3,
-        "start_time": 862.9,
-        "end_time": 874.1999999999999,
-        "target_id": "ETW"
+        "magnitude_minutes": 14.0,
+        "start_time": 861.1,
+        "end_time": 875.1,
+        "target_id": "GZB"
       }
     ]
   },
@@ -480,12 +480,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_35_disp",
-        "train_id": "14163",
+        "train_id": "12397",
         "disruption_type": "platform_block",
-        "magnitude_minutes": 15.0,
-        "start_time": 873.2,
-        "end_time": 888.2,
-        "target_id": "NDLS"
+        "magnitude_minutes": 13.1,
+        "start_time": 857.5,
+        "end_time": 870.6,
+        "target_id": "GZB"
       }
     ]
   },
@@ -494,12 +494,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_36_disp",
-        "train_id": "04184",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 24.4,
-        "start_time": 880.9,
-        "end_time": 905.3,
-        "target_id": "ETW_PHD_11_DOWN"
+        "magnitude_minutes": 27.0,
+        "start_time": 885.4,
+        "end_time": 912.4,
+        "target_id": "ALJN_HRS_03"
       }
     ]
   },
@@ -508,12 +508,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_37_disp",
-        "train_id": "04415",
+        "train_id": "04183",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 15.3,
-        "start_time": 878.5,
-        "end_time": 893.8,
-        "target_id": "GZB_ALJN_17"
+        "magnitude_minutes": 19.3,
+        "start_time": 885.2,
+        "end_time": 904.5,
+        "target_id": "PHD_CNB_08_DOWN"
       }
     ]
   },
@@ -522,12 +522,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_38_disp",
-        "train_id": "12225",
+        "train_id": "12397",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 18.7,
-        "start_time": 867.2,
-        "end_time": 885.9000000000001,
-        "target_id": "ALJN_HRS_01_DOWN"
+        "magnitude_minutes": 21.4,
+        "start_time": 861.6,
+        "end_time": 883.0,
+        "target_id": "NDLS_GZB_06"
       }
     ]
   },
@@ -536,12 +536,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_39_disp",
-        "train_id": "14163",
+        "train_id": "12397",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 25.2,
-        "start_time": 870.5,
-        "end_time": 895.7,
-        "target_id": "GZB_ALJN_16"
+        "magnitude_minutes": 17.3,
+        "start_time": 885.6,
+        "end_time": 902.9,
+        "target_id": "GZB_ALJN_12"
       }
     ]
   },
@@ -550,12 +550,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_40_disp",
-        "train_id": "F9003",
+        "train_id": "04183",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 22.5,
-        "start_time": 890.5,
-        "end_time": 913.0,
-        "target_id": "ETW_PHD_06"
+        "magnitude_minutes": 23.3,
+        "start_time": 871.6,
+        "end_time": 894.9,
+        "target_id": "PHD_CNB_12_DOWN"
       }
     ]
   },
@@ -564,12 +564,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_41_disp",
-        "train_id": "12420",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 14.0,
-        "start_time": 862.4,
-        "end_time": 876.4,
-        "target_id": "GZB_ALJN_15_DOWN"
+        "magnitude_minutes": 12.5,
+        "start_time": 843.6,
+        "end_time": 856.1,
+        "target_id": "GZB_ALJN_01"
       }
     ]
   },
@@ -578,12 +578,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_42_disp",
-        "train_id": "14164",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 29.1,
-        "start_time": 895.3,
-        "end_time": 924.4,
-        "target_id": "NDLS_GZB_01"
+        "magnitude_minutes": 12.3,
+        "start_time": 851.8,
+        "end_time": 864.0999999999999,
+        "target_id": "NDLS_GZB_05"
       }
     ]
   },
@@ -592,12 +592,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_43_disp",
-        "train_id": "12420",
+        "train_id": "12397",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 16.5,
-        "start_time": 841.2,
-        "end_time": 857.7,
-        "target_id": "TDL_FZD_02_DOWN"
+        "magnitude_minutes": 22.1,
+        "start_time": 885.0,
+        "end_time": 907.1,
+        "target_id": "GZB_ALJN_15"
       }
     ]
   },
@@ -606,12 +606,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_44_disp",
-        "train_id": "F9004",
+        "train_id": "04183",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 29.7,
-        "start_time": 888.4,
-        "end_time": 918.1,
-        "target_id": "ALJN_HRS_06"
+        "magnitude_minutes": 23.7,
+        "start_time": 894.0,
+        "end_time": 917.7,
+        "target_id": "PHD_CNB_04_DOWN"
       }
     ]
   },
@@ -620,12 +620,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_45_disp",
-        "train_id": "12302",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 14.8,
-        "start_time": 874.0,
-        "end_time": 888.8,
-        "target_id": "GZB_ALJN_09"
+        "magnitude_minutes": 22.2,
+        "start_time": 871.9,
+        "end_time": 894.1,
+        "target_id": "GZB_ALJN_17"
       }
     ]
   },
@@ -634,12 +634,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_46_disp",
-        "train_id": "12423",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 24.6,
-        "start_time": 889.0,
-        "end_time": 913.6,
-        "target_id": "ETW_PHD_12_DOWN"
+        "magnitude_minutes": 17.1,
+        "start_time": 887.4,
+        "end_time": 904.5,
+        "target_id": "GZB_ALJN_18"
       }
     ]
   },
@@ -648,12 +648,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_47_disp",
-        "train_id": "04415",
+        "train_id": "12397",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 12.5,
-        "start_time": 879.6,
-        "end_time": 892.1,
-        "target_id": "ETW_PHD_08_DOWN"
+        "magnitude_minutes": 21.8,
+        "start_time": 854.0,
+        "end_time": 875.8,
+        "target_id": "GZB_ALJN_03"
       }
     ]
   },
@@ -664,10 +664,10 @@
         "disruption_id": "scen_48_disp",
         "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 15.3,
-        "start_time": 892.3,
-        "end_time": 907.5999999999999,
-        "target_id": "SKB_ETW_07"
+        "magnitude_minutes": 23.6,
+        "start_time": 856.1,
+        "end_time": 879.7,
+        "target_id": "GZB_ALJN_08"
       }
     ]
   },
@@ -676,12 +676,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_49_disp",
-        "train_id": "12003",
+        "train_id": "12419",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 28.6,
-        "start_time": 885.3,
-        "end_time": 913.9,
-        "target_id": "PHD_CNB_06_DOWN"
+        "magnitude_minutes": 22.2,
+        "start_time": 896.0,
+        "end_time": 918.2,
+        "target_id": "NDLS_GZB_02"
       }
     ]
   },
@@ -690,12 +690,12 @@
     "disruptions": [
       {
         "disruption_id": "scen_50_disp",
-        "train_id": "12003",
+        "train_id": "22435",
         "disruption_type": "signal_hold",
-        "magnitude_minutes": 24.3,
-        "start_time": 863.9,
-        "end_time": 888.1999999999999,
-        "target_id": "PHD_CNB_11_DOWN"
+        "magnitude_minutes": 20.3,
+        "start_time": 897.3,
+        "end_time": 917.5999999999999,
+        "target_id": "GZB_ALJN_18"
       }
     ]
   }

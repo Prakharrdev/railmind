@@ -1,46 +1,62 @@
 # Phase 3 Benchmark Report — 2026-06-13
-**Improvements**: Added detailed metrics tracking (invocations, actions applied, conflicts counts), printed console ScoreBreakdowns, disruption averages, and distribution histogram.
+**Improvements**: Implemented scenario validation layer to ensure high-impact, active disruptions. Tracked unique conflicts, raw conflict records, and planner interventions distribution.
 
-This report summarizes the performance evaluation of the **Greedy Policy (depth=1)** vs the **FCFS (None)** baseline across 50 pre-defined disruption scenarios.
+This report summarizes the performance evaluation of the **Greedy Policy (depth=1)** vs the **FCFS (None)** baseline across 50 pre-defined, active disruption scenarios.
 
 ## Summary Metrics
 
 | Metric | FCFS Baseline (None) | Greedy (Depth=1) | Difference / Performance |
 |---|---|---|---|
-| **Mean Passenger Delay Cost** | 285,027.80 | 278,427.80 | -6,600.00 |
-| **Mean Improvement %** | — | — | **2.31%** |
-| **Median Improvement %** | — | — | **2.20%** |
-| **Max Improvement %** | — | — | **8.00%** |
-| **Average Decision Latency** | — | — | **0.2291 ms** |
+| **Mean Passenger Delay Cost** | 298,335.70 | 293,760.90 | -4,574.80 |
+| **Mean Improvement %** | — | — | **1.59%** |
+| **Median Improvement %** | — | — | **2.11%** |
+| **Max Improvement %** | — | — | **6.17%** |
+| **Average Decision Latency** | — | — | **0.2554 ms** |
 
 ### Scenario Outcomes
-- **Greedy beats FCFS:** 50 / 50 scenarios
+- **Greedy beats FCFS:** 46 / 50 scenarios
 - **Greedy equals FCFS:** 0 / 50 scenarios
-- **Greedy performs worse:** 0 / 50 scenarios
+- **Greedy performs worse:** 4 / 50 scenarios
+
+---
+
+## Diversity Statistics
+
+### 1. Distribution of Scenario Disruptions
+- **Engine Slow disruptions:** 20 scenarios (Avg Gain: 2.09%)
+- **Platform Block disruptions:** 15 scenarios (Avg Gain: 0.13%)
+- **Signal Hold disruptions:** 15 scenarios (Avg Gain: 2.39%)
+
+### 2. Distribution of Conflicts
+- **Avg Unique Conflicts per Scenario (FCFS / Greedy):** 59.12 / 49.48 (Unique train-block conflict overlaps)
+- **Avg Raw Conflict Records per Scenario (FCFS / Greedy):** 1730.20 / 1578.04 (Conflict records summed across ticks)
+
+### 3. Distribution of Planner Interventions
+- **0 holds applied:** 0 scenarios
+- **1 - 3 holds applied:** 0 scenarios
+- **4 - 6 holds applied:** 0 scenarios
+- **7 - 9 holds applied:** 46 scenarios
+- **10+ holds applied:** 4 scenarios
 
 ---
 
 ## Disruption Type Performance Summary
 
-This table shows the average improvement of the greedy optimizer grouped by the class of track disruption.
-
 | Disruption Type | Avg Improvement % | Scenarios Evaluated |
 |---|---|---|
-| **Engine Slow** | 2.20% | 20 |
-| **Platform Block** | 2.20% | 15 |
-| **Signal Hold** | 2.56% | 15 |
+| **Engine Slow** | 2.09% | 20 |
+| **Platform Block** | 0.13% | 15 |
+| **Signal Hold** | 2.39% | 15 |
 
 ---
 
 ## Improvement Distribution (Histogram Buckets)
 
-Understanding where optimization actually matters (e.g. prunes massive delay loops vs minor tweaks).
-
 | Improvement Bracket | Scenario Count | Percentage |
 |---|---|---|
 | **0 - 1%** (Minimal Impact) | 0 | 0.0% |
-| **1 - 3%** (Moderate Delay Reduction) | 49 | 98.0% |
-| **3 - 5%** (High Cost Saving) | 0 | 0.0% |
+| **1 - 3%** (Moderate Delay Reduction) | 44 | 88.0% |
+| **3 - 5%** (High Cost Saving) | 1 | 2.0% |
 | **5%+** (Significant Cascade Resolution) | 1 | 2.0% |
 
 ---
@@ -48,63 +64,66 @@ Understanding where optimization actually matters (e.g. prunes massive delay loo
 ## Detailed Results Ledger
 
 For every scenario, we track:
-- `num_conflicts` (FCFS / Greedy total overlaps across steps)
-- `planner_invocations` (Total decision steps)
-- `actions_applied` (Total hold decisions executed)
+- `train_id` of the disrupted train
+- `disruption_type` and its duration magnitude (min)
+- `unique_conflicts` (FCFS / Greedy distinct overlaps)
+- `conflict_records` (FCFS / Greedy total overlaps across ticks)
+- `actions_applied` (Total hold decisions executed by Greedy)
+- `improvement_pct` (%)
 - Before and After cost breakdowns (Delay and Conflict)
 
-| Scenario ID | Disruption Type | FCFS Delay / Conflict / Total | Greedy Delay / Conflict / Total | Actions Applied | Latency (ms) | Improvement % |
-|---|---|---|---|---|---|---|
-| scenario_1 | engine_slow | 7,520 / 280,000 / 287,520 | 31,280 / 250,000 / 281,280 | 7 | 0.2284 | 2.17% |
-| scenario_2 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2269 | 2.20% |
-| scenario_3 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2227 | 2.20% |
-| scenario_4 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2313 | 2.20% |
-| scenario_5 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2282 | 2.20% |
-| scenario_6 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2242 | 2.20% |
-| scenario_7 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2253 | 2.20% |
-| scenario_8 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2375 | 2.20% |
-| scenario_9 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2299 | 2.20% |
-| scenario_10 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2395 | 2.20% |
-| scenario_11 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2408 | 2.20% |
-| scenario_12 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2332 | 2.20% |
-| scenario_13 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2274 | 2.20% |
-| scenario_14 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2283 | 2.20% |
-| scenario_15 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2280 | 2.20% |
-| scenario_16 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2254 | 2.20% |
-| scenario_17 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2276 | 2.20% |
-| scenario_18 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2319 | 2.20% |
-| scenario_19 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2339 | 2.20% |
-| scenario_20 | engine_slow | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2345 | 2.20% |
-| scenario_21 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2720 | 2.20% |
-| scenario_22 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2295 | 2.20% |
-| scenario_23 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2257 | 2.20% |
-| scenario_24 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2267 | 2.20% |
-| scenario_25 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2288 | 2.20% |
-| scenario_26 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2275 | 2.20% |
-| scenario_27 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2252 | 2.20% |
-| scenario_28 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2548 | 2.20% |
-| scenario_29 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2258 | 2.20% |
-| scenario_30 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2255 | 2.20% |
-| scenario_31 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2271 | 2.20% |
-| scenario_32 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2236 | 2.20% |
-| scenario_33 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2241 | 2.20% |
-| scenario_34 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2249 | 2.20% |
-| scenario_35 | platform_block | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2244 | 2.20% |
-| scenario_36 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2246 | 2.20% |
-| scenario_37 | signal_hold | 4,970 / 280,000 / 284,970 | 28,730 / 250,000 / 278,730 | 7 | 0.2255 | 2.19% |
-| scenario_38 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2264 | 2.20% |
-| scenario_39 | signal_hold | 10,730 / 280,000 / 290,730 | 34,490 / 250,000 / 284,490 | 7 | 0.2236 | 2.15% |
-| scenario_40 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2246 | 2.20% |
-| scenario_41 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2256 | 2.20% |
-| scenario_42 | signal_hold | 23,130 / 280,000 / 303,130 | 28,890 / 250,000 / 278,890 | 7 | 0.2249 | 8.00% |
-| scenario_43 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2249 | 2.20% |
-| scenario_44 | signal_hold | 4,970 / 280,000 / 284,970 | 28,730 / 250,000 / 278,730 | 7 | 0.2262 | 2.19% |
-| scenario_45 | signal_hold | 27,365 / 280,000 / 307,365 | 51,125 / 250,000 / 301,125 | 7 | 0.2254 | 2.03% |
-| scenario_46 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2293 | 2.20% |
-| scenario_47 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2244 | 2.20% |
-| scenario_48 | signal_hold | 3,530 / 280,000 / 283,530 | 27,290 / 250,000 / 277,290 | 7 | 0.2251 | 2.20% |
-| scenario_49 | signal_hold | 14,075 / 280,000 / 294,075 | 37,835 / 250,000 / 287,835 | 7 | 0.2266 | 2.12% |
-| scenario_50 | signal_hold | 10,370 / 280,000 / 290,370 | 34,130 / 250,000 / 284,130 | 7 | 0.2249 | 2.15% |
+| Scenario ID | Train ID | Disruption (Mag) | FCFS Delay / Conflict / Total | Greedy Delay / Conflict / Total | Unique Conflicts (F/G) | Conflict Records (F/G) | Actions Applied | Latency (ms) | Improvement % |
+|---|---|---|---|---|---|---|---|---|---|
+| scenario_1 | 04183 | engine_slow (12.2m) | 7,520 / 280,000 / 287,520 | 31,280 / 250,000 / 281,280 | 60 / 49 | 1739 / 1543 | 7 | 0.2345 | 2.17% |
+| scenario_2 | 22435 | engine_slow (25.8m) | 30,050 / 280,000 / 310,050 | 53,810 / 250,000 / 303,810 | 63 / 52 | 1746 / 1550 | 7 | 0.2497 | 2.01% |
+| scenario_3 | 04183 | engine_slow (20.2m) | 9,230 / 280,000 / 289,230 | 32,990 / 250,000 / 282,990 | 62 / 51 | 1764 / 1568 | 7 | 0.2546 | 2.16% |
+| scenario_4 | 22435 | engine_slow (15.6m) | 16,490 / 280,000 / 296,490 | 40,250 / 250,000 / 290,250 | 59 / 48 | 1712 / 1516 | 7 | 0.2605 | 2.10% |
+| scenario_5 | 12397 | engine_slow (28.0m) | 19,805 / 280,000 / 299,805 | 43,565 / 250,000 / 293,565 | 58 / 47 | 1709 / 1513 | 7 | 0.5473 | 2.08% |
+| scenario_6 | 22435 | engine_slow (11.4m) | 12,170 / 280,000 / 292,170 | 35,930 / 250,000 / 285,930 | 58 / 47 | 1709 / 1513 | 7 | 0.2781 | 2.14% |
+| scenario_7 | 04183 | engine_slow (16.0m) | 8,945 / 280,000 / 288,945 | 32,705 / 250,000 / 282,705 | 61 / 50 | 1762 / 1566 | 7 | 0.2472 | 2.16% |
+| scenario_8 | 22435 | engine_slow (24.8m) | 26,510 / 280,000 / 306,510 | 50,270 / 250,000 / 300,270 | 61 / 50 | 1726 / 1530 | 7 | 0.3704 | 2.04% |
+| scenario_9 | 22435 | engine_slow (24.7m) | 30,380 / 280,000 / 310,380 | 54,140 / 250,000 / 304,140 | 62 / 51 | 1743 / 1547 | 7 | 0.2765 | 2.01% |
+| scenario_10 | 22435 | engine_slow (21.6m) | 21,530 / 280,000 / 301,530 | 45,290 / 250,000 / 295,290 | 58 / 47 | 1709 / 1513 | 7 | 0.3865 | 2.07% |
+| scenario_11 | 12397 | engine_slow (23.5m) | 18,230 / 280,000 / 298,230 | 41,990 / 250,000 / 291,990 | 58 / 47 | 1709 / 1513 | 7 | 0.2545 | 2.09% |
+| scenario_12 | 12397 | engine_slow (14.9m) | 12,980 / 280,000 / 292,980 | 36,740 / 250,000 / 286,740 | 58 / 47 | 1709 / 1513 | 7 | 0.2667 | 2.13% |
+| scenario_13 | 22435 | engine_slow (26.1m) | 26,900 / 280,000 / 306,900 | 50,660 / 250,000 / 300,660 | 61 / 50 | 1719 / 1523 | 7 | 0.2500 | 2.03% |
+| scenario_14 | 12397 | engine_slow (28.1m) | 21,380 / 280,000 / 301,380 | 45,140 / 250,000 / 295,140 | 58 / 47 | 1709 / 1513 | 7 | 0.2470 | 2.07% |
+| scenario_15 | 22435 | engine_slow (26.8m) | 26,570 / 280,000 / 306,570 | 50,330 / 250,000 / 300,330 | 58 / 47 | 1709 / 1513 | 7 | 0.2383 | 2.04% |
+| scenario_16 | 04183 | engine_slow (18.6m) | 9,800 / 280,000 / 289,800 | 33,560 / 250,000 / 283,560 | 59 / 48 | 1754 / 1558 | 7 | 0.2421 | 2.15% |
+| scenario_17 | 22435 | engine_slow (11.0m) | 12,890 / 280,000 / 292,890 | 36,650 / 250,000 / 286,650 | 58 / 47 | 1709 / 1513 | 7 | 0.2340 | 2.13% |
+| scenario_18 | 12397 | engine_slow (17.9m) | 14,555 / 280,000 / 294,555 | 38,315 / 250,000 / 288,315 | 58 / 47 | 1709 / 1513 | 7 | 0.2346 | 2.12% |
+| scenario_19 | 22435 | engine_slow (24.7m) | 24,410 / 280,000 / 304,410 | 48,170 / 250,000 / 298,170 | 58 / 47 | 1709 / 1513 | 7 | 0.2358 | 2.05% |
+| scenario_20 | 12397 | engine_slow (23.8m) | 16,655 / 280,000 / 296,655 | 40,415 / 250,000 / 290,415 | 58 / 47 | 1709 / 1513 | 7 | 0.2326 | 2.10% |
+| scenario_21 | 12419 | platform_block (21.7m) | 4,330 / 280,000 / 284,330 | 27,290 / 250,000 / 277,290 | 58 / 47 | 1709 / 1513 | 7 | 0.2347 | 2.48% |
+| scenario_22 | 22435 | platform_block (27.8m) | 51,680 / 280,000 / 331,680 | 100,655 / 250,000 / 350,655 | 64 / 70 | 1878 / 2230 | 10 | 0.2541 | -5.72% |
+| scenario_23 | 22435 | platform_block (29.4m) | 22,250 / 280,000 / 302,250 | 46,010 / 250,000 / 296,010 | 58 / 47 | 1709 / 1513 | 7 | 0.2287 | 2.06% |
+| scenario_24 | 12419 | platform_block (25.2m) | 8,330 / 280,000 / 288,330 | 27,290 / 250,000 / 277,290 | 58 / 47 | 1709 / 1513 | 7 | 0.2450 | 3.83% |
+| scenario_25 | 22435 | platform_block (26.8m) | 21,380 / 280,000 / 301,380 | 45,140 / 250,000 / 295,140 | 58 / 47 | 1709 / 1513 | 7 | 0.2466 | 2.07% |
+| scenario_26 | 22435 | platform_block (13.6m) | 12,170 / 280,000 / 292,170 | 35,930 / 250,000 / 285,930 | 58 / 47 | 1709 / 1513 | 7 | 0.3002 | 2.14% |
+| scenario_27 | 12397 | platform_block (21.4m) | 42,965 / 280,000 / 322,965 | 91,940 / 250,000 / 341,940 | 64 / 70 | 1843 / 2195 | 10 | 0.2486 | -5.88% |
+| scenario_28 | 12397 | platform_block (28.0m) | 24,530 / 280,000 / 304,530 | 48,290 / 250,000 / 298,290 | 58 / 47 | 1709 / 1513 | 7 | 0.2258 | 2.05% |
+| scenario_29 | 12397 | platform_block (21.4m) | 19,805 / 280,000 / 299,805 | 43,565 / 250,000 / 293,565 | 58 / 47 | 1709 / 1513 | 7 | 0.2237 | 2.08% |
+| scenario_30 | 04183 | platform_block (25.9m) | 4,100 / 280,000 / 284,100 | 27,860 / 250,000 / 277,860 | 58 / 47 | 1709 / 1513 | 7 | 0.2305 | 2.20% |
+| scenario_31 | 22435 | platform_block (19.2m) | 8,570 / 280,000 / 288,570 | 32,330 / 250,000 / 282,330 | 58 / 47 | 1709 / 1513 | 7 | 0.2271 | 2.16% |
+| scenario_32 | 22435 | platform_block (29.0m) | 60,395 / 280,000 / 340,395 | 109,370 / 250,000 / 359,370 | 64 / 70 | 1913 / 2265 | 10 | 0.2451 | -5.57% |
+| scenario_33 | 22435 | platform_block (14.7m) | 24,290 / 280,000 / 304,290 | 73,265 / 250,000 / 323,265 | 64 / 70 | 1768 / 2120 | 10 | 0.2439 | -6.24% |
+| scenario_34 | 12397 | platform_block (14.0m) | 14,030 / 280,000 / 294,030 | 37,790 / 250,000 / 287,790 | 58 / 47 | 1709 / 1513 | 7 | 0.2254 | 2.12% |
+| scenario_35 | 12397 | platform_block (13.1m) | 9,305 / 280,000 / 289,305 | 33,065 / 250,000 / 283,065 | 58 / 47 | 1709 / 1513 | 7 | 0.2240 | 2.16% |
+| scenario_36 | 22435 | signal_hold (27.0m) | 6,410 / 280,000 / 286,410 | 30,170 / 250,000 / 280,170 | 58 / 47 | 1709 / 1513 | 7 | 0.2259 | 2.18% |
+| scenario_37 | 04183 | signal_hold (19.3m) | 13,220 / 280,000 / 293,220 | 36,980 / 250,000 / 286,980 | 60 / 49 | 1777 / 1581 | 7 | 0.2276 | 2.13% |
+| scenario_38 | 12397 | signal_hold (21.4m) | 22,955 / 280,000 / 302,955 | 46,715 / 250,000 / 296,715 | 58 / 47 | 1709 / 1513 | 7 | 0.2381 | 2.06% |
+| scenario_39 | 12397 | signal_hold (17.3m) | 10,355 / 280,000 / 290,355 | 34,115 / 250,000 / 284,115 | 58 / 47 | 1709 / 1513 | 7 | 0.2493 | 2.15% |
+| scenario_40 | 04183 | signal_hold (23.3m) | 16,070 / 280,000 / 296,070 | 39,830 / 250,000 / 289,830 | 62 / 51 | 1791 / 1595 | 7 | 0.2275 | 2.11% |
+| scenario_41 | 22435 | signal_hold (12.5m) | 4,250 / 280,000 / 284,250 | 28,010 / 250,000 / 278,010 | 58 / 47 | 1709 / 1513 | 7 | 0.2247 | 2.20% |
+| scenario_42 | 22435 | signal_hold (12.3m) | 5,630 / 280,000 / 285,630 | 29,390 / 250,000 / 279,390 | 58 / 47 | 1709 / 1513 | 7 | 0.2236 | 2.18% |
+| scenario_43 | 12397 | signal_hold (22.1m) | 36,665 / 280,000 / 316,665 | 60,425 / 250,000 / 310,425 | 58 / 47 | 1709 / 1513 | 7 | 0.2253 | 1.97% |
+| scenario_44 | 04183 | signal_hold (23.7m) | 12,080 / 280,000 / 292,080 | 35,840 / 250,000 / 285,840 | 58 / 47 | 1769 / 1573 | 7 | 0.2253 | 2.14% |
+| scenario_45 | 22435 | signal_hold (22.2m) | 5,690 / 280,000 / 285,690 | 29,450 / 250,000 / 279,450 | 58 / 47 | 1709 / 1513 | 7 | 0.2234 | 2.18% |
+| scenario_46 | 22435 | signal_hold (17.1m) | 17,210 / 280,000 / 297,210 | 40,970 / 250,000 / 290,970 | 58 / 47 | 1709 / 1513 | 7 | 0.2251 | 2.10% |
+| scenario_47 | 12397 | signal_hold (21.8m) | 32,480 / 280,000 / 312,480 | 56,240 / 250,000 / 306,240 | 58 / 47 | 1709 / 1513 | 7 | 0.2278 | 2.00% |
+| scenario_48 | 22435 | signal_hold (23.6m) | 14,330 / 280,000 / 294,330 | 38,090 / 250,000 / 288,090 | 58 / 47 | 1709 / 1513 | 7 | 0.2264 | 2.12% |
+| scenario_49 | 12419 | signal_hold (22.2m) | 15,530 / 280,000 / 295,530 | 27,290 / 250,000 / 277,290 | 58 / 47 | 1709 / 1513 | 7 | 0.3971 | 6.17% |
+| scenario_50 | 22435 | signal_hold (20.3m) | 8,780 / 280,000 / 288,780 | 32,540 / 250,000 / 282,540 | 58 / 47 | 1709 / 1513 | 7 | 0.2583 | 2.16% |
 
 ---
 

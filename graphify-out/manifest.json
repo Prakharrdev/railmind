@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "data/evaluation/benchmark_scenarios.json": {
-    "mtime": 1781352694.2268538,
-    "ast_hash": "58dab3650b6c6321db9e121673008a57",
+    "mtime": 1781359280.3102863,
+    "ast_hash": "6743752b60be2484c3629fcca6e07197",
     "semantic_hash": ""
   },
   "data/processed/corridor.json": {
@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "evaluation/analyze_results.py": {
-    "mtime": 1781358075.6288338,
-    "ast_hash": "3bfd5746d2b3439b736d2f0a5efb0668",
+    "mtime": 1781359167.7243705,
+    "ast_hash": "d28ecf779431153c0c47762bd261f1b7",
     "semantic_hash": ""
   },
   "evaluation/run_benchmark.py": {
-    "mtime": 1781357907.2101648,
-    "ast_hash": "c5ea15b5888ed7fa6aed59202231aca5",
+    "mtime": 1781359123.2144272,
+    "ast_hash": "96d7d3446fc4ce165fdb8bece65b85bf",
     "semantic_hash": ""
   },
   "frontend/eslint.config.js": {
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   "simulator/env.py": {
-    "mtime": 1781281668.5046923,
-    "ast_hash": "4f316d22dfb33fe264fe4171138f8684",
+    "mtime": 1781359193.5519235,
+    "ast_hash": "6af8807cb991d76d16be0b6bb18f109f",
     "semantic_hash": ""
   },
   "simulator/tests/__init__.py": {
@@ -390,28 +390,33 @@
     "semantic_hash": ""
   },
   "evaluation/report/benchmark_report.md": {
-    "mtime": 1781358109.6477106,
-    "ast_hash": "726d9cbedcdd249370ab59915fb4a3cb",
+    "mtime": 1781359307.7275836,
+    "ast_hash": "9bd4de7b40657fb27b82a072b46d0e5c",
     "semantic_hash": ""
   },
   "evaluation/generate_html_report.py": {
-    "mtime": 1781358092.6063364,
-    "ast_hash": "77719bbaea13b67d0653c1a7f378c813",
+    "mtime": 1781359301.159478,
+    "ast_hash": "01413f4226a094f60493ea84bf3e0b38",
     "semantic_hash": ""
   },
   "evaluation/report/benchmark_dashboard.html": {
-    "mtime": 1781358113.747941,
-    "ast_hash": "dfd22fde5433ed94aa77ff486b33bef2",
+    "mtime": 1781359307.782907,
+    "ast_hash": "07d56af94089d6c4b8d0e1a34622da18",
     "semantic_hash": ""
   },
   "evaluation/report/archive/benchmark_dashboard_2026_06_13_greedy_explainability.html": {
-    "mtime": 1781358113.748094,
-    "ast_hash": "dfd22fde5433ed94aa77ff486b33bef2",
+    "mtime": 1781359307.7831511,
+    "ast_hash": "07d56af94089d6c4b8d0e1a34622da18",
     "semantic_hash": ""
   },
   "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md": {
-    "mtime": 1781358109.6479337,
-    "ast_hash": "726d9cbedcdd249370ab59915fb4a3cb",
+    "mtime": 1781359307.7277622,
+    "ast_hash": "9bd4de7b40657fb27b82a072b46d0e5c",
+    "semantic_hash": ""
+  },
+  "evaluation/scenario_validation.py": {
+    "mtime": 1781359100.6207929,
+    "ast_hash": "9a63250ea470636a1e09440ef585e1b9",
     "semantic_hash": ""
   }
 }
