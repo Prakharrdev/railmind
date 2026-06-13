@@ -1,0 +1,702 @@
+[
+  {
+    "scenario_id": "scenario_1",
+    "disruptions": [
+      {
+        "disruption_id": "scen_1_disp",
+        "train_id": "04183",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 12.2,
+        "start_time": 884.5,
+        "end_time": 896.7,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_2",
+    "disruptions": [
+      {
+        "disruption_id": "scen_2_disp",
+        "train_id": "12004",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 14.5,
+        "start_time": 884.2,
+        "end_time": 898.7,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_3",
+    "disruptions": [
+      {
+        "disruption_id": "scen_3_disp",
+        "train_id": "04184",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 24.8,
+        "start_time": 872.7,
+        "end_time": 897.5,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_4",
+    "disruptions": [
+      {
+        "disruption_id": "scen_4_disp",
+        "train_id": "12419",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 18.4,
+        "start_time": 841.8,
+        "end_time": 860.1999999999999,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_5",
+    "disruptions": [
+      {
+        "disruption_id": "scen_5_disp",
+        "train_id": "12003",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 14.7,
+        "start_time": 876.1,
+        "end_time": 890.8000000000001,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_6",
+    "disruptions": [
+      {
+        "disruption_id": "scen_6_disp",
+        "train_id": "14164",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 14.0,
+        "start_time": 879.0,
+        "end_time": 893.0,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_7",
+    "disruptions": [
+      {
+        "disruption_id": "scen_7_disp",
+        "train_id": "14164",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 18.4,
+        "start_time": 867.0,
+        "end_time": 885.4,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_8",
+    "disruptions": [
+      {
+        "disruption_id": "scen_8_disp",
+        "train_id": "12226",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 26.2,
+        "start_time": 840.4,
+        "end_time": 866.6,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_9",
+    "disruptions": [
+      {
+        "disruption_id": "scen_9_disp",
+        "train_id": "F9001",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 13.2,
+        "start_time": 865.4,
+        "end_time": 878.6,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_10",
+    "disruptions": [
+      {
+        "disruption_id": "scen_10_disp",
+        "train_id": "12226",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 13.1,
+        "start_time": 897.4,
+        "end_time": 910.5,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_11",
+    "disruptions": [
+      {
+        "disruption_id": "scen_11_disp",
+        "train_id": "12801",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 12.0,
+        "start_time": 862.8,
+        "end_time": 874.8,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_12",
+    "disruptions": [
+      {
+        "disruption_id": "scen_12_disp",
+        "train_id": "12802",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 26.9,
+        "start_time": 876.2,
+        "end_time": 903.1,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_13",
+    "disruptions": [
+      {
+        "disruption_id": "scen_13_disp",
+        "train_id": "F9001",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 10.9,
+        "start_time": 867.6,
+        "end_time": 878.5,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_14",
+    "disruptions": [
+      {
+        "disruption_id": "scen_14_disp",
+        "train_id": "12424",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 29.5,
+        "start_time": 862.7,
+        "end_time": 892.2,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_15",
+    "disruptions": [
+      {
+        "disruption_id": "scen_15_disp",
+        "train_id": "14164",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 15.9,
+        "start_time": 877.7,
+        "end_time": 893.6,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_16",
+    "disruptions": [
+      {
+        "disruption_id": "scen_16_disp",
+        "train_id": "F9004",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 27.2,
+        "start_time": 874.6,
+        "end_time": 901.8000000000001,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_17",
+    "disruptions": [
+      {
+        "disruption_id": "scen_17_disp",
+        "train_id": "04191",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 11.4,
+        "start_time": 879.7,
+        "end_time": 891.1,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_18",
+    "disruptions": [
+      {
+        "disruption_id": "scen_18_disp",
+        "train_id": "04415",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 15.8,
+        "start_time": 844.8,
+        "end_time": 860.5999999999999,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_19",
+    "disruptions": [
+      {
+        "disruption_id": "scen_19_disp",
+        "train_id": "12004",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 27.3,
+        "start_time": 862.8,
+        "end_time": 890.0999999999999,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_20",
+    "disruptions": [
+      {
+        "disruption_id": "scen_20_disp",
+        "train_id": "12555",
+        "disruption_type": "engine_slow",
+        "magnitude_minutes": 22.7,
+        "start_time": 861.9,
+        "end_time": 884.6,
+        "target_id": null
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_21",
+    "disruptions": [
+      {
+        "disruption_id": "scen_21_disp",
+        "train_id": "12802",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 17.1,
+        "start_time": 880.2,
+        "end_time": 897.3000000000001,
+        "target_id": "GZB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_22",
+    "disruptions": [
+      {
+        "disruption_id": "scen_22_disp",
+        "train_id": "12420",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 22.7,
+        "start_time": 872.0,
+        "end_time": 894.7,
+        "target_id": "HRS"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_23",
+    "disruptions": [
+      {
+        "disruption_id": "scen_23_disp",
+        "train_id": "22435",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 19.2,
+        "start_time": 856.2,
+        "end_time": 875.4000000000001,
+        "target_id": "PHD"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_24",
+    "disruptions": [
+      {
+        "disruption_id": "scen_24_disp",
+        "train_id": "12004",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 23.7,
+        "start_time": 890.6,
+        "end_time": 914.3000000000001,
+        "target_id": "NDLS"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_25",
+    "disruptions": [
+      {
+        "disruption_id": "scen_25_disp",
+        "train_id": "12004",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 26.4,
+        "start_time": 888.3,
+        "end_time": 914.6999999999999,
+        "target_id": "SKB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_26",
+    "disruptions": [
+      {
+        "disruption_id": "scen_26_disp",
+        "train_id": "12226",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 11.3,
+        "start_time": 894.8,
+        "end_time": 906.0999999999999,
+        "target_id": "CNB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_27",
+    "disruptions": [
+      {
+        "disruption_id": "scen_27_disp",
+        "train_id": "F9004",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 24.4,
+        "start_time": 852.8,
+        "end_time": 877.1999999999999,
+        "target_id": "ETW"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_28",
+    "disruptions": [
+      {
+        "disruption_id": "scen_28_disp",
+        "train_id": "12397",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 27.7,
+        "start_time": 878.6,
+        "end_time": 906.3000000000001,
+        "target_id": "ALJN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_29",
+    "disruptions": [
+      {
+        "disruption_id": "scen_29_disp",
+        "train_id": "12226",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 12.8,
+        "start_time": 884.7,
+        "end_time": 897.5,
+        "target_id": "PHD"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_30",
+    "disruptions": [
+      {
+        "disruption_id": "scen_30_disp",
+        "train_id": "12226",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 24.9,
+        "start_time": 865.7,
+        "end_time": 890.6,
+        "target_id": "CNB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_31",
+    "disruptions": [
+      {
+        "disruption_id": "scen_31_disp",
+        "train_id": "12397",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 17.2,
+        "start_time": 899.8,
+        "end_time": 917.0,
+        "target_id": "ALJN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_32",
+    "disruptions": [
+      {
+        "disruption_id": "scen_32_disp",
+        "train_id": "14163",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 19.9,
+        "start_time": 885.3,
+        "end_time": 905.1999999999999,
+        "target_id": "GZB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_33",
+    "disruptions": [
+      {
+        "disruption_id": "scen_33_disp",
+        "train_id": "22436",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 22.5,
+        "start_time": 887.5,
+        "end_time": 910.0,
+        "target_id": "SKB"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_34",
+    "disruptions": [
+      {
+        "disruption_id": "scen_34_disp",
+        "train_id": "12420",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 11.3,
+        "start_time": 862.9,
+        "end_time": 874.1999999999999,
+        "target_id": "ETW"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_35",
+    "disruptions": [
+      {
+        "disruption_id": "scen_35_disp",
+        "train_id": "14163",
+        "disruption_type": "platform_block",
+        "magnitude_minutes": 15.0,
+        "start_time": 873.2,
+        "end_time": 888.2,
+        "target_id": "NDLS"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_36",
+    "disruptions": [
+      {
+        "disruption_id": "scen_36_disp",
+        "train_id": "04184",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 24.4,
+        "start_time": 880.9,
+        "end_time": 905.3,
+        "target_id": "ETW_PHD_11_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_37",
+    "disruptions": [
+      {
+        "disruption_id": "scen_37_disp",
+        "train_id": "04415",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 15.3,
+        "start_time": 878.5,
+        "end_time": 893.8,
+        "target_id": "GZB_ALJN_17"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_38",
+    "disruptions": [
+      {
+        "disruption_id": "scen_38_disp",
+        "train_id": "12225",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 18.7,
+        "start_time": 867.2,
+        "end_time": 885.9000000000001,
+        "target_id": "ALJN_HRS_01_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_39",
+    "disruptions": [
+      {
+        "disruption_id": "scen_39_disp",
+        "train_id": "14163",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 25.2,
+        "start_time": 870.5,
+        "end_time": 895.7,
+        "target_id": "GZB_ALJN_16"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_40",
+    "disruptions": [
+      {
+        "disruption_id": "scen_40_disp",
+        "train_id": "F9003",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 22.5,
+        "start_time": 890.5,
+        "end_time": 913.0,
+        "target_id": "ETW_PHD_06"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_41",
+    "disruptions": [
+      {
+        "disruption_id": "scen_41_disp",
+        "train_id": "12420",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 14.0,
+        "start_time": 862.4,
+        "end_time": 876.4,
+        "target_id": "GZB_ALJN_15_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_42",
+    "disruptions": [
+      {
+        "disruption_id": "scen_42_disp",
+        "train_id": "14164",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 29.1,
+        "start_time": 895.3,
+        "end_time": 924.4,
+        "target_id": "NDLS_GZB_01"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_43",
+    "disruptions": [
+      {
+        "disruption_id": "scen_43_disp",
+        "train_id": "12420",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 16.5,
+        "start_time": 841.2,
+        "end_time": 857.7,
+        "target_id": "TDL_FZD_02_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_44",
+    "disruptions": [
+      {
+        "disruption_id": "scen_44_disp",
+        "train_id": "F9004",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 29.7,
+        "start_time": 888.4,
+        "end_time": 918.1,
+        "target_id": "ALJN_HRS_06"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_45",
+    "disruptions": [
+      {
+        "disruption_id": "scen_45_disp",
+        "train_id": "12302",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 14.8,
+        "start_time": 874.0,
+        "end_time": 888.8,
+        "target_id": "GZB_ALJN_09"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_46",
+    "disruptions": [
+      {
+        "disruption_id": "scen_46_disp",
+        "train_id": "12423",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 24.6,
+        "start_time": 889.0,
+        "end_time": 913.6,
+        "target_id": "ETW_PHD_12_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_47",
+    "disruptions": [
+      {
+        "disruption_id": "scen_47_disp",
+        "train_id": "04415",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 12.5,
+        "start_time": 879.6,
+        "end_time": 892.1,
+        "target_id": "ETW_PHD_08_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_48",
+    "disruptions": [
+      {
+        "disruption_id": "scen_48_disp",
+        "train_id": "22435",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 15.3,
+        "start_time": 892.3,
+        "end_time": 907.5999999999999,
+        "target_id": "SKB_ETW_07"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_49",
+    "disruptions": [
+      {
+        "disruption_id": "scen_49_disp",
+        "train_id": "12003",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 28.6,
+        "start_time": 885.3,
+        "end_time": 913.9,
+        "target_id": "PHD_CNB_06_DOWN"
+      }
+    ]
+  },
+  {
+    "scenario_id": "scenario_50",
+    "disruptions": [
+      {
+        "disruption_id": "scen_50_disp",
+        "train_id": "12003",
+        "disruption_type": "signal_hold",
+        "magnitude_minutes": 24.3,
+        "start_time": 863.9,
+        "end_time": 888.1999999999999,
+        "target_id": "PHD_CNB_11_DOWN"
+      }
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "scenario_id": "33",
+  "planner_decisions": [
+    {
+      "time": 867.0,
+      "action": "hold_train",
+      "train_id": "22435",
+      "duration": 10.0
+    },
+    {
+      "time": 887.5,
+      "action": "hold_train",
+      "train_id": "12419",
+      "duration": 20.0
+    },
+    {
+      "time": 895.0,
+      "action": "hold_train",
+      "train_id": "12419",
+      "duration": 20.0
+    },
+    {
+      "time": 902.5,
+      "action": "hold_train",
+      "train_id": "12419",
+      "duration": 20.0
+    },
+    {
+      "time": 912.0,
+      "action": "hold_train",
+      "train_id": "F9001",
+      "duration": 20.0
+    },
+    {
+      "time": 912.5,
+      "action": "hold_train",
+      "train_id": "F9001",
+      "duration": 20.0
+    },
+    {
+      "time": 914.0,
+      "action": "hold_train",
+      "train_id": "F9001",
+      "duration": 20.0
+    },
+    {
+      "time": 926.0,
+      "action": "hold_train",
+      "train_id": "12397",
+      "duration": 5.0
+    },
+    {
+      "time": 929.0,
+      "action": "hold_train",
+      "train_id": "12397",
+      "duration": 5.0
+    },
+    {
+      "time": 956.0,
+      "action": "hold_train",
+      "train_id": "12423",
+      "duration": 20.0
+    }
+  ]
+}

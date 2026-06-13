@@ -1,16 +1,16 @@
 # Graph Report - railmind  (2026-06-13)
 
 ## Corpus Check
-- 68 files · ~139,289 words
+- 69 files · ~139,561 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 517 nodes · 942 edges · 78 communities (74 shown, 4 thin omitted)
+- 518 nodes · 942 edges · 79 communities (75 shown, 4 thin omitted)
 - Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 175 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6ad10dc8`
+- Built from commit: `fc1bb479`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -89,7 +89,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 4 thin omitted)
+## Communities (79 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.12
@@ -272,7 +272,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `RailwayGraph` connect `Community 0` to `Community 1`, `Community 4`, `Community 36`, `Community 72`, `Community 10`, `Community 13`, `Community 57`, `Community 63`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Why does `**RailMind**` connect `Community 7` to `Community 34`, `Community 35`, `Community 11`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 21`, `Community 22`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Are the 18 inferred relationships involving `TrainNetworkSimulator` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**
   _`TrainNetworkSimulator` has 18 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 30 inferred relationships involving `NetworkState` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**

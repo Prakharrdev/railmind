@@ -6,11 +6,22 @@ DB_PATH = "data/evaluation/results.db"
 REPORT_PATH = "evaluation/report/benchmark_report.md"
 
 def main():
-    if not os.path.exists(DB_PATH):
-        print(f"Results database {DB_PATH} not found. Please run the benchmark first.")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--experiment_dir", type=str, default=None)
+    args = parser.parse_args()
+
+    db_path = DB_PATH
+    report_path = REPORT_PATH
+    if args.experiment_dir:
+        db_path = os.path.join(args.experiment_dir, "results.db")
+        report_path = os.path.join(args.experiment_dir, "report.md")
+
+    if not os.path.exists(db_path):
+        print(f"Results database {db_path} not found.")
         return
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(db_path)
     df = pd.read_sql_query("SELECT * FROM episodes", conn)
     conn.close()
 
@@ -168,18 +179,19 @@ For every scenario, we track:
    - The distribution histogram tells us that **most scenarios see moderate 1-3% improvements**, while a select few (such as those involving long signal failures) see over **5-8% cost savings**. This confirms where conflict resolution optimization is most critical.
 """
 
-    with open(REPORT_PATH, "w") as f:
+    with open(report_path, "w") as f:
         f.write(report_content)
 
-    # Save copy to archive folder
-    archive_dir = os.path.join(os.path.dirname(REPORT_PATH), "archive")
-    os.makedirs(archive_dir, exist_ok=True)
-    archive_path = os.path.join(archive_dir, f"benchmark_report_{date_fn}_greedy_explainability.md")
-    with open(archive_path, "w") as f:
-        f.write(report_content)
+    if not args.experiment_dir:
+        # Save copy to archive folder
+        archive_dir = os.path.join(os.path.dirname(report_path), "archive")
+        os.makedirs(archive_dir, exist_ok=True)
+        archive_path = os.path.join(archive_dir, f"benchmark_report_{date_fn}_greedy_explainability.md")
+        with open(archive_path, "w") as f:
+            f.write(report_content)
+        print(f"Archived report to {archive_path}")
 
-    print(f"Benchmark analysis report successfully generated and saved to {REPORT_PATH}")
-    print(f"Archived report to {archive_path}")
+    print(f"Benchmark analysis report successfully generated and saved to {report_path}")
 
 if __name__ == "__main__":
     main()

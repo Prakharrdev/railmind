@@ -1,0 +1,26 @@
+[
+  {
+    "id": "001",
+    "name": "experiment_001_baseline_fcfs",
+    "planner": "fcfs",
+    "improvement": 0.0,
+    "date": "2026-06-13",
+    "git_commit": "fc1bb47"
+  },
+  {
+    "id": "002",
+    "name": "experiment_002_greedy_initial",
+    "planner": "greedy",
+    "improvement": 2.31,
+    "date": "2026-06-13",
+    "git_commit": "fc1bb47"
+  },
+  {
+    "id": "003",
+    "name": "experiment_003_greedy_validated",
+    "planner": "greedy",
+    "improvement": 1.59,
+    "date": "2026-06-13",
+    "git_commit": "fc1bb47"
+  }
+]

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailMind Phase 3 Benchmark Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #60a5fa, #34d399, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* KPI Container */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kpi-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .kpi-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .kpi-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .kpi-blue .kpi-value { color: var(--accent-blue); }
+        .kpi-green .kpi-value { color: var(--accent-green); }
+        .kpi-purple .kpi-value { color: var(--accent-purple); }
+        .kpi-yellow .kpi-value { color: var(--accent-yellow); }
+
+        /* Main Grid */
+        .grid-charts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-charts {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .chart-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .chart-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            min-height: 350px;
+        }
+
+        /* Table Section */
+        .table-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .table-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            max-height: 500px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-secondary);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-slow { background-color: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .badge-block { background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .badge-hold { background-color: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+
+        .text-green { color: var(--accent-green); font-weight: 600; }
+        .text-secondary { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RailMind Phase 3 Benchmark Dashboard — 2026-06-13</h1>
+        <p style="margin-bottom: 0.5rem;"><strong>Improvements</strong>: Implemented scenario validation layer to ensure high-impact, active disruptions. Tracked unique conflicts, raw conflict records, and planner interventions distribution.</p>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">Interactive evaluation of Greedy (depth=1) vs FCFS on validated active scenarios (50 Scenarios)</p>
+    </header>
+
+    <!-- KPI Row -->
+    <div class="kpi-container">
+        <div class="kpi-card kpi-blue">
+            <div class="kpi-title">Avg FCFS Delay Cost</div>
+            <div class="kpi-value">285,431</div>
+            <div class="kpi-desc">First-come-first-served baseline</div>
+        </div>
+        <div class="kpi-card kpi-green">
+            <div class="kpi-title">Avg Greedy Delay Cost</div>
+            <div class="kpi-value">278,831</div>
+            <div class="kpi-desc">With Greedy Optimizer</div>
+        </div>
+        <div class="kpi-card kpi-green">
+            <div class="kpi-title">Mean Improvement %</div>
+            <div class="kpi-value">2.31%</div>
+            <div class="kpi-desc">Average cost reduction</div>
+        </div>
+        <div class="kpi-card kpi-yellow">
+            <div class="kpi-title">Max Improvement %</div>
+            <div class="kpi-value">8.00%</div>
+            <div class="kpi-desc">Best resolving scenario</div>
+        </div>
+        <div class="kpi-card kpi-purple">
+            <div class="kpi-title">Avg Conflicts (FCFS / Greedy)</div>
+            <div class="kpi-value">58.1 / 47.1</div>
+            <div class="kpi-desc">Mean unique conflicts per scenario</div>
+        </div>
+    </div>
+
+    <!-- Diversity Statistics Section -->
+    <div class="grid-charts" style="margin-bottom: 2rem;">
+        <div class="chart-card">
+            <h2>Distribution of Scenario Disruptions</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="disruptionDistributionChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-card">
+            <h2>Distribution of Conflicts (FCFS vs Greedy)</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="conflictDistributionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-charts" style="margin-bottom: 2rem;">
+        <div class="chart-card">
+            <h2>Planner Interventions (Actions Applied)</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="interventionsChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-card">
+            <h2>Avg Improvement by Disruption Type</h2>
+            <div class="chart-container" style="min-height: 300px;">
+                <canvas id="disruptionTypeChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Cost Comparison -->
+    <div class="chart-card" style="margin-bottom: 2.5rem;">
+        <h2>Cost Comparison by Scenario (FCFS vs Greedy)</h2>
+        <div class="chart-container" style="min-height: 400px;">
+            <canvas id="costComparisonChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Data Table Card -->
+    <div class="table-card">
+        <h2>Benchmark Execution Ledger</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Disrupted Train</th>
+                        <th>Disruption</th>
+                        <th>FCFS Delay / Conflict / Total</th>
+                        <th>Greedy Delay / Conflict / Total</th>
+                        <th>Unique Conflicts (F/G)</th>
+                        <th>Conflict Records (F/G)</th>
+                        <th>Actions Applied</th>
+                        <th>Improvement</th>
+                        <th>Avg Latency</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong>scenario_1</strong></td>
+                        <td>04183 (12.2m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">7,520 / 280,000 / 287,520</td>
+                        <td class="text-secondary">31,280 / 250,000 / 281,280</td>
+                        <td>60 / 49</td>
+                        <td>1739 / 1543</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.17%</td>
+                        <td>0.2215 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_2</strong></td>
+                        <td>12004 (14.5m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2487 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_3</strong></td>
+                        <td>04184 (24.8m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2255 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_4</strong></td>
+                        <td>12419 (18.4m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2221 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_5</strong></td>
+                        <td>12003 (14.7m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2252 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_6</strong></td>
+                        <td>14164 (14.0m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2327 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_7</strong></td>
+                        <td>14164 (18.4m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2239 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_8</strong></td>
+                        <td>12226 (26.2m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2207 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_9</strong></td>
+                        <td>F9001 (13.2m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2236 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_10</strong></td>
+                        <td>12226 (13.1m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2248 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_11</strong></td>
+                        <td>12801 (12.0m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2220 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_12</strong></td>
+                        <td>12802 (26.9m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2222 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_13</strong></td>
+                        <td>F9001 (10.9m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2232 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_14</strong></td>
+                        <td>12424 (29.5m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2240 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_15</strong></td>
+                        <td>14164 (15.9m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2233 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_16</strong></td>
+                        <td>F9004 (27.2m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2236 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_17</strong></td>
+                        <td>04191 (11.4m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2225 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_18</strong></td>
+                        <td>04415 (15.8m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2281 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_19</strong></td>
+                        <td>12004 (27.3m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2278 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_20</strong></td>
+                        <td>12555 (22.7m)</td>
+                        <td><span class="badge badge-slow">engine_slow</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2231 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_21</strong></td>
+                        <td>12802 (17.1m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.3210 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_22</strong></td>
+                        <td>12420 (22.7m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2231 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_23</strong></td>
+                        <td>22435 (19.2m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2412 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_24</strong></td>
+                        <td>12004 (23.7m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2379 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_25</strong></td>
+                        <td>12004 (26.4m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2275 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_26</strong></td>
+                        <td>12226 (11.3m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2263 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_27</strong></td>
+                        <td>F9004 (24.4m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2248 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_28</strong></td>
+                        <td>12397 (27.7m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">5,690 / 280,000 / 285,690</td>
+                        <td class="text-secondary">29,450 / 250,000 / 279,450</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.18%</td>
+                        <td>0.2242 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_29</strong></td>
+                        <td>12226 (12.8m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2252 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_30</strong></td>
+                        <td>12226 (24.9m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2255 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_31</strong></td>
+                        <td>12397 (17.2m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">21,530 / 280,000 / 301,530</td>
+                        <td class="text-secondary">45,290 / 250,000 / 295,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.07%</td>
+                        <td>0.2243 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_32</strong></td>
+                        <td>14163 (19.9m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2224 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_33</strong></td>
+                        <td>22436 (22.5m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2245 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_34</strong></td>
+                        <td>12420 (11.3m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2250 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_35</strong></td>
+                        <td>14163 (15.0m)</td>
+                        <td><span class="badge badge-block">platform_block</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2236 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_36</strong></td>
+                        <td>04184 (24.4m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2245 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_37</strong></td>
+                        <td>04415 (15.3m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">4,970 / 280,000 / 284,970</td>
+                        <td class="text-secondary">28,730 / 250,000 / 278,730</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.19%</td>
+                        <td>0.2227 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_38</strong></td>
+                        <td>12225 (18.7m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2242 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_39</strong></td>
+                        <td>14163 (25.2m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">10,730 / 280,000 / 290,730</td>
+                        <td class="text-secondary">34,490 / 250,000 / 284,490</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.15%</td>
+                        <td>0.2231 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_40</strong></td>
+                        <td>F9003 (22.5m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2232 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_41</strong></td>
+                        <td>12420 (14.0m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2249 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_42</strong></td>
+                        <td>14164 (29.1m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">23,130 / 280,000 / 303,130</td>
+                        <td class="text-secondary">28,890 / 250,000 / 278,890</td>
+                        <td>58 / 47</td>
+                        <td>1807 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">8.00%</td>
+                        <td>0.2235 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_43</strong></td>
+                        <td>12420 (16.5m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2241 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_44</strong></td>
+                        <td>F9004 (29.7m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">4,970 / 280,000 / 284,970</td>
+                        <td class="text-secondary">28,730 / 250,000 / 278,730</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.19%</td>
+                        <td>0.2230 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_45</strong></td>
+                        <td>12302 (14.8m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">27,365 / 280,000 / 307,365</td>
+                        <td class="text-secondary">51,125 / 250,000 / 301,125</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.03%</td>
+                        <td>0.2249 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_46</strong></td>
+                        <td>12423 (24.6m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2229 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_47</strong></td>
+                        <td>04415 (12.5m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2238 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_48</strong></td>
+                        <td>22435 (15.3m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">3,530 / 280,000 / 283,530</td>
+                        <td class="text-secondary">27,290 / 250,000 / 277,290</td>
+                        <td>58 / 47</td>
+                        <td>1709 / 1513</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.20%</td>
+                        <td>0.2240 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_49</strong></td>
+                        <td>12003 (28.6m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">14,075 / 280,000 / 294,075</td>
+                        <td class="text-secondary">37,835 / 250,000 / 287,835</td>
+                        <td>59 / 48</td>
+                        <td>1784 / 1588</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.12%</td>
+                        <td>0.2246 ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>scenario_50</strong></td>
+                        <td>12003 (24.3m)</td>
+                        <td><span class="badge badge-hold">signal_hold</span></td>
+                        <td class="text-secondary">10,370 / 280,000 / 290,370</td>
+                        <td class="text-secondary">34,130 / 250,000 / 284,130</td>
+                        <td>60 / 49</td>
+                        <td>1756 / 1560</td>
+                        <td><strong>7</strong></td>
+                        <td class="text-green">2.15%</td>
+                        <td>0.2244 ms</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const labels = ["scenario_1", "scenario_2", "scenario_3", "scenario_4", "scenario_5", "scenario_6", "scenario_7", "scenario_8", "scenario_9", "scenario_10", "scenario_11", "scenario_12", "scenario_13", "scenario_14", "scenario_15", "scenario_16", "scenario_17", "scenario_18", "scenario_19", "scenario_20", "scenario_21", "scenario_22", "scenario_23", "scenario_24", "scenario_25", "scenario_26", "scenario_27", "scenario_28", "scenario_29", "scenario_30", "scenario_31", "scenario_32", "scenario_33", "scenario_34", "scenario_35", "scenario_36", "scenario_37", "scenario_38", "scenario_39", "scenario_40", "scenario_41", "scenario_42", "scenario_43", "scenario_44", "scenario_45", "scenario_46", "scenario_47", "scenario_48", "scenario_49", "scenario_50"];
+        const fcfsCosts = [287520.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 285690.0, 283530.0, 283530.0, 301530.0, 283530.0, 283530.0, 283530.0, 283530.0, 283530.0, 284970.0, 283530.0, 290730.0, 283530.0, 283530.0, 303130.0, 283530.0, 284970.0, 307365.0, 283530.0, 283530.0, 283530.0, 294075.0, 290370.0];
+        const greedyCosts = [281280.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 279450.0, 277290.0, 277290.0, 295290.0, 277290.0, 277290.0, 277290.0, 277290.0, 277290.0, 278730.0, 277290.0, 284490.0, 277290.0, 277290.0, 278890.0, 277290.0, 278730.0, 301125.0, 277290.0, 277290.0, 277290.0, 287835.0, 284130.0];
+        const latencies = [0.22150937972279885, 0.24870434960272783, 0.2255097164985879, 0.2221185784340681, 0.22519550717940243, 0.2326768973337797, 0.2239256697066594, 0.22074565786169842, 0.2236173750134185, 0.2247758626860256, 0.22204826066930158, 0.22224220762533756, 0.22321942960843444, 0.22397637755299607, 0.22327083424897864, 0.2235800466830066, 0.22254114082898013, 0.2280547155047922, 0.2277817045978736, 0.22305569970437014, 0.3209526092784169, 0.22313074417373477, 0.24121038513840176, 0.23794477820047177, 0.22747085749870166, 0.22626700083492324, 0.22476993181044236, 0.2241708508032995, 0.22521128145550998, 0.22553595966504267, 0.22429406065687849, 0.22243008982817022, 0.22451162391613858, 0.22501597025742134, 0.22359796712407842, 0.22450135705488114, 0.2227074209561882, 0.2241737936856225, 0.2230670244898647, 0.22317573214725903, 0.2249296985003942, 0.2234609200968407, 0.224087291280739, 0.22298370070833093, 0.22493608000028567, 0.22294235192627335, 0.22381172214712328, 0.2240006857997893, 0.2245602387120016, 0.2244357599314147];
+
+        // 1. Cost Comparison Bar Chart
+        const ctxCost = document.getElementById('costComparisonChart').getContext('2d');
+        new Chart(ctxCost, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'FCFS Cost (Baseline)',
+                        data: fcfsCosts,
+                        backgroundColor: '#3b82f6',
+                        borderColor: '#2563eb',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Greedy Cost',
+                        data: greedyCosts,
+                        backgroundColor: '#10b981',
+                        borderColor: '#059669',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', maxRotation: 90, minRotation: 90 }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#f8fafc' } }
+                }
+            }
+        });
+
+        // 2. Disruption Distribution (Pie Chart)
+        const ctxDispDist = document.getElementById('disruptionDistributionChart').getContext('2d');
+        new Chart(ctxDispDist, {
+            type: 'pie',
+            data: {
+                labels: ['Engine Slow', 'Platform Block', 'Signal Hold'],
+                datasets: [{
+                    data: [20, 15, 15],
+                    backgroundColor: ['#ef4444', '#f59e0b', '#3b82f6'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { 
+                        position: 'right',
+                        labels: { color: '#f8fafc' } 
+                    }
+                }
+            }
+        });
+
+        // 3. Conflict Distribution (Unique Conflicts FCFS vs Greedy)
+        const ctxConfDist = document.getElementById('conflictDistributionChart').getContext('2d');
+        new Chart(ctxConfDist, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'FCFS Unique Conflicts',
+                        data: [60, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 59, 60],
+                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                        borderColor: '#ef4444',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Greedy Unique Conflicts',
+                        data: [49, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 48, 49],
+                        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                        borderColor: '#10b981',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', maxRotation: 90, minRotation: 90 }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#f8fafc' } }
+                }
+            }
+        });
+
+        // 4. Planner Interventions Distribution
+        const ctxInt = document.getElementById('interventionsChart').getContext('2d');
+        new Chart(ctxInt, {
+            type: 'bar',
+            data: {
+                labels: ['0 holds', '1-3 holds', '4-6 holds', '7-9 holds', '10+ holds'],
+                datasets: [{
+                    label: 'Scenario Count',
+                    data: [0, 0, 0, 50, 0],
+                    backgroundColor: '#8b5cf6',
+                    borderColor: '#7c3aed',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8', stepSize: 1 }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // 5. Disruption Type Averages Bar Chart
+        const ctxType = document.getElementById('disruptionTypeChart').getContext('2d');
+        new Chart(ctxType, {
+            type: 'bar',
+            data: {
+                labels: ['Engine Slow', 'Platform Block', 'Signal Hold'],
+                datasets: [{
+                    label: 'Avg Improvement %',
+                    data: [2.20, 2.19, 2.56],
+                    backgroundColor: ['#ef4444', '#f59e0b', '#3b82f6'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

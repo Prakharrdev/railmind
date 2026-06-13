@@ -6,11 +6,22 @@ DB_PATH = "data/evaluation/results.db"
 HTML_PATH = "evaluation/report/benchmark_dashboard.html"
 
 def main():
-    if not os.path.exists(DB_PATH):
-        print(f"Results database {DB_PATH} not found. Please run benchmark first.")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--experiment_dir", type=str, default=None)
+    args = parser.parse_args()
+
+    db_path = DB_PATH
+    html_path = HTML_PATH
+    if args.experiment_dir:
+        db_path = os.path.join(args.experiment_dir, "results.db")
+        html_path = os.path.join(args.experiment_dir, "report.html")
+
+    if not os.path.exists(db_path):
+        print(f"Results database {db_path} not found.")
         return
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
     # Query comparisons
@@ -648,19 +659,20 @@ def main():
 </html>
 """
 
-    os.makedirs(os.path.dirname(HTML_PATH), exist_ok=True)
-    with open(HTML_PATH, "w") as f:
+    os.makedirs(os.path.dirname(html_path), exist_ok=True)
+    with open(html_path, "w") as f:
         f.write(html_content)
 
-    # Save copy to archive folder
-    archive_dir = os.path.join(os.path.dirname(HTML_PATH), "archive")
-    os.makedirs(archive_dir, exist_ok=True)
-    archive_path = os.path.join(archive_dir, f"benchmark_dashboard_{date_fn}_greedy_explainability.html")
-    with open(archive_path, "w") as f:
-        f.write(html_content)
+    if not args.experiment_dir:
+        # Save copy to archive folder
+        archive_dir = os.path.join(os.path.dirname(html_path), "archive")
+        os.makedirs(archive_dir, exist_ok=True)
+        archive_path = os.path.join(archive_dir, f"benchmark_dashboard_{date_fn}_greedy_explainability.html")
+        with open(archive_path, "w") as f:
+            f.write(html_content)
+        print(f"Archived dashboard to {archive_path}")
 
-    print(f"Interactive dashboard successfully written to {HTML_PATH}")
-    print(f"Archived dashboard to {archive_path}")
+    print(f"Interactive dashboard successfully written to {html_path}")
 
 if __name__ == "__main__":
     main()
