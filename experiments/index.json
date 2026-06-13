@@ -54,5 +54,29 @@
     "improvement": 10.01,
     "date": "2026-06-13",
     "git_commit": "2738515"
+  },
+  {
+    "id": "008",
+    "name": "experiment_008_beam_shallow",
+    "planner": "beam_search",
+    "improvement": 10.07,
+    "date": "2026-06-13",
+    "git_commit": "80d595c"
+  },
+  {
+    "id": "009",
+    "name": "experiment_009_beam_default",
+    "planner": "beam_search",
+    "improvement": 10.07,
+    "date": "2026-06-13",
+    "git_commit": "80d595c"
+  },
+  {
+    "id": "011",
+    "name": "experiment_011_greedy_beam",
+    "planner": "beam_search",
+    "improvement": 10.07,
+    "date": "2026-06-13",
+    "git_commit": "80d595c"
   }
 ]
