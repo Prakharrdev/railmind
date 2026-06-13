@@ -2,20 +2,14 @@ import os
 import sqlite3
 import json
 
-DB_PATH = "data/evaluation/results.db"
-HTML_PATH = "evaluation/report/benchmark_dashboard.html"
-
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--experiment_dir", type=str, default=None)
+    parser.add_argument("--experiment_dir", type=str, required=True, help="Directory of the experiment (e.g. experiments/experiment_001_...)")
     args = parser.parse_args()
 
-    db_path = DB_PATH
-    html_path = HTML_PATH
-    if args.experiment_dir:
-        db_path = os.path.join(args.experiment_dir, "results.db")
-        html_path = os.path.join(args.experiment_dir, "report.html")
+    db_path = os.path.join(args.experiment_dir, "results.db")
+    html_path = os.path.join(args.experiment_dir, "report.html")
 
     if not os.path.exists(db_path):
         print(f"Results database {db_path} not found.")
@@ -662,15 +656,6 @@ def main():
     os.makedirs(os.path.dirname(html_path), exist_ok=True)
     with open(html_path, "w") as f:
         f.write(html_content)
-
-    if not args.experiment_dir:
-        # Save copy to archive folder
-        archive_dir = os.path.join(os.path.dirname(html_path), "archive")
-        os.makedirs(archive_dir, exist_ok=True)
-        archive_path = os.path.join(archive_dir, f"benchmark_dashboard_{date_fn}_greedy_explainability.html")
-        with open(archive_path, "w") as f:
-            f.write(html_content)
-        print(f"Archived dashboard to {archive_path}")
 
     print(f"Interactive dashboard successfully written to {html_path}")
 

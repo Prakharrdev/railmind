@@ -127,10 +127,110 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "evaluation/analyze_results.py",
-      "source_location": "L8",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "evaluation_analyze_results_main",
       "community": 56,
+      "norm_label": "main()"
+    },
+    {
+      "label": "experiment_runner.py",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner",
+      "community": 34,
+      "norm_label": "experiment_runner.py"
+    },
+    {
+      "label": "get_git_commit()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_get_git_commit",
+      "community": 34,
+      "norm_label": "get_git_commit()"
+    },
+    {
+      "label": "generate_experiment_id()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_generate_experiment_id",
+      "community": 34,
+      "norm_label": "generate_experiment_id()"
+    },
+    {
+      "label": "check_id_collision()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_check_id_collision",
+      "community": 34,
+      "norm_label": "check_id_collision()"
+    },
+    {
+      "label": "init_db()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_init_db",
+      "community": 34,
+      "norm_label": "init_db()"
+    },
+    {
+      "label": "save_result()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_save_result",
+      "community": 34,
+      "norm_label": "save_result()"
+    },
+    {
+      "label": "generate_scenarios()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_generate_scenarios",
+      "community": 34,
+      "norm_label": "generate_scenarios()"
+    },
+    {
+      "label": "run_fcfs()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L187",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_run_fcfs",
+      "community": 34,
+      "norm_label": "run_fcfs()"
+    },
+    {
+      "label": "run_greedy()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L208",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_run_greedy",
+      "community": 34,
+      "norm_label": "run_greedy()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L254",
+      "_origin": "ast",
+      "id": "evaluation_experiment_runner_main",
+      "community": 34,
       "norm_label": "main()"
     },
     {
@@ -147,91 +247,11 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "evaluation/generate_html_report.py",
-      "source_location": "L8",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "evaluation_generate_html_report_main",
       "community": 9,
       "norm_label": "main()"
-    },
-    {
-      "label": "run_benchmark.py",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark",
-      "community": 57,
-      "norm_label": "run_benchmark.py"
-    },
-    {
-      "label": "generate_scenarios()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_generate_scenarios",
-      "community": 57,
-      "norm_label": "generate_scenarios()"
-    },
-    {
-      "label": "init_db()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L109",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_init_db",
-      "community": 57,
-      "norm_label": "init_db()"
-    },
-    {
-      "label": "save_result()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L147",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_save_result",
-      "community": 57,
-      "norm_label": "save_result()"
-    },
-    {
-      "label": "run_scenario_fcfs()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L170",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_run_scenario_fcfs",
-      "community": 57,
-      "norm_label": "run_scenario_fcfs()"
-    },
-    {
-      "label": "run_scenario_greedy()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L192",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_run_scenario_greedy",
-      "community": 57,
-      "norm_label": "run_scenario_greedy()"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L233",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_main",
-      "community": 57,
-      "norm_label": "main()"
-    },
-    {
-      "label": "Generates 50 validated scenarios and saves them to benchmark_scenarios.json.",
-      "file_type": "rationale",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "evaluation_run_benchmark_rationale_27",
-      "community": 57,
-      "norm_label": "generates 50 validated scenarios and saves them to benchmark_scenarios.json."
     },
     {
       "label": "scenario_validation.py",
@@ -240,7 +260,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "evaluation_scenario_validation",
-      "community": 57,
+      "community": 34,
       "norm_label": "scenario_validation.py"
     },
     {
@@ -250,7 +270,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_parse_time_to_minutes",
-      "community": 57,
+      "community": 34,
       "norm_label": "parse_time_to_minutes()"
     },
     {
@@ -260,7 +280,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_get_train_movement_history",
-      "community": 57,
+      "community": 34,
       "norm_label": "get_train_movement_history()"
     },
     {
@@ -270,7 +290,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_validate_scenario",
-      "community": 57,
+      "community": 34,
       "norm_label": "validate_scenario()"
     },
     {
@@ -280,7 +300,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_8",
-      "community": 57,
+      "community": 34,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -290,7 +310,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_13",
-      "community": 57,
+      "community": 34,
       "norm_label": "simulates a default fcfs run without any disruptions.     returns:       active_"
     },
     {
@@ -300,7 +320,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_74",
-      "community": 57,
+      "community": 34,
       "norm_label": "validates a generated scenario using 3 checks:     1. disrupted train must be ac"
     },
     {
@@ -770,7 +790,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker",
-      "community": 57,
+      "community": 0,
       "norm_label": "constraintchecker"
     },
     {
@@ -780,7 +800,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_init",
-      "community": 57,
+      "community": 0,
       "norm_label": ".__init__()"
     },
     {
@@ -800,7 +820,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_minimum_headway",
-      "community": 72,
+      "community": 0,
       "norm_label": ".check_minimum_headway()"
     },
     {
@@ -820,7 +840,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_networkstate",
-      "community": 72,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -830,7 +850,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_platform_capacity",
-      "community": 72,
+      "community": 0,
       "norm_label": ".check_platform_capacity()"
     },
     {
@@ -840,7 +860,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_block_clearance",
-      "community": 72,
+      "community": 0,
       "norm_label": ".check_block_clearance()"
     },
     {
@@ -850,7 +870,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_hold_duration",
-      "community": 72,
+      "community": 0,
       "norm_label": ".check_hold_duration()"
     },
     {
@@ -860,7 +880,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_filter",
-      "community": 72,
+      "community": 0,
       "norm_label": ".filter()"
     },
     {
@@ -880,7 +900,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_11",
-      "community": 72,
+      "community": 0,
       "norm_label": "verifies safety margin between two trains.         since the simulator handles p"
     },
     {
@@ -890,7 +910,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_22",
-      "community": 72,
+      "community": 0,
       "norm_label": "deadlock check: returns false if the station platforms are completely full."
     },
     {
@@ -900,7 +920,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_32",
-      "community": 72,
+      "community": 0,
       "norm_label": "verifies if the train is at a station or loop (i.e. not mid-section) to be held."
     },
     {
@@ -910,7 +930,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_37",
-      "community": 72,
+      "community": 0,
       "norm_label": "enforces that holds are within the maximum limit (e.g. 30 minutes)."
     },
     {
@@ -920,7 +940,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_41",
-      "community": 72,
+      "community": 0,
       "norm_label": "filters a list of candidate actions, returning only those that satisfy all csp c"
     },
     {
@@ -1190,7 +1210,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_csp_checker_checker",
-      "community": 57,
+      "community": 0,
       "norm_label": "checker()"
     },
     {
@@ -1540,7 +1560,7 @@
       "source_location": "L342",
       "_origin": "ast",
       "id": "tests_test_scorer_scenarios_test_greedy_policy_selection",
-      "community": 57,
+      "community": 36,
       "norm_label": "test_greedy_policy_selection()"
     },
     {
@@ -1580,7 +1600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 57,
+      "community": 0,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -1630,7 +1650,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_train_speed",
-      "community": 63,
+      "community": 57,
       "norm_label": ".get_train_speed()"
     },
     {
@@ -1640,7 +1660,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_trainstate",
-      "community": 63,
+      "community": 57,
       "norm_label": "trainstate"
     },
     {
@@ -1650,7 +1670,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_parse_time_to_minutes",
-      "community": 63,
+      "community": 57,
       "norm_label": ".parse_time_to_minutes()"
     },
     {
@@ -1660,7 +1680,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_stop_duration",
-      "community": 63,
+      "community": 57,
       "norm_label": ".get_stop_duration()"
     },
     {
@@ -1670,7 +1690,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_project_train_occupancies",
-      "community": 63,
+      "community": 57,
       "norm_label": ".project_train_occupancies()"
     },
     {
@@ -1680,7 +1700,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_scheduled_departure",
-      "community": 63,
+      "community": 57,
       "norm_label": "._get_scheduled_departure()"
     },
     {
@@ -1710,7 +1730,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_26",
-      "community": 63,
+      "community": 57,
       "norm_label": "calculate effective speed of a train on a section considering max speeds and dis"
     },
     {
@@ -1720,7 +1740,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_57",
-      "community": 63,
+      "community": 57,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -1730,7 +1750,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_62",
-      "community": 63,
+      "community": 57,
       "norm_label": "get scheduled stop duration at a station in minutes."
     },
     {
@@ -1740,7 +1760,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_78",
-      "community": 63,
+      "community": 57,
       "norm_label": "project block occupancy intervals (block_id, start_time, end_time) over next 30"
     },
     {
@@ -1750,7 +1770,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_208",
-      "community": 63,
+      "community": 57,
       "norm_label": "get scheduled departure time in minutes since midnight."
     },
     {
@@ -2030,7 +2050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_disruption_injector",
-      "community": 57,
+      "community": 34,
       "norm_label": "disruption_injector.py"
     },
     {
@@ -2040,7 +2060,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruption",
-      "community": 57,
+      "community": 34,
       "norm_label": "disruption"
     },
     {
@@ -2050,7 +2070,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruption_is_active",
-      "community": 57,
+      "community": 34,
       "norm_label": ".is_active()"
     },
     {
@@ -2080,7 +2100,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_inject_disruption",
-      "community": 57,
+      "community": 34,
       "norm_label": ".inject_disruption()"
     },
     {
@@ -2090,7 +2110,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_get_active_disruptions",
-      "community": 57,
+      "community": 34,
       "norm_label": ".get_active_disruptions()"
     },
     {
@@ -2390,7 +2410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_generate_marey_chart",
-      "community": 57,
+      "community": 34,
       "norm_label": "generate_marey_chart.py"
     },
     {
@@ -2400,7 +2420,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_generate_marey_chart_main",
-      "community": 57,
+      "community": 34,
       "norm_label": "main()"
     },
     {
@@ -2410,7 +2430,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "tests_generate_marey_chart_generate_html",
-      "community": 57,
+      "community": 34,
       "norm_label": "generate_html()"
     },
     {
@@ -2620,7 +2640,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_3_conflict_detection",
-      "community": 0,
+      "community": 1,
       "norm_label": "run_test_3_conflict_detection()"
     },
     {
@@ -2670,7 +2690,7 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "simulator_tests_validate_phase2_py_networkstate",
-      "community": 0,
+      "community": 1,
       "norm_label": "networkstate"
     },
     {
@@ -2740,7 +2760,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_93",
-      "community": 0,
+      "community": 1,
       "norm_label": "test 3: verify conflict detector finds overlaps correctly."
     },
     {
@@ -3860,7 +3880,7 @@
       "source_location": "L738",
       "_origin": "ast",
       "id": "railmind_prd_v2_0_10_api_specifications",
-      "community": 34,
+      "community": 7,
       "norm_label": "**10  api specifications**"
     },
     {
@@ -3870,7 +3890,7 @@
       "source_location": "L742",
       "_origin": "ast",
       "id": "railmind_prd_v2_0_10_1_rest_endpoints",
-      "community": 34,
+      "community": 7,
       "norm_label": "**10.1  rest endpoints**"
     },
     {
@@ -3880,7 +3900,7 @@
       "source_location": "L757",
       "_origin": "ast",
       "id": "railmind_prd_v2_0_10_2_websocket_protocol",
-      "community": 34,
+      "community": 7,
       "norm_label": "**10.2  websocket protocol**"
     },
     {
@@ -4894,246 +4914,6 @@
       "norm_label": "in an interview"
     },
     {
-      "label": "benchmark_report_2026_06_13_greedy_explainability.md",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability",
-      "community": 64,
-      "norm_label": "benchmark_report_2026_06_13_greedy_explainability.md"
-    },
-    {
-      "label": "Phase 3 Benchmark Report \u2014 2026-06-13",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "community": 64,
-      "norm_label": "phase 3 benchmark report \u2014 2026-06-13"
-    },
-    {
-      "label": "Summary Metrics",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_summary_metrics",
-      "community": 64,
-      "norm_label": "summary metrics"
-    },
-    {
-      "label": "Scenario Outcomes",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_scenario_outcomes",
-      "community": 64,
-      "norm_label": "scenario outcomes"
-    },
-    {
-      "label": "Diversity Statistics",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_diversity_statistics",
-      "community": 64,
-      "norm_label": "diversity statistics"
-    },
-    {
-      "label": "1. Distribution of Scenario Disruptions",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_1_distribution_of_scenario_disruptions",
-      "community": 64,
-      "norm_label": "1. distribution of scenario disruptions"
-    },
-    {
-      "label": "2. Distribution of Conflicts",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_2_distribution_of_conflicts",
-      "community": 64,
-      "norm_label": "2. distribution of conflicts"
-    },
-    {
-      "label": "3. Distribution of Planner Interventions",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_3_distribution_of_planner_interventions",
-      "community": 64,
-      "norm_label": "3. distribution of planner interventions"
-    },
-    {
-      "label": "Disruption Type Performance Summary",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_disruption_type_performance_summary",
-      "community": 64,
-      "norm_label": "disruption type performance summary"
-    },
-    {
-      "label": "Improvement Distribution (Histogram Buckets)",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_improvement_distribution_histogram_buckets",
-      "community": 64,
-      "norm_label": "improvement distribution (histogram buckets)"
-    },
-    {
-      "label": "Detailed Results Ledger",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_detailed_results_ledger",
-      "community": 64,
-      "norm_label": "detailed results ledger"
-    },
-    {
-      "label": "Analysis & Findings",
-      "file_type": "document",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L130",
-      "_origin": "ast",
-      "id": "archive_benchmark_report_2026_06_13_greedy_explainability_analysis_findings",
-      "community": 64,
-      "norm_label": "analysis & findings"
-    },
-    {
-      "label": "benchmark_report.md",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "report_benchmark_report",
-      "community": 66,
-      "norm_label": "benchmark_report.md"
-    },
-    {
-      "label": "Phase 3 Benchmark Report \u2014 2026-06-13",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "community": 66,
-      "norm_label": "phase 3 benchmark report \u2014 2026-06-13"
-    },
-    {
-      "label": "Summary Metrics",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "report_benchmark_report_summary_metrics",
-      "community": 66,
-      "norm_label": "summary metrics"
-    },
-    {
-      "label": "Scenario Outcomes",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "report_benchmark_report_scenario_outcomes",
-      "community": 66,
-      "norm_label": "scenario outcomes"
-    },
-    {
-      "label": "Diversity Statistics",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "report_benchmark_report_diversity_statistics",
-      "community": 66,
-      "norm_label": "diversity statistics"
-    },
-    {
-      "label": "1. Distribution of Scenario Disruptions",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "report_benchmark_report_1_distribution_of_scenario_disruptions",
-      "community": 66,
-      "norm_label": "1. distribution of scenario disruptions"
-    },
-    {
-      "label": "2. Distribution of Conflicts",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "report_benchmark_report_2_distribution_of_conflicts",
-      "community": 66,
-      "norm_label": "2. distribution of conflicts"
-    },
-    {
-      "label": "3. Distribution of Planner Interventions",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "report_benchmark_report_3_distribution_of_planner_interventions",
-      "community": 66,
-      "norm_label": "3. distribution of planner interventions"
-    },
-    {
-      "label": "Disruption Type Performance Summary",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "report_benchmark_report_disruption_type_performance_summary",
-      "community": 66,
-      "norm_label": "disruption type performance summary"
-    },
-    {
-      "label": "Improvement Distribution (Histogram Buckets)",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "report_benchmark_report_improvement_distribution_histogram_buckets",
-      "community": 66,
-      "norm_label": "improvement distribution (histogram buckets)"
-    },
-    {
-      "label": "Detailed Results Ledger",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "report_benchmark_report_detailed_results_ledger",
-      "community": 66,
-      "norm_label": "detailed results ledger"
-    },
-    {
-      "label": "Analysis & Findings",
-      "file_type": "document",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L130",
-      "_origin": "ast",
-      "id": "report_benchmark_report_analysis_findings",
-      "community": 66,
-      "norm_label": "analysis & findings"
-    },
-    {
       "label": "reportcreation.md",
       "file_type": "document",
       "source_file": "evaluation/report/reportcreation.md",
@@ -5142,6 +4922,366 @@
       "id": "report_reportcreation",
       "community": 78,
       "norm_label": "reportcreation.md"
+    },
+    {
+      "label": "report.md",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report",
+      "community": 63,
+      "norm_label": "report.md"
+    },
+    {
+      "label": "Phase 3 Benchmark Report \u2014 2026-06-13",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "community": 63,
+      "norm_label": "phase 3 benchmark report \u2014 2026-06-13"
+    },
+    {
+      "label": "Summary Metrics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_summary_metrics",
+      "community": 63,
+      "norm_label": "summary metrics"
+    },
+    {
+      "label": "Scenario Outcomes",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_scenario_outcomes",
+      "community": 63,
+      "norm_label": "scenario outcomes"
+    },
+    {
+      "label": "Diversity Statistics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_diversity_statistics",
+      "community": 63,
+      "norm_label": "diversity statistics"
+    },
+    {
+      "label": "1. Distribution of Scenario Disruptions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_1_distribution_of_scenario_disruptions",
+      "community": 63,
+      "norm_label": "1. distribution of scenario disruptions"
+    },
+    {
+      "label": "2. Distribution of Conflicts",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_2_distribution_of_conflicts",
+      "community": 63,
+      "norm_label": "2. distribution of conflicts"
+    },
+    {
+      "label": "3. Distribution of Planner Interventions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_3_distribution_of_planner_interventions",
+      "community": 63,
+      "norm_label": "3. distribution of planner interventions"
+    },
+    {
+      "label": "Disruption Type Performance Summary",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_disruption_type_performance_summary",
+      "community": 63,
+      "norm_label": "disruption type performance summary"
+    },
+    {
+      "label": "Improvement Distribution (Histogram Buckets)",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_improvement_distribution_histogram_buckets",
+      "community": 63,
+      "norm_label": "improvement distribution (histogram buckets)"
+    },
+    {
+      "label": "Detailed Results Ledger",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_detailed_results_ledger",
+      "community": 63,
+      "norm_label": "detailed results ledger"
+    },
+    {
+      "label": "Analysis & Findings",
+      "file_type": "document",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L130",
+      "_origin": "ast",
+      "id": "experiment_001_baseline_fcfs_report_analysis_findings",
+      "community": 63,
+      "norm_label": "analysis & findings"
+    },
+    {
+      "label": "report.md",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report",
+      "community": 64,
+      "norm_label": "report.md"
+    },
+    {
+      "label": "Phase 3 Benchmark Report \u2014 2026-06-13",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "community": 64,
+      "norm_label": "phase 3 benchmark report \u2014 2026-06-13"
+    },
+    {
+      "label": "Summary Metrics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_summary_metrics",
+      "community": 64,
+      "norm_label": "summary metrics"
+    },
+    {
+      "label": "Scenario Outcomes",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_scenario_outcomes",
+      "community": 64,
+      "norm_label": "scenario outcomes"
+    },
+    {
+      "label": "Diversity Statistics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_diversity_statistics",
+      "community": 64,
+      "norm_label": "diversity statistics"
+    },
+    {
+      "label": "1. Distribution of Scenario Disruptions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_1_distribution_of_scenario_disruptions",
+      "community": 64,
+      "norm_label": "1. distribution of scenario disruptions"
+    },
+    {
+      "label": "2. Distribution of Conflicts",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_2_distribution_of_conflicts",
+      "community": 64,
+      "norm_label": "2. distribution of conflicts"
+    },
+    {
+      "label": "3. Distribution of Planner Interventions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_3_distribution_of_planner_interventions",
+      "community": 64,
+      "norm_label": "3. distribution of planner interventions"
+    },
+    {
+      "label": "Disruption Type Performance Summary",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_disruption_type_performance_summary",
+      "community": 64,
+      "norm_label": "disruption type performance summary"
+    },
+    {
+      "label": "Improvement Distribution (Histogram Buckets)",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_improvement_distribution_histogram_buckets",
+      "community": 64,
+      "norm_label": "improvement distribution (histogram buckets)"
+    },
+    {
+      "label": "Detailed Results Ledger",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_detailed_results_ledger",
+      "community": 64,
+      "norm_label": "detailed results ledger"
+    },
+    {
+      "label": "Analysis & Findings",
+      "file_type": "document",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L130",
+      "_origin": "ast",
+      "id": "experiment_002_greedy_initial_report_analysis_findings",
+      "community": 64,
+      "norm_label": "analysis & findings"
+    },
+    {
+      "label": "report.md",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report",
+      "community": 66,
+      "norm_label": "report.md"
+    },
+    {
+      "label": "Phase 3 Benchmark Report \u2014 2026-06-13",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "community": 66,
+      "norm_label": "phase 3 benchmark report \u2014 2026-06-13"
+    },
+    {
+      "label": "Summary Metrics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_summary_metrics",
+      "community": 66,
+      "norm_label": "summary metrics"
+    },
+    {
+      "label": "Scenario Outcomes",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_scenario_outcomes",
+      "community": 66,
+      "norm_label": "scenario outcomes"
+    },
+    {
+      "label": "Diversity Statistics",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_diversity_statistics",
+      "community": 66,
+      "norm_label": "diversity statistics"
+    },
+    {
+      "label": "1. Distribution of Scenario Disruptions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_1_distribution_of_scenario_disruptions",
+      "community": 66,
+      "norm_label": "1. distribution of scenario disruptions"
+    },
+    {
+      "label": "2. Distribution of Conflicts",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_2_distribution_of_conflicts",
+      "community": 66,
+      "norm_label": "2. distribution of conflicts"
+    },
+    {
+      "label": "3. Distribution of Planner Interventions",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_3_distribution_of_planner_interventions",
+      "community": 66,
+      "norm_label": "3. distribution of planner interventions"
+    },
+    {
+      "label": "Disruption Type Performance Summary",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_disruption_type_performance_summary",
+      "community": 66,
+      "norm_label": "disruption type performance summary"
+    },
+    {
+      "label": "Improvement Distribution (Histogram Buckets)",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_improvement_distribution_histogram_buckets",
+      "community": 66,
+      "norm_label": "improvement distribution (histogram buckets)"
+    },
+    {
+      "label": "Detailed Results Ledger",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_detailed_results_ledger",
+      "community": 66,
+      "norm_label": "detailed results ledger"
+    },
+    {
+      "label": "Analysis & Findings",
+      "file_type": "document",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L130",
+      "_origin": "ast",
+      "id": "experiment_003_greedy_validated_report_analysis_findings",
+      "community": 66,
+      "norm_label": "analysis & findings"
     },
     {
       "label": "README.md",
@@ -5228,478 +5368,520 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_check_id_collision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_generate_experiment_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_generate_scenarios",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_get_git_commit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_run_fcfs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_run_greedy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_experiment_runner_save_result",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_scenario_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_scenario_validation_get_train_movement_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "evaluation_scenario_validation_validate_scenario",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_csp_checker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_csp_checker_constraintchecker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_greedy_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_greedy_policy_greedypolicy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_scorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "optimizer_scorer_statescorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_conflict_detector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_conflict_detector_conflict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_conflict_detector_conflictdetector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_disruption_injector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_disruption_injector_disruption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_env_action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner",
+      "target": "simulator_env_trainnetworksimulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_get_git_commit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_generate_experiment_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_check_id_collision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L351",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_save_result",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_generate_scenarios",
+      "target": "evaluation_scenario_validation_get_train_movement_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_generate_scenarios",
+      "target": "evaluation_scenario_validation_validate_scenario",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_generate_scenarios",
+      "target": "simulator_env_trainnetworksimulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L299",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_generate_scenarios",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L320",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_run_fcfs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_fcfs",
+      "target": "optimizer_scorer_statescorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_fcfs",
+      "target": "simulator_conflict_detector_conflictdetector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_fcfs",
+      "target": "simulator_disruption_injector_disruption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_fcfs",
+      "target": "simulator_env_trainnetworksimulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_main",
+      "target": "evaluation_experiment_runner_run_greedy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "optimizer_csp_checker_constraintchecker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L215",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "optimizer_greedy_policy_greedypolicy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "optimizer_scorer_statescorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "simulator_conflict_detector_conflictdetector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "simulator_disruption_injector_disruption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/experiment_runner.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "evaluation_experiment_runner_run_greedy",
+      "target": "simulator_env_trainnetworksimulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "evaluation/generate_html_report.py",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_generate_html_report",
       "target": "evaluation_generate_html_report_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_generate_scenarios"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L86",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_init_db"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L179",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L126",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_run_scenario_fcfs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L145",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_run_scenario_greedy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L109",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_run_benchmark_save_result"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_scenario_validation"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_scenario_validation_get_train_movement_history"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "evaluation_scenario_validation_validate_scenario"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_csp_checker"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_csp_checker_constraintchecker"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_greedy_policy"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_greedy_policy_greedypolicy"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_scorer"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_scorer_statescorebreakdown"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "optimizer_scorer_statescorer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_conflict_detector"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_conflict_detector_conflict"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_conflict_detector_conflictdetector"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_disruption_injector"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_disruption_injector_disruption"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_env_action"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark",
-      "target": "simulator_env_trainnetworksimulator"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_generate_scenarios",
-      "target": "evaluation_scenario_validation_get_train_movement_history"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_generate_scenarios",
-      "target": "evaluation_scenario_validation_validate_scenario"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_generate_scenarios",
-      "target": "simulator_env_trainnetworksimulator"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L181",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_main",
-      "target": "evaluation_run_benchmark_generate_scenarios"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_rationale_27",
-      "target": "evaluation_run_benchmark_generate_scenarios"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_main",
-      "target": "evaluation_run_benchmark_init_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L211",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_main",
-      "target": "evaluation_run_benchmark_save_result"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L198",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_main",
-      "target": "evaluation_run_benchmark_run_scenario_fcfs"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_fcfs",
-      "target": "optimizer_scorer_statescorer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L131",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_fcfs",
-      "target": "simulator_conflict_detector_conflictdetector"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L129",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_fcfs",
-      "target": "simulator_disruption_injector_disruption"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_fcfs",
-      "target": "simulator_env_trainnetworksimulator"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L202",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_main",
-      "target": "evaluation_run_benchmark_run_scenario_greedy"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L150",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "optimizer_csp_checker_constraintchecker"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L152",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "optimizer_greedy_policy_greedypolicy"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "optimizer_scorer_statescorer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L153",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "simulator_conflict_detector_conflictdetector"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L148",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "simulator_disruption_injector_disruption"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/run_benchmark.py",
-      "source_location": "L146",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_run_benchmark_run_scenario_greedy",
-      "target": "simulator_env_trainnetworksimulator"
     },
     {
       "relation": "contains",
@@ -14693,222 +14875,332 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13"
+      "source": "experiment_001_baseline_fcfs_report",
+      "target": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L111",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L130",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_analysis_findings"
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_analysis_findings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L48",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_detailed_results_ledger"
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_detailed_results_ledger",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_disruption_type_performance_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_disruption_type_performance_summary"
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_diversity_statistics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L23",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
+      "source_location": "L53",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_diversity_statistics"
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_improvement_distribution_histogram_buckets",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_improvement_distribution_histogram_buckets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_phase_3_benchmark_report_2026_06_13",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_summary_metrics"
+      "source": "experiment_001_baseline_fcfs_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_001_baseline_fcfs_report_summary_metrics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_summary_metrics",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_scenario_outcomes"
+      "source": "experiment_001_baseline_fcfs_report_summary_metrics",
+      "target": "experiment_001_baseline_fcfs_report_scenario_outcomes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_diversity_statistics",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_1_distribution_of_scenario_disruptions"
+      "source": "experiment_001_baseline_fcfs_report_diversity_statistics",
+      "target": "experiment_001_baseline_fcfs_report_1_distribution_of_scenario_disruptions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L30",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_diversity_statistics",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_2_distribution_of_conflicts"
+      "source": "experiment_001_baseline_fcfs_report_diversity_statistics",
+      "target": "experiment_001_baseline_fcfs_report_2_distribution_of_conflicts",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md",
+      "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L34",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "archive_benchmark_report_2026_06_13_greedy_explainability_diversity_statistics",
-      "target": "archive_benchmark_report_2026_06_13_greedy_explainability_3_distribution_of_planner_interventions"
+      "source": "experiment_001_baseline_fcfs_report_diversity_statistics",
+      "target": "experiment_001_baseline_fcfs_report_3_distribution_of_planner_interventions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report",
-      "target": "report_benchmark_report_phase_3_benchmark_report_2026_06_13"
+      "source": "experiment_002_greedy_initial_report",
+      "target": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L111",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L130",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_analysis_findings"
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_analysis_findings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L48",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_detailed_results_ledger"
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_detailed_results_ledger",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_disruption_type_performance_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_disruption_type_performance_summary"
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_diversity_statistics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L23",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L53",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_diversity_statistics"
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_improvement_distribution_histogram_buckets",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_improvement_distribution_histogram_buckets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_phase_3_benchmark_report_2026_06_13",
-      "target": "report_benchmark_report_summary_metrics"
+      "source": "experiment_002_greedy_initial_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_002_greedy_initial_report_summary_metrics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
-      "source_location": "L15",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
+      "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_summary_metrics",
-      "target": "report_benchmark_report_scenario_outcomes"
+      "source": "experiment_002_greedy_initial_report_summary_metrics",
+      "target": "experiment_002_greedy_initial_report_scenario_outcomes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_diversity_statistics",
-      "target": "report_benchmark_report_1_distribution_of_scenario_disruptions"
+      "source": "experiment_002_greedy_initial_report_diversity_statistics",
+      "target": "experiment_002_greedy_initial_report_1_distribution_of_scenario_disruptions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L30",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_diversity_statistics",
-      "target": "report_benchmark_report_2_distribution_of_conflicts"
+      "source": "experiment_002_greedy_initial_report_diversity_statistics",
+      "target": "experiment_002_greedy_initial_report_2_distribution_of_conflicts",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "evaluation/report/benchmark_report.md",
+      "source_file": "experiments/experiment_002_greedy_initial/report.md",
       "source_location": "L34",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "report_benchmark_report_diversity_statistics",
-      "target": "report_benchmark_report_3_distribution_of_planner_interventions"
+      "source": "experiment_002_greedy_initial_report_diversity_statistics",
+      "target": "experiment_002_greedy_initial_report_3_distribution_of_planner_interventions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report",
+      "target": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_analysis_findings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_detailed_results_ledger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_disruption_type_performance_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_diversity_statistics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_improvement_distribution_histogram_buckets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_phase_3_benchmark_report_2026_06_13",
+      "target": "experiment_003_greedy_validated_report_summary_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_summary_metrics",
+      "target": "experiment_003_greedy_validated_report_scenario_outcomes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_diversity_statistics",
+      "target": "experiment_003_greedy_validated_report_1_distribution_of_scenario_disruptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_diversity_statistics",
+      "target": "experiment_003_greedy_validated_report_2_distribution_of_conflicts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "experiments/experiment_003_greedy_validated/report.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "experiment_003_greedy_validated_report_diversity_statistics",
+      "target": "experiment_003_greedy_validated_report_3_distribution_of_planner_interventions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14942,5 +15234,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "fc1bb479e27176adbc08147139c4cd5d74f72abb"
+  "built_at_commit": "1e51bab03a8f6bf1226dce813c587d4b73f4c973"
 }
