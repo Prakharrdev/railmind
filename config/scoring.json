@@ -1,0 +1,12 @@
+{
+  "class_weights": {
+    "rajdhani_vande_bharat": 1.2,
+    "shatabdi": 1.15,
+    "premium_mail_express": 1.1,
+    "superfast": 1.05,
+    "ordinary_express": 1.0,
+    "passenger_memu": 0.95,
+    "freight": 0.1
+  },
+  "conflict_penalty_multiplier": 10000.0
+}

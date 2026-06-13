@@ -1,16 +1,16 @@
 # Graph Report - railmind  (2026-06-13)
 
 ## Corpus Check
-- 62 files · ~120,688 words
+- 65 files · ~126,708 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 404 nodes · 551 edges · 78 communities (74 shown, 4 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 59 edges (avg confidence: 0.5)
+- 490 nodes · 906 edges · 77 communities (73 shown, 4 thin omitted)
+- Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 175 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `679c7f73`
+- Built from commit: `fcc4881a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -57,43 +57,47 @@
 - [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 66|Community 66]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `TrainNetworkSimulator` - 37 edges
-2. `RailwayGraph` - 27 edges
-3. `**RailMind**` - 23 edges
-4. `NetworkState` - 22 edges
-5. `TrainState` - 21 edges
-6. `RailMind: Intelligent Train Conflict Resolution System` - 20 edges
-7. `ConflictDetector` - 18 edges
-8. `Action` - 17 edges
-9. `Disruption` - 16 edges
-10. `BlockState` - 16 edges
+1. `TrainNetworkSimulator` - 54 edges
+2. `NetworkState` - 50 edges
+3. `RailwayGraph` - 44 edges
+4. `ConflictDetector` - 37 edges
+5. `Action` - 35 edges
+6. `TrainState` - 35 edges
+7. `ConstraintChecker` - 28 edges
+8. `BlockState` - 24 edges
+9. `create_base_state()` - 23 edges
+10. `create_mock_train()` - 23 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ConflictDetector` --uses--> `RailwayGraph`  [INFERRED]
-  simulator/conflict_detector.py → simulator/corridor.py
-- `ConflictDetector` --uses--> `NetworkState`  [INFERRED]
-  simulator/conflict_detector.py → simulator/train_state.py
-- `ConflictDetector` --uses--> `TrainState`  [INFERRED]
-  simulator/conflict_detector.py → simulator/train_state.py
-- `NetworkState` --uses--> `ConflictDetector`  [INFERRED]
-  simulator/tests/validate_phase2.py → simulator/conflict_detector.py
-- `TrainState` --uses--> `RailwayGraph`  [INFERRED]
-  simulator/conflict_detector.py → simulator/corridor.py
+- `ConstraintChecker` --uses--> `RailwayGraph`  [INFERRED]
+  optimizer/csp_checker.py → simulator/corridor.py
+- `ConstraintChecker` --uses--> `Action`  [INFERRED]
+  optimizer/csp_checker.py → simulator/env.py
+- `ConstraintChecker` --uses--> `NetworkState`  [INFERRED]
+  optimizer/csp_checker.py → simulator/train_state.py
+- `ConstraintChecker` --uses--> `TrainState`  [INFERRED]
+  optimizer/csp_checker.py → simulator/train_state.py
+- `GreedyPolicy` --uses--> `Action`  [INFERRED]
+  optimizer/greedy_policy.py → simulator/env.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 4 thin omitted)
+## Communities (77 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.14
-Nodes (27): Disruption, RailwayGraph, Conflict, NetworkState, RailwayGraph, Find the shortest path of station IDs between two stations., Returns a list of block IDs that are currently free (not occupied)., Returns the length of a block in km. (+19 more)
+Cohesion: 0.10
+Nodes (40): Disruption, Action, NetworkState, RailwayGraph, TrainState, Verifies safety margin between two trains.         Since the simulator handles p, NetworkState, RailwayGraph (+32 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.07
-Nodes (28): NetworkState, Calculate the max target speed of a train on a section under active disruptions., Get block IDs currently blocked by active signal failures., Get capacity reductions at stations due to platform blockages., Advance the simulation time by 30 seconds (0.5 minutes) and update train states., Apply a dispatcher hold action to a state snapshot immutably., Fast forward a state snapshot by N minutes (using 60-second steps for speed) und, Pure function that advances the simulation state by delta_minutes, returning a n (+20 more)
+Cohesion: 0.12
+Nodes (17): check_impossible_states(), main(), Test 4: Verify Hold action stops train, timer decreases, train resumes., Test 5: Verify apply_action() does not mutate original state., Test 1: Verify train moves through the corridor correctly., Test 6: Verify project_forward() produces identical results., Inspect state for any impossible invariants., Test 7: Check invariants during simulator run. (+9 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.07
@@ -104,16 +108,16 @@ Cohesion: 0.07
 Nodes (26): **Algorithmic & Mathematical Foundation**, **Backend Setup**, **Beam Search with Forward Simulation**, **Configuration Matrix**, **Core Features**, **Developer & Author**, **Evaluation & Benchmarking Methodology**, **Formal State & Action Space** (+18 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.20
-Nodes (8): ConflictDetector, TrainState, Get scheduled departure time in minutes since midnight., Scan projected occupancy windows and return list of Conflict objects sorted by u, Calculate effective speed of a train on a section considering max speeds and dis, Convert HH:MM to minutes since midnight., Get scheduled stop duration at a station in minutes., Project block occupancy intervals (block_id, start_time, end_time) over next 30
+Cohesion: 0.18
+Nodes (7): TrainState, Get scheduled departure time in minutes since midnight., Scan projected occupancy windows and return list of Conflict objects sorted by u, Calculate effective speed of a train on a section considering max speeds and dis, Convert HH:MM to minutes since midnight., Get scheduled stop duration at a station in minutes., Project block occupancy intervals (block_id, start_time, end_time) over next 30
 
 ### Community 5 - "Community 5"
 Cohesion: 0.17
 Nodes (11): **1.1 Single-Corridor Graph Model**, **1.2 20-Minute Forward Projection Horizon**, **1.3 Deterministic Transitions (No Uncertainty)**, **1.4 Absence of Mechanical/Civil Failure Modelling**, **1. Known Limitations**, **2.1 Live Data & Sensor Integration**, **2.2 Network-Scale Simulator Expansion**, **2.3 Safety Certification & Regulatory Compliance** (+3 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.18
-Nodes (10): 14. Folder Structure, 15. Technology Stack, 16. Risks and Mitigations, 1. Executive Summary, 5.1 Data Flow, 5. System Architecture Overview, RailMind: Intelligent Train Conflict Resolution System, Software Design & Product Requirements Document (SDPRD) (+2 more)
+Cohesion: 0.14
+Nodes (13): 10.1 Dashboard Layout, 10.2 Demo Flow, 10. Frontend Specifications, 14. Folder Structure, 15. Technology Stack, 16. Risks and Mitigations, 1. Executive Summary, 5.1 Data Flow (+5 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.20
@@ -228,8 +232,8 @@ Cohesion: 0.67
 Nodes (3): **12.1  Corridor: Delhi–Kanpur**, **12.2  Train Population and Disruption Types**, **12  Simulation Environment**
 
 ### Community 36 - "Community 36"
-Cohesion: 0.67
-Nodes (3): 10.1 Dashboard Layout, 10.2 Demo Flow, 10. Frontend Specifications
+Cohesion: 0.17
+Nodes (25): create_base_state(), create_mock_train(), graph(), Helper to construct a basic empty NetworkState., Helper to construct a TrainState snapshot., scorer(), test_scenario_10_no_conflict_state(), test_scenario_11_single_vs_multiple_conflicts() (+17 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.67
@@ -239,25 +243,41 @@ Nodes (3): 17. How to Present This Project, In a README, In an Interview
 Cohesion: 0.67
 Nodes (3): 3.1 Goals, 3.2 Non-Goals, 3. Goals and Non-Goals
 
+### Community 57 - "Community 57"
+Cohesion: 0.16
+Nodes (29): Conflict, ConstraintChecker, generate_scenarios(), init_db(), main(), Generates 50 fixed-seed scenarios and saves to benchmark_scenarios.json., run_scenario_fcfs(), run_scenario_greedy() (+21 more)
+
+### Community 63 - "Community 63"
+Cohesion: 0.15
+Nodes (6): Get block IDs currently blocked by active signal failures., Get capacity reductions at stations due to platform blockages., Advance the simulation time by 30 seconds (0.5 minutes) and update train states., Fast forward a state snapshot by N minutes (using 60-second steps for speed) und, Pure function that advances the simulation state by delta_minutes, returning a n, Convert HH:MM to minutes since midnight.
+
+### Community 64 - "Community 64"
+Cohesion: 0.25
+Nodes (4): Deadlock check: returns False if the station platforms are completely full., Verifies if the train is at a station or loop (i.e. not mid-section) to be held., Enforces that holds are within the maximum limit (e.g. 30 minutes)., Filters a list of candidate actions, returning only those that satisfy all CSP c
+
+### Community 66 - "Community 66"
+Cohesion: 0.33
+Nodes (5): Analysis & Findings, Detailed Results, Phase 3 Benchmark Report, Scenario Outcomes, Summary Metrics
+
 ## Knowledge Gaps
-- **177 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+172 more)
+- **180 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+175 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `RailwayGraph` connect `Community 0` to `Community 1`, `Community 4`, `Community 9`, `Community 10`, `Community 13`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+- **Why does `RailwayGraph` connect `Community 0` to `Community 4`, `Community 36`, `Community 9`, `Community 10`, `Community 13`, `Community 57`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+- **Why does `TrainNetworkSimulator` connect `Community 57` to `Community 0`, `Community 1`, `Community 36`, `Community 63`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Why does `**RailMind**` connect `Community 7` to `Community 34`, `Community 35`, `Community 11`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 21`, `Community 22`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
-- **Why does `TrainNetworkSimulator` connect `Community 1` to `Community 0`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **Are the 8 inferred relationships involving `TrainNetworkSimulator` (e.g. with `RailwayGraph` and `Disruption`) actually correct?**
-  _`TrainNetworkSimulator` has 8 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 10 inferred relationships involving `RailwayGraph` (e.g. with `Disruption` and `RailwayGraph`) actually correct?**
-  _`RailwayGraph` has 10 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 11 inferred relationships involving `NetworkState` (e.g. with `Disruption` and `RailwayGraph`) actually correct?**
-  _`NetworkState` has 11 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 11 inferred relationships involving `TrainState` (e.g. with `Disruption` and `RailwayGraph`) actually correct?**
-  _`TrainState` has 11 INFERRED edges - model-reasoned connections that need verification._
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **Are the 18 inferred relationships involving `TrainNetworkSimulator` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**
+  _`TrainNetworkSimulator` has 18 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 30 inferred relationships involving `NetworkState` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**
+  _`NetworkState` has 30 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 21 inferred relationships involving `RailwayGraph` (e.g. with `Disruption` and `ConstraintChecker`) actually correct?**
+  _`RailwayGraph` has 21 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 16 inferred relationships involving `ConflictDetector` (e.g. with `Conflict` and `ConstraintChecker`) actually correct?**
+  _`ConflictDetector` has 16 INFERRED edges - model-reasoned connections that need verification._
