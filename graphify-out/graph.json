@@ -220,7 +220,7 @@
       "source_location": "L214",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_greedy",
-      "community": 1,
+      "community": 62,
       "norm_label": "run_greedy()"
     },
     {
@@ -230,7 +230,7 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_beam_search",
-      "community": 1,
+      "community": 62,
       "norm_label": "run_beam_search()"
     },
     {
@@ -780,7 +780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_beam_search",
-      "community": 62,
+      "community": 0,
       "norm_label": "beam_search.py"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_csp_checker",
-      "community": 62,
+      "community": 0,
       "norm_label": "csp_checker.py"
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_railwaygraph",
-      "community": 62,
+      "community": 0,
       "norm_label": "railwaygraph"
     },
     {
@@ -980,7 +980,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_minimum_headway",
-      "community": 10,
+      "community": 0,
       "norm_label": ".check_minimum_headway()"
     },
     {
@@ -990,7 +990,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_trainstate",
-      "community": 10,
+      "community": 0,
       "norm_label": "trainstate"
     },
     {
@@ -1000,7 +1000,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_networkstate",
-      "community": 10,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_platform_capacity",
-      "community": 10,
+      "community": 0,
       "norm_label": ".check_platform_capacity()"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_block_clearance",
-      "community": 10,
+      "community": 0,
       "norm_label": ".check_block_clearance()"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_hold_duration",
-      "community": 10,
+      "community": 0,
       "norm_label": ".check_hold_duration()"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_filter",
-      "community": 10,
+      "community": 0,
       "norm_label": ".filter()"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_action",
-      "community": 10,
+      "community": 0,
       "norm_label": "action"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_11",
-      "community": 10,
+      "community": 0,
       "norm_label": "verifies safety margin between two trains.         since the simulator handles p"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_22",
-      "community": 10,
+      "community": 0,
       "norm_label": "deadlock check: returns false if the station platforms are completely full."
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_32",
-      "community": 10,
+      "community": 0,
       "norm_label": "verifies if the train is at a station or loop (i.e. not mid-section) to be held."
     },
     {
@@ -1090,7 +1090,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_37",
-      "community": 10,
+      "community": 0,
       "norm_label": "enforces that holds are within the maximum limit (e.g. 30 minutes)."
     },
     {
@@ -1100,7 +1100,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_41",
-      "community": 10,
+      "community": 0,
       "norm_label": "filters a list of candidate actions, returning only those that satisfy all csp c"
     },
     {
@@ -1250,7 +1250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_scorer",
-      "community": 62,
+      "community": 0,
       "norm_label": "scorer.py"
     },
     {
@@ -1330,7 +1330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_search_cost",
-      "community": 62,
+      "community": 0,
       "norm_label": "search_cost.py"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_g_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_g_cost()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_statescorer",
-      "community": 62,
+      "community": 4,
       "norm_label": "statescorer"
     },
     {
@@ -1360,7 +1360,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_networkstate",
-      "community": 62,
+      "community": 4,
       "norm_label": "networkstate"
     },
     {
@@ -1370,7 +1370,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_h_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_h_cost()"
     },
     {
@@ -1380,7 +1380,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_trainnetworksimulator",
-      "community": 62,
+      "community": 4,
       "norm_label": "trainnetworksimulator"
     },
     {
@@ -1390,7 +1390,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_f_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_f_cost()"
     },
     {
@@ -1400,7 +1400,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_6",
-      "community": 62,
+      "community": 4,
       "norm_label": "immediate cost (g) represents actual network impact difference:     g_cost = sco"
     },
     {
@@ -1410,7 +1410,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_12",
-      "community": 62,
+      "community": 4,
       "norm_label": "heuristic cost (h) projects the state 20 minutes forward under fcfs:     h_cost"
     },
     {
@@ -1420,7 +1420,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_19",
-      "community": 62,
+      "community": 4,
       "norm_label": "total cost f = g + h."
     },
     {
@@ -1430,7 +1430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_search_node",
-      "community": 62,
+      "community": 0,
       "norm_label": "search_node.py"
     },
     {
@@ -1450,7 +1450,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "optimizer_search_node_tracenode",
-      "community": 62,
+      "community": 0,
       "norm_label": "tracenode"
     },
     {
@@ -1610,7 +1610,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_csp_checker_checker",
-      "community": 0,
+      "community": 62,
       "norm_label": "checker()"
     },
     {
@@ -1690,7 +1690,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_scorer_scenarios_graph",
-      "community": 0,
+      "community": 36,
       "norm_label": "graph()"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_search_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_search_cost.py"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_search_cost_simulator",
-      "community": 62,
+      "community": 4,
       "norm_label": "simulator()"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_search_cost_scorer",
-      "community": 62,
+      "community": 4,
       "norm_label": "scorer()"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_search_cost_test_g_cost_calculation",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_g_cost_calculation()"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "tests_test_search_cost_test_h_cost_and_f_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_h_cost_and_f_cost()"
     },
     {
@@ -2040,7 +2040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_search_node",
-      "community": 62,
+      "community": 0,
       "norm_label": "test_search_node.py"
     },
     {
@@ -2050,7 +2050,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "tests_test_search_node_test_search_node_instantiation",
-      "community": 62,
+      "community": 0,
       "norm_label": "test_search_node_instantiation()"
     },
     {
@@ -2060,7 +2060,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_test_search_node_test_trace_node_instantiation",
-      "community": 62,
+      "community": 0,
       "norm_label": "test_trace_node_instantiation()"
     },
     {
@@ -2070,7 +2070,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_trace_builder",
-      "community": 62,
+      "community": 0,
       "norm_label": "trace_builder.py"
     },
     {
@@ -2080,7 +2080,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_trace_builder_format_action",
-      "community": 62,
+      "community": 0,
       "norm_label": "format_action()"
     },
     {
@@ -2090,7 +2090,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_trace_builder_py_action",
-      "community": 62,
+      "community": 0,
       "norm_label": "action"
     },
     {
@@ -2100,7 +2100,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_trace_builder_py_networkstate",
-      "community": 62,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -2110,7 +2110,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "optimizer_trace_builder_build_trace_tree",
-      "community": 62,
+      "community": 0,
       "norm_label": "build_trace_tree()"
     },
     {
@@ -2120,7 +2120,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "searchnode",
-      "community": 62,
+      "community": 0,
       "norm_label": "searchnode"
     },
     {
@@ -2130,7 +2130,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tracenode",
-      "community": 62,
+      "community": 0,
       "norm_label": "tracenode"
     },
     {
@@ -2140,7 +2140,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_trace_builder_rationale_7",
-      "community": 62,
+      "community": 0,
       "norm_label": "formats an action object into a human-readable string description."
     },
     {
@@ -2150,7 +2150,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "optimizer_trace_builder_rationale_19",
-      "community": 62,
+      "community": 0,
       "norm_label": "recursively translates a searchnode tree into a tracenode tree."
     },
     {
@@ -2170,7 +2170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 62,
+      "community": 0,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_init",
-      "community": 0,
+      "community": 62,
       "norm_label": ".__init__()"
     },
     {
@@ -2220,7 +2220,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_train_speed",
-      "community": 57,
+      "community": 62,
       "norm_label": ".get_train_speed()"
     },
     {
@@ -2230,7 +2230,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_trainstate",
-      "community": 57,
+      "community": 0,
       "norm_label": "trainstate"
     },
     {
@@ -2240,7 +2240,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_parse_time_to_minutes",
-      "community": 57,
+      "community": 62,
       "norm_label": ".parse_time_to_minutes()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_stop_duration",
-      "community": 57,
+      "community": 62,
       "norm_label": ".get_stop_duration()"
     },
     {
@@ -2260,7 +2260,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_project_train_occupancies",
-      "community": 57,
+      "community": 62,
       "norm_label": ".project_train_occupancies()"
     },
     {
@@ -2270,7 +2270,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_scheduled_departure",
-      "community": 57,
+      "community": 62,
       "norm_label": "._get_scheduled_departure()"
     },
     {
@@ -2280,7 +2280,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_detect_conflicts",
-      "community": 57,
+      "community": 62,
       "norm_label": ".detect_conflicts()"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_networkstate",
-      "community": 57,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_26",
-      "community": 57,
+      "community": 62,
       "norm_label": "calculate effective speed of a train on a section considering max speeds and dis"
     },
     {
@@ -2310,7 +2310,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_57",
-      "community": 57,
+      "community": 62,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -2320,7 +2320,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_62",
-      "community": 57,
+      "community": 62,
       "norm_label": "get scheduled stop duration at a station in minutes."
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_78",
-      "community": 57,
+      "community": 62,
       "norm_label": "project block occupancy intervals (block_id, start_time, end_time) over next 30"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_208",
-      "community": 57,
+      "community": 62,
       "norm_label": "get scheduled departure time in minutes since midnight."
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_220",
-      "community": 57,
+      "community": 62,
       "norm_label": "scan projected occupancy windows and return list of conflict objects sorted by u"
     },
     {
@@ -2370,7 +2370,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "simulator_corridor_stationnode",
-      "community": 0,
+      "community": 10,
       "norm_label": "stationnode"
     },
     {
@@ -2380,7 +2380,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "simulator_corridor_stationnode_getitem",
-      "community": 0,
+      "community": 10,
       "norm_label": ".__getitem__()"
     },
     {
@@ -2390,7 +2390,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "simulator_corridor_signal",
-      "community": 0,
+      "community": 10,
       "norm_label": "signal"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_corridor_blocksection",
-      "community": 0,
+      "community": 10,
       "norm_label": "blocksection"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "simulator_corridor_blocksection_getitem",
-      "community": 0,
+      "community": 10,
       "norm_label": ".__getitem__()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_init",
-      "community": 0,
+      "community": 10,
       "norm_label": ".__init__()"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_station",
-      "community": 0,
+      "community": 10,
       "norm_label": ".get_station()"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section",
-      "community": 0,
+      "community": 35,
       "norm_label": ".get_section()"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section_by_endpoints",
-      "community": 0,
+      "community": 35,
       "norm_label": ".get_section_by_endpoints()"
     },
     {
@@ -2470,7 +2470,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_typical_traversal_time",
-      "community": 0,
+      "community": 35,
       "norm_label": ".get_typical_traversal_time()"
     },
     {
@@ -2490,7 +2490,7 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_next_block",
-      "community": 0,
+      "community": 35,
       "norm_label": ".next_block()"
     },
     {
@@ -2520,7 +2520,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_16",
-      "community": 0,
+      "community": 10,
       "norm_label": "allows dictionary-like subscripting for backward compatibility with existing tes"
     },
     {
@@ -2530,7 +2530,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_38",
-      "community": 0,
+      "community": 10,
       "norm_label": "allows dictionary-like subscripting for compatibility."
     },
     {
@@ -2540,7 +2540,7 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_186",
-      "community": 0,
+      "community": 10,
       "norm_label": "get properties of a station by id."
     },
     {
@@ -2550,7 +2550,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_190",
-      "community": 0,
+      "community": 35,
       "norm_label": "get details of a section by id, handling reversed direction ids as well."
     },
     {
@@ -2560,7 +2560,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_205",
-      "community": 0,
+      "community": 35,
       "norm_label": "get section details by endpoint station ids."
     },
     {
@@ -2570,7 +2570,7 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_222",
-      "community": 0,
+      "community": 35,
       "norm_label": "calculate typical traversal time in minutes for a section         based on the s"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_245",
-      "community": 0,
+      "community": 35,
       "norm_label": "query the block id of the block immediately ahead of the train.         returns"
     },
     {
@@ -2650,7 +2650,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector",
-      "community": 1,
+      "community": 0,
       "norm_label": "disruptioninjector"
     },
     {
@@ -2660,7 +2660,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_init",
-      "community": 1,
+      "community": 0,
       "norm_label": ".__init__()"
     },
     {
@@ -2690,7 +2690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_env",
-      "community": 1,
+      "community": 0,
       "norm_label": "env.py"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "simulator_env_action",
-      "community": 62,
+      "community": 0,
       "norm_label": "action"
     },
     {
@@ -2720,7 +2720,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_init",
-      "community": 1,
+      "community": 0,
       "norm_label": ".__init__()"
     },
     {
@@ -2750,7 +2750,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_py_networkstate",
-      "community": 1,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -2860,7 +2860,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_apply_action",
-      "community": 1,
+      "community": 0,
       "norm_label": ".apply_action()"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "simulator_env_rationale_178",
-      "community": 1,
+      "community": 0,
       "norm_label": "apply a dispatcher hold action to a state snapshot immutably."
     },
     {
@@ -3010,7 +3010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability",
-      "community": 1,
+      "community": 0,
       "norm_label": "test_apply_action_immutability.py"
     },
     {
@@ -3020,7 +3020,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability_test_apply_action_immutability",
-      "community": 1,
+      "community": 0,
       "norm_label": "test_apply_action_immutability()"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_corridor",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_corridor.py"
     },
     {
@@ -3060,7 +3060,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_corridor_graph",
-      "community": 0,
+      "community": 13,
       "norm_label": "graph()"
     },
     {
@@ -3070,7 +3070,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_corridor_test_load_stations",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_load_stations()"
     },
     {
@@ -3080,7 +3080,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_test_corridor_test_load_sections",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_load_sections()"
     },
     {
@@ -3090,7 +3090,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "tests_test_corridor_test_get_section_by_endpoints",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_get_section_by_endpoints()"
     },
     {
@@ -3100,7 +3100,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "tests_test_corridor_test_traversal_time",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_traversal_time()"
     },
     {
@@ -3110,7 +3110,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "tests_test_corridor_test_shortest_path",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_shortest_path()"
     },
     {
@@ -3120,7 +3120,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_test_corridor_test_blocks_generation",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_blocks_generation()"
     },
     {
@@ -3130,7 +3130,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "tests_test_corridor_test_detailed_infrastructure_model",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_detailed_infrastructure_model()"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "tests_test_corridor_test_infrastructure_queries",
-      "community": 0,
+      "community": 13,
       "norm_label": "test_infrastructure_queries()"
     },
     {
@@ -3210,7 +3210,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_3_conflict_detection",
-      "community": 0,
+      "community": 1,
       "norm_label": "run_test_3_conflict_detection()"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "simulator_tests_validate_phase2_py_networkstate",
-      "community": 0,
+      "community": 1,
       "norm_label": "networkstate"
     },
     {
@@ -3330,7 +3330,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_93",
-      "community": 0,
+      "community": 1,
       "norm_label": "test 3: verify conflict detector finds overlaps correctly."
     },
     {
@@ -3410,7 +3410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_train_state",
-      "community": 62,
+      "community": 0,
       "norm_label": "train_state.py"
     },
     {
@@ -3450,7 +3450,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "simulator_train_state_networkstate",
-      "community": 62,
+      "community": 0,
       "norm_label": "networkstate"
     },
     {
@@ -3460,7 +3460,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "simulator_train_state_networkstate_clone",
-      "community": 62,
+      "community": 0,
       "norm_label": ".clone()"
     },
     {
@@ -3470,7 +3470,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "simulator_train_state_rationale_44",
-      "community": 62,
+      "community": 0,
       "norm_label": "custom clone function that copies only mutable structures for speed."
     },
     {
@@ -5484,734 +5484,624 @@
       "norm_label": "in an interview"
     },
     {
-      "label": "phase 4 plan.md",
+      "label": "phase 5 plan.md",
       "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "assets_phase_4_plan",
-      "community": 84,
-      "norm_label": "phase 4 plan.md"
+      "id": "assets_phase_5_plan",
+      "community": 89,
+      "norm_label": "phase 5 plan.md"
     },
     {
-      "label": "RailMind Phase 4 \u2014 Beam Search Planner Implementation Plan",
+      "label": "RailMind Phase 5 \u2014 Operations Platform & Backend Infrastructure",
       "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "assets_phase_4_plan_railmind_phase_4_beam_search_planner_implementation_plan",
-      "community": 84,
-      "norm_label": "railmind phase 4 \u2014 beam search planner implementation plan"
+      "id": "assets_phase_5_plan_railmind_phase_5_operations_platform_backend_infrastructure",
+      "community": 89,
+      "norm_label": "railmind phase 5 \u2014 operations platform & backend infrastructure"
     },
     {
       "label": "Objective",
       "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "assets_phase_4_plan_objective",
-      "community": 84,
+      "id": "assets_phase_5_plan_objective",
+      "community": 89,
       "norm_label": "objective"
-    },
-    {
-      "label": "Architecture Overview",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_architecture_overview",
-      "community": 84,
-      "norm_label": "architecture overview"
-    },
-    {
-      "label": "Phase 4.1 \u2014 Search Infrastructure",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_1_search_infrastructure",
-      "community": 80,
-      "norm_label": "phase 4.1 \u2014 search infrastructure"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal",
-      "community": 80,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files",
-      "community": 80,
-      "norm_label": "files"
-    },
-    {
-      "label": "Tasks",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_tasks",
-      "community": 80,
-      "norm_label": "tasks"
-    },
-    {
-      "label": "SearchNode",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_searchnode",
-      "community": 80,
-      "norm_label": "searchnode"
-    },
-    {
-      "label": "TraceNode",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L82",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_tracenode",
-      "community": 80,
-      "norm_label": "tracenode"
-    },
-    {
-      "label": "SearchStats",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L104",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_searchstats",
-      "community": 80,
-      "norm_label": "searchstats"
-    },
-    {
-      "label": "ActionSequence Extension",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L121",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_actionsequence_extension",
-      "community": 80,
-      "norm_label": "actionsequence extension"
-    },
-    {
-      "label": "Deliverables",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_deliverables",
-      "community": 80,
-      "norm_label": "deliverables"
-    },
-    {
-      "label": "Phase 4.2 \u2014 Cost Evaluation Layer",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L149",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer",
-      "community": 83,
-      "norm_label": "phase 4.2 \u2014 cost evaluation layer"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L151",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_151",
-      "community": 83,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L155",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_155",
-      "community": 83,
-      "norm_label": "files"
-    },
-    {
-      "label": "Tasks",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L164",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_tasks_164",
-      "community": 83,
-      "norm_label": "tasks"
-    },
-    {
-      "label": "Immediate Cost (g)",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L166",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_immediate_cost_g",
-      "community": 83,
-      "norm_label": "immediate cost (g)"
-    },
-    {
-      "label": "Heuristic Cost (h)",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L187",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_heuristic_cost_h",
-      "community": 83,
-      "norm_label": "heuristic cost (h)"
-    },
-    {
-      "label": "Total Cost",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L202",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_total_cost",
-      "community": 83,
-      "norm_label": "total cost"
-    },
-    {
-      "label": "Deliverables",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L211",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_deliverables_211",
-      "community": 83,
-      "norm_label": "deliverables"
-    },
-    {
-      "label": "Phase 4.3 \u2014 Single Node Expansion",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L218",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_3_single_node_expansion",
-      "community": 82,
-      "norm_label": "phase 4.3 \u2014 single node expansion"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L220",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_220",
-      "community": 82,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L224",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_224",
-      "community": 82,
-      "norm_label": "files"
-    },
-    {
-      "label": "Tasks",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L233",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_tasks_233",
-      "community": 82,
-      "norm_label": "tasks"
-    },
-    {
-      "label": "Generate Actions",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L235",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_generate_actions",
-      "community": 82,
-      "norm_label": "generate actions"
-    },
-    {
-      "label": "Run CSP Filter",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L259",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_run_csp_filter",
-      "community": 82,
-      "norm_label": "run csp filter"
-    },
-    {
-      "label": "Create Child States",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L270",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_create_child_states",
-      "community": 82,
-      "norm_label": "create child states"
-    },
-    {
-      "label": "Score Child Nodes",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L282",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_score_child_nodes",
-      "community": 82,
-      "norm_label": "score child nodes"
-    },
-    {
-      "label": "Deliverables",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L294",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_deliverables_294",
-      "community": 82,
-      "norm_label": "deliverables"
-    },
-    {
-      "label": "Phase 4.4 \u2014 Beam Search Planner",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L309",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "community": 4,
-      "norm_label": "phase 4.4 \u2014 beam search planner"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L311",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_311",
-      "community": 4,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L315",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_315",
-      "community": 4,
-      "norm_label": "files"
-    },
-    {
-      "label": "Algorithm",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L324",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_algorithm",
-      "community": 4,
-      "norm_label": "algorithm"
-    },
-    {
-      "label": "Initialize",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L326",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_initialize",
-      "community": 4,
-      "norm_label": "initialize"
-    },
-    {
-      "label": "Expand",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L334",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_expand",
-      "community": 4,
-      "norm_label": "expand"
-    },
-    {
-      "label": "Evaluate",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L346",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_evaluate",
-      "community": 4,
-      "norm_label": "evaluate"
-    },
-    {
-      "label": "Rank",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L358",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_rank",
-      "community": 4,
-      "norm_label": "rank"
-    },
-    {
-      "label": "Prune",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L369",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_prune",
-      "community": 4,
-      "norm_label": "prune"
-    },
-    {
-      "label": "Statistics",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L378",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_statistics",
-      "community": 4,
-      "norm_label": "statistics"
-    },
-    {
-      "label": "Configurations",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L390",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_configurations",
-      "community": 4,
-      "norm_label": "configurations"
-    },
-    {
-      "label": "Greedy",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L392",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_greedy",
-      "community": 4,
-      "norm_label": "greedy"
-    },
-    {
-      "label": "Shallow",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L401",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_shallow",
-      "community": 4,
-      "norm_label": "shallow"
-    },
-    {
-      "label": "Default",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L410",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_default",
-      "community": 4,
-      "norm_label": "default"
-    },
-    {
-      "label": "Wide",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L419",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_wide",
-      "community": 4,
-      "norm_label": "wide"
-    },
-    {
-      "label": "Deliverables",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L428",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_deliverables_428",
-      "community": 4,
-      "norm_label": "deliverables"
-    },
-    {
-      "label": "Phase 4.5 \u2014 Explainability Layer",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L438",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_5_explainability_layer",
-      "community": 81,
-      "norm_label": "phase 4.5 \u2014 explainability layer"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L440",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_440",
-      "community": 81,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L444",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_444",
-      "community": 81,
-      "norm_label": "files"
-    },
-    {
-      "label": "Tasks",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L453",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_tasks_453",
-      "community": 81,
-      "norm_label": "tasks"
-    },
-    {
-      "label": "Build Trace Tree",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L455",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_build_trace_tree",
-      "community": 81,
-      "norm_label": "build trace tree"
-    },
-    {
-      "label": "Preserve Pruned Nodes",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L471",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_preserve_pruned_nodes",
-      "community": 81,
-      "norm_label": "preserve pruned nodes"
-    },
-    {
-      "label": "Best Path Extraction",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L483",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_best_path_extraction",
-      "community": 81,
-      "norm_label": "best path extraction"
-    },
-    {
-      "label": "Human Explanation",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L501",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_human_explanation",
-      "community": 81,
-      "norm_label": "human explanation"
-    },
-    {
-      "label": "Deliverables",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L521",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_deliverables_521",
-      "community": 81,
-      "norm_label": "deliverables"
-    },
-    {
-      "label": "Phase 4.6 \u2014 Experiment Integration",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L533",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "community": 79,
-      "norm_label": "phase 4.6 \u2014 experiment integration"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L535",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_535",
-      "community": 79,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L539",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_539",
-      "community": 79,
-      "norm_label": "files"
-    },
-    {
-      "label": "Experiment IDs",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L549",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_experiment_ids",
-      "community": 79,
-      "norm_label": "experiment ids"
-    },
-    {
-      "label": "Experiment 004",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L551",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_experiment_004",
-      "community": 79,
-      "norm_label": "experiment 004"
-    },
-    {
-      "label": "Experiment 005",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L560",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_experiment_005",
-      "community": 79,
-      "norm_label": "experiment 005"
-    },
-    {
-      "label": "Experiment 006",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L569",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_experiment_006",
-      "community": 79,
-      "norm_label": "experiment 006"
-    },
-    {
-      "label": "Experiment 007",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L578",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_experiment_007",
-      "community": 79,
-      "norm_label": "experiment 007"
-    },
-    {
-      "label": "Metrics",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L587",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_metrics",
-      "community": 79,
-      "norm_label": "metrics"
-    },
-    {
-      "label": "Results Structure",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L604",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_results_structure",
-      "community": 79,
-      "norm_label": "results structure"
-    },
-    {
-      "label": "Phase 4.7 \u2014 Search Replay System (Optional)",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L627",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "community": 85,
-      "norm_label": "phase 4.7 \u2014 search replay system (optional)"
-    },
-    {
-      "label": "Goal",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L629",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_goal_629",
-      "community": 85,
-      "norm_label": "goal"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L633",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_files_633",
-      "community": 85,
-      "norm_label": "files"
-    },
-    {
-      "label": "Output",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L642",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_output",
-      "community": 85,
-      "norm_label": "output"
-    },
-    {
-      "label": "Features",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L656",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_features",
-      "community": 85,
-      "norm_label": "features"
-    },
-    {
-      "label": "Example",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L666",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_example",
-      "community": 85,
-      "norm_label": "example"
-    },
-    {
-      "label": "Future Phase 5 \u2014 Network-Aware Search",
-      "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L682",
-      "_origin": "ast",
-      "id": "assets_phase_4_plan_future_phase_5_network_aware_search",
-      "community": 84,
-      "norm_label": "future phase 5 \u2014 network-aware search"
     },
     {
       "label": "Success Criteria",
       "file_type": "document",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L711",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "assets_phase_4_plan_success_criteria",
-      "community": 84,
+      "id": "assets_phase_5_plan_success_criteria",
+      "community": 89,
       "norm_label": "success criteria"
+    },
+    {
+      "label": "Stage 1 \u2014 Result Management System",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_1_result_management_system",
+      "community": 79,
+      "norm_label": "stage 1 \u2014 result management system"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal",
+      "community": 79,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 1.1 \u2014 Standardize Run Structure",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_1_1_standardize_run_structure",
+      "community": 79,
+      "norm_label": "task 1.1 \u2014 standardize run structure"
+    },
+    {
+      "label": "Task 1.2 \u2014 Run Metadata",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_1_2_run_metadata",
+      "community": 79,
+      "norm_label": "task 1.2 \u2014 run metadata"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable",
+      "community": 79,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 2 \u2014 Event Logging Framework",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_2_event_logging_framework",
+      "community": 80,
+      "norm_label": "stage 2 \u2014 event logging framework"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_87",
+      "community": 80,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 2.1 \u2014 Create Event Types",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_2_1_create_event_types",
+      "community": 80,
+      "norm_label": "task 2.1 \u2014 create event types"
+    },
+    {
+      "label": "Task 2.2 \u2014 Event Logger",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_2_2_event_logger",
+      "community": 80,
+      "norm_label": "task 2.2 \u2014 event logger"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L126",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_126",
+      "community": 80,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 3 \u2014 Replay Engine",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_3_replay_engine",
+      "community": 81,
+      "norm_label": "stage 3 \u2014 replay engine"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_134",
+      "community": 81,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 3.1 \u2014 Replay Runner",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L140",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_3_1_replay_runner",
+      "community": 81,
+      "norm_label": "task 3.1 \u2014 replay runner"
+    },
+    {
+      "label": "Task 3.2 \u2014 Time Controls",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L166",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_3_2_time_controls",
+      "community": 81,
+      "norm_label": "task 3.2 \u2014 time controls"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_178",
+      "community": 81,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 4 \u2014 Metrics Engine",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L184",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_4_metrics_engine",
+      "community": 82,
+      "norm_label": "stage 4 \u2014 metrics engine"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L186",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_186",
+      "community": 82,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 4.1 \u2014 Create Metrics Service",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L192",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_4_1_create_metrics_service",
+      "community": 82,
+      "norm_label": "task 4.1 \u2014 create metrics service"
+    },
+    {
+      "label": "Task 4.2 \u2014 Historical Metrics",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_4_2_historical_metrics",
+      "community": 82,
+      "norm_label": "task 4.2 \u2014 historical metrics"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L224",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_224",
+      "community": 82,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 5 \u2014 API Layer",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L230",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_5_api_layer",
+      "community": 34,
+      "norm_label": "stage 5 \u2014 api layer"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L232",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_232",
+      "community": 34,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 5.1 \u2014 FastAPI Setup",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_5_1_fastapi_setup",
+      "community": 34,
+      "norm_label": "task 5.1 \u2014 fastapi setup"
+    },
+    {
+      "label": "Task 5.2 \u2014 Core Endpoints",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L252",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_5_2_core_endpoints",
+      "community": 34,
+      "norm_label": "task 5.2 \u2014 core endpoints"
+    },
+    {
+      "label": "Simulation",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L254",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_simulation",
+      "community": 34,
+      "norm_label": "simulation"
+    },
+    {
+      "label": "Planner",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L262",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_planner",
+      "community": 34,
+      "norm_label": "planner"
+    },
+    {
+      "label": "Control",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L270",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_control",
+      "community": 34,
+      "norm_label": "control"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L280",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_280",
+      "community": 34,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 6 \u2014 Simulation Orchestrator",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L286",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_6_simulation_orchestrator",
+      "community": 83,
+      "norm_label": "stage 6 \u2014 simulation orchestrator"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L288",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_288",
+      "community": 83,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 6.1 \u2014 Build SimRunner",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L294",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_6_1_build_simrunner",
+      "community": 83,
+      "norm_label": "task 6.1 \u2014 build simrunner"
+    },
+    {
+      "label": "Task 6.2 \u2014 Background Execution",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L320",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_6_2_background_execution",
+      "community": 83,
+      "norm_label": "task 6.2 \u2014 background execution"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L326",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_326",
+      "community": 83,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 7 \u2014 WebSocket Infrastructure",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L332",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_7_websocket_infrastructure",
+      "community": 84,
+      "norm_label": "stage 7 \u2014 websocket infrastructure"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L334",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_334",
+      "community": 84,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 7.1 \u2014 WebSocket Manager",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L340",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_7_1_websocket_manager",
+      "community": 84,
+      "norm_label": "task 7.1 \u2014 websocket manager"
+    },
+    {
+      "label": "Task 7.2 \u2014 Live Tick Stream",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L356",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_7_2_live_tick_stream",
+      "community": 84,
+      "norm_label": "task 7.2 \u2014 live tick stream"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L371",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_371",
+      "community": 84,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 8 \u2014 Experiment Automation",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L377",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_8_experiment_automation",
+      "community": 85,
+      "norm_label": "stage 8 \u2014 experiment automation"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L379",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_379",
+      "community": 85,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 8.1 \u2014 Experiment Runner",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L385",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_8_1_experiment_runner",
+      "community": 85,
+      "norm_label": "task 8.1 \u2014 experiment runner"
+    },
+    {
+      "label": "Task 8.2 \u2014 Batch Execution",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L400",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_8_2_batch_execution",
+      "community": 85,
+      "norm_label": "task 8.2 \u2014 batch execution"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L414",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_414",
+      "community": 85,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 9 \u2014 Benchmark Reporting",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L420",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_9_benchmark_reporting",
+      "community": 87,
+      "norm_label": "stage 9 \u2014 benchmark reporting"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L422",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_422",
+      "community": 87,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 9.1 \u2014 Report Generator",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L428",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_9_1_report_generator",
+      "community": 87,
+      "norm_label": "task 9.1 \u2014 report generator"
+    },
+    {
+      "label": "Task 9.2 \u2014 Charts",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L444",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_9_2_charts",
+      "community": 87,
+      "norm_label": "task 9.2 \u2014 charts"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L456",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_456",
+      "community": 87,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Stage 10 \u2014 Planner Diagnostics",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L462",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_stage_10_planner_diagnostics",
+      "community": 88,
+      "norm_label": "stage 10 \u2014 planner diagnostics"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L464",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_goal_464",
+      "community": 88,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Task 10.1 \u2014 Search Analytics",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L470",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_10_1_search_analytics",
+      "community": 88,
+      "norm_label": "task 10.1 \u2014 search analytics"
+    },
+    {
+      "label": "Task 10.2 \u2014 Search Visualization Data",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L482",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_task_10_2_search_visualization_data",
+      "community": 88,
+      "norm_label": "task 10.2 \u2014 search visualization data"
+    },
+    {
+      "label": "Deliverable",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L494",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_deliverable_494",
+      "community": 88,
+      "norm_label": "deliverable"
+    },
+    {
+      "label": "Final Phase 5 Deliverables",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L500",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_final_phase_5_deliverables",
+      "community": 57,
+      "norm_label": "final phase 5 deliverables"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L502",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_infrastructure",
+      "community": 57,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "Backend",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L509",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_backend",
+      "community": 57,
+      "norm_label": "backend"
+    },
+    {
+      "label": "Evaluation",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L516",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_evaluation",
+      "community": 57,
+      "norm_label": "evaluation"
+    },
+    {
+      "label": "Portfolio Value",
+      "file_type": "document",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L522",
+      "_origin": "ast",
+      "id": "assets_phase_5_plan_portfolio_value",
+      "community": 57,
+      "norm_label": "portfolio value"
     },
     {
       "label": "report.md",
@@ -7051,366 +6941,6 @@
       "_origin": "ast",
       "id": "experiment_007_greedy_beam_report_analysis_findings",
       "community": 78,
-      "norm_label": "analysis & findings"
-    },
-    {
-      "label": "report.md",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report",
-      "community": 13,
-      "norm_label": "report.md"
-    },
-    {
-      "label": "RailMind Planner Benchmark Report \u2014 2026-06-13",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "community": 13,
-      "norm_label": "railmind planner benchmark report \u2014 2026-06-13"
-    },
-    {
-      "label": "Summary Metrics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_summary_metrics",
-      "community": 13,
-      "norm_label": "summary metrics"
-    },
-    {
-      "label": "Scenario Outcomes",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_scenario_outcomes",
-      "community": 13,
-      "norm_label": "scenario outcomes"
-    },
-    {
-      "label": "Diversity Statistics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_diversity_statistics",
-      "community": 13,
-      "norm_label": "diversity statistics"
-    },
-    {
-      "label": "1. Distribution of Scenario Disruptions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_1_distribution_of_scenario_disruptions",
-      "community": 13,
-      "norm_label": "1. distribution of scenario disruptions"
-    },
-    {
-      "label": "2. Distribution of Conflicts",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_2_distribution_of_conflicts",
-      "community": 13,
-      "norm_label": "2. distribution of conflicts"
-    },
-    {
-      "label": "3. Distribution of Planner Interventions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_3_distribution_of_planner_interventions",
-      "community": 13,
-      "norm_label": "3. distribution of planner interventions"
-    },
-    {
-      "label": "Disruption Type Performance Summary",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_disruption_type_performance_summary",
-      "community": 13,
-      "norm_label": "disruption type performance summary"
-    },
-    {
-      "label": "Improvement Distribution (Histogram Buckets)",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L56",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_improvement_distribution_histogram_buckets",
-      "community": 13,
-      "norm_label": "improvement distribution (histogram buckets)"
-    },
-    {
-      "label": "Detailed Results Ledger",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_detailed_results_ledger",
-      "community": 13,
-      "norm_label": "detailed results ledger"
-    },
-    {
-      "label": "Analysis & Findings",
-      "file_type": "document",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L126",
-      "_origin": "ast",
-      "id": "experiment_008_beam_shallow_report_analysis_findings",
-      "community": 13,
-      "norm_label": "analysis & findings"
-    },
-    {
-      "label": "report.md",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report",
-      "community": 34,
-      "norm_label": "report.md"
-    },
-    {
-      "label": "RailMind Planner Benchmark Report \u2014 2026-06-13",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "community": 34,
-      "norm_label": "railmind planner benchmark report \u2014 2026-06-13"
-    },
-    {
-      "label": "Summary Metrics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_summary_metrics",
-      "community": 34,
-      "norm_label": "summary metrics"
-    },
-    {
-      "label": "Scenario Outcomes",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_scenario_outcomes",
-      "community": 34,
-      "norm_label": "scenario outcomes"
-    },
-    {
-      "label": "Diversity Statistics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_diversity_statistics",
-      "community": 34,
-      "norm_label": "diversity statistics"
-    },
-    {
-      "label": "1. Distribution of Scenario Disruptions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_1_distribution_of_scenario_disruptions",
-      "community": 34,
-      "norm_label": "1. distribution of scenario disruptions"
-    },
-    {
-      "label": "2. Distribution of Conflicts",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_2_distribution_of_conflicts",
-      "community": 34,
-      "norm_label": "2. distribution of conflicts"
-    },
-    {
-      "label": "3. Distribution of Planner Interventions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_3_distribution_of_planner_interventions",
-      "community": 34,
-      "norm_label": "3. distribution of planner interventions"
-    },
-    {
-      "label": "Disruption Type Performance Summary",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_disruption_type_performance_summary",
-      "community": 34,
-      "norm_label": "disruption type performance summary"
-    },
-    {
-      "label": "Improvement Distribution (Histogram Buckets)",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L56",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_improvement_distribution_histogram_buckets",
-      "community": 34,
-      "norm_label": "improvement distribution (histogram buckets)"
-    },
-    {
-      "label": "Detailed Results Ledger",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_detailed_results_ledger",
-      "community": 34,
-      "norm_label": "detailed results ledger"
-    },
-    {
-      "label": "Analysis & Findings",
-      "file_type": "document",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L126",
-      "_origin": "ast",
-      "id": "experiment_009_beam_default_report_analysis_findings",
-      "community": 34,
-      "norm_label": "analysis & findings"
-    },
-    {
-      "label": "report.md",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report",
-      "community": 35,
-      "norm_label": "report.md"
-    },
-    {
-      "label": "RailMind Planner Benchmark Report \u2014 2026-06-13",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "community": 35,
-      "norm_label": "railmind planner benchmark report \u2014 2026-06-13"
-    },
-    {
-      "label": "Summary Metrics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_summary_metrics",
-      "community": 35,
-      "norm_label": "summary metrics"
-    },
-    {
-      "label": "Scenario Outcomes",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_scenario_outcomes",
-      "community": 35,
-      "norm_label": "scenario outcomes"
-    },
-    {
-      "label": "Diversity Statistics",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_diversity_statistics",
-      "community": 35,
-      "norm_label": "diversity statistics"
-    },
-    {
-      "label": "1. Distribution of Scenario Disruptions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_1_distribution_of_scenario_disruptions",
-      "community": 35,
-      "norm_label": "1. distribution of scenario disruptions"
-    },
-    {
-      "label": "2. Distribution of Conflicts",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_2_distribution_of_conflicts",
-      "community": 35,
-      "norm_label": "2. distribution of conflicts"
-    },
-    {
-      "label": "3. Distribution of Planner Interventions",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_3_distribution_of_planner_interventions",
-      "community": 35,
-      "norm_label": "3. distribution of planner interventions"
-    },
-    {
-      "label": "Disruption Type Performance Summary",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_disruption_type_performance_summary",
-      "community": 35,
-      "norm_label": "disruption type performance summary"
-    },
-    {
-      "label": "Improvement Distribution (Histogram Buckets)",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L56",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_improvement_distribution_histogram_buckets",
-      "community": 35,
-      "norm_label": "improvement distribution (histogram buckets)"
-    },
-    {
-      "label": "Detailed Results Ledger",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_detailed_results_ledger",
-      "community": 35,
-      "norm_label": "detailed results ledger"
-    },
-    {
-      "label": "Analysis & Findings",
-      "file_type": "document",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L126",
-      "_origin": "ast",
-      "id": "experiment_011_greedy_beam_report_analysis_findings",
-      "community": 35,
       "norm_label": "analysis & findings"
     },
     {
@@ -9359,9 +8889,9 @@
       "source_file": "optimizer/beam_search.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "optimizer_beam_search_rationale_31",
-      "target": "optimizer_beam_search_beamsearchplanner_generate_actions",
-      "confidence_score": 1.0
+      "target": "optimizer_beam_search_beamsearchplanner_generate_actions"
     },
     {
       "relation": "references",
@@ -9701,9 +9231,9 @@
       "source_file": "optimizer/beam_search.py",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "optimizer_beam_search_rationale_48",
-      "target": "optimizer_beam_search_beamsearchplanner_plan",
-      "confidence_score": 1.0
+      "target": "optimizer_beam_search_beamsearchplanner_plan"
     },
     {
       "relation": "uses",
@@ -9822,9 +9352,9 @@
       "source_file": "optimizer/beam_search.py",
       "source_location": "L196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "optimizer_beam_search_rationale_196",
-      "target": "optimizer_beam_search_beamsearchplanner_select_action",
-      "confidence_score": 1.0
+      "target": "optimizer_beam_search_beamsearchplanner_select_action"
     },
     {
       "relation": "uses",
@@ -19867,722 +19397,612 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L13",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L500",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_architecture_overview"
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_final_phase_5_deliverables",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L682",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_future_phase_5_network_aware_search"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_1_search_infrastructure"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L149",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L218",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_3_single_node_expansion"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L309",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_4_beam_search_planner"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L438",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_5_explainability_layer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L533",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_6_experiment_integration"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L627",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_phase_4_7_search_replay_system_optional"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_railmind_phase_4_beam_search_planner_implementation_plan"
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_railmind_phase_5_operations_platform_backend_infrastructure",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L711",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L462",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan",
-      "target": "assets_phase_4_plan_success_criteria"
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_10_planner_diagnostics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_1_result_management_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_2_event_logging_framework",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_3_replay_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_4_metrics_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_5_api_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L286",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_6_simulation_orchestrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_7_websocket_infrastructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_8_experiment_automation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L420",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_stage_9_benchmark_reporting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan",
+      "target": "assets_phase_5_plan_success_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_railmind_phase_4_beam_search_planner_implementation_plan",
-      "target": "assets_phase_4_plan_objective"
+      "source": "assets_phase_5_plan_railmind_phase_5_operations_platform_backend_infrastructure",
+      "target": "assets_phase_5_plan_objective",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_stage_1_result_management_system",
+      "target": "assets_phase_5_plan_goal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal",
+      "target": "assets_phase_5_plan_deliverable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal",
+      "target": "assets_phase_5_plan_task_1_1_standardize_run_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal",
+      "target": "assets_phase_5_plan_task_1_2_run_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_stage_2_event_logging_framework",
+      "target": "assets_phase_5_plan_goal_87",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_87",
+      "target": "assets_phase_5_plan_deliverable_126",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_87",
+      "target": "assets_phase_5_plan_task_2_1_create_event_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_87",
+      "target": "assets_phase_5_plan_task_2_2_event_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_stage_3_replay_engine",
+      "target": "assets_phase_5_plan_goal_134",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_134",
+      "target": "assets_phase_5_plan_deliverable_178",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L140",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_1_search_infrastructure",
-      "target": "assets_phase_4_plan_deliverables"
+      "source": "assets_phase_5_plan_goal_134",
+      "target": "assets_phase_5_plan_task_3_1_replay_runner",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_1_search_infrastructure",
-      "target": "assets_phase_4_plan_files"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_1_search_infrastructure",
-      "target": "assets_phase_4_plan_goal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_1_search_infrastructure",
-      "target": "assets_phase_4_plan_tasks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L121",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks",
-      "target": "assets_phase_4_plan_actionsequence_extension"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks",
-      "target": "assets_phase_4_plan_searchnode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L104",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks",
-      "target": "assets_phase_4_plan_searchstats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks",
-      "target": "assets_phase_4_plan_tracenode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L211",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer",
-      "target": "assets_phase_4_plan_deliverables_211"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L155",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer",
-      "target": "assets_phase_4_plan_files_155"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer",
-      "target": "assets_phase_4_plan_goal_151"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L164",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_2_cost_evaluation_layer",
-      "target": "assets_phase_4_plan_tasks_164"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L187",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_164",
-      "target": "assets_phase_4_plan_heuristic_cost_h"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L166",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_164",
-      "target": "assets_phase_4_plan_immediate_cost_g"
+      "source": "assets_phase_5_plan_goal_134",
+      "target": "assets_phase_5_plan_task_3_2_time_controls",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L202",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L186",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_164",
-      "target": "assets_phase_4_plan_total_cost"
+      "source": "assets_phase_5_plan_stage_4_metrics_engine",
+      "target": "assets_phase_5_plan_goal_186",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L294",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_3_single_node_expansion",
-      "target": "assets_phase_4_plan_deliverables_294"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L224",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_3_single_node_expansion",
-      "target": "assets_phase_4_plan_files_224"
+      "source": "assets_phase_5_plan_goal_186",
+      "target": "assets_phase_5_plan_deliverable_224",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L220",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L192",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_3_single_node_expansion",
-      "target": "assets_phase_4_plan_goal_220"
+      "source": "assets_phase_5_plan_goal_186",
+      "target": "assets_phase_5_plan_task_4_1_create_metrics_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L233",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L212",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_3_single_node_expansion",
-      "target": "assets_phase_4_plan_tasks_233"
+      "source": "assets_phase_5_plan_goal_186",
+      "target": "assets_phase_5_plan_task_4_2_historical_metrics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L232",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_stage_5_api_layer",
+      "target": "assets_phase_5_plan_goal_232",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_232",
+      "target": "assets_phase_5_plan_deliverable_280",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_232",
+      "target": "assets_phase_5_plan_task_5_1_fastapi_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_232",
+      "target": "assets_phase_5_plan_task_5_2_core_endpoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L270",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_233",
-      "target": "assets_phase_4_plan_create_child_states"
+      "source": "assets_phase_5_plan_task_5_2_core_endpoints",
+      "target": "assets_phase_5_plan_control",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L235",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L262",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_233",
-      "target": "assets_phase_4_plan_generate_actions"
+      "source": "assets_phase_5_plan_task_5_2_core_endpoints",
+      "target": "assets_phase_5_plan_planner",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L259",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L254",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_233",
-      "target": "assets_phase_4_plan_run_csp_filter"
+      "source": "assets_phase_5_plan_task_5_2_core_endpoints",
+      "target": "assets_phase_5_plan_simulation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L282",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L288",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_233",
-      "target": "assets_phase_4_plan_score_child_nodes"
+      "source": "assets_phase_5_plan_stage_6_simulation_orchestrator",
+      "target": "assets_phase_5_plan_goal_288",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L324",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "target": "assets_phase_4_plan_algorithm"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L390",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "target": "assets_phase_4_plan_configurations"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L428",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "target": "assets_phase_4_plan_deliverables_428"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L315",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "target": "assets_phase_4_plan_files_315"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L311",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_4_beam_search_planner",
-      "target": "assets_phase_4_plan_goal_311"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L346",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_evaluate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L334",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_expand"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L326",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_initialize"
+      "source": "assets_phase_5_plan_goal_288",
+      "target": "assets_phase_5_plan_deliverable_326",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L369",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L294",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_prune"
+      "source": "assets_phase_5_plan_goal_288",
+      "target": "assets_phase_5_plan_task_6_1_build_simrunner",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L358",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L320",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_rank"
+      "source": "assets_phase_5_plan_goal_288",
+      "target": "assets_phase_5_plan_task_6_2_background_execution",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L378",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L334",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_algorithm",
-      "target": "assets_phase_4_plan_statistics"
+      "source": "assets_phase_5_plan_stage_7_websocket_infrastructure",
+      "target": "assets_phase_5_plan_goal_334",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L410",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L371",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_configurations",
-      "target": "assets_phase_4_plan_default"
+      "source": "assets_phase_5_plan_goal_334",
+      "target": "assets_phase_5_plan_deliverable_371",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L392",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L340",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_configurations",
-      "target": "assets_phase_4_plan_greedy"
+      "source": "assets_phase_5_plan_goal_334",
+      "target": "assets_phase_5_plan_task_7_1_websocket_manager",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L401",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L356",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_configurations",
-      "target": "assets_phase_4_plan_shallow"
+      "source": "assets_phase_5_plan_goal_334",
+      "target": "assets_phase_5_plan_task_7_2_live_tick_stream",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L419",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L379",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_configurations",
-      "target": "assets_phase_4_plan_wide"
+      "source": "assets_phase_5_plan_stage_8_experiment_automation",
+      "target": "assets_phase_5_plan_goal_379",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L521",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L414",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_5_explainability_layer",
-      "target": "assets_phase_4_plan_deliverables_521"
+      "source": "assets_phase_5_plan_goal_379",
+      "target": "assets_phase_5_plan_deliverable_414",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_379",
+      "target": "assets_phase_5_plan_task_8_1_experiment_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L400",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_379",
+      "target": "assets_phase_5_plan_task_8_2_batch_execution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L422",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_stage_9_benchmark_reporting",
+      "target": "assets_phase_5_plan_goal_422",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L456",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_422",
+      "target": "assets_phase_5_plan_deliverable_456",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L428",
+      "weight": 1.0,
+      "source": "assets_phase_5_plan_goal_422",
+      "target": "assets_phase_5_plan_task_9_1_report_generator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/phase 5 plan.md",
       "source_location": "L444",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_5_explainability_layer",
-      "target": "assets_phase_4_plan_files_444"
+      "source": "assets_phase_5_plan_goal_422",
+      "target": "assets_phase_5_plan_task_9_2_charts",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L440",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L464",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_5_explainability_layer",
-      "target": "assets_phase_4_plan_goal_440"
+      "source": "assets_phase_5_plan_stage_10_planner_diagnostics",
+      "target": "assets_phase_5_plan_goal_464",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L453",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L494",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_5_explainability_layer",
-      "target": "assets_phase_4_plan_tasks_453"
+      "source": "assets_phase_5_plan_goal_464",
+      "target": "assets_phase_5_plan_deliverable_494",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L483",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L470",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_453",
-      "target": "assets_phase_4_plan_best_path_extraction"
+      "source": "assets_phase_5_plan_goal_464",
+      "target": "assets_phase_5_plan_task_10_1_search_analytics",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L455",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L482",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_453",
-      "target": "assets_phase_4_plan_build_trace_tree"
+      "source": "assets_phase_5_plan_goal_464",
+      "target": "assets_phase_5_plan_task_10_2_search_visualization_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L501",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L509",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_453",
-      "target": "assets_phase_4_plan_human_explanation"
+      "source": "assets_phase_5_plan_final_phase_5_deliverables",
+      "target": "assets_phase_5_plan_backend",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L471",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L516",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_tasks_453",
-      "target": "assets_phase_4_plan_preserve_pruned_nodes"
+      "source": "assets_phase_5_plan_final_phase_5_deliverables",
+      "target": "assets_phase_5_plan_evaluation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L549",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L502",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "target": "assets_phase_4_plan_experiment_ids"
+      "source": "assets_phase_5_plan_final_phase_5_deliverables",
+      "target": "assets_phase_5_plan_infrastructure",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L539",
+      "source_file": "assets/phase 5 plan.md",
+      "source_location": "L522",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "target": "assets_phase_4_plan_files_539"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L535",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "target": "assets_phase_4_plan_goal_535"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L587",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "target": "assets_phase_4_plan_metrics"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L604",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_6_experiment_integration",
-      "target": "assets_phase_4_plan_results_structure"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L551",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_experiment_ids",
-      "target": "assets_phase_4_plan_experiment_004"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L560",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_experiment_ids",
-      "target": "assets_phase_4_plan_experiment_005"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L569",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_experiment_ids",
-      "target": "assets_phase_4_plan_experiment_006"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L578",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_experiment_ids",
-      "target": "assets_phase_4_plan_experiment_007"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L666",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "target": "assets_phase_4_plan_example"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L656",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "target": "assets_phase_4_plan_features"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L633",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "target": "assets_phase_4_plan_files_633"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L629",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "target": "assets_phase_4_plan_goal_629"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 4 plan.md",
-      "source_location": "L642",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_4_plan_phase_4_7_search_replay_system_optional",
-      "target": "assets_phase_4_plan_output"
+      "source": "assets_phase_5_plan_final_phase_5_deliverables",
+      "target": "assets_phase_5_plan_portfolio_value",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21357,336 +20777,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report",
-      "target": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L126",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_analysis_findings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_detailed_results_ledger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_disruption_type_performance_summary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_diversity_statistics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_improvement_distribution_histogram_buckets",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_008_beam_shallow_report_summary_metrics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_summary_metrics",
-      "target": "experiment_008_beam_shallow_report_scenario_outcomes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_diversity_statistics",
-      "target": "experiment_008_beam_shallow_report_1_distribution_of_scenario_disruptions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_diversity_statistics",
-      "target": "experiment_008_beam_shallow_report_2_distribution_of_conflicts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_008_beam_shallow/report.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "experiment_008_beam_shallow_report_diversity_statistics",
-      "target": "experiment_008_beam_shallow_report_3_distribution_of_planner_interventions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report",
-      "target": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L126",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_analysis_findings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_detailed_results_ledger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_disruption_type_performance_summary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_diversity_statistics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_improvement_distribution_histogram_buckets",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_009_beam_default_report_summary_metrics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_summary_metrics",
-      "target": "experiment_009_beam_default_report_scenario_outcomes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_diversity_statistics",
-      "target": "experiment_009_beam_default_report_1_distribution_of_scenario_disruptions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_diversity_statistics",
-      "target": "experiment_009_beam_default_report_2_distribution_of_conflicts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_009_beam_default/report.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "experiment_009_beam_default_report_diversity_statistics",
-      "target": "experiment_009_beam_default_report_3_distribution_of_planner_interventions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report",
-      "target": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L126",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_analysis_findings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_detailed_results_ledger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_disruption_type_performance_summary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_diversity_statistics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_improvement_distribution_histogram_buckets",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_railmind_planner_benchmark_report_2026_06_13",
-      "target": "experiment_011_greedy_beam_report_summary_metrics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_summary_metrics",
-      "target": "experiment_011_greedy_beam_report_scenario_outcomes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_diversity_statistics",
-      "target": "experiment_011_greedy_beam_report_1_distribution_of_scenario_disruptions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_diversity_statistics",
-      "target": "experiment_011_greedy_beam_report_2_distribution_of_conflicts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "experiments/experiment_011_greedy_beam/report.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "experiment_011_greedy_beam_report_diversity_statistics",
-      "target": "experiment_011_greedy_beam_report_3_distribution_of_planner_interventions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -21716,5 +20806,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "80d595cad8268e3e09b874bd96856904b355eba7"
+  "built_at_commit": "a5ebd957345e906642723160af7ae4b6fcea4729"
 }
