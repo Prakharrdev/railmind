@@ -110,3 +110,116 @@ def test_blocks_generation(graph):
     assert sec_gzb_aljn["blocks"][21]["id"] == "GZB_ALJN_22"
     assert pytest.approx(sec_gzb_aljn["blocks"][21]["length_km"]) == 1.0  # 106 - 21*5 = 1.0 km
 
+
+def test_detailed_infrastructure_model(graph):
+    # Verify StationNode objects
+    ndls_node = graph.stations["NDLS"]
+    assert ndls_node.name == "New Delhi"
+    assert ndls_node.platforms == 16
+    assert ndls_node.loops == 1
+    assert ndls_node.has_loop is True
+    assert ndls_node.is_junction is True
+
+    # Verify BlockSection objects
+    b1_up = graph.blocks["NDLS_GZB_01"]
+    assert b1_up.from_node == "NDLS"
+    assert b1_up.to_node == "NDLS_GZB_02"
+    assert b1_up.length_km == 5.0
+    assert b1_up.max_speed == 110
+    assert b1_up.occupied_by is None
+    assert b1_up.entry_signal_id == "SIG_NDLS_GZB_01_ENTRY"
+    assert b1_up.exit_signal_id == "SIG_NDLS_GZB_01_EXIT"
+    assert b1_up.track_type == "double"
+
+    # Verify DOWN blocks reversed traversal
+    b6_down = graph.blocks["NDLS_GZB_06_DOWN"]
+    assert b6_down.from_node == "GZB"
+    assert b6_down.to_node == "NDLS_GZB_05_DOWN"
+    assert b6_down.length_km == 1.0
+
+    b1_down = graph.blocks["NDLS_GZB_01_DOWN"]
+    assert b1_down.from_node == "NDLS_GZB_02_DOWN"
+    assert b1_down.to_node == "NDLS"
+
+    # Verify signals dict
+    assert "SIG_NDLS_GZB_01_ENTRY" in graph.signals
+    sig = graph.signals["SIG_NDLS_GZB_01_ENTRY"]
+    assert sig.block_id == "NDLS_GZB_01"
+    assert sig.aspect == "green"
+
+    # Verify adjacency
+    assert "NDLS_GZB_01" in graph.adjacency["NDLS"]
+    assert "NDLS_GZB_02" in graph.adjacency["NDLS_GZB_01"]
+    assert "GZB" in graph.adjacency["NDLS_GZB_06"]
+    
+    assert "NDLS_GZB_06_DOWN" in graph.adjacency["GZB"]
+    assert "NDLS_GZB_05_DOWN" in graph.adjacency["NDLS_GZB_06_DOWN"]
+    assert "NDLS" in graph.adjacency["NDLS_GZB_01_DOWN"]
+
+
+def test_infrastructure_queries(graph):
+    # Test block_length
+    assert graph.block_length("NDLS_GZB_01") == 5.0
+    assert graph.block_length("NDLS_GZB_06_DOWN") == 1.0
+    assert graph.block_length("INVALID") == 0.0
+
+    # Test free_blocks
+    assert len(graph.free_blocks()) == len(graph.blocks)
+
+    # Test next_block for train at station (UP direction)
+    train_at_st_up = {
+        "train_id": "12301",
+        "direction": "UP",
+        "current_section": None,
+        "last_station": "NDLS",
+        "next_station": "GZB",
+        "section_progress": 0.0,
+        "current_block_index": None
+    }
+    assert graph.next_block(train_at_st_up) == "NDLS_GZB_01"
+
+    # Test next_block for train at station (DOWN direction)
+    train_at_st_down = {
+        "train_id": "12302",
+        "direction": "DOWN",
+        "current_section": None,
+        "last_station": "GZB",
+        "next_station": "NDLS",
+        "section_progress": 0.0,
+        "current_block_index": None
+    }
+    assert graph.next_block(train_at_st_down) == "NDLS_GZB_06_DOWN"
+
+    # Test next_block for train in section (UP direction)
+    train_in_sec_up = {
+        "train_id": "12301",
+        "direction": "UP",
+        "current_section": "NDLS_GZB",
+        "last_station": "NDLS",
+        "next_station": "GZB",
+        "section_progress": 0.1,  # in NDLS_GZB_01
+        "current_block_index": 0
+    }
+    assert graph.next_block(train_in_sec_up) == "NDLS_GZB_02"
+
+    # Last block in section (UP) -> next is station, so returns None
+    train_in_sec_up["current_block_index"] = 5
+    assert graph.next_block(train_in_sec_up) is None
+
+    # Test next_block for train in section (DOWN direction)
+    train_in_sec_down = {
+        "train_id": "12302",
+        "direction": "DOWN",
+        "current_section": "NDLS_GZB_DOWN",
+        "last_station": "GZB",
+        "next_station": "NDLS",
+        "section_progress": 0.1,  # distance_traveled from GZB is 2.6 km -> pos_from_base is 23.4 -> block 05 (idx 4)
+        "current_block_index": 4  # NDLS_GZB_05_DOWN
+    }
+    assert graph.next_block(train_in_sec_down) == "NDLS_GZB_04_DOWN"
+
+    # Last block in section (DOWN) -> NDLS_GZB_01_DOWN (idx 0)
+    train_in_sec_down["current_block_index"] = 0
+    assert graph.next_block(train_in_sec_down) is None
+
+

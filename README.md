@@ -5,7 +5,7 @@
 
 ---
 
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 [![Build Status](https://img.shields.io/badge/tests-passing-brightgreen.svg)](#unit-testing)
 
@@ -179,7 +179,7 @@ railmind/
 ## **Installation & Local Setup**
 
 ### **Prerequisites**
-*   Python 3.11+
+*   Python 3.10 strictly
 *   Node.js v18+ & npm
 
 ### **Backend Setup**
