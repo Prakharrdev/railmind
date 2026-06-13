@@ -9,13 +9,21 @@ from optimizer.search_node import SearchNode, SearchStats, ActionSequence
 from optimizer.search_cost import compute_g_cost, compute_h_cost, compute_f_cost
 from optimizer.trace_builder import build_trace_tree
 
+# Time (in minutes) to project forward between each search depth.
+# This represents the interval between successive dispatcher decision points.
+# Without this, apply_action only sets hold flags without advancing sim_time,
+# causing all depths to evaluate the identical state/conflict configuration.
+DEFAULT_STEP_MINUTES = 5
+
 class BeamSearchPlanner:
-    def __init__(self, simulator: TrainNetworkSimulator, scorer: StateScorer, csp_checker: ConstraintChecker, depth: int = 4, beam_width: int = 8):
+    def __init__(self, simulator: TrainNetworkSimulator, scorer: StateScorer, csp_checker: ConstraintChecker,
+                 depth: int = 4, beam_width: int = 8, step_minutes: int = DEFAULT_STEP_MINUTES):
         self.simulator = simulator
         self.scorer = scorer
         self.csp_checker = csp_checker
         self.depth = depth
         self.beam_width = beam_width
+        self.step_minutes = step_minutes
         self.detector = ConflictDetector(simulator.graph, simulator.timetable_data)
         self.last_sequence: Optional[ActionSequence] = None
 
@@ -37,7 +45,13 @@ class BeamSearchPlanner:
         return actions
 
     def plan(self, state: NetworkState, depth: int, beam_width: int) -> ActionSequence:
-        """Executes the Conflict-based Beam Search algorithm to plan a sequence of hold actions."""
+        """Executes the Conflict-based Beam Search algorithm to plan a sequence of hold actions.
+
+        At each search depth, after applying an action, the child state is projected
+        forward by `self.step_minutes` to simulate the passage of time between decision
+        points. This ensures deeper search depths evaluate meaningfully different future
+        states with evolved train positions and new conflict patterns.
+        """
         start_time = time.perf_counter()
 
         node_counter = 0
@@ -73,7 +87,7 @@ class BeamSearchPlanner:
                 break
 
             for parent in beam:
-                # Generate candidate actions
+                # Generate candidate actions based on conflicts in the parent state
                 actions = self.generate_actions(parent.state)
                 # Filter legal actions using CSP checker
                 legal_actions = self.csp_checker.filter(actions, parent.state)
@@ -82,20 +96,21 @@ class BeamSearchPlanner:
                     nodes_expanded += 1
 
                 for action in legal_actions:
+                    # Apply action to parent state
                     if action.action_type == "noop":
-                        # Optimization: child state is identical to parent state
-                        child_state = parent.state.clone()
-                        g_cost = 0.0
-                        h_cost = parent.h_cost
-                        f_cost = parent.f_cost
+                        post_action_state = parent.state.clone()
                     else:
-                        child_state = self.simulator.apply_action(parent.state, action)
-                        # Immediate cost difference g_cost = scorer.cost(child) - scorer.cost(parent)
-                        g_cost = compute_g_cost(self.scorer, parent.state, child_state)
-                        # Heuristic lookahead cost
-                        h_cost = compute_h_cost(self.scorer, self.simulator, child_state, lookahead_minutes=20)
-                        # Cumulative g_cost + h_cost
-                        f_cost = compute_f_cost(parent.g_cost + g_cost, h_cost)
+                        post_action_state = self.simulator.apply_action(parent.state, action)
+
+                    # Project the state forward to simulate time passing between decisions.
+                    # This is the critical step: without it, all depths see the same sim_time,
+                    # same train positions, and same conflicts — making deeper search useless.
+                    child_state = self.simulator.project_forward(post_action_state, self.step_minutes)
+
+                    # Compute costs on the evolved state
+                    g_cost = compute_g_cost(self.scorer, parent.state, child_state)
+                    h_cost = compute_h_cost(self.scorer, self.simulator, child_state, lookahead_minutes=20)
+                    f_cost = compute_f_cost(parent.g_cost + g_cost, h_cost)
 
                     child_node = SearchNode(
                         node_id=next_id(),
@@ -130,7 +145,6 @@ class BeamSearchPlanner:
 
         # 2. Extract best leaf node from the final beam
         if beam:
-            # Beam is sorted, so index 0 has the lowest cost
             best_node = beam[0]
         else:
             best_node = root
