@@ -166,7 +166,9 @@ class SimulationRunner:
                     "recommendation_id": rec_id,
                     "actions": actions_list,
                     "projected_cost": action_seq.projected_cost,
-                    "improvement_pct": action_seq.improvement_pct
+                    "improvement_pct": action_seq.improvement_pct,
+                    "stats": dataclasses.asdict(action_seq.stats),
+                    "sim_time": sim_time
                 }
                 
                 # Log event
@@ -200,12 +202,15 @@ class SimulationRunner:
                     "train_id": t.train_id,
                     "name": t.name,
                     "train_class": t.train_class,
+                    "direction": t.direction,
                     "speed_kmph": t.current_speed_kmph,
-                    "delay_minutes": t.delay_minutes,
-                    "progress": t.section_progress,
+                    "delay_minutes": round(t.delay_minutes, 2),
+                    "progress": round(t.section_progress, 4),
                     "section_id": t.current_section,
                     "last_station": t.last_station,
-                    "next_station": t.next_station
+                    "next_station": t.next_station,
+                    "is_held": t.is_held,
+                    "hold_remaining_minutes": round(t.hold_remaining_minutes, 2)
                 }
                 for t in state.trains.values()
             ]
@@ -215,8 +220,9 @@ class SimulationRunner:
                     "train_a_id": c.train_a_id,
                     "train_b_id": c.train_b_id,
                     "block_id": c.block_id,
-                    "start_time": c.conflict_start_sim_time,
-                    "overlap": c.overlap_minutes
+                    "conflict_start_sim_time": round(c.conflict_start_sim_time, 2),
+                    "overlap_minutes": round(c.overlap_minutes, 2),
+                    "urgency_score": round(c.urgency_score, 2)
                 }
                 for c in conflicts
             ]

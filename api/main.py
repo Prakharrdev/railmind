@@ -50,9 +50,8 @@ def read_root():
         "status": "running"
     }
 
-@app.websocket("/stream")
-async def websocket_stream(websocket: WebSocket):
-    """WebSocket stream for real-time train positions, conflicts, and metrics."""
+async def handle_websocket(websocket: WebSocket):
+    """WebSocket handler for real-time train positions, conflicts, and metrics."""
     await ws_manager.connect(websocket)
     try:
         while True:
@@ -63,3 +62,12 @@ async def websocket_stream(websocket: WebSocket):
     except Exception as e:
         logger.warning(f"WebSocket connection error: {e}")
         ws_manager.disconnect(websocket)
+
+@app.websocket("/stream")
+async def websocket_stream(websocket: WebSocket):
+    await handle_websocket(websocket)
+
+@app.websocket("/ws/live")
+async def websocket_live(websocket: WebSocket):
+    await handle_websocket(websocket)
+

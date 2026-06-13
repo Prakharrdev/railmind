@@ -5,3 +5,10 @@ __pycache__/
 data/evaluation/results.db
 frontend/node_modules/
 frontend/dist/
+
+# Phase 5: Ignore heavy simulation databases, traces, events, logs, and local runs
+**/*.db
+**/trace.json
+**/events.json
+experiments/**/logs/
+results/

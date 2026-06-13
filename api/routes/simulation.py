@@ -52,3 +52,19 @@ def get_metrics():
         {"depth": sim_runner.planner.depth, "beam_width": sim_runner.planner.beam_width}
     )
     return metrics
+
+@router.get("/network")
+def get_network():
+    """Retrieve the raw corridor network layout (stations, sections, blocks)."""
+    return sim_runner.simulator.graph.data
+
+@router.get("/metrics/episode")
+def get_episode_metrics():
+    """Retrieve current episode performance metrics."""
+    return get_metrics()
+
+@router.get("/metrics/benchmark")
+def get_benchmark_metrics():
+    """Retrieve historical benchmark runs comparison."""
+    return sim_runner.metrics_engine.get_historical_comparison(sim_runner.run_id)
+
