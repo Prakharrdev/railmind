@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "evaluation/analyze_results.py": {
-    "mtime": 1781352684.2659192,
-    "ast_hash": "33648794ae771e17a80b78c100e4f614",
+    "mtime": 1781358075.6288338,
+    "ast_hash": "3bfd5746d2b3439b736d2f0a5efb0668",
     "semantic_hash": ""
   },
   "evaluation/run_benchmark.py": {
-    "mtime": 1781352678.1182077,
-    "ast_hash": "cfe8a341fa05a8cbf3e4d253bc509420",
+    "mtime": 1781357907.2101648,
+    "ast_hash": "c5ea15b5888ed7fa6aed59202231aca5",
     "semantic_hash": ""
   },
   "frontend/eslint.config.js": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "optimizer/greedy_policy.py": {
-    "mtime": 1781352561.9448457,
-    "ast_hash": "0beeea4c8c76fc3fe30716cf6f15a391",
+    "mtime": 1781357485.3048322,
+    "ast_hash": "cd9840e527abd60dbb9959d14c278837",
     "semantic_hash": ""
   },
   "optimizer/scorer.py": {
@@ -390,8 +390,28 @@
     "semantic_hash": ""
   },
   "evaluation/report/benchmark_report.md": {
-    "mtime": 1781352714.911251,
-    "ast_hash": "74ff8e1adc3b67fdb52d94f2b074861b",
+    "mtime": 1781358109.6477106,
+    "ast_hash": "726d9cbedcdd249370ab59915fb4a3cb",
+    "semantic_hash": ""
+  },
+  "evaluation/generate_html_report.py": {
+    "mtime": 1781358092.6063364,
+    "ast_hash": "77719bbaea13b67d0653c1a7f378c813",
+    "semantic_hash": ""
+  },
+  "evaluation/report/benchmark_dashboard.html": {
+    "mtime": 1781358113.747941,
+    "ast_hash": "dfd22fde5433ed94aa77ff486b33bef2",
+    "semantic_hash": ""
+  },
+  "evaluation/report/archive/benchmark_dashboard_2026_06_13_greedy_explainability.html": {
+    "mtime": 1781358113.748094,
+    "ast_hash": "dfd22fde5433ed94aa77ff486b33bef2",
+    "semantic_hash": ""
+  },
+  "evaluation/report/archive/benchmark_report_2026_06_13_greedy_explainability.md": {
+    "mtime": 1781358109.6479337,
+    "ast_hash": "726d9cbedcdd249370ab59915fb4a3cb",
     "semantic_hash": ""
   }
 }

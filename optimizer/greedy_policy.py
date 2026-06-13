@@ -60,4 +60,23 @@ class GreedyPolicy:
             best_action = Action(train_id="noop", action_type="noop")
             best_breakdown = self.scorer.score(state)
 
+        # Log decision explainability
+        before_breakdown = self.scorer.score(state)
+        net_improvement = before_breakdown.total_cost - best_breakdown.total_cost
+
+        action_desc = "Do nothing (noop)"
+        if best_action.action_type == "hold":
+            action_desc = f"Hold Train {best_action.train_id} for {best_action.hold_minutes} min"
+
+        import logging
+        logger = logging.getLogger("greedy_policy")
+        logger.info(f"Action: {action_desc}")
+        logger.info("Before:")
+        logger.info(f"  Delay Cost = {before_breakdown.delay_cost:.0f}")
+        logger.info(f"  Conflict Cost = {before_breakdown.conflict_cost:.0f}")
+        logger.info("After:")
+        logger.info(f"  Delay Cost = {best_breakdown.delay_cost:.0f}")
+        logger.info(f"  Conflict Cost = {best_breakdown.conflict_cost:.0f}")
+        logger.info(f"Net Improvement = {net_improvement:.0f}\n")
+
         return best_action, best_breakdown
