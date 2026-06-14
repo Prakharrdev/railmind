@@ -1,115 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
-/* Base Overrides & Dark Theme Variables */
 :root {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --bg-dark: #0d0e12;
-  --bg-card: #15171e;
-  --bg-card-hover: #1a1d26;
-  --border-color: #222530;
-  --accent-primary: #7c3aed;
-  --accent-primary-hover: #6d28d9;
-  --color-on-time: #10b981;
-  --color-delay-low: #f59e0b;
-  --color-delay-mid: #f97316;
-  --color-delay-high: #ef4444;
+  --canvas: #0A0A0C;
+  --surface-1: #14151A;
+  --surface-2: #1C1E24;
+  --surface-3: #25272E;
+  --border: #2A2D34;
+  --border-strong: #3A3D47;
+
+  --text-primary: #ECEDEF;
+  --text-secondary: #9B9EA7;
+  --text-tertiary: #6B6E78;
+
+  --signal-green: #2FB350;
+  --signal-yellow: #E8B339;
+  --signal-orange: #E8772E;
+  --signal-red: #E14B4B;
+
+  --action-blue: #4C8DFF;
+  --action-blue-muted: rgba(76, 141, 255, 0.1);
+
+  --success: var(--signal-green);
+  --live-indicator: var(--signal-green);
+  --offline-indicator: var(--signal-red);
+  --scrim: rgba(10, 10, 12, 0.72);
+
   color-scheme: dark;
+}
+
+@theme {
+  --color-canvas: var(--canvas);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  
+  --color-signal-green: var(--signal-green);
+  --color-signal-yellow: var(--signal-yellow);
+  --color-signal-orange: var(--signal-orange);
+  --color-signal-red: var(--signal-red);
+  
+  --color-action-blue: var(--action-blue);
+  --color-action-blue-muted: var(--action-blue-muted);
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-dark);
-  color: #f1f5f9;
-  font-family: var(--font-sans);
+  background-color: var(--canvas);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   overflow: hidden;
+}
+
+/* Typography styles based on spec */
+.style-display {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.style-panel-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.style-card-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.style-body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.style-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.style-data-lg {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  font-feature-settings: "tnum";
+}
+
+.style-data-md {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  font-feature-settings: "tnum";
+}
+
+.style-data-sm {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  font-feature-settings: "tnum";
 }
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
+  background: var(--border);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b3f54;
+  background: var(--border-strong);
 }
 
 /* Leaflet Dark Theme Adjustments */
 .leaflet-container {
-  background: var(--bg-dark) !important;
+  background: var(--canvas) !important;
   outline: none;
 }
 .leaflet-tile {
-  filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(90%);
+  filter: invert(100%) hue-rotate(180deg) brightness(50%) contrast(110%);
 }
 .leaflet-bar {
-  border: 1px solid var(--border-color) !important;
+  border: 1px solid var(--border) !important;
   box-shadow: none !important;
+  border-radius: 2px !important;
 }
 .leaflet-bar a {
-  background-color: var(--bg-card) !important;
-  color: #94a3b8 !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--surface-1) !important;
+  color: var(--text-secondary) !important;
+  border-bottom: 1px solid var(--border) !important;
+  transition: all 0.15s ease;
 }
 .leaflet-bar a:hover {
-  background-color: var(--border-color) !important;
-  color: #f8fafc !important;
+  background-color: var(--surface-3) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Tooltip & Popup Customization */
 .leaflet-tooltip {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  color: #f8fafc !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
+  background-color: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
   font-size: 11px !important;
-  border-radius: 6px !important;
+  border-radius: 2px !important;
   padding: 6px 10px !important;
 }
 
 .leaflet-tooltip-left::before {
-  border-left-color: var(--border-color) !important;
+  border-left-color: var(--border) !important;
 }
 .leaflet-tooltip-right::before {
-  border-right-color: var(--border-color) !important;
+  border-right-color: var(--border) !important;
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  color: #f8fafc !important;
-  border-radius: 6px !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
+  background-color: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
   padding: 2px !important;
 }
 .leaflet-popup-tip {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
+  background-color: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
 }
 
-/* Tab animations and utility classes */
-.active-tab-indicator {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--accent-primary);
+/* Red-hatch pattern background for Gantt overlaps */
+.red-hatch-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--signal-red),
+    var(--signal-red) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  opacity: 0.3;
 }
 
-/* Professional Micro-Animations */
-@keyframes pulsing-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+/* Pulsing micro-animations */
+@keyframes pulsing-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
 }
-.subtle-pulse {
-  animation: pulsing-subtle 2.5s infinite ease-in-out;
+.pulse-indicator {
+  animation: pulsing-dot 1.5s infinite ease-in-out;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-indicator {
+    animation: none !important;
+  }
+}
+
+

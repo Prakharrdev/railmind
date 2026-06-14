@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { RefreshCw, Sliders, Info } from 'lucide-react';
+import { RefreshCw, Info } from 'lucide-react';
 
 export default function PlannerConfig() {
   const { plannerConfig, updatePlannerConfig } = useSimulatorState();

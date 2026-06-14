@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+/* eslint-disable react-hooks/set-state-in-effect */
+import { useState, useMemo, useEffect } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { ChevronDown, ChevronRight, GitCommit, Search, Eye, Filter, Info, ShieldAlert } from 'lucide-react';
+import { ChevronDown, ChevronRight, GitCommit, Search, Info, ShieldAlert } from 'lucide-react';
 
 export default function DecisionTree() {
   const { decisionTree } = useSimulatorState();
@@ -33,7 +34,7 @@ export default function DecisionTree() {
   }, [decisionTree]);
 
   // Pre-expand root and first level children
-  useMemo(() => {
+  useEffect(() => {
     if (!decisionTree) return;
     const initialExpanded = { [decisionTree.node_id]: true };
     if (decisionTree.children) {

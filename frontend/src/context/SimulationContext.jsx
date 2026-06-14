@@ -1,4 +1,6 @@
-import React, { createContext, useState, useEffect, useCallback, useRef } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-hooks/set-state-in-effect */
+import { createContext, useState, useEffect, useCallback, useRef } from 'react';
 import axios from 'axios';
 import { useWebSocket } from '../hooks/useWebSocket';
 
@@ -266,17 +268,20 @@ export const SimulationProvider = ({ children }) => {
   const [metrics, setMetrics] = useState(null);
   const [benchmarkMetrics, setBenchmarkMetrics] = useState([]);
   const [plannerConfig, setPlannerConfig] = useState({ depth: 4, beam_width: 8, step_minutes: 5 });
+  const [simTime, setSimTime] = useState(840.0);
   
   // Selection/Highlighting States
   const [selectedTrainId, setSelectedTrainId] = useState(null);
   const [selectedConflict, setSelectedConflict] = useState(null);
 
   // Scenario History / Replay States
-  const [replayHistory, setReplayHistory] = useState(MOCK_SCENARIOS);
+  const [replayHistory] = useState(MOCK_SCENARIOS);
   const [activeReplay, setActiveReplay] = useState(null); // stores selected scenario object or null
 
   const activeReplayRef = useRef(null);
-  activeReplayRef.current = activeReplay;
+  useEffect(() => {
+    activeReplayRef.current = activeReplay;
+  }, [activeReplay]);
 
   // Fetch static network topology
   const fetchNetwork = useCallback(async () => {
@@ -396,6 +401,9 @@ export const SimulationProvider = ({ children }) => {
   // Handler for WebSocket incoming messages
   const handleWebSocketMessage = useCallback((payload) => {
     if (payload.sim_time !== undefined) {
+      if (!activeReplayRef.current) {
+        setSimTime(payload.sim_time);
+      }
       if (payload.trains) {
         setTrains(payload.trains);
       }
@@ -438,6 +446,7 @@ export const SimulationProvider = ({ children }) => {
       value={{
         network,
         trains,
+        simTime: activeReplay ? (activeReplay.snapshot.activeRecommendation?.sim_time || 840.0) : simTime,
         conflicts: activeReplay ? activeReplay.snapshot.conflicts : conflicts,
         recommendations: activeReplay ? { [activeReplay.snapshot.activeRecommendation.recommendation_id]: activeReplay.snapshot.activeRecommendation } : recommendations,
         activeRecommendation: activeReplay ? activeReplay.snapshot.activeRecommendation : activeRecommendation,

@@ -80,38 +80,38 @@
     "semantic_hash": ""
   },
   "frontend/src/App.jsx": {
-    "mtime": 1781434739.6513734,
-    "ast_hash": "176f36653de951b8a5ce8e199284d319",
+    "mtime": 1781439444.4663723,
+    "ast_hash": "a8acc2e8d3320a0873ad9d9d47f2abab",
     "semantic_hash": ""
   },
   "frontend/src/components/ConflictTimeline.jsx": {
-    "mtime": 1781434770.2708898,
-    "ast_hash": "979e86f43f836e3b64cd29ca0d46da24",
+    "mtime": 1781439378.2729757,
+    "ast_hash": "7e721669bb51de64f260a49f81d2ec64",
     "semantic_hash": ""
   },
   "frontend/src/components/CorridorMap.jsx": {
-    "mtime": 1781434751.4848962,
-    "ast_hash": "62f2977c9d13eafae99369120301f3e4",
+    "mtime": 1781439386.2833154,
+    "ast_hash": "22842b523d3cf4d46112301304ff28e7",
     "semantic_hash": ""
   },
   "frontend/src/components/DecisionTree.jsx": {
-    "mtime": 1781434780.9129765,
-    "ast_hash": "661e5c6e28e1814de1b3da4a02b0b819",
+    "mtime": 1781439566.7509518,
+    "ast_hash": "33a44fd114c4be4ae456e3bffd00acb0",
     "semantic_hash": ""
   },
   "frontend/src/components/MetricsCard.jsx": {
-    "mtime": 1781434789.3334126,
-    "ast_hash": "881ffb9b73985155cc6cab5d7f55b8e3",
+    "mtime": 1781439487.64769,
+    "ast_hash": "0a188fe0b8162183f82cec8154d27be6",
     "semantic_hash": ""
   },
   "frontend/src/components/PlannerConfig.jsx": {
-    "mtime": 1781434795.4311755,
-    "ast_hash": "0ff1b4aeef3f8058c49b24dd7706e9d8",
+    "mtime": 1781439499.0684974,
+    "ast_hash": "b2d6a18237da0b88e6421d0a459d6052",
     "semantic_hash": ""
   },
   "frontend/src/components/RecommendationPanel.jsx": {
-    "mtime": 1781434762.4268363,
-    "ast_hash": "0d03729004a847fcb4e159115a91b056",
+    "mtime": 1781439504.3784187,
+    "ast_hash": "f53bd4abb783db9c304956cf44450975",
     "semantic_hash": ""
   },
   "frontend/src/hooks/useSimulatorState.js": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "frontend/src/hooks/useWebSocket.js": {
-    "mtime": 1781381224.6545138,
-    "ast_hash": "ab22e30b9e188a3c0bf9d5bd95cb2a86",
+    "mtime": 1781439572.8162718,
+    "ast_hash": "bc4343ba7791e2702caf548c5af2d955",
     "semantic_hash": ""
   },
   "frontend/src/main.jsx": {
@@ -295,8 +295,8 @@
     "semantic_hash": ""
   },
   "SDPRD.md": {
-    "mtime": 1781212982.553347,
-    "ast_hash": "b0c6e6199e49a8838baf4370fc14ca9e",
+    "mtime": 1781438262.5128171,
+    "ast_hash": "70a417dc29c8269520d7de595f7ed30b",
     "semantic_hash": ""
   },
   "frontend/README.md": {
@@ -2464,11 +2464,6 @@
     "ast_hash": "2102f5e04d64f71bf812db8532794a4a",
     "semantic_hash": ""
   },
-  "assets/phase 6 plan.md": {
-    "mtime": 1781379829.8197088,
-    "ast_hash": "e764817231fdc301e200080728d50fc6",
-    "semantic_hash": ""
-  },
   "experiments/experiment_051_baseline_fcfs/report.html": {
     "mtime": 1781375209.624855,
     "ast_hash": "5ea26f3a5866b34484c7b276571930da",
@@ -2500,33 +2495,33 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConsoleTabs.jsx": {
-    "mtime": 1781434820.1600652,
-    "ast_hash": "d0441413773ac72239ab6c9533f45681",
+    "mtime": 1781439453.9963152,
+    "ast_hash": "36bab53660226a34d2f4f87d47419b53",
     "semantic_hash": ""
   },
   "frontend/src/components/Loading.jsx": {
-    "mtime": 1781434840.5252378,
-    "ast_hash": "7fdc9689deb9c63ef642363a5948e197",
+    "mtime": 1781439481.7517164,
+    "ast_hash": "fdca8dab4b1f51669e4d7ef8c4351f6e",
     "semantic_hash": ""
   },
   "frontend/src/components/Navbar.jsx": {
-    "mtime": 1781434833.9396539,
-    "ast_hash": "a4eab63d2f5e0135d2c49c62e00bb9d7",
+    "mtime": 1781439493.8768733,
+    "ast_hash": "86fcae22b3c3122df8a1c90f9f56b924",
     "semantic_hash": ""
   },
   "frontend/src/components/Sidebar.jsx": {
-    "mtime": 1781434827.0608983,
-    "ast_hash": "8bf9e781a8e0128040fea70d15df2092",
+    "mtime": 1781439345.5792522,
+    "ast_hash": "65c0dd3bd7c31e9daff4f172afcc2ca0",
     "semantic_hash": ""
   },
   "frontend/src/context/SimulationContext.jsx": {
-    "mtime": 1781434812.072109,
-    "ast_hash": "f57e67e8731e490ba1a6b6bfe4570306",
+    "mtime": 1781439534.598078,
+    "ast_hash": "20b502e29b5eb5aeeaee54a73744d099",
     "semantic_hash": ""
   },
   "start.sh": {
-    "mtime": 1781435156.714547,
-    "ast_hash": "dc33f211d26e191ec714d801a23dc657",
+    "mtime": 1781435391.4849355,
+    "ast_hash": "e421deeccd948b9a573c40c7bee3868d",
     "semantic_hash": ""
   },
   "status.sh": {
@@ -2537,6 +2532,41 @@
   "stop.sh": {
     "mtime": 1781435065.014604,
     "ast_hash": "b28afd131fb726c5849b79daae7b5e9b",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/BlockOccupancyGantt.jsx": {
+    "mtime": 1781439367.8063753,
+    "ast_hash": "a6663dad9a1838ec3682edfdc6ce224d",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/FooterBar.jsx": {
+    "mtime": 1781439392.7402897,
+    "ast_hash": "d5283ea178bdf95618e820498d5c12e1",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/GeographicCorridorMap.jsx": {
+    "mtime": 1781439560.2057061,
+    "ast_hash": "a8ce6b9263a863ddae1cc481e370c400",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/SchematicCorridorDiagram.jsx": {
+    "mtime": 1781439510.4496555,
+    "ast_hash": "8c62d7a48139d2762dc82f59cc316357",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/TopBar.jsx": {
+    "mtime": 1781439353.7761588,
+    "ast_hash": "6e35742eda7d9a9eb99680708a5206ff",
+    "semantic_hash": ""
+  },
+  "frontend/src/utils/timetable.json": {
+    "mtime": 1781439040.3789775,
+    "ast_hash": "7b92f904fa90b1eade877d371ae06c3b",
+    "semantic_hash": ""
+  },
+  "uiredesign.md": {
+    "mtime": 1781438242.7664373,
+    "ast_hash": "93ad0bf42f1e7626d0db3099ffe5652f",
     "semantic_hash": ""
   }
 }

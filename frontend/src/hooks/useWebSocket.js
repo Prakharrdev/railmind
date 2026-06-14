@@ -1,14 +1,20 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 export const useWebSocket = (url, onMessage) => {
   const [status, setStatus] = useState('Disconnected');
+  const [reconnectTrigger, setReconnectTrigger] = useState(0);
   const wsRef = useRef(null);
   const reconnectTimeoutRef = useRef(null);
   const reconnectAttemptsRef = useRef(0);
+  
   // Store onMessage in a ref so the connect callback doesn't depend on it,
   // preventing reconnection loops when the parent re-renders.
   const onMessageRef = useRef(onMessage);
-  onMessageRef.current = onMessage;
+  
+  useEffect(() => {
+    onMessageRef.current = onMessage;
+  }, [onMessage]);
 
   const connect = useCallback(() => {
     if (wsRef.current) {
@@ -52,7 +58,7 @@ export const useWebSocket = (url, onMessage) => {
 
       setStatus('Reconnecting');
       reconnectTimeoutRef.current = setTimeout(() => {
-        connect();
+        setReconnectTrigger(prev => prev + 1);
       }, delay);
     };
 
@@ -72,7 +78,7 @@ export const useWebSocket = (url, onMessage) => {
         clearTimeout(reconnectTimeoutRef.current);
       }
     };
-  }, [connect]);
+  }, [connect, reconnectTrigger]);
 
   return {
     status,

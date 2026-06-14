@@ -110,7 +110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "api_models",
-      "community": 1,
+      "community": 46,
       "norm_label": "models.py"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "api_models_disruptionrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "disruptionrequest"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basemodel",
-      "community": 1,
+      "community": 46,
       "norm_label": "basemodel"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "api_models_plannerconfigrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "plannerconfigrequest"
     },
     {
@@ -150,7 +150,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "api_models_actionrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "actionrequest"
     },
     {
@@ -170,7 +170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_control",
-      "community": 1,
+      "community": 46,
       "norm_label": "control.py"
     },
     {
@@ -180,7 +180,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "routes_control_inject_disruption",
-      "community": 1,
+      "community": 46,
       "norm_label": "inject_disruption()"
     },
     {
@@ -190,7 +190,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "disruptionrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "disruptionrequest"
     },
     {
@@ -200,7 +200,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "routes_control_configure_planner",
-      "community": 1,
+      "community": 46,
       "norm_label": "configure_planner()"
     },
     {
@@ -210,7 +210,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "plannerconfigrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "plannerconfigrequest"
     },
     {
@@ -220,7 +220,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "routes_control_apply_action",
-      "community": 1,
+      "community": 46,
       "norm_label": "apply_action()"
     },
     {
@@ -230,7 +230,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "actionrequest",
-      "community": 1,
+      "community": 46,
       "norm_label": "actionrequest"
     },
     {
@@ -240,7 +240,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "routes_control_rationale_11",
-      "community": 1,
+      "community": 46,
       "norm_label": "inject a simulated infrastructure disruption (e.g. engine slow, signal failure)."
     },
     {
@@ -250,7 +250,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "routes_control_rationale_29",
-      "community": 1,
+      "community": 46,
       "norm_label": "dynamically adjust active planner parameters."
     },
     {
@@ -260,7 +260,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "routes_control_rationale_43",
-      "community": 1,
+      "community": 46,
       "norm_label": "manually apply a dispatch hold action on a train."
     },
     {
@@ -750,7 +750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "evaluation_experiment_runner",
-      "community": 1,
+      "community": 34,
       "norm_label": "experiment_runner.py"
     },
     {
@@ -760,7 +760,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_get_git_commit",
-      "community": 1,
+      "community": 34,
       "norm_label": "get_git_commit()"
     },
     {
@@ -770,7 +770,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_generate_experiment_id",
-      "community": 1,
+      "community": 34,
       "norm_label": "generate_experiment_id()"
     },
     {
@@ -780,7 +780,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_check_id_collision",
-      "community": 1,
+      "community": 34,
       "norm_label": "check_id_collision()"
     },
     {
@@ -790,7 +790,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_init_db",
-      "community": 1,
+      "community": 34,
       "norm_label": "init_db()"
     },
     {
@@ -800,7 +800,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_save_result",
-      "community": 1,
+      "community": 34,
       "norm_label": "save_result()"
     },
     {
@@ -810,7 +810,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_generate_scenarios",
-      "community": 1,
+      "community": 34,
       "norm_label": "generate_scenarios()"
     },
     {
@@ -820,7 +820,7 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_fcfs",
-      "community": 1,
+      "community": 34,
       "norm_label": "run_fcfs()"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_beam_search",
-      "community": 62,
+      "community": 34,
       "norm_label": "run_beam_search()"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L336",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_main",
-      "community": 1,
+      "community": 34,
       "norm_label": "main()"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "evaluation_scenario_validation",
-      "community": 1,
+      "community": 34,
       "norm_label": "scenario_validation.py"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_parse_time_to_minutes",
-      "community": 1,
+      "community": 34,
       "norm_label": "parse_time_to_minutes()"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_get_train_movement_history",
-      "community": 1,
+      "community": 34,
       "norm_label": "get_train_movement_history()"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_validate_scenario",
-      "community": 1,
+      "community": 34,
       "norm_label": "validate_scenario()"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_8",
-      "community": 1,
+      "community": 34,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_13",
-      "community": 1,
+      "community": 34,
       "norm_label": "simulates a default fcfs run without any disruptions.     returns:       active_"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "evaluation_scenario_validation_rationale_74",
-      "community": 1,
+      "community": 34,
       "norm_label": "validates a generated scenario using 3 checks:     1. disrupted train must be ac"
     },
     {
@@ -1417,7 +1417,7 @@
       "label": "DashboardContent()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "src_app_dashboardcontent",
       "community": 39,
@@ -1427,11 +1427,31 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L109",
+      "source_location": "L209",
       "_origin": "ast",
       "id": "src_app_app",
       "community": 39,
       "norm_label": "app()"
+    },
+    {
+      "label": "BlockOccupancyGantt.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_blockoccupancygantt",
+      "community": 39,
+      "norm_label": "blockoccupancygantt.jsx"
+    },
+    {
+      "label": "BlockOccupancyGantt()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_blockoccupancygantt_blockoccupancygantt",
+      "community": 39,
+      "norm_label": "blockoccupancygantt()"
     },
     {
       "label": "ConflictTimeline.jsx",
@@ -1447,7 +1467,7 @@
       "label": "ConflictTimeline()",
       "file_type": "code",
       "source_file": "frontend/src/components/ConflictTimeline.jsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "components_conflicttimeline_conflicttimeline",
       "community": 39,
@@ -1487,7 +1507,7 @@
       "label": "CorridorMap()",
       "file_type": "code",
       "source_file": "frontend/src/components/CorridorMap.jsx",
-      "source_location": "L8",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "components_corridormap_corridormap",
       "community": 39,
@@ -1507,11 +1527,51 @@
       "label": "DecisionTree()",
       "file_type": "code",
       "source_file": "frontend/src/components/DecisionTree.jsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "components_decisiontree_decisiontree",
       "community": 39,
       "norm_label": "decisiontree()"
+    },
+    {
+      "label": "FooterBar.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_footerbar",
+      "community": 39,
+      "norm_label": "footerbar.jsx"
+    },
+    {
+      "label": "FooterBar()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_footerbar_footerbar",
+      "community": 39,
+      "norm_label": "footerbar()"
+    },
+    {
+      "label": "GeographicCorridorMap.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_geographiccorridormap",
+      "community": 39,
+      "norm_label": "geographiccorridormap.jsx"
+    },
+    {
+      "label": "GeographicCorridorMap()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_geographiccorridormap_geographiccorridormap",
+      "community": 39,
+      "norm_label": "geographiccorridormap()"
     },
     {
       "label": "Loading.jsx",
@@ -1614,6 +1674,26 @@
       "norm_label": "recommendationpanel()"
     },
     {
+      "label": "SchematicCorridorDiagram.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_schematiccorridordiagram",
+      "community": 39,
+      "norm_label": "schematiccorridordiagram.jsx"
+    },
+    {
+      "label": "SchematicCorridorDiagram()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "components_schematiccorridordiagram_schematiccorridordiagram",
+      "community": 39,
+      "norm_label": "schematiccorridordiagram()"
+    },
+    {
       "label": "Sidebar.jsx",
       "file_type": "code",
       "source_file": "frontend/src/components/Sidebar.jsx",
@@ -1627,11 +1707,31 @@
       "label": "Sidebar()",
       "file_type": "code",
       "source_file": "frontend/src/components/Sidebar.jsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "components_sidebar_sidebar",
       "community": 39,
       "norm_label": "sidebar()"
+    },
+    {
+      "label": "TopBar.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_topbar",
+      "community": 39,
+      "norm_label": "topbar.jsx"
+    },
+    {
+      "label": "TopBar()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_topbar_topbar",
+      "community": 39,
+      "norm_label": "topbar()"
     },
     {
       "label": "SimulationContext.jsx",
@@ -1647,7 +1747,7 @@
       "label": "SimulationContext",
       "file_type": "code",
       "source_file": "frontend/src/context/SimulationContext.jsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "context_simulationcontext_simulationcontext",
       "community": 39,
@@ -1657,7 +1757,7 @@
       "label": "MOCK_SCENARIOS",
       "file_type": "code",
       "source_file": "frontend/src/context/SimulationContext.jsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "context_simulationcontext_mock_scenarios",
       "community": 39,
@@ -1667,7 +1767,7 @@
       "label": "SimulationProvider()",
       "file_type": "code",
       "source_file": "frontend/src/context/SimulationContext.jsx",
-      "source_location": "L258",
+      "source_location": "L260",
       "_origin": "ast",
       "id": "context_simulationcontext_simulationprovider",
       "community": 39,
@@ -1707,7 +1807,7 @@
       "label": "useWebSocket()",
       "file_type": "code",
       "source_file": "frontend/src/hooks/useWebSocket.js",
-      "source_location": "L3",
+      "source_location": "L4",
       "_origin": "ast",
       "id": "hooks_usewebsocket_usewebsocket",
       "community": 39,
@@ -1940,7 +2040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_csp_checker",
-      "community": 10,
+      "community": 62,
       "norm_label": "csp_checker.py"
     },
     {
@@ -1960,7 +2060,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_init",
-      "community": 10,
+      "community": 62,
       "norm_label": ".__init__()"
     },
     {
@@ -1970,7 +2070,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_railwaygraph",
-      "community": 10,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -2050,7 +2150,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_action",
-      "community": 10,
+      "community": 62,
       "norm_label": "action"
     },
     {
@@ -2590,7 +2690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_csp_checker",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_csp_checker.py"
     },
     {
@@ -2600,7 +2700,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_csp_checker_graph",
-      "community": 10,
+      "community": 62,
       "norm_label": "graph()"
     },
     {
@@ -2610,7 +2710,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_csp_checker_checker",
-      "community": 10,
+      "community": 62,
       "norm_label": "checker()"
     },
     {
@@ -2620,7 +2720,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_block_clearance",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_check_block_clearance()"
     },
     {
@@ -2630,7 +2730,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_hold_duration",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_check_hold_duration()"
     },
     {
@@ -2640,7 +2740,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_platform_capacity",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_check_platform_capacity()"
     },
     {
@@ -2650,7 +2750,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_filter_actions",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_filter_actions()"
     },
     {
@@ -2690,7 +2790,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_scorer_scenarios_graph",
-      "community": 36,
+      "community": 62,
       "norm_label": "graph()"
     },
     {
@@ -2730,7 +2830,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_networkstate",
-      "community": 10,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -2750,7 +2850,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_trainstate",
-      "community": 10,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -3170,7 +3270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 10,
+      "community": 62,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -3200,7 +3300,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_init",
-      "community": 10,
+      "community": 62,
       "norm_label": ".__init__()"
     },
     {
@@ -3210,7 +3310,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_railwaygraph",
-      "community": 10,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -3290,7 +3390,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_networkstate",
-      "community": 10,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -3360,7 +3460,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_corridor",
-      "community": 10,
+      "community": 62,
       "norm_label": "corridor.py"
     },
     {
@@ -3420,7 +3520,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph",
-      "community": 10,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -3450,7 +3550,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section",
-      "community": 10,
+      "community": 49,
       "norm_label": ".get_section()"
     },
     {
@@ -3460,7 +3560,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section_by_endpoints",
-      "community": 10,
+      "community": 49,
       "norm_label": ".get_section_by_endpoints()"
     },
     {
@@ -3470,7 +3570,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_typical_traversal_time",
-      "community": 10,
+      "community": 49,
       "norm_label": ".get_typical_traversal_time()"
     },
     {
@@ -3480,7 +3580,7 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_shortest_path",
-      "community": 10,
+      "community": 62,
       "norm_label": ".get_shortest_path()"
     },
     {
@@ -3490,7 +3590,7 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_next_block",
-      "community": 10,
+      "community": 49,
       "norm_label": ".next_block()"
     },
     {
@@ -3500,7 +3600,7 @@
       "source_location": "L310",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_free_blocks",
-      "community": 10,
+      "community": 62,
       "norm_label": ".free_blocks()"
     },
     {
@@ -3510,7 +3610,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_block_length",
-      "community": 10,
+      "community": 62,
       "norm_label": ".block_length()"
     },
     {
@@ -3550,7 +3650,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_190",
-      "community": 10,
+      "community": 49,
       "norm_label": "get details of a section by id, handling reversed direction ids as well."
     },
     {
@@ -3560,7 +3660,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_205",
-      "community": 10,
+      "community": 49,
       "norm_label": "get section details by endpoint station ids."
     },
     {
@@ -3570,7 +3670,7 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_222",
-      "community": 10,
+      "community": 49,
       "norm_label": "calculate typical traversal time in minutes for a section         based on the s"
     },
     {
@@ -3580,7 +3680,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_235",
-      "community": 10,
+      "community": 62,
       "norm_label": "find the shortest path of station ids between two stations."
     },
     {
@@ -3590,7 +3690,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_245",
-      "community": 10,
+      "community": 49,
       "norm_label": "query the block id of the block immediately ahead of the train.         returns"
     },
     {
@@ -3600,7 +3700,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_311",
-      "community": 10,
+      "community": 62,
       "norm_label": "returns a list of block ids that are currently free (not occupied)."
     },
     {
@@ -3610,7 +3710,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_317",
-      "community": 10,
+      "community": 62,
       "norm_label": "returns the length of a block in km."
     },
     {
@@ -3620,7 +3720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_disruption_injector",
-      "community": 1,
+      "community": 34,
       "norm_label": "disruption_injector.py"
     },
     {
@@ -3630,7 +3730,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruption",
-      "community": 1,
+      "community": 34,
       "norm_label": "disruption"
     },
     {
@@ -3640,7 +3740,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruption_is_active",
-      "community": 1,
+      "community": 34,
       "norm_label": ".is_active()"
     },
     {
@@ -3650,7 +3750,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector",
-      "community": 10,
+      "community": 34,
       "norm_label": "disruptioninjector"
     },
     {
@@ -3660,7 +3760,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_init",
-      "community": 10,
+      "community": 34,
       "norm_label": ".__init__()"
     },
     {
@@ -3670,7 +3770,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_inject_disruption",
-      "community": 1,
+      "community": 34,
       "norm_label": ".inject_disruption()"
     },
     {
@@ -3680,7 +3780,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_get_active_disruptions",
-      "community": 1,
+      "community": 34,
       "norm_label": ".get_active_disruptions()"
     },
     {
@@ -3690,7 +3790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_env",
-      "community": 10,
+      "community": 62,
       "norm_label": "env.py"
     },
     {
@@ -3720,7 +3820,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_init",
-      "community": 10,
+      "community": 34,
       "norm_label": ".__init__()"
     },
     {
@@ -3740,7 +3840,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_initialize_state",
-      "community": 10,
+      "community": 34,
       "norm_label": "._initialize_state()"
     },
     {
@@ -3750,7 +3850,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_py_networkstate",
-      "community": 10,
+      "community": 34,
       "norm_label": "networkstate"
     },
     {
@@ -3780,7 +3880,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "simulator_env_py_disruption",
-      "community": 10,
+      "community": 34,
       "norm_label": "disruption"
     },
     {
@@ -3790,7 +3890,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_train_speed",
-      "community": 10,
+      "community": 34,
       "norm_label": "._get_train_speed()"
     },
     {
@@ -3800,7 +3900,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_py_trainstate",
-      "community": 10,
+      "community": 34,
       "norm_label": "trainstate"
     },
     {
@@ -3900,7 +4000,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "simulator_env_rationale_102",
-      "community": 10,
+      "community": 34,
       "norm_label": "calculate the max target speed of a train on a section under active disruptions."
     },
     {
@@ -4200,7 +4300,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_replay_runner_replayrunner_load_run",
-      "community": 48,
+      "community": 34,
       "norm_label": ".load_run()"
     },
     {
@@ -4290,7 +4390,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_replay_runner_rationale_17",
-      "community": 48,
+      "community": 34,
       "norm_label": "reconstruct the sequence of simulation states by re-simulating with logged actio"
     },
     {
@@ -4370,7 +4470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_generate_marey_chart",
-      "community": 1,
+      "community": 34,
       "norm_label": "generate_marey_chart.py"
     },
     {
@@ -4380,7 +4480,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_generate_marey_chart_main",
-      "community": 1,
+      "community": 34,
       "norm_label": "main()"
     },
     {
@@ -4390,7 +4490,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "tests_generate_marey_chart_generate_html",
-      "community": 1,
+      "community": 34,
       "norm_label": "generate_html()"
     },
     {
@@ -4450,7 +4550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability",
-      "community": 34,
+      "community": 62,
       "norm_label": "test_apply_action_immutability.py"
     },
     {
@@ -4460,7 +4560,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability_test_apply_action_immutability",
-      "community": 34,
+      "community": 62,
       "norm_label": "test_apply_action_immutability()"
     },
     {
@@ -4470,7 +4570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conflict_detector",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_conflict_detector.py"
     },
     {
@@ -4480,7 +4580,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_conflict_detector_test_conflict_detection_overlap",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_conflict_detection_overlap()"
     },
     {
@@ -4490,7 +4590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_corridor",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_corridor.py"
     },
     {
@@ -4500,7 +4600,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_corridor_graph",
-      "community": 10,
+      "community": 4,
       "norm_label": "graph()"
     },
     {
@@ -4510,7 +4610,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_corridor_test_load_stations",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_load_stations()"
     },
     {
@@ -4520,7 +4620,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_test_corridor_test_load_sections",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_load_sections()"
     },
     {
@@ -4530,7 +4630,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "tests_test_corridor_test_get_section_by_endpoints",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_get_section_by_endpoints()"
     },
     {
@@ -4540,7 +4640,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "tests_test_corridor_test_traversal_time",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_traversal_time()"
     },
     {
@@ -4550,7 +4650,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "tests_test_corridor_test_shortest_path",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_shortest_path()"
     },
     {
@@ -4560,7 +4660,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_test_corridor_test_blocks_generation",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_blocks_generation()"
     },
     {
@@ -4570,7 +4670,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "tests_test_corridor_test_detailed_infrastructure_model",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_detailed_infrastructure_model()"
     },
     {
@@ -4580,7 +4680,7 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "tests_test_corridor_test_infrastructure_queries",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_infrastructure_queries()"
     },
     {
@@ -4590,7 +4690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_env",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_env.py"
     },
     {
@@ -4600,7 +4700,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_env_test_dataclasses_instantiation_and_print",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_dataclasses_instantiation_and_print()"
     },
     {
@@ -4610,7 +4710,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_env_test_network_state_clone",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_network_state_clone()"
     },
     {
@@ -4950,7 +5050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_train_state",
-      "community": 10,
+      "community": 62,
       "norm_label": "train_state.py"
     },
     {
@@ -4960,7 +5060,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "simulator_train_state_trainstate",
-      "community": 10,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -4970,7 +5070,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_train_state_blockstate",
-      "community": 10,
+      "community": 36,
       "norm_label": "blockstate"
     },
     {
@@ -4980,7 +5080,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "simulator_train_state_stationstate",
-      "community": 10,
+      "community": 62,
       "norm_label": "stationstate"
     },
     {
@@ -5040,6 +5140,20 @@
       "id": "users_prakharrr_railmind_start_sh__entry",
       "community": 35,
       "norm_label": "start.sh script"
+    },
+    {
+      "label": "WEBSOCKETS_MAX_LINE_LENGTH",
+      "file_type": "code",
+      "source_file": "start.sh",
+      "source_location": "L15",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast",
+      "id": "start_websockets_max_line_length",
+      "community": 35,
+      "norm_label": "websockets_max_line_length"
     },
     {
       "label": "status.sh",
@@ -7136,196 +7250,6 @@
       "norm_label": "in an interview"
     },
     {
-      "label": "phase 6 plan.md",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan",
-      "community": 4,
-      "norm_label": "phase 6 plan.md"
-    },
-    {
-      "label": "RailMind Phase 6 \u2014 Dispatcher Dashboard & Frontend Implementation Plan",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_railmind_phase_6_dispatcher_dashboard_frontend_implementation_plan",
-      "community": 4,
-      "norm_label": "railmind phase 6 \u2014 dispatcher dashboard & frontend implementation plan"
-    },
-    {
-      "label": "Overview",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_overview",
-      "community": 4,
-      "norm_label": "overview"
-    },
-    {
-      "label": "Technical Stack",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_technical_stack",
-      "community": 4,
-      "norm_label": "technical stack"
-    },
-    {
-      "label": "Project Structure",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L75",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_project_structure",
-      "community": 4,
-      "norm_label": "project structure"
-    },
-    {
-      "label": "Dashboard Layout",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L112",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_dashboard_layout",
-      "community": 4,
-      "norm_label": "dashboard layout"
-    },
-    {
-      "label": "|                     NAVBAR                            |",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L118",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_navbar",
-      "community": 4,
-      "norm_label": "|                     navbar                            |"
-    },
-    {
-      "label": "Component 1 \u2014 CorridorMap",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L147",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_1_corridormap",
-      "community": 4,
-      "norm_label": "component 1 \u2014 corridormap"
-    },
-    {
-      "label": "Component 2 \u2014 ConflictTimeline",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L197",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_2_conflicttimeline",
-      "community": 4,
-      "norm_label": "component 2 \u2014 conflicttimeline"
-    },
-    {
-      "label": "Component 3 \u2014 Recommendation Panel",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L237",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_3_recommendation_panel",
-      "community": 4,
-      "norm_label": "component 3 \u2014 recommendation panel"
-    },
-    {
-      "label": "Component 4 \u2014 Decision Tree Visualization",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L281",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_4_decision_tree_visualization",
-      "community": 4,
-      "norm_label": "component 4 \u2014 decision tree visualization"
-    },
-    {
-      "label": "Component 5 \u2014 Metrics Dashboard",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L334",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_5_metrics_dashboard",
-      "community": 4,
-      "norm_label": "component 5 \u2014 metrics dashboard"
-    },
-    {
-      "label": "Component 6 \u2014 Planner Configuration",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L371",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_component_6_planner_configuration",
-      "community": 4,
-      "norm_label": "component 6 \u2014 planner configuration"
-    },
-    {
-      "label": "WebSocket Integration",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L406",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_websocket_integration",
-      "community": 4,
-      "norm_label": "websocket integration"
-    },
-    {
-      "label": "Global State Management",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L438",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_global_state_management",
-      "community": 4,
-      "norm_label": "global state management"
-    },
-    {
-      "label": "UI Requirements",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L462",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_ui_requirements",
-      "community": 4,
-      "norm_label": "ui requirements"
-    },
-    {
-      "label": "Performance Requirements",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L491",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_performance_requirements",
-      "community": 4,
-      "norm_label": "performance requirements"
-    },
-    {
-      "label": "End-to-End Demo Scenario",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L510",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_end_to_end_demo_scenario",
-      "community": 4,
-      "norm_label": "end-to-end demo scenario"
-    },
-    {
-      "label": "Phase 6 Completion Criteria",
-      "file_type": "document",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L569",
-      "_origin": "ast",
-      "id": "assets_phase_6_plan_phase_6_completion_criteria",
-      "community": 4,
-      "norm_label": "phase 6 completion criteria"
-    },
-    {
       "label": "report.md",
       "file_type": "document",
       "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
@@ -8564,6 +8488,466 @@
       "id": "frontend_readme_expanding_the_eslint_configuration",
       "community": 25,
       "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "uiredesign.md",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "uiredesign",
+      "community": 1,
+      "norm_label": "uiredesign.md"
+    },
+    {
+      "label": "RailMind \u2014 Dispatcher Dashboard",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "uiredesign_railmind_dispatcher_dashboard",
+      "community": 1,
+      "norm_label": "railmind \u2014 dispatcher dashboard"
+    },
+    {
+      "label": "Frontend Design & Implementation Specification",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "uiredesign_frontend_design_implementation_specification",
+      "community": 1,
+      "norm_label": "frontend design & implementation specification"
+    },
+    {
+      "label": "0. How to Use This Document",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "uiredesign_0_how_to_use_this_document",
+      "community": 1,
+      "norm_label": "0. how to use this document"
+    },
+    {
+      "label": "1. Design Direction",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "uiredesign_1_design_direction",
+      "community": 1,
+      "norm_label": "1. design direction"
+    },
+    {
+      "label": "1.1 Grounding the Brief",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "uiredesign_1_1_grounding_the_brief",
+      "community": 1,
+      "norm_label": "1.1 grounding the brief"
+    },
+    {
+      "label": "1.2 Why This Avoids the Generic \"AI Dashboard\" Look",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "uiredesign_1_2_why_this_avoids_the_generic_ai_dashboard_look",
+      "community": 1,
+      "norm_label": "1.2 why this avoids the generic \"ai dashboard\" look"
+    },
+    {
+      "label": "1.3 Design Token System",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "uiredesign_1_3_design_token_system",
+      "community": 1,
+      "norm_label": "1.3 design token system"
+    },
+    {
+      "label": "Surfaces (graphite, not blue-black)",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "uiredesign_surfaces_graphite_not_blue_black",
+      "community": 1,
+      "norm_label": "surfaces (graphite, not blue-black)"
+    },
+    {
+      "label": "Text",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "uiredesign_text",
+      "community": 1,
+      "norm_label": "text"
+    },
+    {
+      "label": "Signal Aspect System \u2014 the severity / criticality scale",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "uiredesign_signal_aspect_system_the_severity_criticality_scale",
+      "community": 1,
+      "norm_label": "signal aspect system \u2014 the severity / criticality scale"
+    },
+    {
+      "label": "Action / Interactive",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "uiredesign_action_interactive",
+      "community": 1,
+      "norm_label": "action / interactive"
+    },
+    {
+      "label": "Semantic Aliases",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "uiredesign_semantic_aliases",
+      "community": 1,
+      "norm_label": "semantic aliases"
+    },
+    {
+      "label": "1.4 Typography",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "uiredesign_1_4_typography",
+      "community": 1,
+      "norm_label": "1.4 typography"
+    },
+    {
+      "label": "Type Scale",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "uiredesign_type_scale",
+      "community": 1,
+      "norm_label": "type scale"
+    },
+    {
+      "label": "1.5 Spacing, Radius, Elevation",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L161",
+      "_origin": "ast",
+      "id": "uiredesign_1_5_spacing_radius_elevation",
+      "community": 1,
+      "norm_label": "1.5 spacing, radius, elevation"
+    },
+    {
+      "label": "1.6 Iconography",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "uiredesign_1_6_iconography",
+      "community": 1,
+      "norm_label": "1.6 iconography"
+    },
+    {
+      "label": "1.7 Signature Element: The Track Diagram",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "uiredesign_1_7_signature_element_the_track_diagram",
+      "community": 1,
+      "norm_label": "1.7 signature element: the track diagram"
+    },
+    {
+      "label": "2. Layout Architecture",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L221",
+      "_origin": "ast",
+      "id": "uiredesign_2_layout_architecture",
+      "community": 1,
+      "norm_label": "2. layout architecture"
+    },
+    {
+      "label": "2.1 Overall Grid",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L223",
+      "_origin": "ast",
+      "id": "uiredesign_2_1_overall_grid",
+      "community": 1,
+      "norm_label": "2.1 overall grid"
+    },
+    {
+      "label": "2.2 Panel Specifications",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L259",
+      "_origin": "ast",
+      "id": "uiredesign_2_2_panel_specifications",
+      "community": 1,
+      "norm_label": "2.2 panel specifications"
+    },
+    {
+      "label": "2.3 Responsive Behavior",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L275",
+      "_origin": "ast",
+      "id": "uiredesign_2_3_responsive_behavior",
+      "community": 1,
+      "norm_label": "2.3 responsive behavior"
+    },
+    {
+      "label": "3. Severity System \u2014 Applied Reference Map",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L290",
+      "_origin": "ast",
+      "id": "uiredesign_3_severity_system_applied_reference_map",
+      "community": 1,
+      "norm_label": "3. severity system \u2014 applied reference map"
+    },
+    {
+      "label": "4. Component Inventory",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L317",
+      "_origin": "ast",
+      "id": "uiredesign_4_component_inventory",
+      "community": 1,
+      "norm_label": "4. component inventory"
+    },
+    {
+      "label": "4.1 Global Shell",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L323",
+      "_origin": "ast",
+      "id": "uiredesign_4_1_global_shell",
+      "community": 1,
+      "norm_label": "4.1 global shell"
+    },
+    {
+      "label": "`AppShell`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L325",
+      "_origin": "ast",
+      "id": "uiredesign_appshell",
+      "community": 1,
+      "norm_label": "`appshell`"
+    },
+    {
+      "label": "`TopBar`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L330",
+      "_origin": "ast",
+      "id": "uiredesign_topbar",
+      "community": 1,
+      "norm_label": "`topbar`"
+    },
+    {
+      "label": "`FooterBar`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "uiredesign_footerbar",
+      "community": 1,
+      "norm_label": "`footerbar`"
+    },
+    {
+      "label": "4.2 Left Panel \u2014 Train Roster",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L370",
+      "_origin": "ast",
+      "id": "uiredesign_4_2_left_panel_train_roster",
+      "community": 1,
+      "norm_label": "4.2 left panel \u2014 train roster"
+    },
+    {
+      "label": "`TrainRosterPanel`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L372",
+      "_origin": "ast",
+      "id": "uiredesign_trainrosterpanel",
+      "community": 1,
+      "norm_label": "`trainrosterpanel`"
+    },
+    {
+      "label": "`TrainSearchBar`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L379",
+      "_origin": "ast",
+      "id": "uiredesign_trainsearchbar",
+      "community": 1,
+      "norm_label": "`trainsearchbar`"
+    },
+    {
+      "label": "`TrainFilterMenu`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L387",
+      "_origin": "ast",
+      "id": "uiredesign_trainfiltermenu",
+      "community": 1,
+      "norm_label": "`trainfiltermenu`"
+    },
+    {
+      "label": "`TrainCard`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L394",
+      "_origin": "ast",
+      "id": "uiredesign_traincard",
+      "community": 1,
+      "norm_label": "`traincard`"
+    },
+    {
+      "label": "`TrainCardExpanded`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L428",
+      "_origin": "ast",
+      "id": "uiredesign_traincardexpanded",
+      "community": 1,
+      "norm_label": "`traincardexpanded`"
+    },
+    {
+      "label": "`ViewAllTrainsButton`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L437",
+      "_origin": "ast",
+      "id": "uiredesign_viewalltrainsbutton",
+      "community": 1,
+      "norm_label": "`viewalltrainsbutton`"
+    },
+    {
+      "label": "4.3 Center Panel \u2014 Corridor Visualization",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L446",
+      "_origin": "ast",
+      "id": "uiredesign_4_3_center_panel_corridor_visualization",
+      "community": 1,
+      "norm_label": "4.3 center panel \u2014 corridor visualization"
+    },
+    {
+      "label": "`CorridorPanelHeader`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L455",
+      "_origin": "ast",
+      "id": "uiredesign_corridorpanelheader",
+      "community": 1,
+      "norm_label": "`corridorpanelheader`"
+    },
+    {
+      "label": "`SeverityLegend`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L460",
+      "_origin": "ast",
+      "id": "uiredesign_severitylegend",
+      "community": 1,
+      "norm_label": "`severitylegend`"
+    },
+    {
+      "label": "`CorridorViewToggle`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L467",
+      "_origin": "ast",
+      "id": "uiredesign_corridorviewtoggle",
+      "community": 1,
+      "norm_label": "`corridorviewtoggle`"
+    },
+    {
+      "label": "4.3.1 `SchematicCorridorDiagram` (Primary / Signature)",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L475",
+      "_origin": "ast",
+      "id": "uiredesign_4_3_1_schematiccorridordiagram_primary_signature",
+      "community": 1,
+      "norm_label": "4.3.1 `schematiccorridordiagram` (primary / signature)"
+    },
+    {
+      "label": "4.3.2 `GeographicCorridorMap` (Secondary view)",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L606",
+      "_origin": "ast",
+      "id": "uiredesign_4_3_2_geographiccorridormap_secondary_view",
+      "community": 1,
+      "norm_label": "4.3.2 `geographiccorridormap` (secondary view)"
+    },
+    {
+      "label": "4.3.3 Conflict Timeline",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L631",
+      "_origin": "ast",
+      "id": "uiredesign_4_3_3_conflict_timeline",
+      "community": 1,
+      "norm_label": "4.3.3 conflict timeline"
+    },
+    {
+      "label": "`ConflictTimelineHeader`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L636",
+      "_origin": "ast",
+      "id": "uiredesign_conflicttimelineheader",
+      "community": 1,
+      "norm_label": "`conflicttimelineheader`"
+    },
+    {
+      "label": "`ShowResolvedToggle`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L641",
+      "_origin": "ast",
+      "id": "uiredesign_showresolvedtoggle",
+      "community": 1,
+      "norm_label": "`showresolvedtoggle`"
+    },
+    {
+      "label": "`ConflictListPanel` / `ConflictListRow`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L648",
+      "_origin": "ast",
+      "id": "uiredesign_conflictlistpanel_conflictlistrow",
+      "community": 1,
+      "norm_label": "`conflictlistpanel` / `conflictlistrow`"
+    },
+    {
+      "label": "`BlockOccupancyGantt`",
+      "file_type": "document",
+      "source_file": "uiredesign.md",
+      "source_location": "L661",
+      "_origin": "ast",
+      "id": "uiredesign_blockoccupancygantt",
+      "community": 1,
+      "norm_label": "`blockoccupancygantt`"
     }
   ],
   "links": [
@@ -12074,6 +12458,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_footerbar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_footerbar_footerbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12112,6 +12518,28 @@
       "confidence_score": 1.0,
       "source": "src_app",
       "target": "components_sidebar_sidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_topbar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_topbar_topbar"
     },
     {
       "relation": "imports_from",
@@ -12209,6 +12637,71 @@
       "confidence_score": 1.0,
       "source": "src_main",
       "target": "src_app_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_blockoccupancygantt",
+      "target": "components_blockoccupancygantt_blockoccupancygantt"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_blockoccupancygantt",
+      "target": "hooks_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_blockoccupancygantt",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ConflictTimeline.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_conflicttimeline",
+      "target": "components_blockoccupancygantt"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/BlockOccupancyGantt.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_blockoccupancygantt_blockoccupancygantt",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ConflictTimeline.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_conflicttimeline",
+      "target": "components_blockoccupancygantt_blockoccupancygantt"
     },
     {
       "relation": "contains",
@@ -12399,6 +12892,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/CorridorMap.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_corridormap",
+      "target": "components_geographiccorridormap"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CorridorMap.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_corridormap",
+      "target": "components_geographiccorridormap_geographiccorridormap"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CorridorMap.jsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12415,6 +12930,28 @@
       "confidence_score": 1.0,
       "source": "components_corridormap",
       "target": "components_loading_loading"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CorridorMap.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_corridormap",
+      "target": "components_schematiccorridordiagram"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CorridorMap.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_corridormap",
+      "target": "components_schematiccorridordiagram_schematiccorridordiagram"
     },
     {
       "relation": "imports_from",
@@ -12490,6 +13027,114 @@
       "source_location": "L6",
       "weight": 1.0,
       "source": "components_decisiontree_decisiontree",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footerbar",
+      "target": "components_footerbar_footerbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footerbar",
+      "target": "components_plannerconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footerbar",
+      "target": "components_plannerconfig_plannerconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footerbar",
+      "target": "hooks_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footerbar",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/FooterBar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_footerbar_footerbar",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_geographiccorridormap",
+      "target": "components_geographiccorridormap_geographiccorridormap"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_geographiccorridormap",
+      "target": "hooks_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_geographiccorridormap",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_geographiccorridormap_geographiccorridormap",
       "target": "hooks_usesimulatorstate_usesimulatorstate"
     },
     {
@@ -12699,6 +13344,49 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_schematiccorridordiagram",
+      "target": "components_schematiccorridordiagram_schematiccorridordiagram"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_schematiccorridordiagram",
+      "target": "hooks_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_schematiccorridordiagram",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/SchematicCorridorDiagram.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_schematiccorridordiagram_schematiccorridordiagram",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/Sidebar.jsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -12737,6 +13425,49 @@
       "source_location": "L6",
       "weight": 1.0,
       "source": "components_sidebar_sidebar",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_topbar",
+      "target": "components_topbar_topbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_topbar",
+      "target": "hooks_usesimulatorstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_topbar",
+      "target": "hooks_usesimulatorstate_usesimulatorstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/TopBar.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_topbar_topbar",
       "target": "hooks_usesimulatorstate_usesimulatorstate"
     },
     {
@@ -23556,14 +24287,24 @@
       "target": "simulator_train_state_networkstate_clone"
     },
     {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "start.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "start",
+      "target": "start_websockets_max_line_length"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "start.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "start",
-      "target": "users_prakharrr_railmind_start_sh__entry",
-      "confidence_score": 1.0
+      "target": "users_prakharrr_railmind_start_sh__entry"
     },
     {
       "relation": "defines",
@@ -23571,9 +24312,9 @@
       "source_file": "status.sh",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status",
-      "target": "status_check_status",
-      "confidence_score": 1.0
+      "target": "status_check_status"
     },
     {
       "relation": "contains",
@@ -23581,9 +24322,9 @@
       "source_file": "status.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status",
-      "target": "users_prakharrr_railmind_status_sh__entry",
-      "confidence_score": 1.0
+      "target": "users_prakharrr_railmind_status_sh__entry"
     },
     {
       "relation": "calls",
@@ -23592,9 +24333,9 @@
       "source_location": "L30",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "users_prakharrr_railmind_status_sh__entry",
-      "target": "status_check_status",
-      "confidence_score": 1.0
+      "target": "status_check_status"
     },
     {
       "relation": "defines",
@@ -23602,9 +24343,9 @@
       "source_file": "stop.sh",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stop",
-      "target": "stop_stop_process",
-      "confidence_score": 1.0
+      "target": "stop_stop_process"
     },
     {
       "relation": "contains",
@@ -23612,9 +24353,9 @@
       "source_file": "stop.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stop",
-      "target": "users_prakharrr_railmind_stop_sh__entry",
-      "confidence_score": 1.0
+      "target": "users_prakharrr_railmind_stop_sh__entry"
     },
     {
       "relation": "calls",
@@ -23623,9 +24364,9 @@
       "source_location": "L54",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "users_prakharrr_railmind_stop_sh__entry",
-      "target": "stop_stop_process",
-      "confidence_score": 1.0
+      "target": "stop_stop_process"
     },
     {
       "relation": "contains",
@@ -25580,186 +26321,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L147",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_1_corridormap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L197",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_2_conflicttimeline"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L237",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_3_recommendation_panel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L281",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_4_decision_tree_visualization"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L334",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_5_metrics_dashboard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L371",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_component_6_planner_configuration"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L112",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_dashboard_layout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L510",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_end_to_end_demo_scenario"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L438",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_global_state_management"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L491",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_performance_requirements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L569",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_phase_6_completion_criteria"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_project_structure"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_railmind_phase_6_dispatcher_dashboard_frontend_implementation_plan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_technical_stack"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L462",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_ui_requirements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L406",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan",
-      "target": "assets_phase_6_plan_websocket_integration"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan_railmind_phase_6_dispatcher_dashboard_frontend_implementation_plan",
-      "target": "assets_phase_6_plan_overview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "assets/phase 6 plan.md",
-      "source_location": "L118",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "assets_phase_6_plan_dashboard_layout",
-      "target": "assets_phase_6_plan_navbar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "experiments/experiment_001_baseline_fcfs/report.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -26886,8 +27447,458 @@
       "confidence_score": 1.0,
       "source": "frontend_readme_react_vite",
       "target": "frontend_readme_react_compiler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign",
+      "target": "uiredesign_railmind_dispatcher_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_0_how_to_use_this_document"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_1_design_direction"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L221",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_2_layout_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L290",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_3_severity_system_applied_reference_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L317",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_4_component_inventory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_railmind_dispatcher_dashboard",
+      "target": "uiredesign_frontend_design_implementation_specification"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_1_grounding_the_brief"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_2_why_this_avoids_the_generic_ai_dashboard_look"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_3_design_token_system"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L137",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_4_typography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_5_spacing_radius_elevation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L174",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_6_iconography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_design_direction",
+      "target": "uiredesign_1_7_signature_element_the_track_diagram"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_3_design_token_system",
+      "target": "uiredesign_action_interactive"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_3_design_token_system",
+      "target": "uiredesign_semantic_aliases"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_3_design_token_system",
+      "target": "uiredesign_signal_aspect_system_the_severity_criticality_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_3_design_token_system",
+      "target": "uiredesign_surfaces_graphite_not_blue_black"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_3_design_token_system",
+      "target": "uiredesign_text"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_1_4_typography",
+      "target": "uiredesign_type_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_2_layout_architecture",
+      "target": "uiredesign_2_1_overall_grid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L259",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_2_layout_architecture",
+      "target": "uiredesign_2_2_panel_specifications"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L275",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_2_layout_architecture",
+      "target": "uiredesign_2_3_responsive_behavior"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L323",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_component_inventory",
+      "target": "uiredesign_4_1_global_shell"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L370",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_component_inventory",
+      "target": "uiredesign_4_2_left_panel_train_roster"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L446",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_component_inventory",
+      "target": "uiredesign_4_3_center_panel_corridor_visualization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L325",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_1_global_shell",
+      "target": "uiredesign_appshell"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_1_global_shell",
+      "target": "uiredesign_footerbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L330",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_1_global_shell",
+      "target": "uiredesign_topbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_traincard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L428",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_traincardexpanded"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L387",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_trainfiltermenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L372",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_trainrosterpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L379",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_trainsearchbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L437",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_2_left_panel_train_roster",
+      "target": "uiredesign_viewalltrainsbutton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L475",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_4_3_1_schematiccorridordiagram_primary_signature"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L606",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_4_3_2_geographiccorridormap_secondary_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L631",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_4_3_3_conflict_timeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L661",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_blockoccupancygantt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L648",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_conflictlistpanel_conflictlistrow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L636",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_conflicttimelineheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L455",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_corridorpanelheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L467",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_corridorviewtoggle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L460",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_severitylegend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "uiredesign.md",
+      "source_location": "L641",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "uiredesign_4_3_center_panel_corridor_visualization",
+      "target": "uiredesign_showresolvedtoggle"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3d49581e32d14e0ce78ea86f388c3f3206f4c1fe"
+  "built_at_commit": "c83ced0afeb60afe45f18058bdebe3a97b374d06"
 }

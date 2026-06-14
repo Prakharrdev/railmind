@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useSimulatorState } from '../hooks/useSimulatorState';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Legend } from 'recharts';
 import { ShieldCheck, TrendingUp, Clock, Zap } from 'lucide-react';

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
 import { Activity, AlertTriangle, Play, Wifi, WifiOff, X } from 'lucide-react';
 
 export default function Navbar() {
   const { wsStatus, trains, injectDisruption } = useSimulatorState();
   const [showDisruptModal, setShowDisruptModal] = useState(false);
-  const [disruptForm, setDisruptForm] = useState({
+  const [disruptForm, setDisruptForm] = useState(() => ({
     disruption_id: 'disrupt_' + Math.floor(Math.random() * 1000),
     train_id: '',
     disruption_type: 'engine_slow',
@@ -13,7 +13,7 @@ export default function Navbar() {
     start_time: 845,
     end_time: 875,
     target_id: ''
-  });
+  }));
 
   const getStatusColor = () => {
     switch (wsStatus) {

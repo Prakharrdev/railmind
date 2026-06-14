@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { Check, ShieldAlert, Settings, Zap, Activity, Clock, MapPin, Award } from 'lucide-react';
+import { Check, Settings, Zap, Activity, Clock, MapPin, Award } from 'lucide-react';
 
 export default function RecommendationPanel() {
   const { 
