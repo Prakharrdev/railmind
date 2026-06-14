@@ -1,16 +1,16 @@
 # Graph Report - railmind  (2026-06-14)
 
 ## Corpus Check
-- 137 files · ~284,327 words
+- 137 files · ~284,890 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 901 nodes · 1843 edges · 79 communities (70 shown, 9 thin omitted)
+- 903 nodes · 1845 edges · 82 communities (73 shown, 9 thin omitted)
 - Extraction: 79% EXTRACTED · 21% INFERRED · 0% AMBIGUOUS · INFERRED: 385 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c5f7bbb1`
+- Built from commit: `b06ba497`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -60,7 +60,10 @@
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
@@ -90,29 +93,29 @@
 10. `useSimulatorState()` - 31 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `DisruptionRequest` --uses--> `Disruption`  [INFERRED]
-  api/routes/control.py → simulator/disruption_injector.py
 - `DisruptionRequest` --uses--> `Action`  [INFERRED]
   api/routes/control.py → simulator/env.py
-- `PlannerConfigRequest` --uses--> `Disruption`  [INFERRED]
-  api/routes/control.py → simulator/disruption_injector.py
 - `PlannerConfigRequest` --uses--> `Action`  [INFERRED]
   api/routes/control.py → simulator/env.py
-- `ActionRequest` --uses--> `Disruption`  [INFERRED]
-  api/routes/control.py → simulator/disruption_injector.py
+- `ActionRequest` --uses--> `Action`  [INFERRED]
+  api/routes/control.py → simulator/env.py
+- `SimulationRunner` --uses--> `BeamSearchPlanner`  [INFERRED]
+  api/sim_runner.py → optimizer/beam_search.py
+- `SimulationRunner` --uses--> `ConstraintChecker`  [INFERRED]
+  api/sim_runner.py → optimizer/csp_checker.py
 
 ## Import Cycles
 - 1-file cycle: `api/main.py -> api/main.py`
+- 2-file cycle: `api/main.py -> api/routes/control.py -> api/main.py`
+- 2-file cycle: `api/main.py -> api/ws_manager.py -> api/main.py`
 - 2-file cycle: `api/main.py -> api/routes/planner.py -> api/main.py`
 - 2-file cycle: `api/main.py -> api/routes/simulation.py -> api/main.py`
-- 2-file cycle: `api/main.py -> api/ws_manager.py -> api/main.py`
-- 2-file cycle: `api/main.py -> api/routes/control.py -> api/main.py`
 - 3-file cycle: `api/main.py -> api/sim_runner.py -> api/ws_manager.py -> api/main.py`
+- 4-file cycle: `api/main.py -> api/routes/control.py -> api/sim_runner.py -> api/ws_manager.py -> api/main.py`
 - 4-file cycle: `api/main.py -> api/routes/planner.py -> api/sim_runner.py -> api/ws_manager.py -> api/main.py`
 - 4-file cycle: `api/main.py -> api/routes/simulation.py -> api/sim_runner.py -> api/ws_manager.py -> api/main.py`
-- 4-file cycle: `api/main.py -> api/routes/control.py -> api/sim_runner.py -> api/ws_manager.py -> api/main.py`
 
-## Communities (79 total, 9 thin omitted)
+## Communities (82 total, 9 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -124,7 +127,7 @@ Nodes (30): dependencies, axios, framer-motion, leaflet, lucide-react, react, re
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
-Nodes (26): **Algorithmic & Mathematical Foundation**, **Backend Setup**, **Beam Search with Forward Simulation**, **Configuration Matrix**, **Core Features**, **Developer & Author**, **Evaluation & Benchmarking Methodology**, **Formal State & Action Space** (+18 more)
+Nodes (28): **Algorithmic & Mathematical Foundation**, **Backend Setup**, **Beam Search with Forward Simulation**, **Configuration Matrix**, **Core Features**, **Developer & Author**, **Development & Metric Evolution over Time**, **Evaluation & Benchmarking Methodology** (+20 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -147,8 +150,8 @@ Cohesion: 0.20
 Nodes (10): 4.1 Python Foundations (Prerequisite), 4.2 NumPy and Data Manipulation, 4.3 Graph Theory and NetworkX, 4.4 Tree Data Structures and Search Algorithms, 4.5 State Space Modeling, 4.6 Constraint Satisfaction (Light Version), 4.7 FastAPI, 4.8 React (Frontend) (+2 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.21
-Nodes (13): compute_f_cost(), compute_g_cost(), compute_h_cost(), NetworkState, StateScorer, TrainNetworkSimulator, Heuristic cost (h) projects the state 20 minutes forward under FCFS:     h_cost, Total cost f = g + h. (+5 more)
+Cohesion: 0.12
+Nodes (13): DisruptionInjector, Disruption, NetworkState, Calculate the max target speed of a train on a section under active disruptions., Get block IDs currently blocked by active signal failures., Get capacity reductions at stations due to platform blockages., Advance the simulation time by 30 seconds (0.5 minutes) and update train states., Apply a dispatcher hold action to a state snapshot immutably. (+5 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.22
@@ -239,8 +242,8 @@ Cohesion: 0.50
 Nodes (4): 9.1 Base URL, 9.2 REST Endpoints, 9.3 WebSocket Endpoint, 9. API Specifications
 
 ### Community 34 - "Community 34"
-Cohesion: 0.06
-Nodes (51): check_id_collision(), generate_experiment_id(), generate_scenarios(), get_git_commit(), init_db(), main(), run_beam_search(), run_fcfs() (+43 more)
+Cohesion: 0.09
+Nodes (34): ActionRequest, ActionRequest, DisruptionRequest, PlannerConfigRequest, BaseModel, DisruptionRequest, check_id_collision(), generate_experiment_id() (+26 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.17
@@ -259,24 +262,36 @@ Cohesion: 0.11
 Nodes (25): BlockOccupancyGantt(), ConflictTimeline(), ConsoleTabs(), CorridorMap(), DecisionTree(), FooterBar(), GeographicCorridorMap(), SECTION_GEOMETRIES (+17 more)
 
 ### Community 46 - "Community 46"
-Cohesion: 0.05
-Nodes (42): ActionRequest, handle_websocket(), lifespan(), WebSocket, WebSocket handler for real-time train positions, conflicts, and metrics., websocket_live(), websocket_stream(), ActionRequest (+34 more)
+Cohesion: 0.06
+Nodes (27): handle_websocket(), lifespan(), WebSocket, WebSocket handler for real-time train positions, conflicts, and metrics., websocket_live(), websocket_stream(), WebSocket, WebSocketManager (+19 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.22
 Nodes (6): TrainState, Get scheduled departure time in minutes since midnight., Calculate effective speed of a train on a section considering max speeds and dis, Convert HH:MM to minutes since midnight., Get scheduled stop duration at a station in minutes., Project block occupancy intervals (block_id, start_time, end_time) over next 30
 
 ### Community 48 - "Community 48"
-Cohesion: 0.08
-Nodes (37): Action, Disruption, Stop current simulation, reinitialize everything, and start fresh., Create standard results archive run_XXXX/ under results/., SimulationRunner, MetricsEngine, Any, Compare current run metrics against all other completed runs in results/. (+29 more)
+Cohesion: 0.07
+Nodes (38): Action, Disruption, Stop current simulation, reinitialize everything, and start fresh., Create standard results archive run_XXXX/ under results/., SimulationRunner, MetricsEngine, Any, Compare current run metrics against all other completed runs in results/. (+30 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.25
-Nodes (4): Get details of a section by ID, handling reversed direction IDs as well., Get section details by endpoint station IDs., Calculate typical traversal time in minutes for a section         based on the s, Query the block ID of the block immediately ahead of the train.         Returns
+Cohesion: 0.09
+Nodes (17): Action, RailwayGraph, NetworkState, RailwayGraph, RailwayGraph, Get details of a section by ID, handling reversed direction IDs as well., Get section details by endpoint station IDs., Calculate typical traversal time in minutes for a section         based on the s (+9 more)
+
+### Community 50 - "Community 50"
+Cohesion: 0.15
+Nodes (19): check_impossible_states(), main(), Test 4: Verify Hold action stops train, timer decreases, train resumes., Test 5: Verify apply_action() does not mutate original state., Test 1: Verify train moves through the corridor correctly., Test 6: Verify project_forward() produces identical results., Inspect state for any impossible invariants., Test 7: Check invariants during simulator run. (+11 more)
+
+### Community 52 - "Community 52"
+Cohesion: 0.29
+Nodes (13): NetworkState, TrainState, TrainState, NetworkState, BlockState, StationState, TrainState, test_conflict_detection_overlap() (+5 more)
+
+### Community 53 - "Community 53"
+Cohesion: 0.23
+Nodes (7): NetworkState, TrainState, Verifies safety margin between two trains.         Since the simulator handles p, Deadlock check: returns False if the station platforms are completely full., Verifies if the train is at a station or loop (i.e. not mid-section) to be held., Enforces that holds are within the maximum limit (e.g. 30 minutes)., Filters a list of candidate actions, returning only those that satisfy all CSP c
 
 ### Community 62 - "Community 62"
-Cohesion: 0.06
-Nodes (85): ActionSequence, Conflict, BeamSearchPlanner, Action, ConstraintChecker, NetworkState, StateScoreBreakdown, StateScorer (+77 more)
+Cohesion: 0.08
+Nodes (64): ActionSequence, Conflict, BeamSearchPlanner, Action, ConstraintChecker, NetworkState, StateScoreBreakdown, StateScorer (+56 more)
 
 ### Community 63 - "Community 63"
 Cohesion: 0.17
@@ -323,18 +338,18 @@ Cohesion: 0.67
 Nodes (3): **10.1  REST Endpoints**, **10.2  WebSocket Protocol**, **10  API Specifications**
 
 ## Knowledge Gaps
-- **304 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+299 more)
+- **305 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+300 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TrainNetworkSimulator` connect `Community 34` to `Community 48`, `Community 10`, `Community 36`, `Community 62`?**
+- **Why does `TrainNetworkSimulator` connect `Community 10` to `Community 34`, `Community 36`, `Community 48`, `Community 49`, `Community 50`, `Community 52`, `Community 62`?**
   _High betweenness centrality (0.051) - this node is a cross-community bridge._
-- **Why does `RailwayGraph` connect `Community 62` to `Community 34`, `Community 4`, `Community 36`, `Community 47`, `Community 49`, `Community 51`?**
+- **Why does `RailwayGraph` connect `Community 49` to `Community 4`, `Community 36`, `Community 10`, `Community 47`, `Community 51`, `Community 52`, `Community 53`, `Community 62`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `Action` connect `Community 62` to `Community 48`, `Community 34`, `Community 46`?**
+- **Why does `Action` connect `Community 62` to `Community 34`, `Community 10`, `Community 48`, `Community 49`, `Community 50`, `Community 52`, `Community 53`?**
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Are the 35 inferred relationships involving `TrainNetworkSimulator` (e.g. with `ActionSequence` and `Action`) actually correct?**
   _`TrainNetworkSimulator` has 35 INFERRED edges - model-reasoned connections that need verification._

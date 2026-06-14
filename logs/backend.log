@@ -1,0 +1,60 @@
+INFO:     Will watch for changes in these directories: ['/Users/prakharrr/railmind']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [42374] using StatReload
+INFO:     Started server process [42377]
+INFO:     Waiting for application startup.
+INFO:api_main:Starting background SimulationRunner...
+INFO:     Application startup complete.
+INFO:     127.0.0.1:63650 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 1
+INFO:     connection open
+INFO:     127.0.0.1:63645 - "GET /network HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63649 - "GET /recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63645 - "GET /network HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63649 - "GET /recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63646 - "GET /metrics/benchmark HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63652 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 2
+INFO:     connection open
+INFO:ws_manager:WebSocket client disconnected. Total connections: 1
+INFO:     connection closed
+INFO:     127.0.0.1:63646 - "GET /metrics/benchmark HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63667 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 2
+INFO:     connection open
+INFO:     127.0.0.1:63661 - "GET /network HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63665 - "GET /recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63661 - "GET /network HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63670 - "GET /recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63671 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 3
+INFO:     127.0.0.1:63673 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 4
+INFO:     connection open
+INFO:     connection open
+INFO:     127.0.0.1:63664 - "GET /metrics/benchmark HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63670 - "GET /metrics/benchmark HTTP/1.1" 200 OK
+INFO:ws_manager:WebSocket client disconnected. Total connections: 3
+INFO:     connection closed
+INFO:     127.0.0.1:63676 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 4
+INFO:     connection open
+INFO:     127.0.0.1:63681 - "WebSocket /ws/live" [accepted]
+INFO:ws_manager:WebSocket client connected. Total connections: 5
+INFO:     connection open
+INFO:     Shutting down
+INFO:ws_manager:WebSocket client disconnected. Total connections: 4
+INFO:     connection closed
+INFO:ws_manager:WebSocket client disconnected. Total connections: 3
+INFO:     connection closed
+INFO:ws_manager:WebSocket client disconnected. Total connections: 2
+INFO:     connection closed
+INFO:ws_manager:WebSocket client disconnected. Total connections: 1
+INFO:     connection closed
+INFO:ws_manager:WebSocket client disconnected. Total connections: 0
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:api_main:Stopping background SimulationRunner...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [42377]
+INFO:     Stopping reloader process [42374]

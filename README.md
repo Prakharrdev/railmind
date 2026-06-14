@@ -11,7 +11,7 @@
 
 Indian Railways carries **22 million passengers daily** with an average delay of **36.6 minutes** per train. Crucially, approximately **66% of these delays originate from controllable, internal operational factors** rather than weather or external events.
 
-**RailMind** is a decision-support prototype targeting **priority inversion on single-track lines and siding loops**—operational bottlenecks where passenger services are held for lower-priority trains, cascading delays downstream. By leveraging a **Search-Based Planning Engine** (modeled on chess engine architecture), RailMind looks ahead several steps into the future, evaluates the passenger-welfare cost of different routing options, and recommends real-time actions (such as slot swaps or holds) that reduce cascade delays by **5% to 12%** compared to a standard First-Come-First-Served (FCFS) greedy baseline.
+**RailMind** is a decision-support prototype targeting **priority inversion on siding loops and double-track corridors**—operational bottlenecks where premium passenger services are held for lower-priority trains, cascading delays downstream. By leveraging a **Search-Based Planning Engine** (modeled on chess engine architecture), RailMind looks ahead several steps into the future, evaluates the passenger-welfare cost of different routing options, and recommends real-time actions (such as slot swaps or holds) that reduce cascade delays by **10%** compared to a standard First-Come-First-Served (FCFS) greedy baseline.
 
 ---
 
@@ -27,11 +27,13 @@ Indian Railways carries **22 million passengers daily** with an average delay of
 5. [Repository Directory Layout](#repository-directory-layout)
 6. [Installation & Local Setup](#installation--local-setup)
 7. [Running the System](#running-the-system)
+   - [Unified Service Management (Recommended)](#unified-service-management-recommended)
+   - [Manual Services Startup (Alternative)](#manual-services-startup-alternative)
    - [Running Unit Tests](#running-unit-tests)
-   - [Launching the Backend Server](#launching-the-backend-server)
-   - [Launching the Frontend Dashboard](#launching-the-frontend-dashboard)
    - [Running the Benchmarking Suite](#running-the-benchmarking-suite)
 8. [Evaluation & Benchmarking Methodology](#evaluation--benchmarking-methodology)
+   - [Configuration Matrix](#configuration-matrix)
+   - [Development & Metric Evolution over Time](#development--metric-evolution-over-time)
 9. [Limitations & Deployment Prerequisites](#limitations--deployment-prerequisites)
 10. [Developer & Author](#developer--author)
 
@@ -39,12 +41,17 @@ Indian Railways carries **22 million passengers daily** with an average delay of
 
 ## **Core Features**
 
-*   **Delhi–Kanpur Corridor Simulation (Northern Railway):** Simulates an 8-station, ~440 km high-density segment with authentic double-track and single-track sections (Delhi to Agra is double-track, transitioning to single-track from Agra to Kanpur).
+*   **Delhi–Kanpur Corridor Simulation (Northern Railway):** Simulates a 10-station, 437 km high-density corridor from New Delhi (NDLS) to Kanpur Central (CNB). Includes authentic quadruple-track (4 tracks) from NDLS to Aligarh (ALJN) (~132 km) and double-track (2 tracks) sections from ALJN to CNB (~305 km).
 *   **Sweep-Line Conflict Detection:** Scans a rolling 30-minute lookahead window to identify overlapping train path allocations and block occupancy overlaps.
 *   **Beam Search Optimization:** Explores alternative futures using discrete dispatching actions (e.g., Hold Train A for 2/5/10/20 minutes) up to 4 search steps deep.
 *   **100% Explainable Recommendations:** Surfaces recommendations with a complete, human-readable **Decision Trace** (displaying every branch evaluated, pruned, and scored).
 *   **Safety Constraints (CSP Layer):** Guarantees that no illegal action (e.g., holding a train mid-block section, violating headway safety, or exceeding platform capacity) is ever evaluated or recommended.
-*   **Live Interactive Dashboard:** A three-panel React-based web interface showing a live corridor map, a Gantt-style conflict timeline, ranked recommendations with expandable "Why?" trees, and cumulative optimization metrics.
+*   **Redesigned Operator Dashboard:** A high-performance React + Vite web interface featuring:
+    *   **Unified Control Sidebar:** Start, pause, step, and reset the simulation, adjust planner configs (Search Depth, Beam Width), inject custom delay disruptions, and toggle auto-apply advisor mode.
+    *   **Geographic Map Panel:** Live Leaflet-based map plotting exact train telemetry, station loops, active signals, and track divisions.
+    *   **Schematic Track Diagram:** Linear vector graphic mapping block occupancies, station loop allocations, switch direction changes, and signal aspects.
+    *   **Multitransversal Console:** Displays live conflict timelines, block occupancy Gantt charts, and db-backed logging traces.
+    *   **Explainable Advisory Panel:** Displays ranked dispatcher action choices alongside interactive, drill-down **Decision Tree** tracing.
 
 ---
 
@@ -103,8 +110,8 @@ The system follows a strict layered architecture with unidirectional data depend
 ```
 ┌────────────────────────────────────────────────────────┐
 │              Layer 4: React Dashboard                  │
-│  - Live Map (Leaflet)      - Gantt Conflict Timeline   │
-│  - Interactive "Why?" Tree - Dynamic Metrics Panel     │
+│  - Live Map (Geographic)   - SVG Schematic Diagram     │
+│  - Interactive "Why?" Tree - Console Logs & Gantt       │
 └──────────────────────────┬─────────────────────────────┘
                            │ WebSocket (Ticks) / REST
                            ▼
@@ -154,9 +161,10 @@ railmind/
 │   ├── report/            # Final benchmark summaries
 │   ├── analyze_results.py # Statistical test suites (Wilcoxon, Bootstrap)
 │   └── run_benchmark.py   # Runs the 50-scenario benchmark suite
+├── experiments/           # Historical benchmark runs & config databases
 ├── frontend/              # React + Vite web dashboard
 │   ├── src/               # React source files
-│   │   ├── components/    # Sub-components (Map, Timeline, Tree)
+│   │   ├── components/    # Sub-components (Map, Schematic, Tree, Sidebar)
 │   │   └── App.jsx        # Main application layout
 │   └── package.json       # Node dependency specification
 ├── optimizer/             # Intelligence Engine
@@ -167,11 +175,15 @@ railmind/
 │   └── search_node.py     # SearchNode and ActionSequence classes
 ├── simulator/             # Core Train Movement Simulator
 │   ├── corridor.py        # RailwayGraph representation (NetworkX)
-│   ├── disruption_injector.py # samples and injects delay schedules
+│   ├── disruption_injector.py # Samples and injects delay schedules
 │   ├── env.py             # Main simulator runtime and fast-forward loops
 │   ├── train_state.py     # State dataclasses (NetworkState, TrainState)
 │   └── tests/             # Unit tests for the simulator
-└── requirements.txt       # Python package dependencies
+├── start.sh               # Unified developer launcher script
+├── status.sh              # Stack process status tracker script
+├── stop.sh                # Graceful service shutdown script
+├── requirements.txt       # Python package dependencies
+└── results/               # Compiled HTML benchmark reports & DB files
 ```
 
 ---
@@ -208,27 +220,47 @@ railmind/
 
 ## **Running the System**
 
+### **Unified Service Management (Recommended)**
+A set of production-quality launcher scripts is located in the project root to manage processes, startup logging, and clean shutdown for the entire stack.
+
+*   **Start the Stack**:
+    ```bash
+    ./start.sh
+    ```
+    This script automatically checks your environment, activates the Python venv, launches the FastAPI backend and Vite frontend in the background, redirects process streams to `logs/backend.log` and `logs/frontend.log`, and opens the dashboard in your default browser.
+*   **Check Service Status**:
+    ```bash
+    ./status.sh
+    ```
+    Queries active process identifiers (PIDs) for both backend and frontend components.
+*   **Stop the Stack**:
+    ```bash
+    ./stop.sh
+    ```
+    Gracefully terminates backend and frontend services, clean up PID locks, and falls back to force-kill signals if processes fail to exit in 5 seconds.
+
+### **Manual Services Startup (Alternative)**
+If you prefer running services manually in separate terminal splits:
+
+1.  **FastAPI Backend Server**:
+    ```bash
+    source venv/bin/activate
+    uvicorn api.main:app --reload --port 8000
+    ```
+    API endpoints docs will be at `http://localhost:8000/docs`.
+
+2.  **React Frontend Client**:
+    ```bash
+    cd frontend
+    npm run dev
+    ```
+    Open your browser to `http://localhost:5173`.
+
 ### **Running Unit Tests**
 The codebase contains a comprehensive unit test suite to guarantee simulator stability and mathematical correctness. Run the tests using the virtual environment's `pytest` instance:
 ```bash
 ./venv/bin/pytest
 ```
-
-### **Launching the Backend Server**
-To run the FastAPI server locally:
-```bash
-source venv/bin/activate
-uvicorn api.main:app --reload --port 8000
-```
-API endpoints documentation will be available at `http://localhost:8000/docs`.
-
-### **Launching the Frontend Dashboard**
-To start the React development server:
-```bash
-cd frontend
-npm run dev
-```
-Open `http://localhost:5173` in your browser to view the Dispatcher Dashboard.
 
 ### **Running the Benchmarking Suite**
 To evaluate the search planner configurations against the 50 predefined disruption scenarios:
@@ -258,6 +290,25 @@ The primary claim is that search-based planning with a lookahead outperforms fir
 | **Shallow** | 2 | 4 | < 20ms | Shallow lookahead |
 | **Default** | 4 | 8 | < 180ms | Primary planning target (5–12% delay savings) |
 | **Wide** | 4 | 16 | < 300ms | Performance limit boundary |
+
+### **Development & Metric Evolution over Time**
+Through multiple development stages, RailMind's decision-support capability has evolved significantly, balancing execution efficiency (latency) against passenger delay reduction (optimization cost).
+
+| Development Phase / Configuration | Search Settings | Mean Passenger Delay Cost | Mean Cost Improvement (%) | Avg Decision Latency (ms) | Success Rate (vs FCFS) |
+|---|---|---|---|---|---|
+| **Phase 1: Baseline FCFS** (No Optimizer) | None | 298,435.50 | 0.00% (Baseline) | — | — |
+| **Phase 2 & 3: Greedy Planner** | Depth=1, Beam=1 | 293,690.38 | 1.59% | 0.329 ms | 50 / 50 scenarios |
+| **Phase 4: Beam Search Planner** (Initial) | Depth=4, Beam=8 | 268,562.10 | 10.01% | 148.502 ms | 50 / 50 scenarios |
+| **Phase 5: Refactored Beam Search** (Optimal) | Depth=2, Beam=4 | **268,377.90** | **10.07%** | **23.08 ms** | **50 / 50 scenarios** |
+
+#### **Key Evolutionary Insights**
+1. **The Limitations of Greedy Policies:** Local 1-step optimization (Greedy Planner) is extremely fast (< 0.5 ms) but only reduces delay costs by **1.59%**. Because it ignores down-line train trajectories, it often shifts conflicts rather than resolving them.
+2. **Finding the Latency-Performance Sweet Spot:** While Phase 4 (Depth=4, Beam=8) provided excellent delay reductions (~10.01%), its average latency sat around 150 ms. By refactoring the state scoring heuristic and block adjacency representation in Phase 5, the **Depth=2, Beam Width=4** configuration achieved the highest delay reduction (**10.07%**) while slashing latency to **23.08 ms** (an ~85% speedup), providing highly practical real-time dispatching advice.
+3. **Optimized Beam Search Statistics (D=2, W=4):**
+   * **Mean Search Nodes Generated:** 52,474.0 nodes per scenario.
+   * **Mean Search Nodes Expanded:** 24,522.0 nodes.
+   * **Mean Search Nodes Pruned:** 10,846.0 nodes.
+   * **Statistical Significance:** A Wilcoxon signed-rank test confirmed that the planner improvements are statistically significant ($p < 0.001$), systematically resolving bottleneck delays across all 50 scenarios.
 
 ---
 
