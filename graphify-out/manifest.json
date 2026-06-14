@@ -2515,8 +2515,8 @@
     "semantic_hash": ""
   },
   "frontend/src/context/SimulationContext.jsx": {
-    "mtime": 1781446411.292722,
-    "ast_hash": "1507b164606245d160ae4086f20b1d7a",
+    "mtime": 1781447726.207089,
+    "ast_hash": "0593798303e481bb56c8c05c1b01e5f8",
     "semantic_hash": ""
   },
   "start.sh": {
@@ -2572,6 +2572,16 @@
   "ChatGPT Image Jun 14, 2026, 05_58_21 PM.png": {
     "mtime": 1781440102.3528862,
     "ast_hash": "1b1eccb25b0605236d776212a95f9a90",
+    "semantic_hash": ""
+  },
+  "frontend/vercel.json": {
+    "mtime": 1781447736.1278307,
+    "ast_hash": "6411d2fbb5f0e00aaff0ca0ded84e0b6",
+    "semantic_hash": ""
+  },
+  "railway.json": {
+    "mtime": 1781448198.4425724,
+    "ast_hash": "df9c4a2e1fc53d401c5b13bbd0394fba",
     "semantic_hash": ""
   }
 }
