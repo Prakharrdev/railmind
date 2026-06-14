@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/sim_runner.py": {
-    "mtime": 1781375129.119754,
-    "ast_hash": "ff9d2127fedd01159207a214288bfe71",
+    "mtime": 1781381206.8230364,
+    "ast_hash": "66981665b4bfb78fdc2c6ccd4d4b5138",
     "semantic_hash": ""
   },
   "api/ws_manager.py": {
@@ -75,53 +75,53 @@
     "semantic_hash": ""
   },
   "frontend/package.json": {
-    "mtime": 1781193659.2725012,
-    "ast_hash": "c5966d0a7c0221f8c7e9661fe02ca7c8",
+    "mtime": 1781380355.8976812,
+    "ast_hash": "adb37ba29261e09b9e27469f3b4c65b9",
     "semantic_hash": ""
   },
   "frontend/src/App.jsx": {
-    "mtime": 1781193641.765287,
-    "ast_hash": "cd56544ef84672246b9eebbde5b73d5b",
+    "mtime": 1781434739.6513734,
+    "ast_hash": "176f36653de951b8a5ce8e199284d319",
     "semantic_hash": ""
   },
   "frontend/src/components/ConflictTimeline.jsx": {
-    "mtime": 1781193659.3283143,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434770.2708898,
+    "ast_hash": "979e86f43f836e3b64cd29ca0d46da24",
     "semantic_hash": ""
   },
   "frontend/src/components/CorridorMap.jsx": {
-    "mtime": 1781193659.328266,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434751.4848962,
+    "ast_hash": "62f2977c9d13eafae99369120301f3e4",
     "semantic_hash": ""
   },
   "frontend/src/components/DecisionTree.jsx": {
-    "mtime": 1781193659.329832,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434780.9129765,
+    "ast_hash": "661e5c6e28e1814de1b3da4a02b0b819",
     "semantic_hash": ""
   },
   "frontend/src/components/MetricsCard.jsx": {
-    "mtime": 1781193659.3311706,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434789.3334126,
+    "ast_hash": "881ffb9b73985155cc6cab5d7f55b8e3",
     "semantic_hash": ""
   },
   "frontend/src/components/PlannerConfig.jsx": {
-    "mtime": 1781193659.3311346,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434795.4311755,
+    "ast_hash": "0ff1b4aeef3f8058c49b24dd7706e9d8",
     "semantic_hash": ""
   },
   "frontend/src/components/RecommendationPanel.jsx": {
-    "mtime": 1781193659.3297982,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781434762.4268363,
+    "ast_hash": "0d03729004a847fcb4e159115a91b056",
     "semantic_hash": ""
   },
   "frontend/src/hooks/useSimulatorState.js": {
-    "mtime": 1781193659.3326182,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781380380.2346418,
+    "ast_hash": "fdde6a96c7c4db51553f017eee6b1618",
     "semantic_hash": ""
   },
   "frontend/src/hooks/useWebSocket.js": {
-    "mtime": 1781193659.3325837,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1781381224.6545138,
+    "ast_hash": "ab22e30b9e188a3c0bf9d5bd95cb2a86",
     "semantic_hash": ""
   },
   "frontend/src/main.jsx": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "frontend/vite.config.js": {
-    "mtime": 1781193641.7672534,
-    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "mtime": 1781380360.1501296,
+    "ast_hash": "e71f334c92473b2f4db141aa06b730e1",
     "semantic_hash": ""
   },
   "optimizer/__init__.py": {
@@ -2497,6 +2497,46 @@
   "experiments/experiment_053_beam_d2_w4/report.md": {
     "mtime": 1781375518.114787,
     "ast_hash": "3d7b5638d5298d7246a2ab043ce912c7",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/ConsoleTabs.jsx": {
+    "mtime": 1781434820.1600652,
+    "ast_hash": "d0441413773ac72239ab6c9533f45681",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Loading.jsx": {
+    "mtime": 1781434840.5252378,
+    "ast_hash": "7fdc9689deb9c63ef642363a5948e197",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Navbar.jsx": {
+    "mtime": 1781434833.9396539,
+    "ast_hash": "a4eab63d2f5e0135d2c49c62e00bb9d7",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Sidebar.jsx": {
+    "mtime": 1781434827.0608983,
+    "ast_hash": "8bf9e781a8e0128040fea70d15df2092",
+    "semantic_hash": ""
+  },
+  "frontend/src/context/SimulationContext.jsx": {
+    "mtime": 1781434812.072109,
+    "ast_hash": "f57e67e8731e490ba1a6b6bfe4570306",
+    "semantic_hash": ""
+  },
+  "start.sh": {
+    "mtime": 1781435156.714547,
+    "ast_hash": "dc33f211d26e191ec714d801a23dc657",
+    "semantic_hash": ""
+  },
+  "status.sh": {
+    "mtime": 1781435069.3437865,
+    "ast_hash": "ee163d0b50ca37e36fc9efc815082b84",
+    "semantic_hash": ""
+  },
+  "stop.sh": {
+    "mtime": 1781435065.014604,
+    "ast_hash": "b28afd131fb726c5849b79daae7b5e9b",
     "semantic_hash": ""
   }
 }

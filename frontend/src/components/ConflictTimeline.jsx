@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { AlertOctagon, Clock, Link2, MapPin, ShieldAlert } from 'lucide-react';
+import { ShieldAlert, AlertTriangle, Clock, Link2, ArrowRight } from 'lucide-react';
 
 export default function ConflictTimeline() {
   const { 
-    conflicts, 
+    conflicts = [], 
     selectedConflict, 
     setSelectedConflict, 
-    setSelectedTrainId 
+    setSelectedTrainId,
+    recommendations = {},
+    setSelectedRecommendationId
   } = useSimulatorState();
 
   const formatSimTime = (minutes) => {
@@ -17,10 +19,10 @@ export default function ConflictTimeline() {
     return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const getUrgencyBadge = (score) => {
-    if (score < 10) return 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400';
-    if (score < 25) return 'bg-orange-500/10 border-orange-500/30 text-orange-400';
-    return 'bg-rose-500/15 border-rose-500/30 text-rose-400 font-bold';
+  const getSeverityColor = (score) => {
+    if (score < 10) return { border: 'border-amber-500/30', bg: 'bg-amber-500/5', text: 'text-amber-400', badge: 'border-amber-500/35 bg-amber-500/10' };
+    if (score < 25) return { border: 'border-orange-500/40', bg: 'bg-orange-500/5', text: 'text-orange-400', badge: 'border-orange-500/35 bg-orange-500/10' };
+    return { border: 'border-rose-500/50', bg: 'bg-rose-500/5', text: 'text-rose-400 font-bold', badge: 'border-rose-500/35 bg-rose-500/10 animate-pulse' };
   };
 
   const handleConflictClick = (conflict) => {
@@ -36,17 +38,26 @@ export default function ConflictTimeline() {
       setSelectedConflict(conflict);
       // Highlight Train A on click on map
       setSelectedTrainId(conflict.train_a_id);
+
+      // Workflow: Automatically locate and highlight matching AI recommendation & decision tree trace
+      const matchingRec = Object.values(recommendations).find(rec => 
+        rec.actions?.some(act => act.train_id === conflict.train_a_id || act.train_id === conflict.train_b_id)
+      );
+      if (matchingRec) {
+        setSelectedRecommendationId(matchingRec.recommendation_id);
+      }
     }
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#12131a] border border-[#2e303a] rounded-lg overflow-hidden select-none">
+    <div className="flex flex-col h-full bg-[#15171e] border border-[#222530] rounded-lg overflow-hidden select-none">
       {/* Header */}
-      <div className="bg-[#161720] px-4 py-3 border-b border-[#2e303a] flex items-center justify-between">
-        <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-          <ShieldAlert className="h-4 w-4 text-rose-500 animate-pulse" />
-          <span>Active Operations Conflicts ({conflicts.length})</span>
+      <div className="bg-[#0d0e12]/30 px-4 py-3 border-b border-[#222530] flex items-center justify-between">
+        <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5 font-mono">
+          <ShieldAlert className={`h-4 w-4 ${conflicts.length > 0 ? 'text-rose-500 animate-pulse' : 'text-emerald-500'}`} />
+          <span>Active Grid Conflicts ({conflicts.length})</span>
         </h2>
+        <span className="text-[10px] text-slate-500 font-mono">RESOLVING CONFLICT → UPDATE VIEWS</span>
       </div>
 
       {/* Conflicts Content List */}
@@ -57,54 +68,56 @@ export default function ConflictTimeline() {
             selectedConflict.train_b_id === c.train_b_id &&
             selectedConflict.block_id === c.block_id;
 
+          const colors = getSeverityColor(c.urgency_score);
+
           return (
             <div
               key={index}
               onClick={() => handleConflictClick(c)}
-              className={`border rounded-lg p-4 cursor-pointer transition-all duration-200 relative ${
+              className={`border rounded-lg p-3.5 cursor-pointer transition-all duration-150 relative ${
                 isSelected 
-                  ? 'border-rose-500 bg-rose-950/10 shadow-lg shadow-rose-950/5' 
-                  : 'border-[#2e303a] bg-[#1a1c23]/60 hover:bg-[#1a1c23]'
+                  ? 'border-purple-500 bg-purple-950/10 shadow-lg' 
+                  : `${colors.border} ${colors.bg} hover:bg-[#1a1d26]/60`
               }`}
             >
               {/* Top Details */}
-              <div className="flex items-start justify-between mb-3">
+              <div className="flex items-start justify-between mb-2.5">
                 <div className="flex items-center gap-2">
-                  <div className="bg-rose-500/10 p-1.5 rounded-md border border-rose-500/30">
-                    <AlertOctagon className="h-4 w-4 text-rose-400" />
+                  <div className="bg-rose-500/10 p-1 rounded-md border border-rose-500/25">
+                    <AlertTriangle className="h-4.5 w-4.5 text-rose-400 animate-pulse" />
                   </div>
                   <div>
-                    <span className="font-bold text-slate-200 text-sm">Block: {c.block_id}</span>
-                    <span className="block text-[10px] text-slate-500 font-mono">CONCURRENT OVERLAY DETECTED</span>
+                    <span className="font-bold text-slate-200 text-xs font-mono">Block: {c.block_id}</span>
+                    <span className="block text-[8px] text-slate-500 font-mono uppercase tracking-wide">Block Occupancy Conflict</span>
                   </div>
                 </div>
                 
-                <span className={`text-[10px] font-mono px-2 py-0.5 border rounded uppercase ${getUrgencyBadge(c.urgency_score)}`}>
+                <span className={`text-[9px] font-mono px-2 py-0.5 border rounded uppercase ${colors.text} ${colors.badge}`}>
                   Urgency: {Math.round(c.urgency_score)}
                 </span>
               </div>
 
               {/* Train pairs visualization */}
-              <div className="flex items-center justify-between px-3 py-2 bg-[#0f1015]/60 rounded-md border border-[#2e303a]/50 text-xs font-semibold mb-3">
+              <div className="flex items-center justify-between px-3 py-1.5 bg-[#0d0e12] rounded border border-[#222530] text-xs font-mono mb-2.5">
                 <span 
                   onClick={(e) => { e.stopPropagation(); setSelectedTrainId(c.train_a_id); }}
-                  className="text-purple-400 hover:underline cursor-pointer flex items-center gap-1 font-mono"
+                  className="text-purple-400 hover:underline cursor-pointer font-bold"
                 >
                   {c.train_a_id}
                 </span>
-                <Link2 className="h-3.5 w-3.5 text-slate-500" />
+                <Link2 className="h-3 w-3 text-slate-600" />
                 <span 
                   onClick={(e) => { e.stopPropagation(); setSelectedTrainId(c.train_b_id); }}
-                  className="text-purple-400 hover:underline cursor-pointer flex items-center gap-1 font-mono"
+                  className="text-purple-400 hover:underline cursor-pointer font-bold"
                 >
                   {c.train_b_id}
                 </span>
               </div>
 
               {/* Start & Overlap Details */}
-              <div className="grid grid-cols-2 gap-2 text-xs font-mono text-slate-400">
+              <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
                 <div className="flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5 text-slate-500" />
+                  <Clock className="h-3 w-3 text-slate-500" />
                   <span>Start:</span>
                   <span className="text-slate-200 font-semibold">{formatSimTime(c.conflict_start_sim_time)}</span>
                 </div>
@@ -114,13 +127,13 @@ export default function ConflictTimeline() {
                 </div>
               </div>
 
-              {/* Conflict Projection Visualization (Progress Bar style) */}
-              <div className="mt-3.5 h-1.5 w-full bg-slate-800 rounded-full overflow-hidden relative">
+              {/* Occupancy timeline display indicator (simplified) */}
+              <div className="mt-2.5 h-1.5 w-full bg-[#0d0e12] rounded-full overflow-hidden relative">
                 <div 
-                  className="absolute h-full bg-rose-500 rounded-full animate-pulse" 
+                  className="absolute h-full bg-rose-500 rounded-full" 
                   style={{ 
-                    left: '25%', 
-                    width: `${Math.min(100, c.overlap_minutes * 5)}%` 
+                    left: '30%', 
+                    width: `${Math.min(70, c.overlap_minutes * 6)}%` 
                   }} 
                 />
               </div>
@@ -129,10 +142,10 @@ export default function ConflictTimeline() {
         })}
 
         {conflicts.length === 0 && (
-          <div className="flex flex-col items-center justify-center h-full text-slate-500 py-12">
-            <ShieldAlert className="h-8 w-8 text-emerald-500/40 mb-2" />
-            <span className="text-xs">No active operations conflicts detected.</span>
-            <span className="text-[10px] text-slate-600 font-mono mt-0.5">TIMELINE CLEAR | NORMAL RUN</span>
+          <div className="flex flex-col items-center justify-center py-12 text-slate-500 text-xs">
+            <ShieldAlert className="h-8 w-8 text-emerald-500/30 mb-2" />
+            <span className="font-semibold text-slate-400">Operations Timeline Stable</span>
+            <span className="text-[9px] text-slate-600 font-mono mt-0.5 uppercase tracking-widest">No Active Conflicts</span>
           </div>
         )}
       </div>

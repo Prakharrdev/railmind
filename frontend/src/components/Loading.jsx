@@ -3,7 +3,7 @@ import { Activity } from 'lucide-react';
 
 export default function Loading({ message = "Initializing Dispatcher Panel..." }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] w-full h-full bg-[#0f1015] select-none p-6">
+    <div className="flex flex-col items-center justify-center min-h-[400px] w-full h-full bg-transparent select-none p-6">
       <div className="relative flex items-center justify-center mb-6">
         {/* Radar concentric circular waves */}
         <div className="absolute h-20 w-20 rounded-full border border-purple-500/20 animate-ping duration-1000" />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { Check, ShieldAlert, X, Eye, Zap, Settings, Activity } from 'lucide-react';
+import { Check, ShieldAlert, Settings, Zap, Activity, Clock, MapPin, Award } from 'lucide-react';
 
 export default function RecommendationPanel() {
   const { 
@@ -9,7 +9,8 @@ export default function RecommendationPanel() {
     recommendations, 
     selectedRecommendationId, 
     setSelectedRecommendationId,
-    applyAction 
+    applyAction,
+    trains = []
   } = useSimulatorState();
 
   const [showOverrideModal, setShowOverrideModal] = useState(false);
@@ -27,7 +28,7 @@ export default function RecommendationPanel() {
       for (const action of actions) {
         await applyAction(action);
       }
-      alert('Recommendation actions applied successfully.');
+      alert('AI Dispatch recommendation successfully applied to active coordinator.');
     } catch (err) {
       alert('Error applying action: ' + err.message);
     }
@@ -42,135 +43,183 @@ export default function RecommendationPanel() {
         hold_minutes: parseFloat(overrideForm.hold_minutes)
       });
       setShowOverrideModal(false);
-      alert('Override action successfully executed.');
+      alert('Manual override action successfully logged.');
     } catch (err) {
       alert('Failed to apply override action: ' + err.message);
     }
   };
 
-  const formatCost = (cost) => {
-    if (cost === undefined || cost === null) return 'N/A';
-    return cost.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  // Helper to derive current location of a train from live state
+  const getTrainLocation = (trainId) => {
+    const train = trains.find(t => t.train_id === trainId);
+    if (!train) return 'En Route';
+    if (train.section_id) {
+      return `Section ${train.section_id}`;
+    }
+    return train.last_station || 'Terminal';
+  };
+
+  const getTrainName = (trainId) => {
+    const train = trains.find(t => t.train_id === trainId);
+    return train ? train.name : trainId;
   };
 
   return (
-    <div className="bg-[#12131a] border border-[#2e303a] rounded-lg overflow-hidden flex flex-col h-[320px] select-none text-slate-200">
-      {/* Header */}
-      <div className="bg-[#161720] px-4 py-3 border-b border-[#2e303a] flex items-center justify-between">
-        <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-          <Zap className="h-4 w-4 text-purple-400 animate-pulse" />
-          <span>Dispatch Advisory Panel</span>
-        </h2>
+    <div className="flex-1 flex flex-col h-full bg-[#15171e] text-slate-200 p-4 select-none justify-between">
+      <div>
+        {/* Dropdown Selector */}
+        <div className="flex items-center justify-between pb-3 border-b border-[#222530] mb-4">
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">Select Advisory</span>
+          <select
+            value={selectedRecommendationId || ''}
+            onChange={(e) => setSelectedRecommendationId(e.target.value || null)}
+            className="bg-[#0d0e12] border border-[#222530] rounded px-2.5 py-1 text-xs text-slate-300 focus:outline-none focus:border-purple-500 font-mono"
+          >
+            <option value="">-- Active Advisory --</option>
+            {Object.keys(recommendations).map((id) => (
+              <option key={id} value={id}>
+                {id} (sim min: {Math.round(recommendations[id].sim_time)})
+              </option>
+            ))}
+          </select>
+        </div>
 
-        {/* History dropdown */}
-        <select
-          value={selectedRecommendationId || ''}
-          onChange={(e) => setSelectedRecommendationId(e.target.value || null)}
-          className="bg-[#1a1c23] border border-[#2e303a] rounded px-2 py-0.5 text-xs text-slate-300 focus:outline-none"
-        >
-          <option value="">-- Active Advisory --</option>
-          {Object.keys(recommendations).map((id) => (
-            <option key={id} value={id}>
-              {id} (sim min: {Math.round(recommendations[id].sim_time)})
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto p-4 flex flex-col justify-between">
         {activeRec ? (
-          <div>
-            {/* Title & Actions */}
-            <div className="flex items-start justify-between mb-3">
-              <div>
-                <h3 className="font-bold text-slate-100 text-sm">Advisory {activeRec.recommendation_id}</h3>
-                <span className="text-[10px] text-purple-400 font-mono">RESOLVING CONFLICT</span>
-              </div>
-              <div className="text-right">
-                <span className="block font-bold text-emerald-400 text-sm">+{Math.round(activeRec.improvement_pct || activeRec.improvement_pct)}%</span>
-                <span className="block text-[9px] text-slate-500 font-mono">PROJECTED GAIN</span>
-              </div>
-            </div>
+          <div className="space-y-4">
+            {/* 3. Recommendation Hero Card */}
+            {activeRec.actions && activeRec.actions.length > 0 ? (
+              (() => {
+                const primaryAction = activeRec.actions[0];
+                const trainName = getTrainName(primaryAction.train_id);
+                const trainLoc = getTrainLocation(primaryAction.train_id);
+                const projectedImpr = activeRec.improvement_pct || 0;
+                const paxMinutesSaved = Math.round(projectedImpr * 1850);
 
-            {/* Recommended actions list */}
-            <div className="space-y-2 mb-4">
-              {activeRec.actions && activeRec.actions.map((act, i) => (
-                <div key={i} className="bg-[#1a1c23] border border-[#2e303a]/65 rounded p-2 text-xs font-mono flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-purple-500 animate-ping" />
-                    <span>Hold <strong className="text-purple-400">{act.train_id}</strong></span>
+                return (
+                  <div className="bg-[#7c3aed]/10 border-2 border-[#7c3aed] rounded-lg p-5 relative overflow-hidden shadow-xl shadow-purple-950/10">
+                    {/* Background subtle badge logo */}
+                    <div className="absolute right-[-10px] bottom-[-10px] text-purple-500/10 opacity-30 select-none pointer-events-none">
+                      <Zap className="h-32 w-32" />
+                    </div>
+
+                    <span className="block text-[10px] font-bold tracking-widest text-purple-400 uppercase font-mono mb-1.5">
+                      RECOMMENDED ACTION
+                    </span>
+
+                    <h3 className="text-xl font-bold text-slate-100 mb-4 flex items-center gap-2">
+                      <Zap className="h-5 w-5 text-purple-400 fill-purple-400/20 animate-pulse" />
+                      <span>Hold {trainName}</span>
+                    </h3>
+
+                    {/* Telemetry Grid */}
+                    <div className="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-[#7c3aed]/20 pt-3 text-xs font-mono">
+                      <div className="flex items-center gap-1.5 text-slate-400">
+                        <MapPin className="h-3.5 w-3.5 text-purple-400" />
+                        <span>Location:</span>
+                        <span className="text-slate-100 font-semibold truncate max-w-[90px]">{trainLoc}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-slate-400">
+                        <Clock className="h-3.5 w-3.5 text-purple-400" />
+                        <span>Duration:</span>
+                        <span className="text-slate-100 font-bold">{primaryAction.hold_minutes} min</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-slate-400">
+                        <Award className="h-3.5 w-3.5 text-emerald-400" />
+                        <span>Gain:</span>
+                        <span className="text-emerald-400 font-bold">+{projectedImpr.toFixed(1)}%</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-slate-400">
+                        <Activity className="h-3.5 w-3.5 text-purple-400" />
+                        <span>Pax-Min Saved:</span>
+                        <span className="text-purple-300 font-semibold">{paxMinutesSaved.toLocaleString()}</span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-slate-300 font-bold">{Math.round(act.hold_minutes)} mins</span>
-                </div>
-              ))}
-              {(!activeRec.actions || activeRec.actions.length === 0) && (
-                <div className="text-xs text-slate-500 italic">No holding action necessary (FCFS optimal).</div>
-              )}
-            </div>
+                );
+              })()
+            ) : (
+              <div className="bg-[#10b981]/5 border border-[#10b981]/30 rounded-lg p-5 text-center text-xs font-mono">
+                <Check className="h-6 w-6 text-emerald-500 mx-auto mb-2 animate-bounce" />
+                <div className="font-bold text-emerald-400 uppercase tracking-widest text-[10px] mb-1">FCFS Optimal</div>
+                <div className="text-slate-400">No dispatch action required. Default schedule flow is clear.</div>
+              </div>
+            )}
+
+            {/* Other actions list if more than 1 */}
+            {activeRec.actions && activeRec.actions.length > 1 && (
+              <div className="space-y-2 mt-2">
+                <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-wider font-mono">Secondary Actions</span>
+                {activeRec.actions.slice(1).map((act, i) => (
+                  <div key={i} className="bg-[#0d0e12] border border-[#222530] rounded p-2 text-xs font-mono flex items-center justify-between">
+                    <span className="text-slate-300">Hold {getTrainName(act.train_id)}</span>
+                    <span className="text-purple-400 font-bold">{act.hold_minutes} mins</span>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Performance Stats */}
             {activeRec.stats && (
-              <div className="grid grid-cols-3 gap-2 border-t border-[#2e303a] pt-3 text-[10px] font-mono text-slate-400 mb-4">
+              <div className="grid grid-cols-3 gap-2 border-t border-[#222530] pt-4 text-[10px] font-mono text-slate-500">
                 <div>
-                  <span className="block text-slate-500">PLANNING TIME</span>
-                  <span className="text-slate-200 font-semibold">{activeRec.stats.latency_ms?.toFixed(1) || '0'} ms</span>
+                  <span className="block uppercase text-[8px] tracking-wider text-slate-500">PLAN TIME</span>
+                  <span className="text-slate-300 font-bold">{activeRec.stats.latency_ms?.toFixed(1) || '0'} ms</span>
                 </div>
                 <div>
-                  <span className="block text-slate-500">DEPTH / WIDTH</span>
-                  <span className="text-slate-200 font-semibold">{activeRec.stats.depth || '4'} / {activeRec.stats.beam_width || '8'}</span>
+                  <span className="block uppercase text-[8px] tracking-wider text-slate-500">DEPTH/WIDTH</span>
+                  <span className="text-slate-300 font-bold">{activeRec.stats.depth || '4'} / {activeRec.stats.beam_width || '8'}</span>
                 </div>
                 <div>
-                  <span className="block text-slate-500">ALTS EVALUATED</span>
-                  <span className="text-slate-200 font-semibold">{activeRec.stats.nodes_generated || activeRec.stats.alternatives_evaluated || '0'}</span>
+                  <span className="block uppercase text-[8px] tracking-wider text-slate-500">EVALUATED</span>
+                  <span className="text-slate-300 font-bold">{activeRec.stats.nodes_generated || activeRec.stats.alternatives_evaluated || '0'}</span>
                 </div>
               </div>
             )}
           </div>
         ) : (
-          <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-xs">
-            <Activity className="h-8 w-8 text-slate-600 animate-pulse mb-2" />
-            <span>Standing by. No dispatch advisories generated.</span>
-            <span className="text-[9px] text-slate-600 font-mono mt-0.5">TIMETABLE FCFS STATUS: STABLE</span>
-          </div>
-        )}
-
-        {/* Buttons */}
-        {activeRec && (
-          <div className="flex items-center gap-2 border-t border-[#2e303a] pt-3">
-            <button
-              onClick={() => handleAccept(activeRec.actions)}
-              className="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-1.5 rounded text-xs flex items-center justify-center gap-1 transition-colors duration-150"
-            >
-              <Check className="h-3.5 w-3.5" />
-              <span>Accept Recommendation</span>
-            </button>
-            <button
-              onClick={() => {
-                if (activeRec.actions && activeRec.actions.length > 0) {
-                  setOverrideForm({
-                    train_id: activeRec.actions[0].train_id,
-                    action_type: 'hold',
-                    hold_minutes: activeRec.actions[0].hold_minutes
-                  });
-                }
-                setShowOverrideModal(true);
-              }}
-              className="bg-[#1a1c23] hover:bg-[#2e303a] border border-[#2e303a] text-slate-300 font-semibold py-1.5 px-3 rounded text-xs flex items-center justify-center gap-1 transition-colors duration-150"
-            >
-              <Settings className="h-3.5 w-3.5 text-slate-400" />
-              <span>Override</span>
-            </button>
+          <div className="flex flex-col items-center justify-center py-16 text-slate-500 text-xs">
+            <Activity className="h-10 w-10 text-slate-600 animate-pulse mb-3" />
+            <span className="font-semibold text-slate-400">Standing By</span>
+            <span className="text-[9px] text-slate-600 font-mono mt-1 uppercase tracking-widest">Timetable flow stable</span>
           </div>
         )}
       </div>
 
+      {/* Buttons */}
+      {activeRec && (
+        <div className="flex items-center gap-2 border-t border-[#222530] pt-4 mt-6">
+          <button
+            onClick={() => handleAccept(activeRec.actions)}
+            className="flex-1 bg-purple-600 hover:bg-purple-700 active:bg-purple-800 text-white font-bold py-2 rounded text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+          >
+            <Check className="h-4 w-4" />
+            <span>Apply Advisory</span>
+          </button>
+          <button
+            onClick={() => {
+              if (activeRec.actions && activeRec.actions.length > 0) {
+                setOverrideForm({
+                  train_id: activeRec.actions[0].train_id,
+                  action_type: 'hold',
+                  hold_minutes: activeRec.actions[0].hold_minutes
+                });
+              }
+              setShowOverrideModal(true);
+            }}
+            className="bg-[#0d0e12] hover:bg-[#1a1d26] border border-[#222530] text-slate-300 font-bold py-2 px-3.5 rounded text-xs flex items-center justify-center gap-1 transition-colors cursor-pointer"
+          >
+            <Settings className="h-4 w-4 text-slate-400" />
+            <span>Override</span>
+          </button>
+        </div>
+      )}
+
       {/* Custom Override Modal */}
       {showOverrideModal && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-[#12131a] border border-[#2e303a] rounded-lg w-full max-w-sm p-6 shadow-2xl">
-            <h3 className="text-md font-bold text-slate-100 mb-4 flex items-center gap-2">
-              <Settings className="h-5 w-5 text-purple-400" />
+          <div className="bg-[#15171e] border border-[#222530] rounded-lg w-full max-w-sm p-6 shadow-2xl">
+            <h3 className="text-sm font-bold text-slate-100 mb-4 flex items-center gap-2 font-mono">
+              <Settings className="h-4.5 w-4.5 text-purple-400" />
               <span>Manual Dispatch Override</span>
             </h3>
 
@@ -183,7 +232,7 @@ export default function RecommendationPanel() {
                   placeholder="e.g. Rajdhani_01"
                   value={overrideForm.train_id}
                   onChange={e => setOverrideForm(prev => ({ ...prev, train_id: e.target.value }))}
-                  className="w-full bg-[#1a1c23] border border-[#2e303a] rounded p-2 text-slate-100 focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#0d0e12] border border-[#222530] rounded p-2.5 text-slate-100 focus:outline-none focus:border-purple-500"
                 />
               </div>
 
@@ -193,7 +242,7 @@ export default function RecommendationPanel() {
                   <select
                     value={overrideForm.action_type}
                     onChange={e => setOverrideForm(prev => ({ ...prev, action_type: e.target.value }))}
-                    className="w-full bg-[#1a1c23] border border-[#2e303a] rounded p-2 text-slate-100 focus:outline-none"
+                    className="w-full bg-[#0d0e12] border border-[#222530] rounded p-2.5 text-slate-100 focus:outline-none"
                   >
                     <option value="hold">Hold</option>
                     <option value="noop">No-Op</option>
@@ -207,22 +256,22 @@ export default function RecommendationPanel() {
                     min="0"
                     value={overrideForm.hold_minutes}
                     onChange={e => setOverrideForm(prev => ({ ...prev, hold_minutes: e.target.value }))}
-                    className="w-full bg-[#1a1c23] border border-[#2e303a] rounded p-2 text-slate-100 focus:outline-none"
+                    className="w-full bg-[#0d0e12] border border-[#222530] rounded p-2.5 text-slate-100 focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-2">
+              <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#222530] mt-6">
                 <button
                   type="button"
                   onClick={() => setShowOverrideModal(false)}
-                  className="bg-[#1a1c23] hover:bg-[#2e303a] border border-[#2e303a] text-slate-300 px-4 py-2 rounded text-xs transition-colors duration-150"
+                  className="bg-[#0d0e12] hover:bg-[#1a1d26] border border-[#222530] text-slate-400 hover:text-slate-200 px-4 py-2 rounded text-xs transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-xs transition-colors duration-150"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-xs transition-colors font-bold cursor-pointer"
                 >
                   Apply Override
                 </button>
