@@ -1814,6 +1814,26 @@
       "norm_label": "simulationcontext"
     },
     {
+      "label": "API_BASE",
+      "file_type": "code",
+      "source_file": "frontend/src/context/SimulationContext.jsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "context_simulationcontext_api_base",
+      "community": 39,
+      "norm_label": "api_base"
+    },
+    {
+      "label": "WS_URL",
+      "file_type": "code",
+      "source_file": "frontend/src/context/SimulationContext.jsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "context_simulationcontext_ws_url",
+      "community": 39,
+      "norm_label": "ws_url"
+    },
+    {
       "label": "MOCK_SCENARIOS",
       "file_type": "code",
       "source_file": "frontend/src/context/SimulationContext.jsx",
@@ -2120,7 +2140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_csp_checker",
-      "community": 4,
+      "community": 62,
       "norm_label": "csp_checker.py"
     },
     {
@@ -2150,7 +2170,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_railwaygraph",
-      "community": 4,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -2160,7 +2180,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_minimum_headway",
-      "community": 4,
+      "community": 62,
       "norm_label": ".check_minimum_headway()"
     },
     {
@@ -2170,7 +2190,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_trainstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -2180,7 +2200,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_networkstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -2190,7 +2210,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_platform_capacity",
-      "community": 4,
+      "community": 62,
       "norm_label": ".check_platform_capacity()"
     },
     {
@@ -2200,7 +2220,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_block_clearance",
-      "community": 4,
+      "community": 62,
       "norm_label": ".check_block_clearance()"
     },
     {
@@ -2210,7 +2230,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_hold_duration",
-      "community": 4,
+      "community": 62,
       "norm_label": ".check_hold_duration()"
     },
     {
@@ -2220,7 +2240,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_filter",
-      "community": 4,
+      "community": 62,
       "norm_label": ".filter()"
     },
     {
@@ -2230,7 +2250,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_action",
-      "community": 4,
+      "community": 62,
       "norm_label": "action"
     },
     {
@@ -2240,7 +2260,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_11",
-      "community": 4,
+      "community": 62,
       "norm_label": "verifies safety margin between two trains.         since the simulator handles p"
     },
     {
@@ -2250,7 +2270,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_22",
-      "community": 4,
+      "community": 62,
       "norm_label": "deadlock check: returns false if the station platforms are completely full."
     },
     {
@@ -2260,7 +2280,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_32",
-      "community": 4,
+      "community": 62,
       "norm_label": "verifies if the train is at a station or loop (i.e. not mid-section) to be held."
     },
     {
@@ -2270,7 +2290,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_37",
-      "community": 4,
+      "community": 62,
       "norm_label": "enforces that holds are within the maximum limit (e.g. 30 minutes)."
     },
     {
@@ -2280,7 +2300,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_41",
-      "community": 4,
+      "community": 62,
       "norm_label": "filters a list of candidate actions, returning only those that satisfy all csp c"
     },
     {
@@ -2290,7 +2310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_greedy_policy",
-      "community": 4,
+      "community": 62,
       "norm_label": "greedy_policy.py"
     },
     {
@@ -2430,7 +2450,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_scorer",
-      "community": 4,
+      "community": 62,
       "norm_label": "scorer.py"
     },
     {
@@ -2510,7 +2530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_search_cost",
-      "community": 4,
+      "community": 10,
       "norm_label": "search_cost.py"
     },
     {
@@ -2770,7 +2790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_csp_checker",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_csp_checker.py"
     },
     {
@@ -2780,7 +2800,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_csp_checker_graph",
-      "community": 4,
+      "community": 62,
       "norm_label": "graph()"
     },
     {
@@ -2800,7 +2820,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_block_clearance",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_check_block_clearance()"
     },
     {
@@ -2810,7 +2830,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_hold_duration",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_check_hold_duration()"
     },
     {
@@ -2820,7 +2840,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_platform_capacity",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_check_platform_capacity()"
     },
     {
@@ -2830,7 +2850,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_filter_actions",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_filter_actions()"
     },
     {
@@ -2910,7 +2930,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_networkstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -2930,7 +2950,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_trainstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -3140,7 +3160,7 @@
       "source_location": "L342",
       "_origin": "ast",
       "id": "tests_test_scorer_scenarios_test_greedy_policy_selection",
-      "community": 36,
+      "community": 62,
       "norm_label": "test_greedy_policy_selection()"
     },
     {
@@ -3350,7 +3370,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 4,
+      "community": 62,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -3390,7 +3410,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_railwaygraph",
-      "community": 4,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -3400,7 +3420,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_train_speed",
-      "community": 62,
+      "community": 47,
       "norm_label": ".get_train_speed()"
     },
     {
@@ -3410,7 +3430,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_trainstate",
-      "community": 4,
+      "community": 47,
       "norm_label": "trainstate"
     },
     {
@@ -3420,7 +3440,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_parse_time_to_minutes",
-      "community": 62,
+      "community": 47,
       "norm_label": ".parse_time_to_minutes()"
     },
     {
@@ -3430,7 +3450,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_stop_duration",
-      "community": 62,
+      "community": 47,
       "norm_label": ".get_stop_duration()"
     },
     {
@@ -3440,7 +3460,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_project_train_occupancies",
-      "community": 62,
+      "community": 47,
       "norm_label": ".project_train_occupancies()"
     },
     {
@@ -3450,7 +3470,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_get_scheduled_departure",
-      "community": 62,
+      "community": 47,
       "norm_label": "._get_scheduled_departure()"
     },
     {
@@ -3470,7 +3490,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_networkstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -3480,7 +3500,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_26",
-      "community": 62,
+      "community": 47,
       "norm_label": "calculate effective speed of a train on a section considering max speeds and dis"
     },
     {
@@ -3490,7 +3510,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_57",
-      "community": 62,
+      "community": 47,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -3500,7 +3520,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_62",
-      "community": 62,
+      "community": 47,
       "norm_label": "get scheduled stop duration at a station in minutes."
     },
     {
@@ -3510,7 +3530,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_78",
-      "community": 62,
+      "community": 47,
       "norm_label": "project block occupancy intervals (block_id, start_time, end_time) over next 30"
     },
     {
@@ -3520,7 +3540,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_208",
-      "community": 62,
+      "community": 47,
       "norm_label": "get scheduled departure time in minutes since midnight."
     },
     {
@@ -3540,7 +3560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_corridor",
-      "community": 4,
+      "community": 62,
       "norm_label": "corridor.py"
     },
     {
@@ -3600,7 +3620,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph",
-      "community": 4,
+      "community": 62,
       "norm_label": "railwaygraph"
     },
     {
@@ -3630,7 +3650,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section",
-      "community": 4,
+      "community": 49,
       "norm_label": ".get_section()"
     },
     {
@@ -3640,7 +3660,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section_by_endpoints",
-      "community": 4,
+      "community": 49,
       "norm_label": ".get_section_by_endpoints()"
     },
     {
@@ -3650,7 +3670,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_typical_traversal_time",
-      "community": 4,
+      "community": 49,
       "norm_label": ".get_typical_traversal_time()"
     },
     {
@@ -3660,7 +3680,7 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_shortest_path",
-      "community": 4,
+      "community": 62,
       "norm_label": ".get_shortest_path()"
     },
     {
@@ -3670,7 +3690,7 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_next_block",
-      "community": 4,
+      "community": 49,
       "norm_label": ".next_block()"
     },
     {
@@ -3680,7 +3700,7 @@
       "source_location": "L310",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_free_blocks",
-      "community": 4,
+      "community": 62,
       "norm_label": ".free_blocks()"
     },
     {
@@ -3690,7 +3710,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_block_length",
-      "community": 4,
+      "community": 62,
       "norm_label": ".block_length()"
     },
     {
@@ -3730,7 +3750,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_190",
-      "community": 4,
+      "community": 49,
       "norm_label": "get details of a section by id, handling reversed direction ids as well."
     },
     {
@@ -3740,7 +3760,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_205",
-      "community": 4,
+      "community": 49,
       "norm_label": "get section details by endpoint station ids."
     },
     {
@@ -3750,7 +3770,7 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_222",
-      "community": 4,
+      "community": 49,
       "norm_label": "calculate typical traversal time in minutes for a section         based on the s"
     },
     {
@@ -3760,7 +3780,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_235",
-      "community": 4,
+      "community": 62,
       "norm_label": "find the shortest path of station ids between two stations."
     },
     {
@@ -3770,7 +3790,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_245",
-      "community": 4,
+      "community": 49,
       "norm_label": "query the block id of the block immediately ahead of the train.         returns"
     },
     {
@@ -3780,7 +3800,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_311",
-      "community": 4,
+      "community": 62,
       "norm_label": "returns a list of block ids that are currently free (not occupied)."
     },
     {
@@ -3790,7 +3810,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_317",
-      "community": 4,
+      "community": 62,
       "norm_label": "returns the length of a block in km."
     },
     {
@@ -3830,7 +3850,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector",
-      "community": 4,
+      "community": 62,
       "norm_label": "disruptioninjector"
     },
     {
@@ -3840,7 +3860,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_init",
-      "community": 4,
+      "community": 62,
       "norm_label": ".__init__()"
     },
     {
@@ -3870,7 +3890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_env",
-      "community": 4,
+      "community": 62,
       "norm_label": "env.py"
     },
     {
@@ -3900,7 +3920,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_init",
-      "community": 4,
+      "community": 62,
       "norm_label": ".__init__()"
     },
     {
@@ -3920,7 +3940,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_initialize_state",
-      "community": 4,
+      "community": 62,
       "norm_label": "._initialize_state()"
     },
     {
@@ -3930,7 +3950,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_py_networkstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -3960,7 +3980,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "simulator_env_py_disruption",
-      "community": 4,
+      "community": 62,
       "norm_label": "disruption"
     },
     {
@@ -3970,7 +3990,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_train_speed",
-      "community": 4,
+      "community": 62,
       "norm_label": "._get_train_speed()"
     },
     {
@@ -3980,7 +4000,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_py_trainstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -4080,7 +4100,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "simulator_env_rationale_102",
-      "community": 4,
+      "community": 62,
       "norm_label": "calculate the max target speed of a train on a section under active disruptions."
     },
     {
@@ -4650,7 +4670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conflict_detector",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_conflict_detector.py"
     },
     {
@@ -4660,7 +4680,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_conflict_detector_test_conflict_detection_overlap",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_conflict_detection_overlap()"
     },
     {
@@ -4770,7 +4790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_env",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_env.py"
     },
     {
@@ -4780,7 +4800,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_env_test_dataclasses_instantiation_and_print",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_dataclasses_instantiation_and_print()"
     },
     {
@@ -4790,7 +4810,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_env_test_network_state_clone",
-      "community": 4,
+      "community": 62,
       "norm_label": "test_network_state_clone()"
     },
     {
@@ -5130,7 +5150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_train_state",
-      "community": 4,
+      "community": 62,
       "norm_label": "train_state.py"
     },
     {
@@ -5140,7 +5160,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "simulator_train_state_trainstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -5150,7 +5170,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_train_state_blockstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "blockstate"
     },
     {
@@ -5160,7 +5180,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "simulator_train_state_stationstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "stationstate"
     },
     {
@@ -5170,7 +5190,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "simulator_train_state_networkstate",
-      "community": 4,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -5180,7 +5200,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "simulator_train_state_networkstate_clone",
-      "community": 4,
+      "community": 62,
       "norm_label": ".clone()"
     },
     {
@@ -5190,7 +5210,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "simulator_train_state_rationale_44",
-      "community": 4,
+      "community": 62,
       "norm_label": "custom clone function that copies only mutable structures for speed."
     },
     {
@@ -13713,6 +13733,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/context/SimulationContext.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "context_simulationcontext",
+      "target": "context_simulationcontext_api_base",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/SimulationContext.jsx",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13738,6 +13768,16 @@
       "confidence_score": 1.0,
       "source": "context_simulationcontext",
       "target": "context_simulationcontext_simulationprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/context/SimulationContext.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "context_simulationcontext",
+      "target": "context_simulationcontext_ws_url",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -28149,5 +28189,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "be1df14fa168f0c56c6f31d7d230b5767f60da15"
+  "built_at_commit": "c5f7bbb1385c070f4971e0b83a962576df374e61"
 }

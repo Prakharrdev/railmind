@@ -6,8 +6,8 @@ import { useWebSocket } from '../hooks/useWebSocket';
 
 export const SimulationContext = createContext(null);
 
-const API_BASE = import.meta.env.VITE_API_URL || `http://${window.location.hostname || 'localhost'}:8000`;
-const WS_URL = import.meta.env.VITE_WS_URL || `ws://${window.location.hostname || 'localhost'}:8000/ws/live`;
+const API_BASE = (import.meta.env.VITE_API_URL || `http://${window.location.hostname || 'localhost'}:8000`).replace(/\/+$/, '');
+const WS_URL = (import.meta.env.VITE_WS_URL || `ws://${window.location.hostname || 'localhost'}:8000/ws/live`).replace(/\/+$/, '');
 
 
 // Pre-defined high-fidelity mock scenarios for portfolio demonstration

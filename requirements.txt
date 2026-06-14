@@ -7,3 +7,4 @@ osmnx
 pytest
 httpx
 requests
+websockets
