@@ -234,6 +234,16 @@
       "norm_label": "actionrequest"
     },
     {
+      "label": "restart_simulation()",
+      "file_type": "code",
+      "source_file": "api/routes/control.py",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "routes_control_restart_simulation",
+      "community": 46,
+      "norm_label": "restart_simulation()"
+    },
+    {
       "label": "Inject a simulated infrastructure disruption (e.g. engine slow, signal failure).",
       "file_type": "rationale",
       "source_file": "api/routes/control.py",
@@ -262,6 +272,16 @@
       "id": "routes_control_rationale_43",
       "community": 46,
       "norm_label": "manually apply a dispatch hold action on a train."
+    },
+    {
+      "label": "Restart the simulation from the beginning, reinitializing all state.",
+      "file_type": "rationale",
+      "source_file": "api/routes/control.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "routes_control_rationale_57",
+      "community": 46,
+      "norm_label": "restart the simulation from the beginning, reinitializing all state."
     },
     {
       "label": "planner.py",
@@ -564,10 +584,20 @@
       "norm_label": ".stop()"
     },
     {
-      "label": ".run_loop()",
+      "label": ".restart()",
       "file_type": "code",
       "source_file": "api/sim_runner.py",
       "source_location": "L101",
+      "_origin": "ast",
+      "id": "api_sim_runner_simulationrunner_restart",
+      "community": 48,
+      "norm_label": ".restart()"
+    },
+    {
+      "label": ".run_loop()",
+      "file_type": "code",
+      "source_file": "api/sim_runner.py",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "api_sim_runner_simulationrunner_run_loop",
       "community": 48,
@@ -577,19 +607,29 @@
       "label": ".save_run_results()",
       "file_type": "code",
       "source_file": "api/sim_runner.py",
-      "source_location": "L248",
+      "source_location": "L275",
       "_origin": "ast",
       "id": "api_sim_runner_simulationrunner_save_run_results",
       "community": 48,
       "norm_label": ".save_run_results()"
     },
     {
+      "label": "Stop current simulation, reinitialize everything, and start fresh.",
+      "file_type": "rationale",
+      "source_file": "api/sim_runner.py",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "api_sim_runner_rationale_102",
+      "community": 48,
+      "norm_label": "stop current simulation, reinitialize everything, and start fresh."
+    },
+    {
       "label": "Create standard results archive run_XXXX/ under results/.",
       "file_type": "rationale",
       "source_file": "api/sim_runner.py",
-      "source_location": "L249",
+      "source_location": "L276",
       "_origin": "ast",
-      "id": "api_sim_runner_rationale_249",
+      "id": "api_sim_runner_rationale_276",
       "community": 48,
       "norm_label": "create standard results archive run_xxxx/ under results/."
     },
@@ -1564,10 +1604,30 @@
       "norm_label": "geographiccorridormap.jsx"
     },
     {
+      "label": "SECTION_GEOMETRIES",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_geographiccorridormap_section_geometries",
+      "community": 39,
+      "norm_label": "section_geometries"
+    },
+    {
+      "label": "getInterpolatedPosition()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "components_geographiccorridormap_getinterpolatedposition",
+      "community": 39,
+      "norm_label": "getinterpolatedposition()"
+    },
+    {
       "label": "GeographicCorridorMap()",
       "file_type": "code",
       "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
-      "source_location": "L7",
+      "source_location": "L92",
       "_origin": "ast",
       "id": "components_geographiccorridormap_geographiccorridormap",
       "community": 39,
@@ -1667,7 +1727,7 @@
       "label": "RecommendationPanel()",
       "file_type": "code",
       "source_file": "frontend/src/components/RecommendationPanel.jsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_recommendationpanel_recommendationpanel",
       "community": 39,
@@ -1880,7 +1940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_beam_search",
-      "community": 62,
+      "community": 4,
       "norm_label": "beam_search.py"
     },
     {
@@ -2040,7 +2100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_csp_checker",
-      "community": 62,
+      "community": 4,
       "norm_label": "csp_checker.py"
     },
     {
@@ -2060,7 +2120,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_init",
-      "community": 62,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -2070,7 +2130,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_railwaygraph",
-      "community": 62,
+      "community": 4,
       "norm_label": "railwaygraph"
     },
     {
@@ -2080,7 +2140,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_minimum_headway",
-      "community": 57,
+      "community": 62,
       "norm_label": ".check_minimum_headway()"
     },
     {
@@ -2090,7 +2150,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_trainstate",
-      "community": 57,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -2100,7 +2160,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_networkstate",
-      "community": 57,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -2110,7 +2170,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_platform_capacity",
-      "community": 57,
+      "community": 62,
       "norm_label": ".check_platform_capacity()"
     },
     {
@@ -2120,7 +2180,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_block_clearance",
-      "community": 57,
+      "community": 62,
       "norm_label": ".check_block_clearance()"
     },
     {
@@ -2130,7 +2190,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_hold_duration",
-      "community": 57,
+      "community": 62,
       "norm_label": ".check_hold_duration()"
     },
     {
@@ -2140,7 +2200,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_filter",
-      "community": 57,
+      "community": 62,
       "norm_label": ".filter()"
     },
     {
@@ -2160,7 +2220,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_11",
-      "community": 57,
+      "community": 62,
       "norm_label": "verifies safety margin between two trains.         since the simulator handles p"
     },
     {
@@ -2170,7 +2230,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_22",
-      "community": 57,
+      "community": 62,
       "norm_label": "deadlock check: returns false if the station platforms are completely full."
     },
     {
@@ -2180,7 +2240,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_32",
-      "community": 57,
+      "community": 62,
       "norm_label": "verifies if the train is at a station or loop (i.e. not mid-section) to be held."
     },
     {
@@ -2190,7 +2250,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_37",
-      "community": 57,
+      "community": 62,
       "norm_label": "enforces that holds are within the maximum limit (e.g. 30 minutes)."
     },
     {
@@ -2200,7 +2260,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_41",
-      "community": 57,
+      "community": 62,
       "norm_label": "filters a list of candidate actions, returning only those that satisfy all csp c"
     },
     {
@@ -2350,7 +2410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_scorer",
-      "community": 62,
+      "community": 4,
       "norm_label": "scorer.py"
     },
     {
@@ -2430,7 +2490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_search_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "search_cost.py"
     },
     {
@@ -2440,7 +2500,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_g_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_g_cost()"
     },
     {
@@ -2450,7 +2510,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_statescorer",
-      "community": 62,
+      "community": 4,
       "norm_label": "statescorer"
     },
     {
@@ -2460,7 +2520,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_networkstate",
-      "community": 62,
+      "community": 4,
       "norm_label": "networkstate"
     },
     {
@@ -2470,7 +2530,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_h_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_h_cost()"
     },
     {
@@ -2480,7 +2540,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_search_cost_py_trainnetworksimulator",
-      "community": 62,
+      "community": 4,
       "norm_label": "trainnetworksimulator"
     },
     {
@@ -2490,7 +2550,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "optimizer_search_cost_compute_f_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "compute_f_cost()"
     },
     {
@@ -2500,7 +2560,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_6",
-      "community": 62,
+      "community": 4,
       "norm_label": "immediate cost (g) represents actual network impact difference:     g_cost = sco"
     },
     {
@@ -2510,7 +2570,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_12",
-      "community": 62,
+      "community": 4,
       "norm_label": "heuristic cost (h) projects the state 20 minutes forward under fcfs:     h_cost"
     },
     {
@@ -2520,7 +2580,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "optimizer_search_cost_rationale_19",
-      "community": 62,
+      "community": 4,
       "norm_label": "total cost f = g + h."
     },
     {
@@ -2690,7 +2750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_csp_checker",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_csp_checker.py"
     },
     {
@@ -2700,7 +2760,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_csp_checker_graph",
-      "community": 62,
+      "community": 4,
       "norm_label": "graph()"
     },
     {
@@ -2710,7 +2770,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_csp_checker_checker",
-      "community": 62,
+      "community": 4,
       "norm_label": "checker()"
     },
     {
@@ -2720,7 +2780,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_block_clearance",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_check_block_clearance()"
     },
     {
@@ -2730,7 +2790,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_hold_duration",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_check_hold_duration()"
     },
     {
@@ -2740,7 +2800,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_platform_capacity",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_check_platform_capacity()"
     },
     {
@@ -2790,7 +2850,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_scorer_scenarios_graph",
-      "community": 62,
+      "community": 36,
       "norm_label": "graph()"
     },
     {
@@ -3090,7 +3150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_search_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_search_cost.py"
     },
     {
@@ -3100,7 +3160,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_search_cost_simulator",
-      "community": 62,
+      "community": 34,
       "norm_label": "simulator()"
     },
     {
@@ -3110,7 +3170,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_search_cost_scorer",
-      "community": 62,
+      "community": 4,
       "norm_label": "scorer()"
     },
     {
@@ -3120,7 +3180,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_search_cost_test_g_cost_calculation",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_g_cost_calculation()"
     },
     {
@@ -3130,7 +3190,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "tests_test_search_cost_test_h_cost_and_f_cost",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_h_cost_and_f_cost()"
     },
     {
@@ -3270,7 +3330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 62,
+      "community": 4,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -3300,7 +3360,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_init",
-      "community": 62,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -3310,7 +3370,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_railwaygraph",
-      "community": 62,
+      "community": 4,
       "norm_label": "railwaygraph"
     },
     {
@@ -3390,7 +3450,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_networkstate",
-      "community": 62,
+      "community": 4,
       "norm_label": "networkstate"
     },
     {
@@ -3460,7 +3520,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_corridor",
-      "community": 62,
+      "community": 4,
       "norm_label": "corridor.py"
     },
     {
@@ -3470,7 +3530,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "simulator_corridor_stationnode",
-      "community": 10,
+      "community": 4,
       "norm_label": "stationnode"
     },
     {
@@ -3480,7 +3540,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "simulator_corridor_stationnode_getitem",
-      "community": 10,
+      "community": 4,
       "norm_label": ".__getitem__()"
     },
     {
@@ -3490,7 +3550,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "simulator_corridor_signal",
-      "community": 10,
+      "community": 4,
       "norm_label": "signal"
     },
     {
@@ -3500,7 +3560,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_corridor_blocksection",
-      "community": 10,
+      "community": 4,
       "norm_label": "blocksection"
     },
     {
@@ -3510,7 +3570,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "simulator_corridor_blocksection_getitem",
-      "community": 10,
+      "community": 4,
       "norm_label": ".__getitem__()"
     },
     {
@@ -3520,7 +3580,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph",
-      "community": 62,
+      "community": 4,
       "norm_label": "railwaygraph"
     },
     {
@@ -3530,7 +3590,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_init",
-      "community": 10,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -3540,7 +3600,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_station",
-      "community": 10,
+      "community": 4,
       "norm_label": ".get_station()"
     },
     {
@@ -3550,7 +3610,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section",
-      "community": 49,
+      "community": 4,
       "norm_label": ".get_section()"
     },
     {
@@ -3560,7 +3620,7 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_section_by_endpoints",
-      "community": 49,
+      "community": 4,
       "norm_label": ".get_section_by_endpoints()"
     },
     {
@@ -3570,7 +3630,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_typical_traversal_time",
-      "community": 49,
+      "community": 4,
       "norm_label": ".get_typical_traversal_time()"
     },
     {
@@ -3580,7 +3640,7 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_shortest_path",
-      "community": 62,
+      "community": 4,
       "norm_label": ".get_shortest_path()"
     },
     {
@@ -3590,7 +3650,7 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_next_block",
-      "community": 49,
+      "community": 4,
       "norm_label": ".next_block()"
     },
     {
@@ -3600,7 +3660,7 @@
       "source_location": "L310",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_free_blocks",
-      "community": 62,
+      "community": 4,
       "norm_label": ".free_blocks()"
     },
     {
@@ -3610,7 +3670,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_block_length",
-      "community": 62,
+      "community": 4,
       "norm_label": ".block_length()"
     },
     {
@@ -3620,7 +3680,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_16",
-      "community": 10,
+      "community": 4,
       "norm_label": "allows dictionary-like subscripting for backward compatibility with existing tes"
     },
     {
@@ -3630,7 +3690,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_38",
-      "community": 10,
+      "community": 4,
       "norm_label": "allows dictionary-like subscripting for compatibility."
     },
     {
@@ -3640,7 +3700,7 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_186",
-      "community": 10,
+      "community": 4,
       "norm_label": "get properties of a station by id."
     },
     {
@@ -3650,7 +3710,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_190",
-      "community": 49,
+      "community": 4,
       "norm_label": "get details of a section by id, handling reversed direction ids as well."
     },
     {
@@ -3660,7 +3720,7 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_205",
-      "community": 49,
+      "community": 4,
       "norm_label": "get section details by endpoint station ids."
     },
     {
@@ -3670,7 +3730,7 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_222",
-      "community": 49,
+      "community": 4,
       "norm_label": "calculate typical traversal time in minutes for a section         based on the s"
     },
     {
@@ -3680,7 +3740,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_235",
-      "community": 62,
+      "community": 4,
       "norm_label": "find the shortest path of station ids between two stations."
     },
     {
@@ -3690,7 +3750,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_245",
-      "community": 49,
+      "community": 4,
       "norm_label": "query the block id of the block immediately ahead of the train.         returns"
     },
     {
@@ -3700,7 +3760,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_311",
-      "community": 62,
+      "community": 4,
       "norm_label": "returns a list of block ids that are currently free (not occupied)."
     },
     {
@@ -3710,7 +3770,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_317",
-      "community": 62,
+      "community": 4,
       "norm_label": "returns the length of a block in km."
     },
     {
@@ -3790,7 +3850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_env",
-      "community": 62,
+      "community": 4,
       "norm_label": "env.py"
     },
     {
@@ -3900,7 +3960,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_py_trainstate",
-      "community": 34,
+      "community": 4,
       "norm_label": "trainstate"
     },
     {
@@ -4300,7 +4360,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_replay_runner_replayrunner_load_run",
-      "community": 34,
+      "community": 62,
       "norm_label": ".load_run()"
     },
     {
@@ -4310,7 +4370,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_replay_runner_py_any",
-      "community": 48,
+      "community": 62,
       "norm_label": "any"
     },
     {
@@ -4390,7 +4450,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_replay_runner_rationale_17",
-      "community": 34,
+      "community": 62,
       "norm_label": "reconstruct the sequence of simulation states by re-simulating with logged actio"
     },
     {
@@ -4550,7 +4610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability",
-      "community": 62,
+      "community": 34,
       "norm_label": "test_apply_action_immutability.py"
     },
     {
@@ -4560,7 +4620,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability_test_apply_action_immutability",
-      "community": 62,
+      "community": 34,
       "norm_label": "test_apply_action_immutability()"
     },
     {
@@ -4570,7 +4630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conflict_detector",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_conflict_detector.py"
     },
     {
@@ -4580,7 +4640,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_conflict_detector_test_conflict_detection_overlap",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_conflict_detection_overlap()"
     },
     {
@@ -4690,7 +4750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_env",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_env.py"
     },
     {
@@ -4700,7 +4760,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_env_test_dataclasses_instantiation_and_print",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_dataclasses_instantiation_and_print()"
     },
     {
@@ -4710,7 +4770,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_env_test_network_state_clone",
-      "community": 62,
+      "community": 4,
       "norm_label": "test_network_state_clone()"
     },
     {
@@ -5050,7 +5110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_train_state",
-      "community": 62,
+      "community": 4,
       "norm_label": "train_state.py"
     },
     {
@@ -5060,7 +5120,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "simulator_train_state_trainstate",
-      "community": 62,
+      "community": 4,
       "norm_label": "trainstate"
     },
     {
@@ -5080,7 +5140,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "simulator_train_state_stationstate",
-      "community": 62,
+      "community": 4,
       "norm_label": "stationstate"
     },
     {
@@ -9434,6 +9494,16 @@
       "target": "routes_control_inject_disruption"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/routes/control.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_control",
+      "target": "routes_control_restart_simulation"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9621,6 +9691,16 @@
       "confidence_score": 0.5,
       "source": "actionrequest",
       "target": "simulator_env_action"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/routes/control.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_control_rationale_57",
+      "target": "routes_control_restart_simulation"
     },
     {
       "relation": "imports_from",
@@ -10192,6 +10272,16 @@
       "confidence_score": 1.0,
       "source": "api_sim_runner_simulationrunner",
       "target": "api_sim_runner_simulationrunner_inject_disruption"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "api/sim_runner.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_sim_runner_simulationrunner",
+      "target": "api_sim_runner_simulationrunner_restart"
     },
     {
       "relation": "method",
@@ -10910,11 +11000,120 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "api/sim_runner.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "api_sim_runner_simulationrunner_start"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/sim_runner.py",
       "source_location": "L89",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "api_sim_runner_simulationrunner_start",
       "target": "api_sim_runner_simulationrunner_run_loop"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/sim_runner.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "api_sim_runner_simulationrunner_stop"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/sim_runner.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_sim_runner_rationale_102",
+      "target": "api_sim_runner_simulationrunner_restart"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "evaluation_metrics_engine_metricsengine"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "optimizer_beam_search_beamsearchplanner"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "optimizer_csp_checker_constraintchecker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "optimizer_scorer_statescorer"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "simulator_conflict_detector_conflictdetector"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "simulator_env_trainnetworksimulator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/sim_runner.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "api_sim_runner_simulationrunner_restart",
+      "target": "simulator_event_logger_eventlogger"
     },
     {
       "relation": "calls",
@@ -10997,10 +11196,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "api/sim_runner.py",
-      "source_location": "L249",
+      "source_location": "L276",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "api_sim_runner_rationale_249",
+      "source": "api_sim_runner_rationale_276",
       "target": "api_sim_runner_simulationrunner_save_run_results"
     },
     {
@@ -13103,6 +13302,26 @@
       "confidence_score": 1.0,
       "source": "components_geographiccorridormap",
       "target": "components_geographiccorridormap_geographiccorridormap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "components_geographiccorridormap",
+      "target": "components_geographiccorridormap_getinterpolatedposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GeographicCorridorMap.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_geographiccorridormap",
+      "target": "components_geographiccorridormap_section_geometries",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -27900,5 +28119,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c83ced0afeb60afe45f18058bdebe3a97b374d06"
+  "built_at_commit": "6d18d9489b55ffa3bb3580af28f176d918ecde7f"
 }

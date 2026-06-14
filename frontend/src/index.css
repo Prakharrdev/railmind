@@ -3,29 +3,29 @@
 @import "leaflet/dist/leaflet.css";
 
 :root {
-  --canvas: #0A0A0C;
-  --surface-1: #14151A;
-  --surface-2: #1C1E24;
-  --surface-3: #25272E;
-  --border: #2A2D34;
-  --border-strong: #3A3D47;
+  --canvas: #0B0F14;
+  --surface-1: #111827;
+  --surface-2: #161B22;
+  --surface-3: #242B36;
+  --border: #242B36;
+  --border-strong: #2D3748;
 
-  --text-primary: #ECEDEF;
-  --text-secondary: #9B9EA7;
-  --text-tertiary: #6B6E78;
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
 
-  --signal-green: #2FB350;
-  --signal-yellow: #E8B339;
-  --signal-orange: #E8772E;
-  --signal-red: #E14B4B;
+  --signal-green: #22C55E;
+  --signal-yellow: #F59E0B;
+  --signal-orange: #F97316;
+  --signal-red: #EF4444;
 
-  --action-blue: #4C8DFF;
-  --action-blue-muted: rgba(76, 141, 255, 0.1);
+  --action-blue: #1C64F2;
+  --action-blue-muted: rgba(28, 100, 242, 0.1);
 
   --success: var(--signal-green);
   --live-indicator: var(--signal-green);
   --offline-indicator: var(--signal-red);
-  --scrim: rgba(10, 10, 12, 0.72);
+  --scrim: rgba(11, 15, 20, 0.85);
 
   color-scheme: dark;
 }
@@ -146,7 +146,6 @@ body {
   outline: none;
 }
 .leaflet-tile {
-  filter: invert(100%) hue-rotate(180deg) brightness(50%) contrast(110%);
 }
 .leaflet-bar {
   border: 1px solid var(--border) !important;
@@ -222,4 +221,22 @@ body {
   }
 }
 
+.custom-leaflet-train-icon, .custom-leaflet-station-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Clean outline on conflict highlights */
+.conflict-glow {
+  outline: 1.5px solid currentColor;
+}
+
+/* Smooth hover for Gantt bars */
+.gantt-bar {
+  transition: transform 0.1s ease-out, filter 0.1s ease-out;
+}
+.gantt-bar:hover {
+  filter: brightness(1.15);
+  transform: scaleY(1.1);
+}
 

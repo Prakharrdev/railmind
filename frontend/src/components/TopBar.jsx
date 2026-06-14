@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
 import { 
-  TrainFront, CheckCircle2, Clock, AlertTriangle, CircleDot, Zap, X, Play 
+  TrainFront, CheckCircle2, Clock, AlertTriangle, Zap, X, Play, RotateCcw 
 } from 'lucide-react';
 
 export default function TopBar() {
@@ -10,10 +10,12 @@ export default function TopBar() {
     conflicts = [], 
     simTime = 840, 
     wsStatus, 
-    injectDisruption 
+    injectDisruption,
+    restartSimulation 
   } = useSimulatorState();
 
   const [showDisruptModal, setShowDisruptModal] = useState(false);
+  const [isRestarting, setIsRestarting] = useState(false);
   const [disruptForm, setDisruptForm] = useState(() => ({
     disruption_id: 'disrupt_' + Math.floor(Math.random() * 1000),
     train_id: '',
@@ -23,15 +25,6 @@ export default function TopBar() {
     end_time: 875,
     target_id: ''
   }));
-
-  const getStatusColor = () => {
-    switch (wsStatus) {
-      case 'Connected': return 'text-signal-green';
-      case 'Connecting':
-      case 'Reconnecting': return 'text-signal-yellow';
-      default: return 'text-signal-red';
-    }
-  };
 
   const handleDisruptSubmit = async (e) => {
     e.preventDefault();
@@ -75,91 +68,89 @@ export default function TopBar() {
     return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Stat pill component
+  const StatPill = ({ label, value, icon: Icon, color, suffix, isLast }) => (
+    <div className={`flex items-center gap-3 px-4 py-1 ${!isLast ? 'border-r border-border' : ''}`}>
+      <div className="flex flex-col justify-between">
+        <span className="text-[9px] font-bold text-text-tertiary uppercase tracking-wider font-sans">{label}</span>
+        <div className="flex items-center gap-2 mt-0.5">
+          <Icon className={`h-4 w-4 ${color}`} />
+          <span className={`text-base font-bold leading-none font-mono ${color === 'text-signal-green' ? 'text-text-primary' : color}`}>
+            {value}
+            {suffix && <span className="text-[10px] font-normal font-sans text-text-secondary ml-1">{suffix}</span>}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <header className="h-16 bg-surface-1 border-b border-border px-4 flex items-center justify-between select-none shrink-0 z-40">
       {/* Logo & Tagline */}
-      <div className="flex flex-col justify-center">
-        <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2.5">
+        <div className="h-9 w-9 rounded-full bg-action-blue/10 border border-action-blue/20 flex items-center justify-center">
           <TrainFront className="h-5 w-5 text-action-blue" />
-          <span className="style-display text-text-primary">RailMind</span>
         </div>
-        <span className="style-label text-text-tertiary leading-none mt-0.5">
-          Intelligent Train Conflict Resolution
-        </span>
+        <div className="flex flex-col justify-center">
+          <span className="font-bold text-lg leading-tight text-text-primary">RailMind</span>
+          <span className="text-[10px] text-text-tertiary leading-none font-medium">
+            Intelligent Train Conflict Resolution
+          </span>
+        </div>
       </div>
 
-      {/* Stat Pills */}
-      <div className="hidden lg:flex items-center gap-3">
-        {/* Active Trains */}
-        <div className="bg-surface-2 border border-border rounded px-3 py-1.5 min-w-[90px]">
-          <div className="style-label text-text-secondary flex items-center gap-1">
-            <TrainFront className="h-3 w-3 text-text-secondary" />
-            <span>Active</span>
-          </div>
-          <div className="style-data-lg text-text-primary leading-tight mt-0.5">{totalTrains}</div>
-        </div>
-
-        {/* On Time */}
-        <div className="bg-surface-2 border border-border rounded px-3 py-1.5 min-w-[90px]">
-          <div className="style-label text-text-secondary flex items-center gap-1">
-            <CheckCircle2 className="h-3 w-3 text-signal-green" />
-            <span>On Time</span>
-          </div>
-          <div className="style-data-lg text-signal-green leading-tight mt-0.5">{onTimeCount}</div>
-        </div>
-
-        {/* Delayed */}
-        <div className="bg-surface-2 border border-border rounded px-3 py-1.5 min-w-[90px]">
-          <div className="style-label text-text-secondary flex items-center gap-1">
-            <Clock className="h-3 w-3 text-signal-orange" />
-            <span>Delayed</span>
-          </div>
-          <div className="style-data-lg text-signal-orange leading-tight mt-0.5">{delayedCount}</div>
-        </div>
-
-        {/* Active Conflicts */}
-        <div className="bg-surface-2 border border-border rounded px-3 py-1.5 min-w-[90px]">
-          <div className="style-label text-text-secondary flex items-center gap-1">
-            <AlertTriangle className="h-3 w-3 text-signal-red" />
-            <span>Conflicts</span>
-          </div>
-          <div className="style-data-lg text-signal-red leading-tight mt-0.5">{activeConflicts}</div>
-        </div>
-
-        {/* Avg Delay */}
-        <div className="bg-surface-2 border border-border rounded px-3 py-1.5 min-w-[90px]">
-          <div className="style-label text-text-secondary flex items-center gap-1">
-            <Clock className="h-3 w-3 text-text-tertiary" />
-            <span>Avg Delay</span>
-          </div>
-          <div className="style-data-lg text-text-primary leading-tight mt-0.5">
-            {avgDelay.toFixed(1)}<span className="text-xs font-normal">m</span>
-          </div>
-        </div>
+      {/* Stat Pills — now with dividers between them */}
+      <div className="hidden lg:flex items-center bg-[#0b0e14]/40 border border-border rounded-sm">
+        <StatPill label="Active Trains" value={totalTrains} icon={TrainFront} color="text-signal-green" />
+        <StatPill label="On Time" value={onTimeCount} icon={CheckCircle2} color="text-signal-green" />
+        <StatPill label="Delayed Trains" value={delayedCount} icon={Clock} color="text-signal-orange" />
+        <StatPill label="Active Conflicts" value={activeConflicts} icon={AlertTriangle} color="text-signal-red" />
+        <StatPill label="Avg Delay" value={avgDelay.toFixed(1)} icon={Clock} color="text-signal-orange" suffix="min" isLast />
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
         {/* Connection Status */}
-        <div className="flex items-center gap-2 px-2.5 py-1 bg-surface-2 border border-border rounded text-text-secondary">
-          <CircleDot className={`h-3.5 w-3.5 ${getStatusColor()} pulse-indicator`} />
-          <span className="style-label font-semibold">
-            {wsStatus === 'Connected' ? 'OPERATIONAL' : 'OFFLINE'}
-          </span>
+        <div className="flex flex-col items-start leading-tight">
+          <span className="text-[8px] font-bold text-text-tertiary uppercase tracking-wider font-sans">System Status</span>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className={`h-2 w-2 rounded-full ${wsStatus === 'Connected' ? 'bg-signal-green' : 'bg-signal-red'} pulse-indicator`} />
+            <span className={`text-[11px] font-bold uppercase tracking-wider ${wsStatus === 'Connected' ? 'text-signal-green' : 'text-signal-red'}`}>
+              {wsStatus === 'Connected' ? 'OPERATIONAL' : 'OFFLINE'}
+            </span>
+          </div>
         </div>
 
         {/* Clock */}
-        <div className="text-right leading-none font-mono">
-          <div className="style-data-md text-text-primary">{formatTime(simTime)}</div>
-          <div className="style-data-sm text-text-tertiary mt-0.5">14 JUN 2026</div>
+        <div className="flex flex-col items-end leading-tight font-mono">
+          <span className="text-sm font-bold text-text-primary leading-none">{formatTime(simTime)}</span>
+          <span className="text-[9px] text-text-tertiary mt-1 font-sans font-medium uppercase tracking-wider">21 May 2026</span>
         </div>
 
-        {/* Action Button */}
+        {/* Action Buttons */}
+        <button
+          onClick={async () => {
+            setIsRestarting(true);
+            try {
+              await restartSimulation();
+            } catch (err) {
+              alert('Failed to restart: ' + err.message);
+            } finally {
+              setIsRestarting(false);
+            }
+          }}
+          disabled={isRestarting}
+          className="flex items-center gap-1.5 border border-border hover:bg-surface-3 text-text-secondary hover:text-text-primary px-3 py-2 rounded-sm text-xs font-bold transition-all cursor-pointer tracking-wider uppercase font-sans disabled:opacity-50"
+        >
+          <RotateCcw className={`h-3.5 w-3.5 ${isRestarting ? 'animate-spin' : ''}`} />
+          <span>{isRestarting ? 'Restarting…' : 'Restart'}</span>
+        </button>
+
         <button
           onClick={() => setShowDisruptModal(true)}
-          className="flex items-center gap-1.5 bg-signal-red hover:opacity-90 text-white px-3.5 py-2 rounded text-xs font-bold transition-all cursor-pointer shadow-md"
+          className="flex items-center gap-1.5 bg-action-blue hover:bg-[#1A56DB] text-white px-4 py-2 rounded-sm text-xs font-bold transition-all cursor-pointer shadow-md tracking-wider uppercase font-sans"
         >
-          <Zap className="h-3.5 w-3.5" />
+          <Zap className="h-3.5 w-3.5 fill-white/10" />
           <span>Inject Disruption</span>
         </button>
       </div>

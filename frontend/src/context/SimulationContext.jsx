@@ -441,6 +441,33 @@ export const SimulationProvider = ({ children }) => {
 
   const { status: wsStatus, reconnect } = useWebSocket(WS_URL, handleWebSocketMessage);
 
+  // Restart simulation API
+  const restartSimulation = useCallback(async () => {
+    try {
+      const response = await axios.post(`${API_BASE}/restart`);
+      // Clear all local state
+      setTrains([]);
+      setConflicts([]);
+      setRecommendations({});
+      setActiveRecommendation(null);
+      setSelectedRecommendationId(null);
+      setSelectedRecommendationDetails(null);
+      setDecisionTree(null);
+      setMetrics(null);
+      setSelectedTrainId(null);
+      setSelectedConflict(null);
+      setActiveReplay(null);
+      setSimTime(840.0);
+      // Re-fetch network and reconnect
+      fetchNetwork();
+      reconnect();
+      return response.data;
+    } catch (error) {
+      console.error('Error restarting simulation:', error);
+      throw error;
+    }
+  }, [fetchNetwork, reconnect]);
+
   return (
     <SimulationContext.Provider
       value={{
@@ -460,6 +487,7 @@ export const SimulationProvider = ({ children }) => {
         updatePlannerConfig,
         injectDisruption,
         applyAction,
+        restartSimulation,
         selectedTrainId,
         setSelectedTrainId,
         selectedConflict,

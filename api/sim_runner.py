@@ -98,6 +98,33 @@ class SimulationRunner:
                 pass
             self.task = None
 
+    async def restart(self) -> None:
+        """Stop current simulation, reinitialize everything, and start fresh."""
+        await self.stop()
+
+        # Reinitialize all components
+        self.simulator = TrainNetworkSimulator(
+            CORRIDOR_PATH, TIMETABLE_PATH, DISTRIBUTIONS_PATH
+        )
+        self.scorer = StateScorer(self.simulator.graph, self.simulator.timetable_data)
+        self.checker = ConstraintChecker(self.simulator.graph)
+        self.planner = BeamSearchPlanner(
+            self.simulator, self.scorer, self.checker, depth=4, beam_width=8
+        )
+        self.detector = ConflictDetector(self.simulator.graph, self.simulator.timetable_data)
+        self.logger = EventLogger()
+        self.metrics_engine = MetricsEngine()
+
+        # Clear state
+        self.recommendations = {}
+        self.latest_recommendation = None
+        self.run_id = f"run_{int(time.time())}"
+        self.timestamp = datetime.now().isoformat()
+
+        # Start fresh loop
+        await self.start()
+
+
     async def run_loop(self) -> None:
         tick_count = 0
         while self.is_running and tick_count < 240:

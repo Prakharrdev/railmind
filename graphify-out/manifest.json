@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/sim_runner.py": {
-    "mtime": 1781381206.8230364,
-    "ast_hash": "66981665b4bfb78fdc2c6ccd4d4b5138",
+    "mtime": 1781441876.7945,
+    "ast_hash": "3585baa77d4846e429d51efc06b5261e",
     "semantic_hash": ""
   },
   "api/ws_manager.py": {
@@ -80,18 +80,18 @@
     "semantic_hash": ""
   },
   "frontend/src/App.jsx": {
-    "mtime": 1781439444.4663723,
-    "ast_hash": "a8acc2e8d3320a0873ad9d9d47f2abab",
+    "mtime": 1781441255.7493117,
+    "ast_hash": "61f7d44380d986eba857ab55edba5139",
     "semantic_hash": ""
   },
   "frontend/src/components/ConflictTimeline.jsx": {
-    "mtime": 1781439378.2729757,
-    "ast_hash": "7e721669bb51de64f260a49f81d2ec64",
+    "mtime": 1781441023.9933114,
+    "ast_hash": "a4520fa4bbd5237f32d5cdf8a2d4c63a",
     "semantic_hash": ""
   },
   "frontend/src/components/CorridorMap.jsx": {
-    "mtime": 1781439386.2833154,
-    "ast_hash": "22842b523d3cf4d46112301304ff28e7",
+    "mtime": 1781446995.8336775,
+    "ast_hash": "4a4ff92ae9a71de9ad94cf53bea974a2",
     "semantic_hash": ""
   },
   "frontend/src/components/DecisionTree.jsx": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "frontend/src/components/RecommendationPanel.jsx": {
-    "mtime": 1781439504.3784187,
-    "ast_hash": "f53bd4abb783db9c304956cf44450975",
+    "mtime": 1781441228.3937776,
+    "ast_hash": "c2e80d0fefa22c4a29a192c59948f8e9",
     "semantic_hash": ""
   },
   "frontend/src/hooks/useSimulatorState.js": {
@@ -2360,8 +2360,8 @@
     "semantic_hash": ""
   },
   "api/routes/control.py": {
-    "mtime": 1781375148.6625998,
-    "ast_hash": "9f1fba6271564d54176ead8436d30d42",
+    "mtime": 1781441891.4736507,
+    "ast_hash": "0c90c29d4d6b842bbb18a4af0b5b6cf5",
     "semantic_hash": ""
   },
   "api/routes/planner.py": {
@@ -2495,8 +2495,8 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConsoleTabs.jsx": {
-    "mtime": 1781439453.9963152,
-    "ast_hash": "36bab53660226a34d2f4f87d47419b53",
+    "mtime": 1781441059.5929902,
+    "ast_hash": "d45445edaa1f84e1a95140c282d66b0a",
     "semantic_hash": ""
   },
   "frontend/src/components/Loading.jsx": {
@@ -2510,13 +2510,13 @@
     "semantic_hash": ""
   },
   "frontend/src/components/Sidebar.jsx": {
-    "mtime": 1781439345.5792522,
-    "ast_hash": "65c0dd3bd7c31e9daff4f172afcc2ca0",
+    "mtime": 1781440155.3531103,
+    "ast_hash": "6e54059dfb9c31d535c2830a5cf90b51",
     "semantic_hash": ""
   },
   "frontend/src/context/SimulationContext.jsx": {
-    "mtime": 1781439534.598078,
-    "ast_hash": "20b502e29b5eb5aeeaee54a73744d099",
+    "mtime": 1781446411.292722,
+    "ast_hash": "1507b164606245d160ae4086f20b1d7a",
     "semantic_hash": ""
   },
   "start.sh": {
@@ -2535,28 +2535,28 @@
     "semantic_hash": ""
   },
   "frontend/src/components/BlockOccupancyGantt.jsx": {
-    "mtime": 1781439367.8063753,
-    "ast_hash": "a6663dad9a1838ec3682edfdc6ce224d",
+    "mtime": 1781447037.152401,
+    "ast_hash": "fd35c5ff5eccd0cfaa09233ac1a35a49",
     "semantic_hash": ""
   },
   "frontend/src/components/FooterBar.jsx": {
-    "mtime": 1781439392.7402897,
-    "ast_hash": "d5283ea178bdf95618e820498d5c12e1",
+    "mtime": 1781441090.0520067,
+    "ast_hash": "dedcee624de54669606e3080d211b374",
     "semantic_hash": ""
   },
   "frontend/src/components/GeographicCorridorMap.jsx": {
-    "mtime": 1781439560.2057061,
-    "ast_hash": "a8ce6b9263a863ddae1cc481e370c400",
+    "mtime": 1781447357.905183,
+    "ast_hash": "7f71fbfae56dd5908e2916decf829450",
     "semantic_hash": ""
   },
   "frontend/src/components/SchematicCorridorDiagram.jsx": {
-    "mtime": 1781439510.4496555,
-    "ast_hash": "8c62d7a48139d2762dc82f59cc316357",
+    "mtime": 1781440945.6284494,
+    "ast_hash": "6abd0f10bd935a7a3e6bd0bcafa1c8d8",
     "semantic_hash": ""
   },
   "frontend/src/components/TopBar.jsx": {
-    "mtime": 1781439353.7761588,
-    "ast_hash": "6e35742eda7d9a9eb99680708a5206ff",
+    "mtime": 1781441930.4705899,
+    "ast_hash": "2a66667b862f231145e024339b11b627",
     "semantic_hash": ""
   },
   "frontend/src/utils/timetable.json": {
@@ -2567,6 +2567,11 @@
   "uiredesign.md": {
     "mtime": 1781438242.7664373,
     "ast_hash": "93ad0bf42f1e7626d0db3099ffe5652f",
+    "semantic_hash": ""
+  },
+  "ChatGPT Image Jun 14, 2026, 05_58_21 PM.png": {
+    "mtime": 1781440102.3528862,
+    "ast_hash": "1b1eccb25b0605236d776212a95f9a90",
     "semantic_hash": ""
   }
 }

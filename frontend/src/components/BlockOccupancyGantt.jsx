@@ -8,7 +8,8 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
     simTime = 840, 
     activeRecommendation,
     selectedConflict,
-    setSelectedTrainId 
+    setSelectedTrainId,
+    conflicts = []
   } = useSimulatorState();
 
   const sections = useMemo(() => network?.sections || [], [network?.sections]);
@@ -141,14 +142,12 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
     if (activeSectionIds.length > 0) {
       return sections.filter(s => activeSectionIds.includes(s.id));
     }
-    // Default: show sections that have any overlap conflicts or active trains
     const sectionsWithConflictsOrTrains = sections.filter(s => {
       const hasConflict = overlaps.some(o => o.sectionId === s.id);
       const hasTrain = trains.some(t => t.section_id === s.id);
       return hasConflict || hasTrain;
     });
 
-    // If none, show all sections
     return sectionsWithConflictsOrTrains.length > 0 ? sectionsWithConflictsOrTrains : sections;
   }, [sections, overlaps, trains, activeSectionIds]);
 
@@ -160,14 +159,14 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
     return 'bg-signal-red';
   };
 
-  // Convert time to percentage from start (simTime)
+  // Convert time to percentage from start (simTime - 20)
   const getPercent = (time) => {
-    const elapsed = time - simTime;
+    const elapsed = time - (simTime - 20);
     return Math.max(0, Math.min(100, (elapsed / 60) * 100));
   };
 
-  // 10-minute grid increments
-  const gridIntervals = [0, 10, 20, 30, 40, 50, 60];
+  // 10-minute grid increments relative to simTime
+  const gridIntervals = [-20, -10, 0, 10, 20, 30, 40];
 
   // Helper to format sim clock minute labels
   const formatTimeLabel = (minutes) => {
@@ -179,36 +178,45 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
   // Find first action timestamp if recommendation exists
   const recActionTime = useMemo(() => {
     if (activeRecommendation?.sim_time) {
-      // First action usually takes place at sim_time + lookup
       return activeRecommendation.sim_time;
     }
     return null;
   }, [activeRecommendation]);
 
+  // Determine train IDs for the legend
+  const activeConflict = selectedConflict || conflicts[0];
+  const trainALegend = activeConflict ? activeConflict.train_a_id : 'Train 12302';
+  const trainBLegend = activeConflict ? activeConflict.train_b_id : 'Freight 54321';
+
   return (
-    <div className="flex-1 flex flex-col h-full overflow-hidden select-none bg-surface-1 text-text-primary p-4">
-      {/* Time Header Grid labels */}
-      <div className="flex shrink-0 mb-2.5">
-        <div className="w-28 shrink-0"></div>
-        <div className="flex-grow h-6 relative font-mono text-[10px] text-text-tertiary">
-          {gridIntervals.map(min => {
-            const timeVal = simTime + min;
-            return (
-              <div 
-                key={min} 
-                style={{ left: `${(min / 60) * 100}%` }}
-                className="absolute -translate-x-1/2 flex flex-col items-center"
-              >
-                <span>+{min}m</span>
-                <span className="text-[9px] text-text-tertiary/60 font-normal mt-0.5">{formatTimeLabel(timeVal)}</span>
-              </div>
-            );
-          })}
+    <div className="flex-1 flex flex-col h-full overflow-hidden select-none bg-surface-1 text-text-primary p-4 relative">
+      {/* Legend Header */}
+      <div className="flex items-center justify-between shrink-0 mb-3 border-b border-border/40 pb-2">
+        <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider font-sans">
+          Block Occupancy Timeline (Next 60 Minutes)
+        </span>
+        <div className="flex items-center gap-3 text-[9px] font-mono font-medium">
+          <div className="flex items-center gap-1">
+            <span className="h-2 w-2 rounded-full bg-signal-red" />
+            <span className="text-text-primary">Train {trainALegend.slice(-5)}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="h-2 w-2 rounded-full bg-action-blue" />
+            <span className="text-text-primary">Freight {trainBLegend.slice(-5)}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="h-2 w-2 rounded-full bg-text-tertiary" />
+            <span className="text-text-secondary">Others</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="inline-block h-2 w-4 red-hatch-pattern border border-signal-red/35 rounded-sm" />
+            <span className="text-text-secondary">Overlap</span>
+          </div>
         </div>
       </div>
 
       {/* Gantt Rows */}
-      <div className="flex-grow overflow-y-auto space-y-1.5 pr-1">
+      <div className="flex-grow overflow-y-auto space-y-1.5 pr-1 mb-2">
         {visibleSections.map(sec => {
           // Find occupancies for this section
           const secOccs = projectedOccupancies.filter(o => o.sectionId === sec.id);
@@ -223,12 +231,12 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
             <div 
               key={sec.id} 
               className={`flex items-center h-8 rounded-sm transition-all ${
-                isConflictRow ? 'bg-surface-3/50' : 'bg-surface-1/40 hover:bg-surface-3/20'
+                isConflictRow ? 'bg-[#161B22] border-y border-[#242B36]' : 'bg-[#111827]/40 hover:bg-[#161B22]/30'
               }`}
             >
               {/* Row title */}
               <div className="w-28 shrink-0 style-data-sm text-text-secondary pl-2 flex flex-col truncate">
-                <span className="font-semibold text-text-primary">{sec.id.replace('_', '–')}</span>
+                <span className="font-semibold text-text-primary">{sec.id.replace(/_/g, ' – ')}</span>
                 <span className="text-[9px] text-text-tertiary leading-none mt-0.5">
                   {sec.tracks} Track{sec.tracks > 1 ? 's' : ''}
                 </span>
@@ -240,7 +248,7 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
                 {gridIntervals.map(min => (
                   <div
                     key={min}
-                    style={{ left: `${(min / 60) * 100}%` }}
+                    style={{ left: `${((min + 20) / 60) * 100}%` }}
                     className="absolute top-0 bottom-0 border-l border-border/30 pointer-events-none"
                   />
                 ))}
@@ -308,20 +316,45 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
         )}
       </div>
 
-      {/* Pinned Vertical Time Indicator Lines */}
-      <div className="absolute top-0 bottom-0 left-[128px] right-4 pointer-events-none">
-        {/* SimTime "NOW" line */}
-        <div className="absolute top-0 bottom-0 border-l-2 border-dashed border-border-strong left-0 z-20">
-          <div className="bg-border-strong text-text-primary px-1 py-0.5 style-label rounded-b absolute top-0 -left-[14px]">
-            NOW
-          </div>
+      {/* Time Header Grid labels (Bottom of timeline) */}
+      <div className="flex shrink-0 mt-1 mb-1">
+        <div className="w-28 shrink-0"></div>
+        <div className="flex-grow h-6 relative font-mono text-[9px] text-text-tertiary">
+          {gridIntervals.map(min => {
+            const timeVal = simTime + min;
+            const isNow = min === 0;
+            return (
+              <div 
+                key={min} 
+                style={{ left: `${((min + 20) / 60) * 100}%` }}
+                className="absolute -translate-x-1/2 flex flex-col items-center justify-start h-full"
+              >
+                {isNow ? (
+                  <span className="bg-action-blue text-white rounded px-2 py-0.5 font-bold text-[9px] leading-tight select-none shadow">
+                    {formatTimeLabel(timeVal)}
+                  </span>
+                ) : (
+                  <span className="py-0.5">{formatTimeLabel(timeVal)}</span>
+                )}
+              </div>
+            );
+          })}
         </div>
+      </div>
+
+      {/* Pinned Vertical Time Indicator Lines */}
+      <div className="absolute top-10 bottom-[34px] left-[128px] right-4 pointer-events-none z-20">
+        {/* SimTime "NOW" line */}
+        <div 
+          style={{ left: '33.33%' }}
+          className="absolute top-0 bottom-0 border-l-2 border-dashed border-action-blue"
+        />
 
         {/* First action effect execution line */}
         {recActionTime && getPercent(recActionTime) > 0 && getPercent(recActionTime) <= 100 && (
           <div 
             style={{ left: `${getPercent(recActionTime)}%` }}
-            className="absolute top-0 bottom-0 border-l border-dotted border-signal-green z-20"
+            className="absolute top-0 bottom-0 border-l border-dotted border-signal-green"
           >
             <div className="bg-signal-green/20 text-signal-green px-1 py-0.5 style-label rounded-b absolute top-0 -translate-x-1/2">
               REC EFF
@@ -331,8 +364,8 @@ export default function BlockOccupancyGantt({ activeSectionIds = [] }) {
       </div>
 
       {/* Gantt Footer captions */}
-      <div className="shrink-0 mt-2.5 pt-2 border-t border-border/50 text-[10px] text-text-tertiary flex items-center justify-between">
-        <span>* Projected schedules based on current speeds and remaining progress.</span>
+      <div className="shrink-0 pt-2 border-t border-border/50 text-[10px] text-text-tertiary flex items-center justify-between">
+        <span>Conflicts occur when two trains occupy the same block at overlapping times.</span>
         <span className="flex items-center gap-2 font-mono">
           <span className="inline-block h-2.5 w-6 red-hatch-pattern border border-signal-red/35 rounded-sm" /> Block Conflict (Overlap Zone)
         </span>

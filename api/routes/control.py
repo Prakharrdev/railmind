@@ -51,3 +51,13 @@ def apply_action(req: ActionRequest):
         return {"status": "success", "message": f"Action successfully applied: {req.action_type} on train '{req.train_id}'."}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+@router.post("/restart")
+async def restart_simulation():
+    """Restart the simulation from the beginning, reinitializing all state."""
+    try:
+        await sim_runner.restart()
+        return {"status": "success", "message": "Simulation restarted successfully."}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+

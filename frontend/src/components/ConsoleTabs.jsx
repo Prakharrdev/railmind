@@ -3,31 +3,25 @@ import RecommendationPanel from './RecommendationPanel';
 import DecisionTree from './DecisionTree';
 import MetricsCard from './MetricsCard';
 import PlannerConfig from './PlannerConfig';
-import { Zap, Eye, BarChart3, RotateCcw, AlertTriangle } from 'lucide-react';
+import { RotateCcw, AlertTriangle } from 'lucide-react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
 
 export default function ConsoleTabs() {
-  const [activeTab, setActiveTab] = useState('advisories'); // 'advisories', 'reasoning', 'analytics'
+  const [activeTab, setActiveTab] = useState('advisories');
   const { activeRecommendation, selectedRecommendationId, replayHistory = [], activeReplay, setActiveReplay } = useSimulatorState();
 
   const tabs = [
     {
       id: 'advisories',
       name: 'Advisories',
-      icon: Zap,
-      badge: activeRecommendation ? 'New' : null,
     },
     {
       id: 'reasoning',
-      name: 'Reasoning Tree',
-      icon: Eye,
-      badge: selectedRecommendationId ? 'Active' : null,
+      name: 'Planner Reasoning',
     },
     {
       id: 'analytics',
-      name: 'Analytics & Config',
-      icon: BarChart3,
-      badge: activeReplay ? 'Replay' : null,
+      name: 'Analytics & Controls',
     }
   ];
 
@@ -50,30 +44,21 @@ export default function ConsoleTabs() {
         </div>
       )}
 
-      {/* Tabs Selector Header */}
-      <div className="flex border-b border-border bg-[#0d0e12]/30 text-xs">
+      {/* Tabs Selector Header — matching reference: uppercase, active indicator bar */}
+      <div className="flex border-b border-border bg-surface-1">
         {tabs.map(tab => {
-          const Icon = tab.icon;
           const isActive = activeTab === tab.id;
           return (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-3 px-2 flex items-center justify-center gap-1.5 font-bold transition-all relative outline-none cursor-pointer ${
+              className={`flex-1 py-3 px-2 flex items-center justify-center gap-1.5 font-bold transition-all relative outline-none cursor-pointer text-[11px] uppercase tracking-wider ${
                 isActive 
-                  ? 'text-action-blue bg-surface-1' 
+                  ? 'text-action-blue' 
                   : 'text-text-secondary hover:text-text-primary hover:bg-surface-2/50'
               }`}
             >
-              <Icon className={`h-4 w-4 ${isActive ? 'text-action-blue' : 'text-text-tertiary'}`} />
               <span>{tab.name}</span>
-              {tab.badge && (
-                <span className={`text-[8px] px-1.5 py-0.2 rounded-full font-bold uppercase animate-pulse ${
-                  tab.id === 'analytics' ? 'bg-signal-yellow text-canvas' : 'bg-action-blue text-white'
-                }`}>
-                  {tab.badge}
-                </span>
-              )}
               {isActive && <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-action-blue" />}
             </button>
           );
@@ -116,7 +101,6 @@ export default function ConsoleTabs() {
                       key={scenario.id}
                       onClick={() => {
                         setActiveReplay(isSelected ? null : scenario);
-                        // Redirect to advisories tab to inspect loaded recommendation immediately
                         if (!isSelected) {
                           setActiveTab('advisories');
                         }
@@ -156,4 +140,3 @@ export default function ConsoleTabs() {
     </div>
   );
 }
-

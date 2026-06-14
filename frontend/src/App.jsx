@@ -48,7 +48,7 @@ function DashboardContent() {
       <TopBar />
 
       {/* Main Workspace Layout */}
-      <div className="flex flex-1 h-[calc(100vh-104px)] w-full overflow-hidden relative">
+      <div className="flex flex-1 min-h-0 w-full overflow-hidden relative">
         
         {/* MOBILE MODE */}
         {isMobile && (

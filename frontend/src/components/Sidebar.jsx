@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSimulatorState } from '../hooks/useSimulatorState';
-import { Search, SlidersHorizontal, ArrowRight, Locate } from 'lucide-react';
+import { Search, SlidersHorizontal, ArrowRight, Locate, ChevronRight } from 'lucide-react';
 import timetableData from '../utils/timetable.json';
 
 export default function Sidebar() {
@@ -225,7 +225,7 @@ export default function Sidebar() {
               key={train.train_id}
               className={`bg-surface-2 border rounded-sm transition-all duration-150 relative cursor-pointer ${
                 isSelected 
-                  ? 'border-action-blue bg-action-blue-muted' 
+                  ? 'border-action-blue bg-[#1C64F2]/5' 
                   : 'border-border hover:bg-surface-3'
               }`}
               onClick={() => {
@@ -233,43 +233,51 @@ export default function Sidebar() {
                   setSelectedTrainId(null);
                 } else {
                   setSelectedTrainId(train.train_id);
-                  // Clear conflict highlight to avoid interference
                   setSelectedConflict(null);
                 }
               }}
             >
               {/* Card Summary Layout */}
-              <div className="p-3.5">
-                {/* Row 1: Status Dot + Train Id/Name + Status Label */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 min-w-0">
-                    <span className={`h-2 w-2 rounded-full ${aspect.dot}`} />
-                    <span className="style-data-md text-text-primary shrink-0">{train.train_id}</span>
-                    <span className="style-body text-text-primary truncate font-medium ml-1">{train.name}</span>
+              <div className="p-3.5 flex items-center justify-between">
+                <div className="flex-1 min-w-0 pr-2">
+                  {/* Row 1: Status Dot + Train Number + Name */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span className={`h-2 w-2 rounded-full shrink-0 ${aspect.dot}`} />
+                      <span className="style-data-md text-text-primary font-bold shrink-0">{train.train_id}</span>
+                      <span className="style-body text-text-primary truncate font-bold ml-1">{train.name}</span>
+                    </div>
+                    
+                    {train.delay_minutes > 0.1 && (
+                      <span className={`text-[10px] font-mono font-bold text-white px-1.5 py-0.5 rounded-sm shrink-0 ${
+                        train.delay_minutes > 30 ? 'bg-signal-red' : 'bg-signal-orange'
+                      }`}>
+                        +{Math.round(train.delay_minutes)} min
+                      </span>
+                    )}
                   </div>
-                  <span className={`style-label font-bold ${aspect.color} shrink-0`}>
-                    {aspect.label}
-                  </span>
+
+                  {/* Row 2: Route Endpoints */}
+                  <div className="flex items-center gap-1 mt-1 text-text-secondary text-[11px] font-sans font-medium">
+                    <span>{getStationName(originCode)}</span>
+                    <span className="text-text-tertiary font-mono text-[10px]">({originCode})</span>
+                    <ArrowRight className="h-3 w-3 text-text-tertiary shrink-0 mx-0.5" />
+                    <span>{getStationName(destCode)}</span>
+                    <span className="text-text-tertiary font-mono text-[10px]">({destCode})</span>
+                  </div>
+
+                  {/* Row 3: Speed & Status aspect */}
+                  <div className="flex items-center gap-1.5 mt-2.5 text-[11px] font-sans text-text-secondary font-medium">
+                    <span>{Math.round(train.speed_kmph)} km/h</span>
+                    <span>•</span>
+                    <span className={`font-bold ${aspect.color}`}>
+                      {train.delay_minutes > 0.1 ? 'DELAYED' : 'ON TIME'}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Row 2: Route display */}
-                <div className="flex items-center gap-1 mt-1 text-text-secondary style-body">
-                  <span>{getStationName(originCode)}</span>
-                  <span className="style-data-sm text-text-tertiary">({originCode})</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-text-tertiary shrink-0 mx-0.5" />
-                  <span>{getStationName(destCode)}</span>
-                  <span className="style-data-sm text-text-tertiary">({destCode})</span>
-                </div>
-
-                {/* Row 3: Speed & Delay */}
-                <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-border/50">
-                  <div className="style-data-sm text-text-secondary">
-                    Speed: <span className="style-data-md text-text-primary">{Math.round(train.speed_kmph)}</span> km/h
-                  </div>
-                  <div className="style-data-sm text-text-secondary">
-                    Delay: <span className={`style-data-md ${aspect.color}`}>{aspect.label}</span>
-                  </div>
-                </div>
+                {/* Chevron on the right */}
+                <ChevronRight className="h-4 w-4 text-text-tertiary shrink-0" />
               </div>
 
               {/* Card Expanded Detail Stops View */}
