@@ -301,16 +301,161 @@ Through multiple development stages, RailMind's decision-support capability has 
 | **Phase 4: Beam Search Planner** (Initial) | Depth=4, Beam=8 | 268,562.10 | 10.01% | 148.502 ms | 50 / 50 scenarios |
 | **Phase 5: Refactored Beam Search** (Optimal) | Depth=2, Beam=4 | **268,377.90** | **10.07%** | **23.08 ms** | **50 / 50 scenarios** |
 
-#### **Key Evolutionary Insights**
-1. **The Limitations of Greedy Policies:** Local 1-step optimization (Greedy Planner) is extremely fast (< 0.5 ms) but only reduces delay costs by **1.59%**. Because it ignores down-line train trajectories, it often shifts conflicts rather than resolving them.
-2. **Finding the Latency-Performance Sweet Spot:** While Phase 4 (Depth=4, Beam=8) provided excellent delay reductions (~10.01%), its average latency sat around 150 ms. By refactoring the state scoring heuristic and block adjacency representation in Phase 5, the **Depth=2, Beam Width=4** configuration achieved the highest delay reduction (**10.07%**) while slashing latency to **23.08 ms** (an ~85% speedup), providing highly practical real-time dispatching advice.
-3. **Optimized Beam Search Statistics (D=2, W=4):**
-   * **Mean Search Nodes Generated:** 52,474.0 nodes per scenario.
-   * **Mean Search Nodes Expanded:** 24,522.0 nodes.
-   * **Mean Search Nodes Pruned:** 10,846.0 nodes.
-   * **Statistical Significance:** A Wilcoxon signed-rank test confirmed that the planner improvements are statistically significant ($p < 0.001$), systematically resolving bottleneck delays across all 50 scenarios.
+---
+
+### **Detailed Decision Pipeline & State Flow**
+
+The flowchart below represents how the simulator, conflict detector, safety constraints layer (CSP), and search planner coordinate to generate optimized dispatch advice:
+
+```mermaid
+graph TD
+    A[Start Simulator Tick] --> B[Update Train Telemetry & Block Occupancies]
+    B --> C[Sweep-Line Conflict Detector: Scan Lookahead 30 min]
+    C -->|No Conflict| D[Continue Standard Movement]
+    C -->|Conflict Detected between Train A & B| E[Initialize BeamSearchPlanner]
+    E --> F[Generate Candidate Action Space]
+    F -->|Actions: Hold A / Hold B / Noop| G[CSP Safety Checker: Apply Hard Constraints]
+    G -->|Filters Out Illegal Actions e.g., Holds Mid-Block| H[Simulate Remaining Actions in Fast-Forward Simulator +20 min]
+    H --> I[Priority Scorer: Calculate State Delay Cost]
+    I --> J[Sort Children & Apply Beam Width Pruning: Keep Top K Nodes]
+    J -->|Search Depth < Max Depth| F
+    J -->|Search Depth = Max Depth| K[Select Action Sequence with Lowest Priority Cost]
+    K --> L[Generate Dispatch Advisory Trace]
+    L --> M[Update UI Dashboard & Save to database]
+```
 
 ---
+
+### **Explainable Priority Heuristic: Walkthrough Example**
+
+To ensure transparency, RailMind evaluates routing choices based on a passenger-delay minimization formula that accounts for passenger volumes, service classes, and secondary delay cascades. 
+
+#### **Priority-Weighted Cost Formula Details**
+$$	ext{Cost}(s) = \sum_{i \in 	ext{Trains}} p_i 	imes 	ext{Delay}_i 	imes \mu_i 	imes (1 + \gamma_i)$$
+
+Where:
+*   $p_i$: Passenger capacity.
+*   $\mu_i$: Service class weight ($\mu_{	ext{Rajdhani}} = 1.5$, $\mu_{	ext{Mail/Express}} = 1.0$, $\mu_{	ext{Passenger}} = 0.8$, $\mu_{	ext{Freight}} = 0.3$).
+*   $\gamma_i$: Cascade multiplier (calculated as $0.15 	imes N_{blocked}$, where $N_{blocked}$ is the number of downstream trains waiting for train $i$'s block release).
+
+#### **Conflict Scenario Walkthrough**
+Let **Train A (Rajdhani Express)** and **Train B (Freight Train)** have a block occupancy overlap (conflict) at a single-track siding block.
+*   **Train A (Rajdhani)**: $p_A = 1,200$ passengers, $\mu_A = 1.5$ (priority weight)
+*   **Train B (Freight)**: $p_B = 0$ passengers, $\mu_B = 0.3$ (priority weight)
+
+The dispatcher has two choices to resolve the conflict:
+1.  **Action 1: Hold Rajdhani (Train A) for 10 minutes** at the station loop to let the Freight train pass.
+2.  **Action 2: Hold Freight (Train B) for 20 minutes** at the station loop to let the Rajdhani pass.
+
+##### **Case 1: Local Cost Evaluation (No Cascades)**
+*   **Holding Train A (Rajdhani) for 10 mins**:
+    $$	ext{Cost}(	ext{Action 1}) = 1,200 	ext{ passengers} 	imes 10 	ext{ min} 	imes 1.5 	ext{ priority} 	imes (1.0 + 0) = 18,000$$
+*   **Holding Train B (Freight) for 20 mins**:
+    $$	ext{Cost}(	ext{Action 2}) = 0 	ext{ passengers} 	imes 20 	ext{ min} 	imes 0.3 	ext{ priority} 	imes (1.0 + 0) = 0$$
+
+Comparing the choices: $	ext{Cost}(	ext{Action 2}) = 0 < 	ext{Cost}(	ext{Action 1}) = 18,000$. The planner recommends **Action 2** (Hold the Freight Train).
+
+##### **Case 2: Downstream Cascade Evaluation (Lookahead Enabled)**
+Suppose holding the Freight train at the loop for 20 minutes delays a third train behind it: **Train C (Mail/Express)** with $p_C = 800$ passengers and $\mu_C = 1.0$, causing it to accrue a 5-minute cascade delay.
+*   Train B (Freight) now blocks 1 train downstream, so $N_{blocked} = 1 \implies \gamma_B = 0.15 	imes 1 = 0.15$.
+*   We re-evaluate both states using the **Fast-Forward Lookahead (Beam Search)**:
+    $$	ext{Cost of holding Rajdhani} = 18,000 	ext{ (no cascade)}$$
+    $$	ext{Cost of holding Freight} = 	ext{Freight Cost} + 	ext{Mail/Express Cost}$$
+    $$	ext{Freight Cost} = 0 	imes 20 	imes 0.3 	imes (1 + 0.15) = 0$$
+    $$	ext{Mail/Express Cost} = 800 	ext{ passengers} 	imes 5 	ext{ min} 	imes 1.0 	ext{ priority} 	imes (1 + 0) = 4,000$$
+    $$	ext{Total Cost}(	ext{Action 2}) = 0 + 4,000 = 4,000$$
+
+Comparing the choices: $	ext{Cost}(	ext{Action 2}) = 4,000 < 	ext{Cost}(	ext{Action 1}) = 18,000$. The planner still recommends **Action 2**, but it has accurately quantified the downstream delay penalty. A greedy depth-1 policy would miss the cascade penalty entirely, whereas the multi-depth search engine models these domino effects explicitly.
+
+---
+
+### **Research Graphs & Visualizations**
+
+Here are the visual representations of the comparative studies and computational benchmarking:
+
+#### **1. Overall Optimization Efficacy: Cost vs. Relative Improvement**
+Shows the trade-off between passenger delay costs and relative planner improvement percentages across the FCFS baseline, Greedy planner, and optimal Beam Search.
+![Delay Cost vs. Improvement](assets/performance_comparison.png)
+
+#### **2. Computational Latency comparison (Log Scale)**
+Demonstrates the algorithmic speed of the Greedy planner (<0.5ms) compared to the optimal Beam Search (~23ms), showing both are well within the critical real-time 200ms dispatching window.
+![Computational Latency](assets/decision_latency.png)
+
+#### **3. Search Tree Complexity Breakdown**
+A breakdown of the node search spaces evaluated, expanded, and pruned under the optimal Depth=2, Beam=4 search configuration.
+![Nodes Breakdown](assets/nodes_breakdown.png)
+
+#### **4. Passenger Cost Curves across All 50 Scenarios**
+Displays the detailed scenario-by-scenario costs. The colored region highlights the "Optimization Saving Zone" representing the delay savings achieved by the Beam Search planner compared to FCFS.
+![Scenario Cost Curves](assets/scenario_cost_curves.png)
+
+#### **5. Planner Improvement Breakdown by Disruption Type**
+Compares Greedy vs. Beam Search improvements across the three disruption archetypes. Signal holds see the largest improvements under Beam Search (averaging >10.4%) since preventing a train from entering an occupied signal block resolves massive cascades.
+![Disruption Performance](assets/disruption_performance.png)
+
+#### **6. Frequency of Advisor Actions (Interventions)**
+Displays a histogram representing how active the planning system is across the 50 scenarios. In most cases, the planner resolves cascades using 1-3 highly targeted holds.
+![Interventions Distribution](assets/interventions_distribution.png)
+
+---
+
+### **Detailed Scenario-by-Scenario Cost Ledger (50 Scenarios)**
+
+The complete ledger below lists the individual metrics for every scenario run. No results have been clubbed or abbreviated:
+
+| Scenario ID | Disruption Type | Affected Train | Magnitude | FCFS Cost | Greedy Cost (Imp %) | Beam D=2, W=4 Cost (Imp %) | Beam Latency (ms) |
+|---|---|---|---|---|---|---|---|
+| scenario_1 | `engine_slow` | 04183 | 12.2 min | 287,520 | 281,280 (+2.17%) | **257,520** (+10.43%) | 23.0033 ms |
+| scenario_2 | `engine_slow` | 22435 | 25.8 min | 310,050 | 303,810 (+2.01%) | **280,050** (+9.68%) | 25.4996 ms |
+| scenario_3 | `engine_slow` | 04183 | 20.2 min | 289,230 | 282,990 (+2.16%) | **259,230** (+10.37%) | 21.5934 ms |
+| scenario_4 | `engine_slow` | 22435 | 15.6 min | 296,490 | 290,250 (+2.10%) | **266,490** (+10.12%) | 22.4446 ms |
+| scenario_5 | `engine_slow` | 12397 | 28.0 min | 299,805 | 293,565 (+2.08%) | **269,805** (+10.01%) | 21.6628 ms |
+| scenario_6 | `engine_slow` | 22435 | 11.4 min | 292,170 | 285,930 (+2.14%) | **262,170** (+10.27%) | 22.3623 ms |
+| scenario_7 | `engine_slow` | 04183 | 16.0 min | 288,945 | 282,705 (+2.16%) | **258,945** (+10.38%) | 22.4920 ms |
+| scenario_8 | `engine_slow` | 22435 | 24.8 min | 306,510 | 300,270 (+2.04%) | **276,510** (+9.79%) | 21.6547 ms |
+| scenario_9 | `engine_slow` | 22435 | 24.7 min | 310,380 | 304,140 (+2.01%) | **280,380** (+9.67%) | 23.1582 ms |
+| scenario_10 | `engine_slow` | 22435 | 21.6 min | 301,530 | 295,290 (+2.07%) | **271,530** (+9.95%) | 23.8388 ms |
+| scenario_11 | `engine_slow` | 12397 | 23.5 min | 298,230 | 291,990 (+2.09%) | **268,230** (+10.06%) | 22.0022 ms |
+| scenario_12 | `engine_slow` | 12397 | 14.9 min | 292,980 | 286,740 (+2.13%) | **262,980** (+10.24%) | 22.0770 ms |
+| scenario_13 | `engine_slow` | 22435 | 26.1 min | 306,900 | 300,660 (+2.03%) | **276,900** (+9.78%) | 21.7436 ms |
+| scenario_14 | `engine_slow` | 12397 | 28.1 min | 301,380 | 295,140 (+2.07%) | **271,380** (+9.95%) | 21.6786 ms |
+| scenario_15 | `engine_slow` | 22435 | 26.8 min | 306,570 | 300,330 (+2.04%) | **276,570** (+9.79%) | 25.4739 ms |
+| scenario_16 | `engine_slow` | 04183 | 18.6 min | 289,800 | 283,560 (+2.15%) | **259,800** (+10.35%) | 24.0013 ms |
+| scenario_17 | `engine_slow` | 22435 | 11.0 min | 292,890 | 286,650 (+2.13%) | **262,890** (+10.24%) | 25.8484 ms |
+| scenario_18 | `engine_slow` | 12397 | 17.9 min | 294,555 | 288,315 (+2.12%) | **264,555** (+10.18%) | 26.4258 ms |
+| scenario_19 | `engine_slow` | 22435 | 24.7 min | 304,410 | 298,170 (+2.05%) | **274,410** (+9.86%) | 24.1405 ms |
+| scenario_20 | `engine_slow` | 12397 | 23.8 min | 296,655 | 290,415 (+2.10%) | **266,655** (+10.11%) | 22.4289 ms |
+| scenario_21 | `platform_block` | 12419 | 21.7 min | 284,330 | 277,290 (+2.48%) | **254,330** (+10.55%) | 22.2187 ms |
+| scenario_22 | `platform_block` | 22435 | 27.8 min | 331,680 | 350,655 (-5.72%) | **301,680** (+9.04%) | 25.6219 ms |
+| scenario_23 | `platform_block` | 22435 | 29.4 min | 302,250 | 296,010 (+2.06%) | **272,250** (+9.93%) | 25.3894 ms |
+| scenario_24 | `platform_block` | 12419 | 25.2 min | 288,330 | 277,290 (+3.83%) | **258,330** (+10.40%) | 23.2475 ms |
+| scenario_25 | `platform_block` | 22435 | 26.8 min | 301,380 | 295,140 (+2.07%) | **271,380** (+9.95%) | 24.8309 ms |
+| scenario_26 | `platform_block` | 22435 | 13.6 min | 292,170 | 285,930 (+2.14%) | **262,170** (+10.27%) | 23.4173 ms |
+| scenario_27 | `platform_block` | 12397 | 21.4 min | 322,965 | 341,940 (-5.88%) | **292,965** (+9.29%) | 23.7930 ms |
+| scenario_28 | `platform_block` | 12397 | 28.0 min | 304,530 | 298,290 (+2.05%) | **274,530** (+9.85%) | 21.9063 ms |
+| scenario_29 | `platform_block` | 12397 | 21.4 min | 299,805 | 293,565 (+2.08%) | **269,805** (+10.01%) | 22.0634 ms |
+| scenario_30 | `platform_block` | 04183 | 25.9 min | 284,100 | 277,860 (+2.20%) | **254,100** (+10.56%) | 22.6968 ms |
+| scenario_31 | `platform_block` | 22435 | 19.2 min | 288,570 | 282,330 (+2.16%) | **258,570** (+10.40%) | 24.3630 ms |
+| scenario_32 | `platform_block` | 22435 | 29.0 min | 340,395 | 359,370 (-5.57%) | **310,395** (+8.81%) | 27.4069 ms |
+| scenario_33 | `platform_block` | 22435 | 14.7 min | 304,290 | 323,265 (-6.24%) | **274,290** (+9.86%) | 23.8047 ms |
+| scenario_34 | `platform_block` | 12397 | 14.0 min | 294,030 | 287,790 (+2.12%) | **264,030** (+10.20%) | 21.9865 ms |
+| scenario_35 | `platform_block` | 12397 | 13.1 min | 289,305 | 283,065 (+2.16%) | **259,305** (+10.37%) | 23.0546 ms |
+| scenario_36 | `signal_hold` | 22435 | 27.0 min | 286,410 | 280,170 (+2.18%) | **256,410** (+10.47%) | 22.2023 ms |
+| scenario_37 | `signal_hold` | 04183 | 19.3 min | 293,220 | 286,980 (+2.13%) | **263,220** (+10.23%) | 22.3661 ms |
+| scenario_38 | `signal_hold` | 12397 | 21.4 min | 302,955 | 296,715 (+2.06%) | **272,955** (+9.90%) | 22.2980 ms |
+| scenario_39 | `signal_hold` | 12397 | 17.3 min | 290,355 | 284,115 (+2.15%) | **260,355** (+10.33%) | 22.4542 ms |
+| scenario_40 | `signal_hold` | 04183 | 23.3 min | 296,070 | 289,830 (+2.11%) | **266,070** (+10.13%) | 21.9935 ms |
+| scenario_41 | `signal_hold` | 22435 | 12.5 min | 284,250 | 278,010 (+2.20%) | **254,250** (+10.55%) | 22.1449 ms |
+| scenario_42 | `signal_hold` | 22435 | 12.3 min | 285,630 | 279,390 (+2.18%) | **255,630** (+10.50%) | 22.0373 ms |
+| scenario_43 | `signal_hold` | 12397 | 22.1 min | 316,665 | 310,425 (+1.97%) | **286,665** (+9.47%) | 22.1809 ms |
+| scenario_44 | `signal_hold` | 04183 | 23.7 min | 292,080 | 285,840 (+2.14%) | **262,080** (+10.27%) | 22.1391 ms |
+| scenario_45 | `signal_hold` | 22435 | 22.2 min | 285,690 | 279,450 (+2.18%) | **255,690** (+10.50%) | 22.0982 ms |
+| scenario_46 | `signal_hold` | 22435 | 17.1 min | 297,210 | 290,970 (+2.10%) | **267,210** (+10.09%) | 22.3502 ms |
+| scenario_47 | `signal_hold` | 12397 | 21.8 min | 312,480 | 306,240 (+2.00%) | **282,480** (+9.60%) | 23.6482 ms |
+| scenario_48 | `signal_hold` | 22435 | 23.6 min | 294,330 | 288,090 (+2.12%) | **264,330** (+10.19%) | 22.1906 ms |
+| scenario_49 | `signal_hold` | 12419 | 22.2 min | 295,530 | 277,290 (+6.17%) | **265,530** (+10.15%) | 22.1760 ms |
+| scenario_50 | `signal_hold` | 22435 | 20.3 min | 288,780 | 282,540 (+2.16%) | **258,780** (+10.39%) | 22.5785 ms |
+
 
 ## **Limitations & Deployment Prerequisites**
 

@@ -590,7 +590,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "api_sim_runner_simulationrunner_restart",
-      "community": 48,
+      "community": 62,
       "norm_label": ".restart()"
     },
     {
@@ -620,7 +620,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "api_sim_runner_rationale_102",
-      "community": 48,
+      "community": 62,
       "norm_label": "stop current simulation, reinitialize everything, and start fresh."
     },
     {
@@ -784,6 +784,16 @@
       "norm_label": "main()"
     },
     {
+      "label": "copy_image.py",
+      "file_type": "code",
+      "source_file": "evaluation/copy_image.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "evaluation_copy_image",
+      "community": 82,
+      "norm_label": "copy_image.py"
+    },
+    {
       "label": "experiment_runner.py",
       "file_type": "code",
       "source_file": "evaluation/experiment_runner.py",
@@ -870,7 +880,7 @@
       "source_location": "L214",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_greedy",
-      "community": 34,
+      "community": 62,
       "norm_label": "run_greedy()"
     },
     {
@@ -880,7 +890,7 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "evaluation_experiment_runner_run_beam_search",
-      "community": 34,
+      "community": 62,
       "norm_label": "run_beam_search()"
     },
     {
@@ -892,6 +902,96 @@
       "id": "evaluation_experiment_runner_main",
       "community": 34,
       "norm_label": "main()"
+    },
+    {
+      "label": "generate_detailed_plots.py",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots",
+      "community": 50,
+      "norm_label": "generate_detailed_plots.py"
+    },
+    {
+      "label": "style_plot()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_style_plot",
+      "community": 50,
+      "norm_label": "style_plot()"
+    },
+    {
+      "label": "get_experiment_db_path()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_get_experiment_db_path",
+      "community": 50,
+      "norm_label": "get_experiment_db_path()"
+    },
+    {
+      "label": "generate_performance_comparison()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_performance_comparison",
+      "community": 50,
+      "norm_label": "generate_performance_comparison()"
+    },
+    {
+      "label": "generate_decision_latency()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_decision_latency",
+      "community": 50,
+      "norm_label": "generate_decision_latency()"
+    },
+    {
+      "label": "generate_nodes_breakdown()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_nodes_breakdown",
+      "community": 50,
+      "norm_label": "generate_nodes_breakdown()"
+    },
+    {
+      "label": "generate_scenario_cost_curves()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L124",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_scenario_cost_curves",
+      "community": 50,
+      "norm_label": "generate_scenario_cost_curves()"
+    },
+    {
+      "label": "generate_disruption_performance()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L175",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_disruption_performance",
+      "community": 50,
+      "norm_label": "generate_disruption_performance()"
+    },
+    {
+      "label": "generate_interventions_distribution()",
+      "file_type": "code",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L235",
+      "_origin": "ast",
+      "id": "evaluation_generate_detailed_plots_generate_interventions_distribution",
+      "community": 50,
+      "norm_label": "generate_interventions_distribution()"
     },
     {
       "label": "generate_html_report.py",
@@ -1122,6 +1222,36 @@
       "id": "evaluation_scenario_validation_rationale_74",
       "community": 34,
       "norm_label": "validates a generated scenario using 3 checks:     1. disrupted train must be ac"
+    },
+    {
+      "label": "update_readme.py",
+      "file_type": "code",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "evaluation_update_readme",
+      "community": 52,
+      "norm_label": "update_readme.py"
+    },
+    {
+      "label": "get_experiment_db_path()",
+      "file_type": "code",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "evaluation_update_readme_get_experiment_db_path",
+      "community": 52,
+      "norm_label": "get_experiment_db_path()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "evaluation_update_readme_main",
+      "community": 52,
+      "norm_label": "main()"
     },
     {
       "label": "eslint.config.js",
@@ -2140,7 +2270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "optimizer_csp_checker",
-      "community": 49,
+      "community": 53,
       "norm_label": "csp_checker.py"
     },
     {
@@ -2160,7 +2290,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_init",
-      "community": 49,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -2170,7 +2300,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_railwaygraph",
-      "community": 49,
+      "community": 4,
       "norm_label": "railwaygraph"
     },
     {
@@ -2180,7 +2310,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_minimum_headway",
-      "community": 53,
+      "community": 57,
       "norm_label": ".check_minimum_headway()"
     },
     {
@@ -2190,7 +2320,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_trainstate",
-      "community": 53,
+      "community": 57,
       "norm_label": "trainstate"
     },
     {
@@ -2200,7 +2330,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_networkstate",
-      "community": 53,
+      "community": 57,
       "norm_label": "networkstate"
     },
     {
@@ -2210,7 +2340,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_platform_capacity",
-      "community": 53,
+      "community": 57,
       "norm_label": ".check_platform_capacity()"
     },
     {
@@ -2220,7 +2350,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_block_clearance",
-      "community": 53,
+      "community": 57,
       "norm_label": ".check_block_clearance()"
     },
     {
@@ -2230,7 +2360,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_check_hold_duration",
-      "community": 53,
+      "community": 57,
       "norm_label": ".check_hold_duration()"
     },
     {
@@ -2240,7 +2370,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_constraintchecker_filter",
-      "community": 53,
+      "community": 57,
       "norm_label": ".filter()"
     },
     {
@@ -2250,7 +2380,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "optimizer_csp_checker_py_action",
-      "community": 49,
+      "community": 57,
       "norm_label": "action"
     },
     {
@@ -2260,7 +2390,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_11",
-      "community": 53,
+      "community": 57,
       "norm_label": "verifies safety margin between two trains.         since the simulator handles p"
     },
     {
@@ -2270,7 +2400,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_22",
-      "community": 53,
+      "community": 57,
       "norm_label": "deadlock check: returns false if the station platforms are completely full."
     },
     {
@@ -2280,7 +2410,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_32",
-      "community": 53,
+      "community": 57,
       "norm_label": "verifies if the train is at a station or loop (i.e. not mid-section) to be held."
     },
     {
@@ -2290,7 +2420,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_37",
-      "community": 53,
+      "community": 57,
       "norm_label": "enforces that holds are within the maximum limit (e.g. 30 minutes)."
     },
     {
@@ -2300,7 +2430,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "optimizer_csp_checker_rationale_41",
-      "community": 53,
+      "community": 57,
       "norm_label": "filters a list of candidate actions, returning only those that satisfy all csp c"
     },
     {
@@ -2790,7 +2920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_csp_checker",
-      "community": 49,
+      "community": 53,
       "norm_label": "test_csp_checker.py"
     },
     {
@@ -2800,7 +2930,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_csp_checker_graph",
-      "community": 49,
+      "community": 4,
       "norm_label": "graph()"
     },
     {
@@ -2810,7 +2940,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_csp_checker_checker",
-      "community": 49,
+      "community": 53,
       "norm_label": "checker()"
     },
     {
@@ -2820,7 +2950,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_block_clearance",
-      "community": 49,
+      "community": 53,
       "norm_label": "test_check_block_clearance()"
     },
     {
@@ -2830,7 +2960,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_hold_duration",
-      "community": 49,
+      "community": 53,
       "norm_label": "test_check_hold_duration()"
     },
     {
@@ -2840,7 +2970,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_check_platform_capacity",
-      "community": 49,
+      "community": 53,
       "norm_label": "test_check_platform_capacity()"
     },
     {
@@ -2850,7 +2980,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_test_csp_checker_test_filter_actions",
-      "community": 52,
+      "community": 53,
       "norm_label": "test_filter_actions()"
     },
     {
@@ -2930,7 +3060,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_networkstate",
-      "community": 52,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -2950,7 +3080,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "optimizer_tests_test_scorer_scenarios_py_trainstate",
-      "community": 52,
+      "community": 62,
       "norm_label": "trainstate"
     },
     {
@@ -3370,7 +3500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_conflict_detector",
-      "community": 52,
+      "community": 4,
       "norm_label": "conflict_detector.py"
     },
     {
@@ -3400,7 +3530,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_init",
-      "community": 49,
+      "community": 61,
       "norm_label": ".__init__()"
     },
     {
@@ -3410,7 +3540,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_railwaygraph",
-      "community": 49,
+      "community": 61,
       "norm_label": "railwaygraph"
     },
     {
@@ -3480,7 +3610,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_conflictdetector_detect_conflicts",
-      "community": 62,
+      "community": 47,
       "norm_label": ".detect_conflicts()"
     },
     {
@@ -3490,7 +3620,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "simulator_conflict_detector_py_networkstate",
-      "community": 49,
+      "community": 4,
       "norm_label": "networkstate"
     },
     {
@@ -3550,7 +3680,7 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "simulator_conflict_detector_rationale_220",
-      "community": 62,
+      "community": 47,
       "norm_label": "scan projected occupancy windows and return list of conflict objects sorted by u"
     },
     {
@@ -3560,7 +3690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_corridor",
-      "community": 49,
+      "community": 4,
       "norm_label": "corridor.py"
     },
     {
@@ -3620,7 +3750,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph",
-      "community": 49,
+      "community": 4,
       "norm_label": "railwaygraph"
     },
     {
@@ -3680,7 +3810,7 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_get_shortest_path",
-      "community": 49,
+      "community": 4,
       "norm_label": ".get_shortest_path()"
     },
     {
@@ -3700,7 +3830,7 @@
       "source_location": "L310",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_free_blocks",
-      "community": 49,
+      "community": 4,
       "norm_label": ".free_blocks()"
     },
     {
@@ -3710,7 +3840,7 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "simulator_corridor_railwaygraph_block_length",
-      "community": 49,
+      "community": 4,
       "norm_label": ".block_length()"
     },
     {
@@ -3780,7 +3910,7 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_235",
-      "community": 49,
+      "community": 4,
       "norm_label": "find the shortest path of station ids between two stations."
     },
     {
@@ -3800,7 +3930,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_311",
-      "community": 49,
+      "community": 4,
       "norm_label": "returns a list of block ids that are currently free (not occupied)."
     },
     {
@@ -3810,7 +3940,7 @@
       "source_location": "L317",
       "_origin": "ast",
       "id": "simulator_corridor_rationale_317",
-      "community": 49,
+      "community": 4,
       "norm_label": "returns the length of a block in km."
     },
     {
@@ -3850,7 +3980,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector",
-      "community": 10,
+      "community": 60,
       "norm_label": "disruptioninjector"
     },
     {
@@ -3860,7 +3990,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "simulator_disruption_injector_disruptioninjector_init",
-      "community": 10,
+      "community": 60,
       "norm_label": ".__init__()"
     },
     {
@@ -3890,7 +4020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_env",
-      "community": 49,
+      "community": 53,
       "norm_label": "env.py"
     },
     {
@@ -3910,7 +4040,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator",
-      "community": 10,
+      "community": 62,
       "norm_label": "trainnetworksimulator"
     },
     {
@@ -3920,7 +4050,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_init",
-      "community": 10,
+      "community": 60,
       "norm_label": ".__init__()"
     },
     {
@@ -3930,7 +4060,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_parse_time_to_minutes",
-      "community": 10,
+      "community": 54,
       "norm_label": "._parse_time_to_minutes()"
     },
     {
@@ -3940,7 +4070,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_initialize_state",
-      "community": 52,
+      "community": 53,
       "norm_label": "._initialize_state()"
     },
     {
@@ -3950,7 +4080,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "simulator_env_py_networkstate",
-      "community": 10,
+      "community": 53,
       "norm_label": "networkstate"
     },
     {
@@ -3960,7 +4090,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_current_state",
-      "community": 10,
+      "community": 53,
       "norm_label": ".current_state()"
     },
     {
@@ -3970,7 +4100,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_inject_disruption",
-      "community": 10,
+      "community": 60,
       "norm_label": ".inject_disruption()"
     },
     {
@@ -3980,7 +4110,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "simulator_env_py_disruption",
-      "community": 10,
+      "community": 60,
       "norm_label": "disruption"
     },
     {
@@ -3990,7 +4120,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_train_speed",
-      "community": 10,
+      "community": 60,
       "norm_label": "._get_train_speed()"
     },
     {
@@ -4000,7 +4130,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "simulator_env_py_trainstate",
-      "community": 52,
+      "community": 53,
       "norm_label": "trainstate"
     },
     {
@@ -4010,7 +4140,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_scheduled_departure",
-      "community": 10,
+      "community": 54,
       "norm_label": "._get_scheduled_departure()"
     },
     {
@@ -4020,7 +4150,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_scheduled_arrival",
-      "community": 10,
+      "community": 54,
       "norm_label": "._get_scheduled_arrival()"
     },
     {
@@ -4030,7 +4160,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_active_signal_holds",
-      "community": 10,
+      "community": 54,
       "norm_label": "._get_active_signal_holds()"
     },
     {
@@ -4040,7 +4170,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_get_active_platform_capacity_reductions",
-      "community": 10,
+      "community": 54,
       "norm_label": "._get_active_platform_capacity_reductions()"
     },
     {
@@ -4050,7 +4180,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_tick",
-      "community": 10,
+      "community": 54,
       "norm_label": ".tick()"
     },
     {
@@ -4060,7 +4190,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_apply_action",
-      "community": 10,
+      "community": 62,
       "norm_label": ".apply_action()"
     },
     {
@@ -4070,7 +4200,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_project_forward",
-      "community": 10,
+      "community": 54,
       "norm_label": ".project_forward()"
     },
     {
@@ -4080,7 +4210,7 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "simulator_env_trainnetworksimulator_update_state",
-      "community": 10,
+      "community": 54,
       "norm_label": "._update_state()"
     },
     {
@@ -4090,7 +4220,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "simulator_env_rationale_29",
-      "community": 10,
+      "community": 54,
       "norm_label": "convert hh:mm to minutes since midnight."
     },
     {
@@ -4100,7 +4230,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "simulator_env_rationale_102",
-      "community": 10,
+      "community": 60,
       "norm_label": "calculate the max target speed of a train on a section under active disruptions."
     },
     {
@@ -4110,7 +4240,7 @@
       "source_location": "L157",
       "_origin": "ast",
       "id": "simulator_env_rationale_157",
-      "community": 10,
+      "community": 54,
       "norm_label": "get block ids currently blocked by active signal failures."
     },
     {
@@ -4120,7 +4250,7 @@
       "source_location": "L165",
       "_origin": "ast",
       "id": "simulator_env_rationale_165",
-      "community": 10,
+      "community": 54,
       "norm_label": "get capacity reductions at stations due to platform blockages."
     },
     {
@@ -4130,7 +4260,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "simulator_env_rationale_173",
-      "community": 10,
+      "community": 54,
       "norm_label": "advance the simulation time by 30 seconds (0.5 minutes) and update train states."
     },
     {
@@ -4140,7 +4270,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "simulator_env_rationale_178",
-      "community": 10,
+      "community": 62,
       "norm_label": "apply a dispatcher hold action to a state snapshot immutably."
     },
     {
@@ -4150,7 +4280,7 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "simulator_env_rationale_189",
-      "community": 10,
+      "community": 54,
       "norm_label": "fast forward a state snapshot by n minutes (using 60-second steps for speed) und"
     },
     {
@@ -4160,7 +4290,7 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "simulator_env_rationale_197",
-      "community": 10,
+      "community": 54,
       "norm_label": "pure function that advances the simulation state by delta_minutes, returning a n"
     },
     {
@@ -4650,7 +4780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_apply_action_immutability.py"
     },
     {
@@ -4660,7 +4790,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_apply_action_immutability_test_apply_action_immutability",
-      "community": 10,
+      "community": 62,
       "norm_label": "test_apply_action_immutability()"
     },
     {
@@ -4670,7 +4800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conflict_detector",
-      "community": 52,
+      "community": 4,
       "norm_label": "test_conflict_detector.py"
     },
     {
@@ -4680,7 +4810,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_test_conflict_detector_test_conflict_detection_overlap",
-      "community": 52,
+      "community": 4,
       "norm_label": "test_conflict_detection_overlap()"
     },
     {
@@ -4790,7 +4920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_env",
-      "community": 52,
+      "community": 53,
       "norm_label": "test_env.py"
     },
     {
@@ -4800,7 +4930,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_test_env_test_dataclasses_instantiation_and_print",
-      "community": 52,
+      "community": 53,
       "norm_label": "test_dataclasses_instantiation_and_print()"
     },
     {
@@ -4810,7 +4940,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_env_test_network_state_clone",
-      "community": 52,
+      "community": 53,
       "norm_label": "test_network_state_clone()"
     },
     {
@@ -4920,7 +5050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_validate_phase2",
-      "community": 50,
+      "community": 10,
       "norm_label": "validate_phase2.py"
     },
     {
@@ -4930,7 +5060,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_1_train_movement",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_1_train_movement()"
     },
     {
@@ -4940,7 +5070,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_2_delay_injection",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_2_delay_injection()"
     },
     {
@@ -4950,7 +5080,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_3_conflict_detection",
-      "community": 52,
+      "community": 10,
       "norm_label": "run_test_3_conflict_detection()"
     },
     {
@@ -4960,7 +5090,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_4_hold_action",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_4_hold_action()"
     },
     {
@@ -4970,7 +5100,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_5_state_immutability",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_5_state_immutability()"
     },
     {
@@ -4980,7 +5110,7 @@
       "source_location": "L239",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_6_project_forward_determinism",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_6_project_forward_determinism()"
     },
     {
@@ -4990,7 +5120,7 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "tests_validate_phase2_check_impossible_states",
-      "community": 50,
+      "community": 10,
       "norm_label": "check_impossible_states()"
     },
     {
@@ -5000,7 +5130,7 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "simulator_tests_validate_phase2_py_networkstate",
-      "community": 52,
+      "community": 62,
       "norm_label": "networkstate"
     },
     {
@@ -5010,7 +5140,7 @@
       "source_location": "L303",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_7_no_impossible_states",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_7_no_impossible_states()"
     },
     {
@@ -5020,7 +5150,7 @@
       "source_location": "L319",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_8_stress_test",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_8_stress_test()"
     },
     {
@@ -5030,7 +5160,7 @@
       "source_location": "L368",
       "_origin": "ast",
       "id": "tests_validate_phase2_run_test_9_performance_validation",
-      "community": 50,
+      "community": 10,
       "norm_label": "run_test_9_performance_validation()"
     },
     {
@@ -5040,7 +5170,7 @@
       "source_location": "L401",
       "_origin": "ast",
       "id": "tests_validate_phase2_main",
-      "community": 50,
+      "community": 10,
       "norm_label": "main()"
     },
     {
@@ -5050,7 +5180,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_22",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 1: verify train moves through the corridor correctly."
     },
     {
@@ -5060,7 +5190,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_49",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 2: verify delay injection."
     },
     {
@@ -5070,7 +5200,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_93",
-      "community": 52,
+      "community": 10,
       "norm_label": "test 3: verify conflict detector finds overlaps correctly."
     },
     {
@@ -5080,7 +5210,7 @@
       "source_location": "L163",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_163",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 4: verify hold action stops train, timer decreases, train resumes."
     },
     {
@@ -5090,7 +5220,7 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_209",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 5: verify apply_action() does not mutate original state."
     },
     {
@@ -5100,7 +5230,7 @@
       "source_location": "L240",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_240",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 6: verify project_forward() produces identical results."
     },
     {
@@ -5110,7 +5240,7 @@
       "source_location": "L272",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_272",
-      "community": 50,
+      "community": 10,
       "norm_label": "inspect state for any impossible invariants."
     },
     {
@@ -5120,7 +5250,7 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_304",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 7: check invariants during simulator run."
     },
     {
@@ -5130,7 +5260,7 @@
       "source_location": "L320",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_320",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 8: 100 random scenario stress test."
     },
     {
@@ -5140,7 +5270,7 @@
       "source_location": "L369",
       "_origin": "ast",
       "id": "tests_validate_phase2_rationale_369",
-      "community": 50,
+      "community": 10,
       "norm_label": "test 9: measure latency targets."
     },
     {
@@ -5150,7 +5280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "simulator_train_state",
-      "community": 52,
+      "community": 53,
       "norm_label": "train_state.py"
     },
     {
@@ -5160,7 +5290,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "simulator_train_state_trainstate",
-      "community": 52,
+      "community": 53,
       "norm_label": "trainstate"
     },
     {
@@ -5170,7 +5300,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "simulator_train_state_blockstate",
-      "community": 52,
+      "community": 53,
       "norm_label": "blockstate"
     },
     {
@@ -5180,7 +5310,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "simulator_train_state_stationstate",
-      "community": 52,
+      "community": 53,
       "norm_label": "stationstate"
     },
     {
@@ -5750,20 +5880,150 @@
       "norm_label": "**development & metric evolution over time**"
     },
     {
-      "label": "**Key Evolutionary Insights**",
+      "label": "**Detailed Decision Pipeline & State Flow**",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L304",
+      "source_location": "L306",
       "_origin": "ast",
-      "id": "readme_key_evolutionary_insights",
+      "id": "readme_detailed_decision_pipeline_state_flow",
       "community": 3,
-      "norm_label": "**key evolutionary insights**"
+      "norm_label": "**detailed decision pipeline & state flow**"
+    },
+    {
+      "label": "**Explainable Priority Heuristic: Walkthrough Example**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L329",
+      "_origin": "ast",
+      "id": "readme_explainable_priority_heuristic_walkthrough_example",
+      "community": 3,
+      "norm_label": "**explainable priority heuristic: walkthrough example**"
+    },
+    {
+      "label": "**Priority-Weighted Cost Formula Details**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L333",
+      "_origin": "ast",
+      "id": "readme_priority_weighted_cost_formula_details",
+      "community": 3,
+      "norm_label": "**priority-weighted cost formula details**"
+    },
+    {
+      "label": "**Conflict Scenario Walkthrough**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L341",
+      "_origin": "ast",
+      "id": "readme_conflict_scenario_walkthrough",
+      "community": 3,
+      "norm_label": "**conflict scenario walkthrough**"
+    },
+    {
+      "label": "**Case 1: Local Cost Evaluation (No Cascades)**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L350",
+      "_origin": "ast",
+      "id": "readme_case_1_local_cost_evaluation_no_cascades",
+      "community": 3,
+      "norm_label": "**case 1: local cost evaluation (no cascades)**"
+    },
+    {
+      "label": "**Case 2: Downstream Cascade Evaluation (Lookahead Enabled)**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L358",
+      "_origin": "ast",
+      "id": "readme_case_2_downstream_cascade_evaluation_lookahead_enabled",
+      "community": 3,
+      "norm_label": "**case 2: downstream cascade evaluation (lookahead enabled)**"
+    },
+    {
+      "label": "**Research Graphs & Visualizations**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L372",
+      "_origin": "ast",
+      "id": "readme_research_graphs_visualizations",
+      "community": 3,
+      "norm_label": "**research graphs & visualizations**"
+    },
+    {
+      "label": "**1. Overall Optimization Efficacy: Cost vs. Relative Improvement**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L376",
+      "_origin": "ast",
+      "id": "readme_1_overall_optimization_efficacy_cost_vs_relative_improvement",
+      "community": 3,
+      "norm_label": "**1. overall optimization efficacy: cost vs. relative improvement**"
+    },
+    {
+      "label": "**2. Computational Latency comparison (Log Scale)**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L380",
+      "_origin": "ast",
+      "id": "readme_2_computational_latency_comparison_log_scale",
+      "community": 3,
+      "norm_label": "**2. computational latency comparison (log scale)**"
+    },
+    {
+      "label": "**3. Search Tree Complexity Breakdown**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L384",
+      "_origin": "ast",
+      "id": "readme_3_search_tree_complexity_breakdown",
+      "community": 3,
+      "norm_label": "**3. search tree complexity breakdown**"
+    },
+    {
+      "label": "**4. Passenger Cost Curves across All 50 Scenarios**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L388",
+      "_origin": "ast",
+      "id": "readme_4_passenger_cost_curves_across_all_50_scenarios",
+      "community": 3,
+      "norm_label": "**4. passenger cost curves across all 50 scenarios**"
+    },
+    {
+      "label": "**5. Planner Improvement Breakdown by Disruption Type**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L392",
+      "_origin": "ast",
+      "id": "readme_5_planner_improvement_breakdown_by_disruption_type",
+      "community": 3,
+      "norm_label": "**5. planner improvement breakdown by disruption type**"
+    },
+    {
+      "label": "**6. Frequency of Advisor Actions (Interventions)**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L396",
+      "_origin": "ast",
+      "id": "readme_6_frequency_of_advisor_actions_interventions",
+      "community": 3,
+      "norm_label": "**6. frequency of advisor actions (interventions)**"
+    },
+    {
+      "label": "**Detailed Scenario-by-Scenario Cost Ledger (50 Scenarios)**",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L402",
+      "_origin": "ast",
+      "id": "readme_detailed_scenario_by_scenario_cost_ledger_50_scenarios",
+      "community": 3,
+      "norm_label": "**detailed scenario-by-scenario cost ledger (50 scenarios)**"
     },
     {
       "label": "**Limitations & Deployment Prerequisites**",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L315",
+      "source_location": "L460",
       "_origin": "ast",
       "id": "readme_limitations_deployment_prerequisites",
       "community": 3,
@@ -5773,7 +6033,7 @@
       "label": "**Developer & Author**",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L324",
+      "source_location": "L469",
       "_origin": "ast",
       "id": "readme_developer_author",
       "community": 3,
@@ -5783,7 +6043,7 @@
       "label": "**License**",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L333",
+      "source_location": "L478",
       "_origin": "ast",
       "id": "readme_license",
       "community": 3,
@@ -12005,6 +12265,119 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_decision_latency"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_disruption_performance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L235",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_interventions_distribution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_nodes_breakdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_performance_comparison"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_generate_scenario_cost_curves"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_get_experiment_db_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots",
+      "target": "evaluation_generate_detailed_plots_style_plot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots_generate_disruption_performance",
+      "target": "evaluation_generate_detailed_plots_get_experiment_db_path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L237",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots_generate_interventions_distribution",
+      "target": "evaluation_generate_detailed_plots_get_experiment_db_path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/generate_detailed_plots.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_generate_detailed_plots_generate_scenario_cost_curves",
+      "target": "evaluation_generate_detailed_plots_get_experiment_db_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "evaluation/generate_html_report.py",
       "source_location": "L8",
       "weight": 1.0,
@@ -12345,6 +12718,37 @@
       "confidence_score": 1.0,
       "source": "evaluation_scenario_validation_validate_scenario",
       "target": "simulator_env_trainnetworksimulator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_update_readme",
+      "target": "evaluation_update_readme_get_experiment_db_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_update_readme",
+      "target": "evaluation_update_readme_main"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/update_readme.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_update_readme_main",
+      "target": "evaluation_update_readme_get_experiment_db_path"
     },
     {
       "relation": "contains",
@@ -25023,9 +25427,9 @@
       "source_file": "README.md",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_running_the_system",
-      "target": "readme_manual_services_startup_alternative",
-      "confidence_score": 1.0
+      "target": "readme_manual_services_startup_alternative"
     },
     {
       "relation": "contains",
@@ -25053,9 +25457,9 @@
       "source_file": "README.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_running_the_system",
-      "target": "readme_unified_service_management_recommended",
-      "confidence_score": 1.0
+      "target": "readme_unified_service_management_recommended"
     },
     {
       "relation": "contains",
@@ -25071,11 +25475,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
+      "source_location": "L306",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_evaluation_benchmarking_methodology",
+      "target": "readme_detailed_decision_pipeline_state_flow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L326",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_evaluation_benchmarking_methodology",
+      "target": "readme_detailed_scenario_by_scenario_cost_ledger_50_scenarios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L294",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_evaluation_benchmarking_methodology",
-      "target": "readme_development_metric_evolution_over_time",
-      "confidence_score": 1.0
+      "target": "readme_development_metric_evolution_over_time"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L329",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_evaluation_benchmarking_methodology",
+      "target": "readme_explainable_priority_heuristic_walkthrough_example"
     },
     {
       "relation": "contains",
@@ -25083,9 +25517,109 @@
       "source_file": "README.md",
       "source_location": "L304",
       "weight": 1.0,
-      "source": "readme_development_metric_evolution_over_time",
-      "target": "readme_key_evolutionary_insights",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "readme_evaluation_benchmarking_methodology",
+      "target": "readme_research_graphs_visualizations"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L341",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_explainable_priority_heuristic_walkthrough_example",
+      "target": "readme_conflict_scenario_walkthrough"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L333",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_explainable_priority_heuristic_walkthrough_example",
+      "target": "readme_priority_weighted_cost_formula_details"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L350",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_conflict_scenario_walkthrough",
+      "target": "readme_case_1_local_cost_evaluation_no_cascades"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L358",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_conflict_scenario_walkthrough",
+      "target": "readme_case_2_downstream_cascade_evaluation_lookahead_enabled"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L376",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_1_overall_optimization_efficacy_cost_vs_relative_improvement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L312",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_2_computational_latency_comparison_log_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L316",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_3_search_tree_complexity_breakdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L320",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_4_passenger_cost_curves_across_all_50_scenarios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L392",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_5_planner_improvement_breakdown_by_disruption_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L396",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_research_graphs_visualizations",
+      "target": "readme_6_frequency_of_advisor_actions_interventions"
     },
     {
       "relation": "contains",
@@ -28229,5 +28763,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b06ba4972165bdcd63f405c0bda43cc1b3b7b650"
+  "built_at_commit": "13aae98f129ca2f7734f6307d7bb4f77f08db36e"
 }
