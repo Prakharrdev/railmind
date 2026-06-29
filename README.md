@@ -471,7 +471,7 @@ RailMind is a decision-support prototype. Transitioning to a production-grade di
 *   **Author:** Prakhar Gupta
 *   **Affiliation:** Manipal University Jaipur, B.Tech CSE (Batch 2025–2029)
 *   **GitHub:** [@prakharrdev](https://github.com/prakharrdev)
-*   **Last Updated:** June 2026
+*   **Last Updated:** 20 June 2026
 
 ---
 
